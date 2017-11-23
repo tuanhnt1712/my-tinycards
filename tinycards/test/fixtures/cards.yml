@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deck: one
+  font: MyString
+  back: MyString
+
+two:
+  deck: two
+  font: MyString
+  back: MyString
