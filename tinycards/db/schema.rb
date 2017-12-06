@@ -12,16 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20171120093936) do
 
-  create_table "cards", force: :cascade do |t|
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "deck_id"
-    t.string   "font"
+    t.string   "front"
     t.string   "back"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["deck_id"], name: "index_cards_on_deck_id"
+    t.index ["deck_id"], name: "index_cards_on_deck_id", using: :btree
   end
 
-  create_table "decks", force: :cascade do |t|
+  create_table "decks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
     t.string   "cover_image"
     t.string   "string"
@@ -30,35 +30,26 @@ ActiveRecord::Schema.define(version: 20171120093936) do
     t.string   "text"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_decks_on_user_id"
+    t.index ["user_id"], name: "index_decks_on_user_id", using: :btree
   end
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
     t.integer  "deck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["deck_id"], name: "index_favorites_on_deck_id"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.index ["deck_id"], name: "index_favorites_on_deck_id", using: :btree
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
-  create_table "lesson_cards", force: :cascade do |t|
-    t.integer  "card_id"
-    t.integer  "lesson_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["card_id"], name: "index_lesson_cards_on_card_id"
-    t.index ["lesson_id"], name: "index_lesson_cards_on_lesson_id"
-  end
-
-  create_table "relationships", force: :cascade do |t|
+  create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "follower_id"
     t.integer  "following_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -71,8 +62,12 @@ ActiveRecord::Schema.define(version: 20171120093936) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "cards", "decks"
+  add_foreign_key "decks", "users"
+  add_foreign_key "favorites", "decks"
+  add_foreign_key "favorites", "users"
 end
