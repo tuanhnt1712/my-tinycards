@@ -1,0 +1,23 @@
+/*
+ *= require settings
+ *= require slicknav
+ *= require style
+ *= require responsive
+ *= require animate
+ *= require colors/red
+ *= require colors/jade
+ *= require colors/green
+ *= require colors/blue
+ *= require colors/beige
+ *= require colors/cyan
+ *= require colors/orange
+ *= require colors/peach
+ *= require colors/pink
+ *= require colors/purple
+ *= require colors/sky-blue
+ *= require colors/yellow
+ *= require_tree .
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
