@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Tinycards</title>
+    <link rel="icon" sizes="192x192" href="//d17u0960v8a9bp.cloudfront.net/192x192.png">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div class="container">
+      <div class="show-value">
+        <%= yield %>
+      </div>
+    </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

@@ -1,3 +1,13 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "style.scss";
+@import "home";
+
+body {
+  background-color: #F7F7F7;
+  margin: 0px;
+
+  a:link, a:visited, a:hover {
+    text-decoration: none;
+  }
+}

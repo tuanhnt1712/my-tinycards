@@ -1,0 +1,31 @@
+<header>
+  <div class="header-logo">
+    <div class="inner">
+      <div class="logo">
+        <%= link_to image_tag("logo.jpg"), root_path %>
+        <div class="name-logo">
+          <%= link_to "tinycard", root_path %>
+        </div>
+      </div>
+
+      <div class="search">
+        <form class="form-inline">
+          <input class="form-control f-search" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+
+      <div class="nav-list">
+        <div class="nav-item">
+          <%= link_to " HOME", root_path, class: "cl-text fa fa-home" %>
+        </div>
+        <div class="nav-item">
+          <%= link_to " CREATE", root_path, class: "cl-text fa fa-plus" %>
+        </div>
+        <div class="nav-item">
+          <%= link_to " LOG IN", root_path, class: "cl-text fa fa-user" %>
+          <!-- <%= link_to " ACCOUNT", root_path, class: "cl-text fa fa-user" %> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
