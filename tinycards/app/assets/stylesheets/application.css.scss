@@ -1,12 +1,21 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "font";
 @import "home";
+@import "style";
 
 body {
   background-color: #F7F7F7;
   margin: 0px;
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Regular, sans-serif;
+  line-height: 1.5;
 
   a:link, a:visited, a:hover {
     text-decoration: none;
   }
+}
+
+button {
+  cursor: pointer
 }

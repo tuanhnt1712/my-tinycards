@@ -4,7 +4,7 @@
       <div class="logo">
         <%= link_to image_tag("logo.jpg"), root_path %>
         <div class="name-logo">
-          <%= link_to "tinycard", root_path %>
+          <%= link_to "tinycards", root_path %>
         </div>
       </div>
 
@@ -15,15 +15,20 @@
       </div>
 
       <div class="nav-list">
-        <div class="nav-item">
-          <%= link_to " HOME", root_path, class: "cl-text fa fa-home" %>
-        </div>
+          <%= link_to root_path, class: "nav-item" do %>
+            <span class="fa fa-home"></span>
+            <span class="nav-text">home</span>
+          <% end %>
         <div class="nav-item">
           <%= link_to " CREATE", root_path, class: "cl-text fa fa-plus" %>
         </div>
         <div class="nav-item">
-          <%= link_to " LOG IN", root_path, class: "cl-text fa fa-user" %>
-          <!-- <%= link_to " ACCOUNT", root_path, class: "cl-text fa fa-user" %> -->
+          <% if user_signed_in? %>
+            <!-- <%= link_to " ACCOUNT", root_path, class: "cl-text fa fa-user" %> -->
+            <%= link_to " SIGN OUT", destroy_user_session_path, method: :delete, data: {hover: "Sign out"}, class: "cl-text fa fa-user" %>
+          <% else %>
+            <%= link_to " LOG IN", new_user_session_path, class: "cl-text fa fa-user" %>
+          <% end %>
         </div>
       </div>
     </div>
