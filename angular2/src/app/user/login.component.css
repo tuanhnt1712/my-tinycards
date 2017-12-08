@@ -1,0 +1,118 @@
+/* Dinh nghia font moi de dung cho du an*/
+@font-face {
+  font-family: DINNextRoundedLTPro-Light;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Light"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.svg) format("svg");
+}
+@font-face {
+  font-family: DINNextRoundedLTPro-Regular;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Regular"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.svg) format("svg");
+}
+@font-face {
+  font-family: DINNextRoundedLTPro-Medium;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Medium"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.svg) format("svg");
+}
+@font-face {
+  font-family: DINNextRoundedLTPro-Bold;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Bold"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.svg) format("svg");
+}
+
+/* Sign in form*/
+.login-form {
+  margin-top: 40px;
+  padding: 35px;
+  border-radius: 20px;
+}
+
+.login-form-label {
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.social-login {
+  margin-top: 20px;
+}
+
+.btn-social-signin {
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 15px;
+  padding: 12px 0 8px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.google-signin {
+  background-color: #df360a;
+}
+
+.facebook-signin {
+  background-color: #39559f;
+}
+
+.devide-login {
+  border-bottom: 1px solid #e8e8e8;
+  margin: 30px 0;
+  position: relative;
+}
+
+.devide-text {
+  background-color: #fff;
+  color: #898989;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 21px;
+  left: 50%;
+  padding: 0 10px;
+  position: absolute;
+  top: -12px;
+  -webkit-transform: translateX(-50%);
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.btn-custome {
+  background-color: #32cdff;
+  border-radius: 10px;
+  color: #fff;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 15px;
+  padding: 12px 0 8px;
+  text-align: center;
+}
+.btn-custome:hover {
+  filter: brightness(95%);
+}
+
+.link-custome {
+  background-color: transparent;
+  border: none;
+  color: #32cdff;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  text-transform: uppercase;
+}
+.link-custome:hover {
+  color: #32cdff;
+  text-decoration: none;
+  filter: brightness(95%);
+}
+
+.shadow {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shadow:hover {
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-nohover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
