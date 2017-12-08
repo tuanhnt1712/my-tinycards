@@ -33,6 +33,7 @@ header {
           font-size: 30px;
           font-weight: bold;
           margin: 7px;
+          padding-top: 4px;
 
           a {
             color: White;
@@ -59,13 +60,15 @@ header {
       .nav-list{
         display: flex;
 
-        .nav-item, {
+        .nav-item {
           color: White;
           display: block;
-          font-weight: bold;
           padding: 20px 15px;
         }
-
+        .nav-text{
+          font-family: DINNextRoundedLTPro-Bold, sans-serif;
+          text-transform: uppercase;
+        }
         .cl-text {
           color: White;
         }

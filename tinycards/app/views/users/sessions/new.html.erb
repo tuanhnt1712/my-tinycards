@@ -13,21 +13,13 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
         <label for="user_email">Email address</label>
-        <%= f.email_field :email, autofocus: true, class: "form-control", "aria-describedby": "emailHelp", placeholder:"Enter email" %>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder:"Enter email" %>
       </div>
 
       <div class="form-group">
         <label for="user_password">Password</label>
         <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
       </div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div class="form-check">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, class: "form-check-label" %>
-        </div>
-      <% end -%>
 
       <button type="submit" class="btn btn-block btn-custome">LOG IN</button>
     <% end %>
