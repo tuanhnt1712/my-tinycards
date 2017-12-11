@@ -1,1 +1,24 @@
-<h1>Hello</h1>
+<div class="show-value">
+  <div class="slide">
+    <h1>Slide</h1>
+  </div>
+  <div class="favorites">
+    <div class="container">
+      <div class="title">
+        <span class="txt">Your favorites</span>
+      </div>
+      <div class="list-decks-favor">
+        <% @decks.each do |deck| %>
+          <div class="item-deck">
+            <div class="image-cover">
+              <%= link_to image_tag("deck-demo.jpg"), deck %>
+            </div>
+            <div class="name">
+              <%= link_to deck.title, "#", class: "name-deck" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,51 @@
   border: 1px solid #fff;
   box-shadow: 0 0 25px rgba(0,0,0,.04);
   width: auto;
+
+  .slide {
+    height: 200px;
+    width: 100%;
+    background-color: #ddddff;
+    border-radius: 8px;
+  }
+
+  .favorites {
+    height: 350px;
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    .list-decks-favor {
+      display: flex;
+    }
+
+    .item-deck {
+      height: 240px;
+      padding: 10px;
+      width: 170px;
+
+      img {
+        width: 100%;
+        border-radius: 18px;
+      }
+
+      .image-cover {
+        background-color: #fff;
+      }
+
+      .name {
+        margin-top: 5px;
+
+        .name-deck {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
 
 header {
@@ -64,6 +109,10 @@ header {
           color: White;
           display: block;
           padding: 20px 15px;
+
+          :hover {
+            color: antiquewhite;
+          }
         }
         .nav-text{
           font-family: DINNextRoundedLTPro-Bold, sans-serif;
