@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :decks
+  get "/profile", to: "users#index"
 end
