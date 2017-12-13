@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "font";
+@import "toastr";
 @import "home";
 @import "style";
 @import "deck";
@@ -19,4 +20,8 @@ body {
 
 button {
   cursor: pointer
+}
+
+a:focus, button:focus, input:focus, div:focus, textarea:focus {
+  outline: none;
 }
