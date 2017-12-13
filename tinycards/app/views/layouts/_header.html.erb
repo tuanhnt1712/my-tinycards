@@ -25,9 +25,9 @@
               <div class="nav-text">create</div>
             <% end %>
             <% if user_signed_in? %>
-              <%= link_to destroy_user_session_path, method: :delete, data: {hover: "Sign out"}, class: "nav-item" do %>
+              <%= link_to profile_path, class: "nav-item" do %>
                 <div class="fa fa-user nav-icon"></div>
-                <div class="nav-text">Log out</div>
+                <div class="nav-text"><%= current_user.name %></div>
               <% end %>
             <% else %>
               <%= link_to new_user_session_path, class: "nav-item" do %>

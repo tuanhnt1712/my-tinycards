@@ -11,6 +11,11 @@
       </div>
 
       <div class="form-group">
+        <label for="user_name">Name</label>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder:"Enter your name" %>
+      </div>
+
+      <div class="form-group">
         <label for="user_password">Password
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
