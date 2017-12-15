@@ -14,13 +14,12 @@
           <div class="search-form">
             <input class="search-input" type="search" placeholder="Search" aria-label="Search">
           </div>
-
           <ul class="navbar-nav mr-auto nav-list">
             <%= link_to root_path, class: "nav-item nav-item-active" do %>
               <div class="fa fa-home nav-icon"></div>
               <div class="nav-text">home</div>
             <% end %>
-            <%= link_to root_path, class: "nav-item" do %>
+            <%= link_to new_deck_path, class: "nav-item" do %>
               <div class="fa fa-plus nav-icon"></div>
               <div class="nav-text">create</div>
             <% end %>
