@@ -3,19 +3,19 @@
     <div class="col-xs-12 col-md-4">
       <div class="left">
         <div class="img-deck">
-          <%= image_tag "deck-demo.jpg" %>
+          <%= image_tag @deck.cover_image %>
         </div>
         <div class="txt">
           <div class="name-deck">
-            <span class="name">Shapes</span>
+            <span class="name"><%= @deck.title %></span>
           </div>
           <div class="description-deck">
-            <span class="des">Bright and colorful shapes. Great for kids! Happy learning :)</span>
+            <span class="des"><%= @deck.description %></span>
           </div>
           <div class="author">
             <div class="img">
               <%= image_tag "avatar.png" %>
-              <a href="#" class="name"> Bette</a>
+              <a href="#" class="name"> <%= @deck.user.email %></a>
             </div>
           </div>
           <div class="btn-ct">
