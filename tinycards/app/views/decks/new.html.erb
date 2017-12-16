@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-xs-12 col-md-4">
+      <div class="left">
+        <div class="cover-deck" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+          <div class="import-cover-deck">
+            <i class="fa fa-picture-o" aria-hidden="true"></i>
+            <div class="change-cover">
+              <p class="ct-text">CHOOSE COVER</p>
+            </div>
+          </div>
+        </div>
+        <div class="txt pd-top-10">
+          <div class="name-deck">
+            <input type="text" class="form-control" id="ip-title" placeholder="Enter title">
+          </div>
+          <div class="description-deck" style="margin-top: 15px;">
+            <input type="text" class="form-control" id="ip-description" placeholder="Enter description">
+          </div>
+          <div class="btn-ct">
+            <button type="button" class="btn btn-ct-setting"><i class="fa fa-cog" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-ct-publ btn-primary">PUBLISH</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-8">
+      <div class="right">
+        <div class="add-card">
+          <button class="add" id="btn-addCard">+</button>
+        </div>
+        <div class="wrapper">
+          <div class="n-card">
+            <div class="number">
+              <h3>1</h3>
+            </div>
+
+            <div class="front-card">
+              <div class="f-deck">
+                <div class="import-cover-deck">
+                  <div class="change-cover">
+                    <textarea type="text" rows="6" class="form-control ct-text" id="front-card-value" placeholder="Front"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="back-card">
+              <div class="f-deck">
+                <div class="import-cover-deck">
+                  <div class="change-cover">
+                    <textarea type="text" rows="6" class="form-control ct-text" id="back-card-value" placeholder="Back"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="list-option">
+              <button class="del"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--   Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">INSERT IMAGE</h5>
+        </div>
+        <div class="modal-body">
+          <div id="messages"></div>
+          <input type="file" name="file" id="file">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
