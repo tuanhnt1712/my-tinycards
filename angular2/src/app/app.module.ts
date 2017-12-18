@@ -8,6 +8,7 @@ import { appRoutes } from './app.routes';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login.component';
 import { SignupComponent } from './user/signup.component';
+import { DeckComponent } from './deck/deck.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SignupComponent } from './user/signup.component';
     HomeComponent,
     UserComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DeckComponent
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes

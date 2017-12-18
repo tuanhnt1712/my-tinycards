@@ -1,4 +1,6 @@
 class DecksController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @deck = Deck.find_by id: params[:id]
   end
