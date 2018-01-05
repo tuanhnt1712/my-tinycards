@@ -1,0 +1,48 @@
+.jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+@keyframes jssorl-009-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.slide-setting {
+  height: 200px;
+  left: 0px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  top: 0px;
+  visibility: hidden;
+  width: 1000px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  .slides {
+    cursor: default;
+    height: 200px;
+    left: 0px;
+    overflow: hidden;
+    top: 0px;
+    width: 1000px;
+  }
+
+  .img-sett {
+    background-color: darkturquoise;
+
+    img {
+      width: 170px;
+      height: 200px;
+    }
+  }
+}
+
