@@ -1,7 +1,26 @@
 <div class="show-value">
   <div class="slide">
-    <h1>Slide</h1>
+    <div id="jssor_1" class="slide-setting">
+        <div data-u="slides" class="slides">
+          <% @decks.each do |deck| %>
+            <%= link_to deck do %>
+              <div data-p="30.00" class="img-sett" style="background-color: #00C5FF">
+                <div data-u="image">
+                  <div class="item-decks-slide">
+                    <%= image_tag deck.cover_image, style: "position:absolute;right:0" %>
+                    <div class="title">
+                      <%= deck.title %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
   </div>
+
   <div class="favorites">
     <div class="container">
       <div class="title">
