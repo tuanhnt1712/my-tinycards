@@ -1,0 +1,9 @@
+en:
+  api_error:
+    access_denied: "Access Denied!"
+    connection_refused: "Connection is Refused!"
+    unauthorized: "Unauthorized!"
+    forbidden: "Forbidden!"
+    not_found: "Not Found!"
+    validation_errors: "Validations Error!"
+    unauthenticated: "Unauthenticated!"

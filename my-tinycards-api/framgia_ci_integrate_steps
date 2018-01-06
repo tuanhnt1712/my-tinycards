@@ -1,0 +1,12 @@
+- active repo on ci.framgia.vn
+- authenticate reports at ci-reports.framgia.vn
+- enable CW/email notification if neccessary
+- create automated build on docker hub
+- create Dockerfile and push to github repo
+- create .drone.yml
+- install python3
+- pip3 install framgia-ci
+- pip install --upgrade pip
+- framgia-ci init ruby
+- edit .framgia-ci.yml as your requirements
+- commit and push to github, create PRs

@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require "aws-sdk"
+require "net/http"
+
+METADATA_ENDPOINT = "http://169.254.169.254/latest/meta-data/instance-id"
+
+client = AWS::ELB.new region: ENV["AWS_REGION"],
+  access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+  secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+elb = client.load_balancers.find{|lb| lb.name == ENV["AWS_ELB_NAME"]}
+instance_id = Net::HTTP.get(URI.parse METADATA_ENDPOINT)
+instance = elb.instances.find{|i| i.id != instance_id}
+instance ||= AWS::EC2.new(region: ENV["AWS_REGION"]).instances[instance_id]
+deploy_ref_type = instance.tags["DEPLOY_REF_TYPE"]
+print deploy_ref_type

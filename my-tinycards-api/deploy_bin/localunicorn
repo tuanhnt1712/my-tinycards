@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# Name: localunicorn
+# Author: [Framgia] Johnny, HuyND
+# Usage: localunicorn [start|stop|restart|reload|add_worker|remove_worker]
+#
+# This command wraps capistrano3-unicorn gem. All commands available
+# depend on the gem.
+#
+
+cd /home/deploy/$(echo "$REPO_URL" | grep -o "\/[a-zA-Z0-9_\-]\+\.git" | sed -r "s/^\/|\.git$//g")
+LOCAL_DEPLOY=true DEPLOY_REF=dummy bundle exec cap $RAILS_ENV unicorn:$1
