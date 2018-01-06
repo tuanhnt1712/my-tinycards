@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Author: [Framgia] Johnny, HuyND
+
+function exit_failure() {
+  echo "Aborted due to an error: $1"
+  exit 1;
+}
+
+SOURCE_CODE_DIR=/home/deploy/$(echo "$REPO_URL" | grep -o "\/[a-zA-Z0-9_\-]\+\.git" | sed -r "s/^\/|\.git$//g")
+echo "---> Move to $SOURCE_CODE_DIR";\
+cd $SOURCE_CODE_DIR || exit_failure "Move to $SOURCE_CODE_DIR";\
+echo "---> Fetch the codes from git repo";\
+git fetch origin && git fetch origin --tags || exit_failure "Fetch the codes from git repo";\
+
+echo "---> Pull the code from git repo";\
+case $1 in
+tag) REF=$2;;
+branch) REF=origin/$2;;
+*) exit_failure "Please speify (tag|branch) as the first argument.";;
+esac
+git reset --hard $REF -- || exit_failure "Pull the codes from git repo";\
+
+echo "---> Bundle install";\
+bundle --path /home/deploy/bundle || exit_failure "Bundle install";\
+echo "---> Deploy";\
+DEPLOY_REF_TYPE=$1 DEPLOY_REF=$2 bundle exec cap $RAILS_ENV deploy || exit_failure "Deploy";\
+echo "---> Done"

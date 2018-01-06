@@ -1,0 +1,48 @@
+carrierwave:
+  fog_cache_control: 1.hour
+  fog_expiration: 1.hour
+  fog_public: false
+
+access_token_header: "X-Casec-Access-Token"
+
+http_code:
+  code_200: 200
+  code_400: 400
+  code_404: 404
+  code_401: 401
+  code_403: 403
+
+error_formatter:
+  error_code_key: "error_code"
+  error_codes:
+    data_operation: 600
+    unauthorized: 601
+    token_expired: 602
+    record_not_found: 603
+    validation_errors: 604
+    pwd_not_correct: 605
+    unauthenticated: 606
+  message_key: "message"
+  http_code:
+    data_operation: 422
+    unauthorized: 401
+    token_expired: 401
+    record_not_found: 404
+    validation_errors: 400
+    pwd_not_correct: 401
+    unauthenticated: 401
+
+validations:
+  strings:
+    max_length: 255
+
+user_tokens:
+  token:
+    secure_length: 64
+  refresh_token:
+    secure_length: 64
+  expired_period: 30.days
+
+user_testset:
+  code:
+    length: 12

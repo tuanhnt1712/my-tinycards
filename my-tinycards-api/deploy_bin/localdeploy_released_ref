@@ -1,0 +1,5 @@
+#!/bin/bash -v
+
+# Author: [Framgia] Johnny, HuyND
+
+localdeploy `get_released_deploy_ref_type` `get_released_deploy_ref`

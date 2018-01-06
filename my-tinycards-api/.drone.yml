@@ -1,0 +1,39 @@
+build:
+  image: lannp/casec_server
+  environment:
+    REPO_URL: git@github.com:framgia/casec_server.git
+    EMAIL_USERNAME: sample@sample.com
+    EMAIL_PASSWORD: sample1
+    HOST: localhost:3000
+    AWS_REGION: ap-northeast-1
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    S3_BUCKET_NAME: S3_BUCKET_NAME
+    DATABASE_HOSTNAME: 127.0.0.1
+    DATABASE_NAME_TEST: rails_app_development
+    DATABASE_USERNAME: test
+    DATABASE_PASSWORD: test
+    REDIS_HOSTNAME: localhost
+    RAILS_ENV: test
+    SECRET_KEY_BASE: ci_test
+    DEVISE_SECRET_KEY: ci_test
+    WEB_SERVER: unicorn
+    NUM_UNICORN_WORKERS: 3
+    SECRET_KEY_BASE: "4a6fb7f46d34aeb6c2372466e4aefb31e77c588f3912a72206834f9fe7d2b09b2caa059d187d71855874b75859180dc28c2a2657569dfeaddb40d59fbbd60524"
+  commands:
+    - framgia-ci test-connect 127.0.0.1 3306
+    - bundle install
+    - RAILS_ENV=test rake db:create db:migrate
+    - framgia-ci run
+
+compose:
+  database:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: rails_app_development
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: root
+cache:
+  mount:
+    - .git
