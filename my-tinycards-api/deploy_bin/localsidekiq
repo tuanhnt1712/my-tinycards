@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# Name: localsidekiq
+# Author: [Framgia] Johnny, HuyND
+# Usage: localsidekiq [start|stop|restart|rolling_restart|respawn|quiet]
+#
+# This command wraps capistrano-sidekiq gem. All commands available
+# depend on the gem.
+#
+
+cd /home/deploy/$(echo "$REPO_URL" | grep -o "\/[a-zA-Z0-9_\-]\+\.git" | sed -r "s/^\/|\.git$//g")
+LOCAL_DEPLOY=true DEPLOY_REF=dummy bundle exec cap $RAILS_ENV sidekiq:$1

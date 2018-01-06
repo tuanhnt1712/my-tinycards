@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require "aws-sdk"
+require "fileutils"
+
+def error_exit msg
+  STDERR.puts "[ERROR] #{msg}"
+  exit 1
+end
+
+S3_DOTENV_PATH = "ec2_setting_files/dotenv"
+LOCAL_DOTENV_PATH = "/home/deploy/.env"
+BACKUP_DIR = "/home/deploy/dotenv_backups"
+
+s3 = AWS::S3.new region: ENV["AWS_REGION"],
+  access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+  secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+bucket = s3.buckets[ENV["S3_BUCKET_NAME"]]
+
+begin
+  FileUtils.mkdir_p "/home/deploy/dotenv_backups"
+  FileUtils.cp LOCAL_DOTENV_PATH, "#{BACKUP_DIR}/.env.#{Time.now.strftime '%Y-%m-%d-%H-%M-%S'}"
+  File.write LOCAL_DOTENV_PATH, bucket.objects[S3_DOTENV_PATH].read
+  FileUtils.chmod 0600, LOCAL_DOTENV_PATH
+rescue AWS::S3::Errors::NoSuchKey
+  error_exit "#{S3_DOTENV_PATH} doesn't exist in your S3 bucket."
+end

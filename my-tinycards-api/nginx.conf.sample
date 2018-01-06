@@ -1,0 +1,71 @@
+## unicorn
+upstream backend-unicorn {
+  server unix:/usr/local/rails_apps/Rails5Skeleton/current/tmp/sockets/unicorn.sock;
+}
+
+server {
+  listen 80;
+  server_name localhost default_server;
+  root /usr/local/rails_apps/Rails5Skeleton/current/public;
+  client_max_body_size 10M;
+  location / {
+    try_files $uri @webapp;
+  }
+  location @webapp {
+    proxy_redirect     off;
+    proxy_set_header   Host             $host;
+    proxy_set_header   X-Real-IP        $remote_addr;
+    proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    proxy_read_timeout 10000;
+    proxy_pass http://backend-unicorn;
+  }
+}
+
+## passenger
+# server {
+#   client_max_body_size 10M;
+#   listen 80;
+#   server_name localhost default_server;
+#   root /usr/local/rails_apps/Rails5Skeleton/current/public;
+#   location / {
+#     try_files $uri @webapp;
+#   }
+#   location @webapp {
+#     proxy_redirect     off;
+#     proxy_set_header   Host             $host;
+#     proxy_set_header   X-Real-IP        $remote_addr;
+#     proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+#     proxy_read_timeout 10000;
+#   }
+# 
+#   passenger_enabled on;
+#   passenger_ruby /home/deploy/.rvm/gems/ruby-2.3.1/wrappers/ruby;
+# }
+# 
+# passenger_max_pool_size 5;
+# passenger_min_instances 5;
+
+## puma
+# upstream patest {
+#   server unix:/usr/local/rails_apps/esport_server/current/tmp/sockets/puma.sock;
+# }
+# 
+# server {
+#   listen 80;
+#   server_name localhost default_server;
+# 
+#   root /usr/local/rails_apps/esport_server/current/public;
+# 
+#   try_files $uri/index.html $uri @app;
+# 
+#   location / {
+#     proxy_pass http://patest;
+#     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#     proxy_set_header Host $http_host;
+#     proxy_redirect off;
+#   }
+# 
+#   error_page 500 502 503 504 /500.html;
+#   client_max_body_size 4G;
+#   keepalive_timeout 10;
+# }

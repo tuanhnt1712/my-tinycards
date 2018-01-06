@@ -1,0 +1,519 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/user_testsets/{code}/answer_sheets": {
+      "post": {
+        "summary": "Create answer_sheets",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "type": "string",
+            "description": "UserTestset code (ex: 000000000000)",
+            "required": true
+          },
+          {
+            "name": "X-Casec-Access-Token",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "params",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "answer_sheet": [
+                  {
+                    "question_id": {
+                      "type": "integer"
+                    },
+                    "answer_id": {
+                      "type": "integer"
+                    },
+                    "answer_content": {
+                      "type": "string"
+                    },
+                    "answer_file": {
+                      "type": "file"
+                    },
+                    "situation_id": {
+                      "type": "integer"
+                    }
+                  }
+                ]
+              },
+              "required": [
+                "question_id",
+                "answer_id",
+                "situation_id"
+              ],
+              "example": {
+                "answer_sheet": [
+                  {
+                    "question_id": 1,
+                    "answer_id": 1,
+                    "answer_content": "Rowe Group",
+                    "answer_file": "",
+                    "situation_id": 1
+                  },
+                  {
+                    "question_id": 2,
+                    "answer_id": 1,
+                    "answer_content": "Miller, Howe and Blanda",
+                    "answer_file": "",
+                    "situation_id": 1
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "answer sheet create",
+            "examples": {
+              "application/json": {
+                "answer_sheet": [
+                  {
+                    "question_id": 1,
+                    "answer_id": 1,
+                    "situation_id": 1,
+                    "answer_content": "example1@gmail.com",
+                    "answer_file": "spec/support/files/test.mp3"
+                  }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "user testset not found",
+            "examples": {
+              "application/json": {
+                "answer_sheet": [
+                  {
+                    "question_id": 1,
+                    "answer_id": 1,
+                    "situation_id": 1,
+                    "answer_content": "example1@gmail.com",
+                    "answer_file": "spec/support/files/test.mp3"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user_testsets/{code}/testset_parts": {
+      "get": {
+        "summary": "Retrieves reading section's information",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "type": "string",
+            "description": "Section type (ex: reading, listening, speaking, writing)",
+            "example": "reading"
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "type": "string",
+            "description": "UserTestset code (ex: 000000000000, 111111111111, ..., 999999999999)",
+            "example": "000000000000",
+            "required": true
+          },
+          {
+            "name": "X-Casec-Access-Token",
+            "in": "header",
+            "type": "string",
+            "description": "authorized token (ex: user1-token, user2-token, ..., user10-token)",
+            "example": "user1-token"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "reading section",
+            "examples": {
+              "application/json": {
+                "testset_parts": [
+                  {
+                    "id": 1,
+                    "part_id": 1,
+                    "testset_id": 1,
+                    "description": "section's description",
+                    "format": "section's format",
+                    "target": "section's target",
+                    "short_situations": 1,
+                    "long_situations": 1,
+                    "questions": 1,
+                    "time": 60
+                  }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "section not found",
+            "examples": {
+              "application/json": {
+                "error_code": 404,
+                "message": "Not Found!"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user_testsets/{code}/testset_parts/{id}": {
+      "get": {
+        "summary": "Retrieves TestsetPart's information",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "description": "TestsetPart's id (ex: 1)",
+            "example": "1",
+            "required": true
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "type": "string",
+            "description": "UserTestset code (ex: 000000000000, 111111111111, ..., 999999999999)",
+            "example": "000000000000",
+            "required": true
+          },
+          {
+            "name": "X-Casec-Access-Token",
+            "in": "header",
+            "type": "string",
+            "description": "authorized token (ex: user1-token, user2-token, ..., user10-token)",
+            "example": "user1-token"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "reading section",
+            "examples": {
+              "application/json": {
+                "testset_part": [
+                  {
+                    "id": 1,
+                    "ordinal_show": 1,
+                    "description": "section's description",
+                    "image": {
+                      "url": "https://example.com/image_name.jpg"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "TestsetPart not found",
+            "examples": {
+              "application/json": {
+                "error_code": 404,
+                "message": "Not Found!"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/testset_part/{testset_part_id}/testset_situation/{testset_situation_id}": {
+      "get": {
+        "summary": "Situation show",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "testset_part_id",
+            "in": "path",
+            "type": "integer",
+            "description": "Testset Part id (ex: 1)",
+            "required": true
+          },
+          {
+            "name": "testset_situation_id",
+            "in": "path",
+            "type": "integer",
+            "description": "Testset situation_id (ex: 1)",
+            "required": true
+          },
+          {
+            "name": "X-Casec-Access-Token",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "situation found",
+            "examples": {
+              "application/json": {
+                "title": "example1@gmail.com",
+                "audio_file": "dummy_name"
+              }
+            }
+          },
+          "404": {
+            "description": "testset_part testset_situation not found",
+            "examples": {
+              "application/json": {
+                "error_code": 603,
+                "message": "param is integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tokens/renew": {
+      "post": {
+        "summary": "Token renew",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "params",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "refresh_token": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "refresh_token"
+              ],
+              "example": {
+                "refresh_token": "4f76fa30e367212eead18fd9a4226a999fcce010a0e2c1d7ad4416c9099978651e3beadc3e2a9cdda444c9f0d5db513b9acafb845f4166f9de9385d1c087a4bd"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Token has successfully renew",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "refresh_token": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "token",
+                    "refresh_token"
+                  ]
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "token": {
+                  "token": "0badd2647e5c0ad2be61211f71b04ab9ec2c09ca5bd338191c880e1c55ba1c0a1e162705c5d4fe1f698e3050920b8dd02343acb0a634a57b42a568e9fb12ca52",
+                  "refresh_token": "78ad9f68a716e0c4f51439000fd0c141bacdd8aca2d81b2f2fecb35268efd6d4256c9d9c622b7db6c0097081dec3a667c5141e002a428f77757e50b59cf754db"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "refresh_token not present",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error_code": {
+                  "type": "integer",
+                  "example": 601
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized!"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/login": {
+      "post": {
+        "summary": "User login",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "params",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id_login": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "password"
+                }
+              },
+              "required": [
+                "id_login",
+                "password"
+              ],
+              "example": {
+                "id_login": "example",
+                "password": "password"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User has successfully log in",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "refresh_token": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "token": {
+                  "token": "28bdfb6227a7478fc149a192d101671fae73666215837ee727af3345197dd030fa4d46f24ced61821e60480bff2c2e7e440063e6a4e873b99ba0b908d01baac9",
+                  "refresh_token": "e7ac066f8f731a3e3be35bbd7db233ee3b730bb4f58fbeca60272b8cac1b53416accfeb92179096a234268d2b6c8bbdd3b4e057c5cb935247de54c02d05e9820"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Password doesn't match",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error_code": {
+                  "type": "integer",
+                  "example": 601
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized!"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user_testsets/{examination_id}": {
+      "get": {
+        "summary": "check examination id",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "examination_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User's given examination code, 12 number characters,\n          example:  \"000000000000\""
+          },
+          {
+            "name": "X-Casec-Access-Token",
+            "in": "header",
+            "type": "string",
+            "description": "Access Token from Login"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthenticate",
+            "examples": {
+              "application/json": {
+                "error_code": 606,
+                "message": "Unauthenticated!"
+              }
+            }
+          },
+          "404": {
+            "description": "Record not found",
+            "examples": {
+              "application/json": {
+                "error_code": 404,
+                "message": "Not Found!"
+              }
+            }
+          },
+          "200": {
+            "description": "Successfully get user testset",
+            "examples": {
+              "application/json": {
+                "user_testset": {
+                  "id": 1,
+                  "user_id": 1,
+                  "code": "123456789123",
+                  "finished": false,
+                  "current_situation": null,
+                  "testset": {
+                    "id": 1,
+                    "name": "Test set 1",
+                    "time": {
+                      "reading": 1000,
+                      "listening": 1000,
+                      "writing": 1000,
+                      "speaking": 1000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "X-Casec-Access-Token": {
+      "type": "apiKey",
+      "name": "X-Casec-Access-Token",
+      "in": "header"
+    }
+  }
+}
