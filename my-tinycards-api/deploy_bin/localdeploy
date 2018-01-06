@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Author: [Framgia] Johnny, HuyND
+
+LOCAL_DEPLOY=true deploy $1 $2

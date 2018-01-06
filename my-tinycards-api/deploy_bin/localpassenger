@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Author: [Framgia] Johnny, HuyND
+
+passenger-config restart-app /usr/local/rails_apps/$(echo "$REPO_URL" | grep -o "\/[a-zA-Z0-9_\-]\+\.git" | sed -r "s/^\/|\.git$//g" | sed -r 's/([a-z]+)_([a-z])([a-z]+)/\1\U\2\L\3/' | sed -e "s/\b\(.\)/\u\1/g") --ignore-app-not-running
