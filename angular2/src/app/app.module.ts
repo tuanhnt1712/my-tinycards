@@ -9,6 +9,8 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login.component';
 import { SignupComponent } from './user/signup.component';
 import { DeckComponent } from './deck/deck.component';
+import { DecksService } from './decks.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,9 @@ import { DeckComponent } from './deck/deck.component';
     DeckComponent
   ],
   imports: [
-    BrowserModule, AlertModule.forRoot(), appRoutes
+    BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule
   ],
-  providers: [],
+  providers: [DecksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
