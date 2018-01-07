@@ -23,7 +23,7 @@ class V1::DeckAPI < Grape::API
     end
     post do
       Deck.create!({
-        user_id: current_user.id,
+        user_id: 1,
         title: params[:title],
         description: params[:description]
       })
