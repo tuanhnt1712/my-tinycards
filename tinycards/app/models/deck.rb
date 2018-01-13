@@ -6,13 +6,13 @@ class Deck < ApplicationRecord
   validates :title, presence: true, length: {maximum: 100}
   validates :description, presence: true, length: {maximum: 250}
 
-  accepts_nested_attributes_for :cards, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :cards
 
   ATTRIBUTE_PARAMS = [
     :title,
     :description,
     :cover_image,
-    card_attributes: [
+    cards_attributes: [
       :id,
       :front,
       :back

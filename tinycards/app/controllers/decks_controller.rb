@@ -6,6 +6,8 @@ class DecksController < ApplicationController
   end
 
   def new
+    @deck = Deck.new
+    @deck.cards.build
   end
 
   def create
