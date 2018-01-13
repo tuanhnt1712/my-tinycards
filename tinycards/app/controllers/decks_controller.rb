@@ -6,6 +6,8 @@ class DecksController < ApplicationController
   end
 
   def new
+    @deck = Deck.new
+    @deck.cards.build
   end
 
   def create
@@ -20,6 +22,6 @@ class DecksController < ApplicationController
   private
 
   def deck_params
-    params.require(:deck).permit :cover_image, :title, :description
+    params.require(:deck).permit Deck::ATTRIBUTE_PARAMS
   end
 end
