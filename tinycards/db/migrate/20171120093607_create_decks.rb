@@ -4,7 +4,6 @@ class CreateDecks < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.string :cover_image
       t.string :title
-      t.string :string
       t.string :description
 
       t.timestamps

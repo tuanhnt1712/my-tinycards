@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for([@deck, current_user.decks.build]) do |f| %>
+  <%= form_for @deck do |f| %>
     <div class="row" style="margin-top: 25px;">
       <div class="col-xs-12 col-md-4">
         <div class="left">
@@ -29,40 +29,14 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-8">
-        <div class="right">
+        <div class="right prepend-body-content card-body">
           <div class="add-card">
-            <button class="add" id="btn-addCard">+</button>
+            <%= link_to_add_fields f, :cards %>
           </div>
-          <div class="wrapper">
-            <div class="n-card">
-              <div class="number">
-                <h3>1</h3>
-              </div>
 
-              <div class="front-card">
-                <div class="f-deck">
-                  <div class="import-cover-deck">
-                    <div class="change-cover">
-                      <textarea type="text" rows="6" class="form-control ct-text" id="front-card-value" placeholder="Front"></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="back-card">
-                <div class="f-deck">
-                  <div class="import-cover-deck">
-                    <div class="change-cover">
-                      <textarea type="text" rows="6" class="form-control ct-text" id="back-card-value" placeholder="Back"></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="list-option">
-                <button class="del"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-              </div>
-            </div>
-          </div>
+          <%= f.fields_for :cards do |ff| %>
+            <%= render "card_fields", f: ff %>
+          <% end %>
         </div>
       </div>
     </div>
