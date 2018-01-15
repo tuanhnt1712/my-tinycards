@@ -12,3 +12,9 @@ function add_fields(link, association, content) {
     $('.card-body').prepend(content.replace(regexp, new_id));
   }
 }
+
+$(document).ready(function() {
+  $(".ct-card").click(function() {
+    $(this).toggleClass('flipped');
+  });
+});

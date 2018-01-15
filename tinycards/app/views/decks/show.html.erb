@@ -29,7 +29,7 @@
       <div class="right">
         <div class="s-select">
           <span onclick="openTab('b1','bb1');"><a href="#" id="bb1" class="s-txt lessons s-active"> LESSONS</a></span>
-          <span onclick="openTab('b2','bb2');"><a href="#" id="bb2" class="s-txt cards"> CARDS(10)</a></span>
+          <span onclick="openTab('b2','bb2');"><a href="#" id="bb2" class="s-txt cards"> CARDS (<%= @cards.length() %>)</a></span>
         </div>
         <hr style="margin-top: 0;">
 
@@ -67,7 +67,22 @@
           </div>
 
           <div id="b2" class="containerTab" style="display:none;">
-            <h2>Cards...</h2>
+            <div class="list-card">
+              <div class="row">
+                <% @cards.each do |card| %>
+                  <div class="containerr">
+                    <div class="ct-card">
+                      <div class="item-card front">
+                        <%= card.front %>
+                      </div>
+                      <div class="item-card back">
+                        <%= card.back %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
