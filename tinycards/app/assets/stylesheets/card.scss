@@ -91,3 +91,16 @@
   -o-transform: rotateY( 180deg );
   transform: rotateY( 180deg );
 }
+
+
+.del {
+  background-color: white;
+  border: none;
+  outline: none;
+
+  .fa-trash-o {
+    color: #32cdff;
+    font-size: 25px;
+    opacity: 0;
+  }
+}

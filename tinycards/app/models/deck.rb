@@ -15,7 +15,8 @@ class Deck < ApplicationRecord
     cards_attributes: [
       :id,
       :front,
-      :back
+      :back,
+      :picture
     ]
   ].freeze
 

@@ -192,6 +192,10 @@
 
         .del {
           background-color: #F7F7F7;
+
+          .fa-trash-o {
+            opacity: 0.7;
+          }
         }
       }
     }
@@ -202,6 +206,16 @@
 
     .front-card {
       flex: 3;
+
+      .image {
+        display: block;
+        width: 45px;
+        margin: 15px;
+      }
+
+      .add-img {
+        width: 100%;
+      }
     }
 
     .back-card {
@@ -210,18 +224,6 @@
 
     .list-option {
       flex: 1;
-
-      .del {
-        background-color: white;
-        border: none;
-        outline: none;
-
-        .fa-trash-o {
-          color: #32cdff;
-          font-size: 25px;
-          opacity: 0.7;
-        }
-      }
     }
 
     .f-deck {

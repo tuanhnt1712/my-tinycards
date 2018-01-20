@@ -73,7 +73,11 @@
                   <div class="containerr">
                     <div class="ct-card">
                       <div class="item-card front">
-                        <%= card.front %>
+                        <% if card.picture.blank? %>
+                          <%= card.front %>
+                        <% else %>
+                          <%= image_tag card.picture %>
+                        <% end %>
                       </div>
                       <div class="item-card back">
                         <%= card.back %>
