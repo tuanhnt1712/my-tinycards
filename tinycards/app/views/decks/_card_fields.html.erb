@@ -5,6 +5,9 @@
     </div>
     <div class="front-card">
       <div class="f-deck">
+        <div class="image">
+          <%= f.file_field :picture, style: "width: 100%" %>
+        </div>
         <div class="import-cover-deck">
           <div class="change-cover">
             <%= f.text_field :front, class: "form-control", id: "front-card-value", placeholder: "Front" %>
@@ -22,7 +25,7 @@
       </div>
     </div>
     <%= link_to "javascript:void(0)", onclick: "remove_fields(this)" do %>
-    <span class="del"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+      <span class="del"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
     <% end %>
   </div>
 </div>
