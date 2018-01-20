@@ -1,4 +1,9 @@
-<div class="container">
+ <ul >
+    <li *ngFor="let deck of decks | async " >
+          {{deck.title}}
+    </li>
+  </ul>
+<!-- <div class="container">
   <div class="row" style="margin-top: 25px;">
     <div class="col-xs-12 col-md-4">
       <div class="left">
@@ -74,3 +79,4 @@
     </div>
   </div>
 </div>
+ -->
