@@ -1,9 +1,5 @@
- <ul >
-    <li *ngFor="let deck of decks | async " >
-      <a href="#" [routerLink]="['/decks', deck.id]">{{deck.title}}</a>
-    </li>
-  </ul>
-<!-- <div class="container">
+<section *ngIf="deck">
+<div class="container">
   <div class="row" style="margin-top: 25px;">
     <div class="col-xs-12 col-md-4">
       <div class="left">
@@ -12,10 +8,10 @@
         </div>
         <div class="txt">
           <div class="name-deck">
-            <span class="name">Shapes</span>
+            <span class="name">{{deck.title}}</span>
           </div>
           <div class="description-deck">
-            <span class="des">Bright and colorful shapes. Great for kids! Happy learning :)</span>
+            <span class="des">{{deck.description}}</span>
           </div>
           <div class="author">
             <div class="img">
@@ -52,21 +48,6 @@
                     <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
                   </div>
                 </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -79,4 +60,4 @@
     </div>
   </div>
 </div>
- -->
+</section>
