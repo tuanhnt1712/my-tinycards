@@ -1,0 +1,79 @@
+ <div class="container">
+  <!-- <%= form_for @deck do |f| %> -->
+  <form (ngSubmit)="createDeck(deck.title, deck.description)">
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-xs-12 col-md-4">
+        <div class="left">
+          <div class="cover-deck" data-toggle="modal" data-target="#coverImgModal" data-whatever="@mdo">
+            <div id="preview-img" class="import-cover-deck">
+              <img id="blah" src="#"/>
+              <div class="img-tog">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                <div class="change-cover">
+                  <p class="ct-text">CHOOSE COVER</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="txt pd-top-10">
+            <div class="name-deck">
+              <input type="text" name="title" placeholder="Enter title" class="ip input-title" required [(ngModel)]="deck.title" #deck="ngModel">
+              <!-- <%= f.text_field :title, class: "ip input-title", placeholder: "Enter title" %> -->
+            </div>
+            <div class="description-deck" style="margin-top: 15px;">
+            <input type="text" name="description" placeholder="Enter description" class="ip input-des" [(ngModel)]="deck.description" #deck="ngModel">
+              <!-- <%= f.text_field :description, class: "ip input-des", placeholder: "Enter description" %> -->
+            </div>
+            <div class="btn-ct">
+              <button type="button" class="btn btn-ct-setting"><i class="fa fa-cog" aria-hidden="true"></i></button>
+              <button type="submit" class="btn btn-ct-publ btn-primary">Create</button>
+              <!-- <%= f.submit "CREATE", class: "btn btn-ct-publ btn-primary" %> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-xs-12 col-md-8">
+        <div class="right prepend-body-content card-body">
+          <div class="add-card">
+            <%= link_to_add_fields f, :cards %>
+          </div>
+
+          <%= f.fields_for :cards do |ff| %>
+            <%= render "card_fields", f: ff %>
+          <% end %>
+        </div>
+      </div> -->
+    </div>
+
+    <!--   Modal -->
+    <div class="modal fade" id="coverImgModal" tabindex="-1" role="dialog" aria-labelledby="coverImgModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="coverImgModalLabel">INSERT IMAGE</h5>
+          </div>
+          <div class="modal-body">
+            <!-- <%= f.file_field :cover_image, id: "imgInp" %> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- <% end %> -->
+</div>
+
+
+  <!-- <form (ngSubmit)="createDeck(deck.title, deck.description)">
+        <div>
+            <label for="name">Title: </label>
+            <input type="text" name="title" required [(ngModel)]="deck.title" #deck="ngModel">
+      </div>
+      <div>
+        <label for="weight">description: </label>
+        <input type="number" name="description" [(ngModel)]="deck.description" #deck="ngModel">
+      </div>
+      <button type="submit">Save</button>
+    </form> -->
