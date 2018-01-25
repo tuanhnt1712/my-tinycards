@@ -107,6 +107,8 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     airbrussh (1.3.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    apipie-rails (0.5.6)
+      rails (>= 4.1)
     arel (8.0.0)
     ast (2.3.0)
     astrolabe (1.3.1)
@@ -193,6 +195,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
     docile (1.1.5)
+    doorkeeper (4.2.6)
+      railties (>= 4.2)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
@@ -396,19 +400,6 @@ GEM
     get_process_mem (0.2.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    grape (0.19.2)
-      activesupport
-      builder
-      hashie (>= 2.1.0)
-      multi_json (>= 1.3.2)
-      multi_xml (>= 0.5.2)
-      mustermann-grape (~> 1.0.0)
-      rack (>= 1.3.0)
-      rack-accept
-      virtus (>= 1.0.0)
-    grape-active_model_serializers (1.5.1)
-      active_model_serializers (>= 0.10.0)
-      grape (>= 0.8.0)
     guard (2.14.1)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -423,7 +414,6 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    hashie (3.5.7)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -476,10 +466,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
-    multi_xml (0.6.0)
     mustermann (1.0.1)
-    mustermann-grape (1.0.0)
-      mustermann (~> 1.0.0)
     mysql2 (0.4.10)
     nenv (0.3.0)
     net-scp (1.2.1)
@@ -505,8 +492,6 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.0.1)
     rack (2.0.3)
-    rack-accept (0.4.5)
-      rack (>= 0.4)
     rack-cors (1.0.2)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
@@ -727,6 +712,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  apipie-rails
   aws-sdk (~> 1.66.0)
   better_errors
   bootstrap-kaminari-views
@@ -747,14 +733,13 @@ DEPENDENCIES
   config
   database_cleaner
   devise!
+  doorkeeper
   dotenv-rails
   eslint-rails
   factory_girl_rails
   faker
   figaro
   fog
-  grape (< 1.0.0)
-  grape-active_model_serializers
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails

@@ -1,9 +1,12 @@
+require "api_constraints"
+
 Rails.application.routes.draw do
-  unless Rails.env.production?
-    mount Rswag::Ui::Engine => "/api-docs"
-    mount Rswag::Api::Engine => "/api-docs"
-  end
+  use_doorkeeper
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :alive, only: :show
-  mount API => "/"
+  namespace :api, defaults: {format: "json"} do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+      resources :decks, only: :show
+    end
+  end
 end

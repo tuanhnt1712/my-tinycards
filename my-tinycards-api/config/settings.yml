@@ -46,3 +46,8 @@ user_tokens:
 user_testset:
   code:
     length: 12
+language:
+  en: "en"
+  vi: "vi"
+api:
+  default_language: en
