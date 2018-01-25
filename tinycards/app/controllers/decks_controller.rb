@@ -12,8 +12,7 @@ class DecksController < ApplicationController
   end
 
   def create
-    @deck = current_user.decks.build deck_params
-    if @deck.save
+    if @deck = ::CreateDeckService.new.perform(current_user, deck_params)
       redirect_to @deck
     else
       render :new
