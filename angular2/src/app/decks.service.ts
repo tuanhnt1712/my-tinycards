@@ -14,7 +14,7 @@ import { Deck } from './deck';
 
 @Injectable()
 export class DecksService{
-  private baseUrl: string = 'http://localhost:3000/api/v1';
+  private baseUrl: string = 'http://localhost:3000/api';
 
   constructor(private http : Http){}
 

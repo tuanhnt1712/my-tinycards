@@ -16,7 +16,7 @@ export class CreateDeckComponent implements OnInit{
   }
 
   createDeck(title, description) {
-    let deck = {title: title, description: description};
+    let deck = {user_id: 1, title: title, description: description};
     debugger
     this.decksService.add_deck(deck).subscribe(
        data => {
