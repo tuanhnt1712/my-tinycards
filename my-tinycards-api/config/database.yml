@@ -3,7 +3,7 @@ default: &default
   encoding: utf8
   pool: 5
   host: <%= ENV["DATABASE_HOSTNAME"] %>
-  database: <%= ENV["DATABASE_NAME"] %>
+  database: tinycard
   username: <%= ENV["DATABASE_USERNAME"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>
   redis:

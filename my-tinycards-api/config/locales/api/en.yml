@@ -1,9 +1,58 @@
 en:
   api_error:
-    access_denied: "Access Denied!"
-    connection_refused: "Connection is Refused!"
-    unauthorized: "Unauthorized!"
-    forbidden: "Forbidden!"
-    not_found: "Not Found!"
-    validation_errors: "Validations Error!"
-    unauthenticated: "Unauthenticated!"
+    # module:
+    #   error:
+    #     code:
+    #     message:
+    client:
+      not_found:
+        code: 404
+        message: "Not Found"
+      invalid_access_token:
+        code: 190
+        message: "Invalid OAuth access token"
+      access_deny:
+        code: 401
+        message: "Access Denied"
+      app_expired:
+        code: 1001
+        message: "The application is out of date"
+    params:
+      required:
+        code: 1000
+        message: "Params Required"
+      missing:
+        code: 3002
+        message: Missing or invalid parameter.
+    server:
+      internal_error:
+        code: 500
+        message: "Internal Server Error"
+      bad_gateway:
+        code: 502
+        message: "Bad Gateway"
+    authorize:
+      doorkeeper_error:
+        code: 401
+        message: "Doorkeeper::Errors::InvalidTokenStrategy"
+      invalid_confirmation_token:
+        code: 2601
+        message: Invalid code
+      user_activated:
+        code: 2603
+        message: User Activated
+      user_inactive:
+        code: 2602
+        message: User inactive
+      token_expired:
+        code: 2603
+        message: The access token expired
+      token_unknown:
+        code: 2604
+        message: The access token is invalid
+      token_revoked:
+        code: 2605
+        message: The access token is revoked
+      unauthorized:
+        code: 2606
+        message: (E-mail address or password) is incorrect.
