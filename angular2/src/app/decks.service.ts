@@ -38,6 +38,7 @@ export class DecksService{
     let deck$ = this.http
       .get(`${this.baseUrl}/decks/${id}`, {headers: this.getHeaders()})
       .map(mapDeck);
+      debugger
       return deck$;
   }
 

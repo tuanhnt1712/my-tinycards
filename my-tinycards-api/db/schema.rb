@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218154626) do
+ActiveRecord::Schema.define(version: 20180129121318) do
 
   create_table "cards", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "deck_id"
@@ -18,7 +18,9 @@ ActiveRecord::Schema.define(version: 20171218154626) do
     t.string "back"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "lesson_id"
     t.index ["deck_id"], name: "index_cards_on_deck_id"
+    t.index ["lesson_id"], name: "index_cards_on_lesson_id"
   end
 
   create_table "decks", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -38,6 +40,13 @@ ActiveRecord::Schema.define(version: 20171218154626) do
     t.datetime "updated_at", null: false
     t.index ["deck_id"], name: "index_favorites_on_deck_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "lessons", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "deck_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deck_id"], name: "index_lessons_on_deck_id"
   end
 
   create_table "relationships", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -69,7 +78,9 @@ ActiveRecord::Schema.define(version: 20171218154626) do
   end
 
   add_foreign_key "cards", "decks"
+  add_foreign_key "cards", "lessons"
   add_foreign_key "decks", "users"
   add_foreign_key "favorites", "decks"
   add_foreign_key "favorites", "users"
+  add_foreign_key "lessons", "decks"
 end
