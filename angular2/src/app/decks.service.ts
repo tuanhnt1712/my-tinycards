@@ -14,7 +14,7 @@ import { Deck } from './deck';
 
 @Injectable()
 export class DecksService{
-  private baseUrl: string = 'http://localhost:3000/api/v1';
+  private baseUrl: string = 'http://localhost:3000/api';
 
   constructor(private http : Http){}
 
@@ -38,6 +38,7 @@ export class DecksService{
     let deck$ = this.http
       .get(`${this.baseUrl}/decks/${id}`, {headers: this.getHeaders()})
       .map(mapDeck);
+      debugger
       return deck$;
   }
 

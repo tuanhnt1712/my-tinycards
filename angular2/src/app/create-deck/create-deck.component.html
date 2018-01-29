@@ -4,7 +4,8 @@
     <div class="row" style="margin-top: 25px;">
       <div class="col-xs-12 col-md-4">
         <div class="left">
-          <div class="cover-deck" data-toggle="modal" data-target="#coverImgModal" data-whatever="@mdo">
+          <div class="cover-deck" data-whatever="@mdo">
+          <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#coverImgModal">Open Modal</button>
             <div id="preview-img" class="import-cover-deck">
               <img id="blah" src="#"/>
               <div class="img-tog">
@@ -66,14 +67,3 @@
 </div>
 
 
-  <!-- <form (ngSubmit)="createDeck(deck.title, deck.description)">
-        <div>
-            <label for="name">Title: </label>
-            <input type="text" name="title" required [(ngModel)]="deck.title" #deck="ngModel">
-      </div>
-      <div>
-        <label for="weight">description: </label>
-        <input type="number" name="description" [(ngModel)]="deck.description" #deck="ngModel">
-      </div>
-      <button type="submit">Save</button>
-    </form> -->
