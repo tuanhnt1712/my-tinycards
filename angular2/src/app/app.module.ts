@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ng2-modal';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +28,7 @@ import { CreateDeckComponent } from './create-deck/create-deck.component';
     CreateDeckComponent
   ],
   imports: [
-    BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule
+    BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ModalModule
   ],
   providers: [DecksService],
   bootstrap: [AppComponent]
