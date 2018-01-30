@@ -4,6 +4,7 @@ class DecksController < ApplicationController
   def show
     @deck = Deck.find_by id: params[:id]
     @cards = @deck.cards
+    @lessons = @deck.lessons
   end
 
   def new
