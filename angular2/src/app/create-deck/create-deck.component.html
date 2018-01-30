@@ -1,6 +1,5 @@
- <div class="container">
-  <!-- <%= form_for @deck do |f| %> -->
-  <form (ngSubmit)="createDeck(deck.title, deck.description)">
+<div class="container">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
     <div class="row" style="margin-top: 25px;">
       <div class="col-xs-12 col-md-4">
         <div class="left">
@@ -16,50 +15,55 @@
             </div>
           </div>
           <div class="txt pd-top-10">
-            <div class="name-deck">
-              <input type="text" name="title" placeholder="Enter title" class="ip input-title" required [(ngModel)]="deck.title" #deck="ngModel">
-              <!-- <%= f.text_field :title, class: "ip input-title", placeholder: "Enter title" %> -->
+            <div class="description-deck">
+              <input type="text" formControlName="title" placeholder="Enter title" class="ip input-title">
             </div>
             <div class="description-deck" style="margin-top: 15px;">
-            <input type="text" name="description" placeholder="Enter description" class="ip input-des" [(ngModel)]="deck.description" #deck="ngModel">
-              <!-- <%= f.text_field :description, class: "ip input-des", placeholder: "Enter description" %> -->
+              <input type="text" formControlName="description" placeholder="Enter description" class="ip input-des">
             </div>
+
             <div class="btn-ct">
               <button type="button" class="btn btn-ct-setting"><i class="fa fa-cog" aria-hidden="true"></i></button>
               <button type="submit" class="btn btn-ct-publ btn-primary">Create</button>
-              <!-- <%= f.submit "CREATE", class: "btn btn-ct-publ btn-primary" %> -->
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="col-xs-12 col-md-8">
-        <div class="right prepend-body-content card-body">
-          <div class="add-card">
-            <%= link_to_add_fields f, :cards %>
+      <div formArrayName="cards_attributes" class="col-xs-12 col-md-8">
+        <div *ngFor="let cards_attributes of myForm.controls.cards_attributes.controls; let i=index">
+          <div class="right prepend-body-content card-body">
+            <div class="add-card">
+              <!-- <a (click)="addCard()" style="cursor: default">
+                Add another card +
+              </a> -->
+            </div>
+            <div [formGroupName]="i">
+              <card [group]="myForm.controls.cards_attributes.controls[i]"></card>
+            </div>
+            <div class="panel-heading">
+              <span>Address {{i + 1}}</span>
+              <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.cards_attributes.controls.length > 1" (click)="removeCard(i)"></span>
+            </div>
           </div>
-
-          <%= f.fields_for :cards do |ff| %>
-            <%= render "card_fields", f: ff %>
-          <% end %>
         </div>
-      </div> -->
+      </div>
     </div>
 
-    <!--   Modal -->
-    <modal #coverImgModal>
-          <modal-header>
-            <h5 id="coverImgModalLabel">INSERT IMAGE</h5>
-          </modal-header>
-          <modal-content>
-            <input name="myFile" type="file">
-            <!-- <%= f.file_field :cover_image, id: "imgInp" %> -->
-          </modal-content>
-          <modal-footer>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="coverImgModal.close()">Close</button>
-          </modal-footer>
-    </modal>
+    <!-- <div class="margin-20">
+      <a (click)="addCard()" style="cursor: default">
+        Add another card +
+      </a>
+    </div> -->
+
+    <!-- <div class="margin-20">
+      <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="margin-20">
+      <div>myForm details:-</div>
+      <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+      <pre>form value: <br>{{myForm.value | json}}</pre>
+    </div> -->
   </form>
-  <!-- <% end %> -->
 </div>
-
-

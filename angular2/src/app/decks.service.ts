@@ -45,6 +45,8 @@ export class DecksService{
   add_deck(deck) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
+    // deck.user_id = 1
+    debugger
     let body = JSON.stringify(deck);
     return this.http.post(`${this.baseUrl}/decks/`, body, options ).map((res: Response) => res.json());
   }
