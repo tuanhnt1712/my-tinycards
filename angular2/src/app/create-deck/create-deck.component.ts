@@ -54,7 +54,6 @@ export class CreateDeckComponent implements OnInit{
   save(model: Deck) {
     // call API to save customer
     console.log(model);
-    debugger;
     // let deck = {user_id: 1, title: title, description: description};
     this.decksService.add_deck(model["value"]).subscribe(
        data => {
@@ -63,13 +62,13 @@ export class CreateDeckComponent implements OnInit{
     );
   }
 
-  createDeck(title, description) {
-    let deck = {user_id: 1, title: title, description: description};
-    debugger
-    this.decksService.add_deck(deck).subscribe(
-       data => {
-         return true;
-       }
-    );
-  }
+  // createDeck(title, description) {
+  //   let deck = {user_id: 1, title: title, description: description};
+  //   debugger
+  //   this.decksService.add_deck(deck).subscribe(
+  //      data => {
+  //        return true;
+  //      }
+  //   );
+  // }
 }
