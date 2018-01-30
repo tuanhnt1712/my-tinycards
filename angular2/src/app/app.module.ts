@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ng2-modal';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { DecksService } from './decks.service';
 import { HttpModule } from '@angular/http';
 import { DeckDetailsComponent } from './deck-details/deck-details.component';
 import { CreateDeckComponent } from './create-deck/create-deck.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,11 @@ import { CreateDeckComponent } from './create-deck/create-deck.component';
     SignupComponent,
     DeckComponent,
     DeckDetailsComponent,
-    CreateDeckComponent
+    CreateDeckComponent,
+    CardComponent
   ],
   imports: [
-    BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ModalModule
+    BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule
   ],
   providers: [DecksService],
   bootstrap: [AppComponent]

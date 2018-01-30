@@ -1,4 +1,4 @@
- <div class="container">
+<div class="container">
   <!-- <%= form_for @deck do |f| %> -->
   <form (ngSubmit)="createDeck(deck.title, deck.description)">
     <div class="row" style="margin-top: 25px;">
@@ -32,17 +32,19 @@
           </div>
         </div>
       </div>
-      <!-- <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-md-8">
         <div class="right prepend-body-content card-body">
-          <div class="add-card">
-            <%= link_to_add_fields f, :cards %>
-          </div>
+          <!-- <div class="add-card"> -->
+            <!-- <%= link_to_add_fields f, :cards %> -->
+          <!-- </div> -->
 
-          <%= f.fields_for :cards do |ff| %>
-            <%= render "card_fields", f: ff %>
-          <% end %>
+          <!-- <%= f.fields_for :cards do |ff| %> -->
+            <!-- <%= render "card_fields", f: ff %> -->
+          <!-- <% end %> -->
+          <app-card></app-card>
+
         </div>
-      </div> -->
+      </div>
     </div>
 
     <!--   Modal -->
@@ -62,4 +64,48 @@
   <!-- <% end %> -->
 </div>
 
+<form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+    <!-- we will place our fields here -->
+
+    <!-- name -->
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name">
+        <!--display error message if name is not valid-->
+        <!-- <small *ngIf="!myForm.controls.name.valid" class="text-danger">
+            Name is required (minimum 5 characters).
+        </small> -->
+    </div>
+
+    <!-- list of cards -->
+    <div formArrayName="cards">
+        <div *ngFor="let card of myForm.controls.cards.controls | let i=index">
+            <!-- card header, show remove button when more than one card available -->
+            <div>
+                <span>card {{i + 1}}</span>
+                <span *ngIf="myForm.controls.cards.controls.length > 1" (click)="removecard(i)">
+                </span>
+            </div>
+
+            <!-- Angular assigns array index as group name by default 0, 1, 2, ... -->
+            <div [formGroupName]="i">
+                <!--front-->
+                <div>
+                    <label>front</label>
+                    <input type="text" formControlName="front">
+                    <!--display error message if front is not valid-->
+                    <small [hidden]="myForm.controls.cards.controls[i].controls.front.valid">
+                        front is required
+                    </small>
+                </div>
+                <!--back-->
+                <div>
+                    <label>back</label>
+                    <input type="text" formControlName="back">
+                </div>
+            <div>
+        </div>
+    </div>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form>
 

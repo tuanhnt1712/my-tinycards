@@ -1,0 +1,33 @@
+<div class="wrapper">
+	<div class="n-card destroy">
+		<div class="number">
+			<h3>1</h3>
+		</div>
+		<div class="front-card">
+			<div class="f-deck">
+				<div class="image">
+					<!-- <%= f.file_field :picture, style: "width: 100%" %> -->
+				</div>
+				<div class="import-cover-deck">
+					<div class="change-cover">
+						<input type="text" name="front-card" id="front-card-value" placeholder="Front">
+						<!-- <%= f.text_field :front, class: "form-control", id: "front-card-value", placeholder: "Front" %> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="back-card">
+			<div class="f-deck">
+				<div class="import-cover-deck">
+					<div class="change-cover">
+						<input type="text" name="back-card" id="back-card-value" placeholder="Back">
+						<!-- <%= f.text_field :back, class: "form-control", id: "back-card-value", placeholder: "Back" %> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <%= link_to "javascript:void(0)", onclick: "remove_fields(this)" do %> -->
+		<span class="del"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+		<!-- <% end %> -->
+	</div>
+</div>
