@@ -29,13 +29,13 @@
           </div>
         </div>
       </div>
-      <div formArrayName="cards_attributes" class="col-xs-12 col-md-8">
-        <div *ngFor="let cards_attributes of myForm.controls.cards_attributes.controls; let i=index">
+      <div class="col-xs-12 col-md-8">
+        <div formArrayName="cards_attributes" *ngFor="let cards_attributes of myForm.controls.cards_attributes.controls; let i=index">
           <div class="right prepend-body-content card-body">
             <div class="add-card">
-              <!-- <a (click)="addCard()" style="cursor: default">
+              <a (click)="addCard()" style="cursor: default">
                 Add another card +
-              </a> -->
+              </a>
             </div>
             <div [formGroupName]="i">
               <card [group]="myForm.controls.cards_attributes.controls[i]"></card>
@@ -49,21 +49,17 @@
       </div>
     </div>
 
-    <!-- <div class="margin-20">
-      <a (click)="addCard()" style="cursor: default">
-        Add another card +
-      </a>
-    </div> -->
-
-    <!-- <div class="margin-20">
-      <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
-    </div>
-    <div class="clearfix"></div>
-
-    <div class="margin-20">
-      <div>myForm details:-</div>
-      <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
-      <pre>form value: <br>{{myForm.value | json}}</pre>
-    </div> -->
+    <modal #coverImgModal>
+          <modal-header>
+            <h5 id="coverImgModalLabel">INSERT IMAGE</h5>
+          </modal-header>
+          <modal-content>
+            <input name="myFile" type="file">
+            <!-- <%= f.file_field :cover_image, id: "imgInp" %> -->
+          </modal-content>
+          <modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="coverImgModal.close()">Close</button>
+          </modal-footer>
+    </modal>
   </form>
 </div>

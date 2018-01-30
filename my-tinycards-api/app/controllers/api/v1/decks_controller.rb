@@ -17,6 +17,6 @@ class Api::V1::DecksController < Api::V1::AuthorizeController
 	private
 
 	def deck_params
-		params.require(:deck).permit Deck::ATTRIBUTE_PARAMS
+		params.permit Deck::ATTRIBUTE_PARAMS
 	end
 end
