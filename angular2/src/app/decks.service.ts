@@ -6,12 +6,6 @@ import 'rxjs/add/operator/map';
 
 import { Deck } from './deck';
 
-// const PEOPLE : Deck[] = [
-//       {id: 1, name: 'Luke Skywalker', height: 177, weight: 70},
-//       {id: 2, name: 'Darth Vader', height: 200, weight: 100},
-//       {id: 3, name: 'Han Solo', height: 185, weight: 85},
-//     ];
-
 @Injectable()
 export class DecksService{
   private baseUrl: string = 'http://localhost:3000/api';
@@ -24,10 +18,6 @@ export class DecksService{
       .map(mapDecks);
       return decks$;
   }
-
-  // get(id: number): Deck {
-  //   return
-  // }
 
   private getHeaders(){
     let headers = new Headers();
@@ -50,8 +40,6 @@ export class DecksService{
   }
 
   save(deck: Deck) : Observable<Response>{
-    // this won't actually work because the StarWars API
-    // is read-only. But it would look like this:
     return this
       .http
       .put(`${this.baseUrl}/decks/${deck.id}`,
@@ -76,13 +64,6 @@ function toDeck(r:any): Deck{
   return deck;
 }
 
-// to avoid breaking the rest of our app
-// I extract the id from the person url
-// function extractId(deckData:any){
-//   debugger;
-//   let extractedId = deckData.url.replace('http://localhost:3000/api/v1/decks/','').replace('/','');
-//   return parseInt(extractedId);
-// }
 
 function mapDeck(response:Response): Deck{
    return toDeck(response.json());
