@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormArray, FormBuilder, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DecksService } from '../decks.service';
+import { DecksService } from '../services/decks.service';
 import { Deck } from '../deck';
 
 @Component({
@@ -19,7 +19,6 @@ export class CreateDeckComponent implements OnInit{
 
   ngOnInit(){
     this.myForm = this._fb.group({
-              user_id: 1,
               title: ['', [Validators.required]],
               description: ['', [Validators.required]],
               cards_attributes: this._fb.array([])

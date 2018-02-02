@@ -10,15 +10,13 @@ class User < ApplicationRecord
   	:name,
   	:email,
   	:password,
-  	:password_confirmation,
-  	# :confirmation_token
+  	:password_confirmation
   ].freeze
 
   SIGN_UP_REQUIRE_PARAMS = [
   	:name,
   	:email,
   	:password,
-  	:password_confirmation,
-  	# :confirmation_token
+  	:password_confirmation
   ].freeze
 end

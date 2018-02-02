@@ -1,6 +1,4 @@
 class Api::V1::Auth::UsersController < Api::V1::BaseController
-  # include Document::Auth::SignUpDoc
-  # include Document::Auth::ActiveUserDoc
   validate_params on: :create, require: [user: User::SIGN_UP_REQUIRE_PARAMS]
 
   def create
@@ -18,7 +16,7 @@ class Api::V1::Auth::UsersController < Api::V1::BaseController
 
   private
   def user_params
-    params.require(:user).permit User::ATTRIBUTES_PARAMS
+    params.permit User::ATTRIBUTES_PARAMS
   end
 
   def invalid_confirmation_token! user

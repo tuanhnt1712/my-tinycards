@@ -10,7 +10,7 @@ class Api::V1::DecksController < Api::V1::AuthorizeController
 	end
 
 	def create
-		@deck = ::CreateDeckService.new.perform(User.first, deck_params)
+		@deck = ::CreateDeckService.new.perform(current_user, deck_params)
     render_success data: Api::V1::DeckSerializer.new(@deck)
 	end
 
