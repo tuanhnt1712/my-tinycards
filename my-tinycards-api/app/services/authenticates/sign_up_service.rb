@@ -6,14 +6,13 @@ class Authenticates::SignUpService
   end
 
   def perform
-    user_params.merge! confirmation_token: SecureRandom.hex(Settings.active_user.token_number_char)
+    # user_params.merge! confirmation_token: SecureRandom.hex(32)
     user = nil
+    binding.pry
     ActiveRecord::Base.transaction do
       user = User.create! user_params
-      user.user_profile.create_user_profile_setting!
-      user.user_profile.create_user_profile_asset!
     end
-    UserMailer.active_user(user).deliver_later
+    # UserMailer.active_user(user).deliver_later
     user
   end
 end
