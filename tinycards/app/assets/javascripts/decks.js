@@ -13,6 +13,11 @@ function add_fields(link, association, content) {
   }
 }
 
+function modalLesson(lesID) {
+  $('#title'+lesID).text("Lession " + lesID);
+  $('#'+lesID).modal('show');
+}
+
 $(document).ready(function() {
   $(".ct-card").click(function() {
     $(this).toggleClass('flipped');
