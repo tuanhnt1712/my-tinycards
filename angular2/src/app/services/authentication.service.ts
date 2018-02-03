@@ -2,31 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
+import { Subject } from 'rxjs/Subject';
 import { User } from '../user';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable()
 export class AuthenticationService {
-	public token: string;
-	public currentUser: User;
-  constructor(private http: HttpClient) { 
-  	var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.token = currentUser && currentUser.token;
-  }
+  private baseUrl: string = 'http://localhost:3000/api';
+
+  constructor(private http: HttpClient,
+              private router: Router
+  ){}
 
   login(email: string, password: string) {
-    return this.http.post<any>('http://localhost:3000/api/auth/sign_in', { "grant_type": "password", email: email, password: password })
+    return this.http.post<any>(`${this.baseUrl}/auth/sign_in`, { "grant_type": "password", email: email, password: password })
       .map(response => {
-          var user = response.data
-          if (user && user.token) {
-            this.token = user.token;
+          let user = response.data
+          if (user && user.token)
             localStorage.setItem('currentUser', JSON.stringify(user));
-          }
           return user;
       });
   }
 
   logout() {
-    this.token = null;
     localStorage.removeItem('currentUser');
+    this.router.navigate(['/login']);
+  }
+
+  isLoggedIn() {
+    return localStorage.getItem('currentUser') != null
   }
 }
