@@ -3,7 +3,13 @@ export interface Deck {
 	user_id: number,
 	title: string,
 	description: string,
-  cards_attributes: Card[]
+  cards: Card[],
+  lessons: Lesson[]
+}
+
+export interface Lesson {
+  id: number,
+  cards: Card[]
 }
 
 export interface Card {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Deck } from '../deck';
+import { Lesson } from '../lesson';
 
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -34,6 +35,13 @@ export class DecksService extends RequestBasicService{
     let body = deck;
     return this.http.post(`${this.baseUrl}/decks/`, body, options ).map((res: Response) => res.json());
   }
+
+  get_lesson(id: number) {
+    let lesson$ = this.http
+    .get(`${this.baseUrl}/lessons/${id}`, {headers: this.getHeaders()})
+      .map(mapLesson);
+    return lesson$;
+  }
 }
 
 function mapDecks(response:Response): Deck[]{
@@ -45,12 +53,27 @@ function toDeck(r:any): Deck{
     id: (r.id),
     user_id: r.user_id,
     title: r.title,
-    description: r.description
+    description: r.description,
+    cards: r.cards,
+    lessons: r.lessons
   });
   return deck;
 }
 
+function toLesson(r:any): Lesson{
+  let lesson = <Lesson>({
+    id: (r.id),
+    cards: r.cards
+  });
+  return lesson;
+}
+
 function mapDeck(response:Response): Deck{
-  console.log(response.json())
-   return toDeck(response.json().data);
+  console.log(response.json().data)
+  return toDeck(response.json().data);
+}
+
+function mapLesson(response:Response){
+  return toLesson(response.json().data);
+  // return toDeck(response.json().data);
 }

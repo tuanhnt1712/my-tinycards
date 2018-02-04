@@ -5,6 +5,7 @@ import { SignupComponent } from './user/signup.component';
 import { DeckComponent } from './deck/deck.component';
 import { CreateDeckComponent } from './create-deck/create-deck.component';
 import { DeckDetailsComponent } from './deck-details/deck-details.component';
+import { LessonComponent } from './lesson/lesson.component';
 
 const routing : Routes = [
   {path: '', component: HomeComponent},
@@ -12,7 +13,8 @@ const routing : Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'decks', component: DeckComponent},
   {path: 'decks/:id', component: DeckDetailsComponent},
-  {path: 'createDeck', component: CreateDeckComponent}
+  {path: 'createDeck', component: CreateDeckComponent},
+  {path: 'lesson', component: LessonComponent}
 ]
 
 export const appRoutes = RouterModule.forRoot(routing);

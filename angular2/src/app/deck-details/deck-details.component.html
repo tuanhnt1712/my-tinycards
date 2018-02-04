@@ -26,6 +26,26 @@
         </div>
       </div>
     </div>
+    <div class="row" *ngFor="let card of cards">
+                <!-- <% @cards.each do |card| %> -->
+                  <div class="containerr">
+                    <div class="ct-card">
+                      <div class="item-card front">
+                        <!-- <% if card.picture.blank? %> -->
+                          <!-- <%= card.front %> -->
+                          <p>{{card.front}}</p>
+                        <!-- <% else %> -->
+                          <!-- <%= image_tag card.picture %> -->
+                        <!-- <% end %> -->
+                      </div>
+                      <div class="item-card back">
+                        <!-- <%= card.back %> -->
+                        <p>{{card.back}}</p>
+                      </div>
+                    </div>
+                  </div>
+                <!-- <% end %> -->
+              </div>
     <div class="col-xs-12 col-md-8">
       <div class="right">
         <div class="s-select">
@@ -38,22 +58,80 @@
           <div id="b1" class="containerTab">
             <div class="list-lesson">
               <div class="row">
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
+                <div *ngFor= "let lesson of lessons">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                    <div class="item-lesson">
+                      <div (click)="coverImgModal1.open(); click_lesson(lesson.id)"><img src="./assets/images/lesson.png" alt="lesson"></div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
+                  <modal #coverImgModal1>
+                    <modal-content>
+                    <div *ngFor="let card of cards">
+                    <form-wizard>
+                      <wizard-step [title]="'Step1'">
+                        <div class="containerr">
+                          <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
+                            <div class="item-card front" style="border-radius: 15px;">
+                              <span> {{card.front}} </span>
+                            </div>
+                            <div class="item-card back">
+                              <span> {{card.back}} </span>
+                            </div>
+                          </div>
+                        </div>
+                      </wizard-step>
+                      <wizard-step [title]="'Step2'" (onNext)="onStep2Next($event)">
+                        <h1>Step2</h1>
+                      </wizard-step>
+                      <wizard-step [title]="'Step3'" (onNext)="onStep3Next($event)">
+                        <h1>Step3</h1>
+                      </wizard-step>
+                      <wizard-step [title]="'Step4'" (onComplete)="onComplete($event)">
+                        <div [ngSwitch]="isCompleted">
+                          <div *ngSwitchDefault>
+                            <h1>Step4</h1>
+                          </div>
+                          <div *ngSwitchCase="true">
+                            <h4>Thank you! You have completed all the steps.</h4>
+                          </div>
+                        </div>
+                      </wizard-step>
+                    </form-wizard>
+                    </div>
+                    </modal-content>
+                    <modal-footer>
+                      <button type="button" class="btn btn-success align-content-end">Continue</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </modal-footer>
+                  </modal>
                 </div>
               </div>
             </div>
           </div>
 
           <div id="b2" class="containerTab" style="display:none;">
-            <h2>Cards...</h2>
+            <div class="list-card">
+              <div class="row" *ngFor="let card of deck.cards">
+                <!-- <% @cards.each do |card| %> -->
+                  <div class="containerr">
+                    <div class="ct-card">
+                      <div class="item-card front">
+                        <!-- <% if card.picture.blank? %> -->
+                          <!-- <%= card.front %> -->
+                          <p>{{card.front}}</p>
+                        <!-- <% else %> -->
+                          <!-- <%= image_tag card.picture %> -->
+                        <!-- <% end %> -->
+                      </div>
+                      <div class="item-card back">
+                        <!-- <%= card.back %> -->
+                        <p>{{card.back}}</p>
+                      </div>
+                    </div>
+                  </div>
+                <!-- <% end %> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
