@@ -54,7 +54,7 @@ export class DecksService{
 
 
 function mapDecks(response:Response): Deck[]{
-  return response.json()
+  return response.json().data.decks
 }
 
 function toDeck(r:any): Deck{
@@ -62,12 +62,14 @@ function toDeck(r:any): Deck{
     id: r.id,
     user_id: r.user_id,
     title: r.title,
-    description: r.description
+    description: r.description,
+    cards: r.cards
   });
   return deck;
 }
 
 
 function mapDeck(response:Response): Deck{
-   return toDeck(response.json());
+  console.log(response.json().data)
+   return toDeck(response.json().data);
 }
