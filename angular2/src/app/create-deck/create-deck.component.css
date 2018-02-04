@@ -125,11 +125,11 @@
   margin-bottom: 20px;
   width: 100%;
 }
-.right .add-card {
+/*.right .add-card {
   position: absolute;
   right: 32px;
   top: 160px;
-}
+}*/
 .right .add-card img {
   width: 110px;
 }
