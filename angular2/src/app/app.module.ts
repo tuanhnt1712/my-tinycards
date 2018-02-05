@@ -19,6 +19,7 @@ import { HttpModule } from '@angular/http';
 import { DeckDetailsComponent } from './deck-details/deck-details.component';
 import { CreateDeckComponent } from './create-deck/create-deck.component';
 import { CardComponent } from './card/card.component';
+import { LessonComponent } from './lesson/lesson.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CardComponent } from './card/card.component';
     DeckComponent,
     DeckDetailsComponent,
     CreateDeckComponent,
-    CardComponent
+    CardComponent,
+    LessonComponent
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule

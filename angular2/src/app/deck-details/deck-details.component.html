@@ -26,6 +26,26 @@
         </div>
       </div>
     </div>
+    <div class="row" *ngFor="let card of deck.cards">
+                <!-- <% @cards.each do |card| %> -->
+                  <div class="containerr">
+                    <div class="ct-card">
+                      <div class="item-card front">
+                        <!-- <% if card.picture.blank? %> -->
+                          <!-- <%= card.front %> -->
+                          <p>{{card.front}}</p>
+                        <!-- <% else %> -->
+                          <!-- <%= image_tag card.picture %> -->
+                        <!-- <% end %> -->
+                      </div>
+                      <div class="item-card back">
+                        <!-- <%= card.back %> -->
+                        <p>{{card.back}}</p>
+                      </div>
+                    </div>
+                  </div>
+                <!-- <% end %> -->
+              </div>
     <div class="col-xs-12 col-md-8">
       <div class="right">
         <div class="s-select">
@@ -40,7 +60,7 @@
               <div class="row">
                 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                   <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
+                    <a href="lesson"><img src="./assets/images/lesson.png" alt="lesson"></a>
                   </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
@@ -53,7 +73,28 @@
           </div>
 
           <div id="b2" class="containerTab" style="display:none;">
-            <h2>Cards...</h2>
+            <div class="list-card">
+              <div class="row" *ngFor="let card of deck.cards">
+                <!-- <% @cards.each do |card| %> -->
+                  <div class="containerr">
+                    <div class="ct-card">
+                      <div class="item-card front">
+                        <!-- <% if card.picture.blank? %> -->
+                          <!-- <%= card.front %> -->
+                          <p>{{card.front}}</p>
+                        <!-- <% else %> -->
+                          <!-- <%= image_tag card.picture %> -->
+                        <!-- <% end %> -->
+                      </div>
+                      <div class="item-card back">
+                        <!-- <%= card.back %> -->
+                        <p>{{card.back}}</p>
+                      </div>
+                    </div>
+                  </div>
+                <!-- <% end %> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
