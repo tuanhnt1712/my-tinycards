@@ -49,8 +49,8 @@ export class CreateDeckComponent implements OnInit{
   save(model: Deck) {
     this.decksService.add_deck(model["value"]).subscribe(
       data => {
+        this.router.navigate(['/decks']);
         return true;
       });
-    this.router.navigate(['/decks']);
   }
 }
