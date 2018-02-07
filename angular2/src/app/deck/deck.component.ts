@@ -10,7 +10,7 @@ import { Deck } from '../deck';
 })
 
 export class DeckComponent implements OnInit{
-  decks: Observable<Deck[]>;
+  decks: Promise<Deck[]>;
 
   constructor(private decksService : DecksService){}
 
