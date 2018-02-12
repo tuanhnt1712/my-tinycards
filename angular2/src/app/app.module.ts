@@ -15,6 +15,7 @@ import { DeckComponent } from './deck/deck.component';
 import { DecksService } from './services/decks.service';
 import { UserService } from './services/user.service'
 import { AuthenticationService } from './services/authentication.service';
+import { HeaderBasicService } from './services/base/header-basic.service';
 import { HttpModule } from '@angular/http';
 import { DeckDetailsComponent } from './deck-details/deck-details.component';
 import { CreateDeckComponent } from './create-deck/create-deck.component';
@@ -37,7 +38,7 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule
   ],
-  providers: [DecksService, AuthenticationService, UserService],
+  providers: [DecksService, AuthenticationService, UserService, HeaderBasicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
