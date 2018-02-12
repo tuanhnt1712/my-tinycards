@@ -24,6 +24,7 @@ export class DecksService{
   }
 
   private getAccess(){
+    debugger
     if (JSON.parse(localStorage.getItem('currentUser')) == null)
       this.router.navigate(['/login']);
     else
