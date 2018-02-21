@@ -1,40 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { AuthenticationService } from '../services/authentication.service';
 import { Deck } from '../deck';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RequestBasicService } from './base/request-basic.service';
 
 @Injectable()
-export class DecksService{
-  private baseUrl: string = 'http://localhost:3000/api';
-
-  constructor(private http : Http,
-              private authenticationService: AuthenticationService,
-              private router: Router
-  ){}
-
-  private getHeaders(){
-    let headers = new Headers();
-    headers.append('Accept', 'application/json');
-    headers.append('Doorkeeper-Token', 'Bearer ' + this.getAccess())
-    return headers;
-  }
-
-  private getAccess(){
-    if (JSON.parse(localStorage.getItem('currentUser')) == null)
-      this.router.navigate(['/login']);
-    else
-      return JSON.parse(localStorage.getItem('currentUser')).token
-  }
-
-  getAll(): Observable<Deck[]>{
-    let decks$ = this.http
+export class DecksService extends RequestBasicService{
+  getAll(): Promise<Deck[]>{
+    let decks = this.http
       .get(`${this.baseUrl}/decks`, { headers: this.getHeaders()})
-      .map(mapDecks);
-      return decks$;
+      .toPromise()
+      .then(response => {
+        return response.json().data['decks']
+      })
+      .catch(error => this.handleError(error));
+    return decks;
   }
 
   get(id: number): Observable<Deck> {

@@ -21,11 +21,11 @@
       <div class="nav-item">
         <a href="createDeck" class="cl-text fa fa-plus">CREATE</a>
       </div>
-      <div class="nav-item" *ngIf="!isAuthenticated"> 
+      <div class="nav-item" *ngIf="!isAuthenticated">
         <a href="login" class="cl-text fa fa-user">LOG IN</a>
       </div>
-      <div class="nav-item"> 
-        <a href="#" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated">LOG OUT</a>
+      <div class="nav-item">
+        <a href="javascript:void(0)" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated">LOG OUT</a>
       </div>
     </div>
   </div>
