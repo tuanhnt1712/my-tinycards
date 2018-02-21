@@ -14,7 +14,7 @@ const routing : Routes = [
   {path: 'decks', component: DeckComponent},
   {path: 'decks/:id', component: DeckDetailsComponent},
   {path: 'createDeck', component: CreateDeckComponent},
-  {path: 'lesson', component: LessonComponent}
+  {path: 'decks/:id/lessons/:id', component: LessonComponent}
 ]
 
 export const appRoutes = RouterModule.forRoot(routing);

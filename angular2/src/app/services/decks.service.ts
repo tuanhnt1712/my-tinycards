@@ -36,6 +36,13 @@ export class DecksService extends RequestBasicService{
     return this.http.post(`${this.baseUrl}/decks/`, body, options ).map((res: Response) => res.json());
   }
 
+  create_user_lesson(user_lesson) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = user_lesson;
+    return this.http.post(`${this.baseUrl}/user_lessons/`, body, options ).map((res: Response) => res.json());
+  }
+
   get_lesson(id: number) {
     let lesson$ = this.http
     .get(`${this.baseUrl}/lessons/${id}`, {headers: this.getHeaders()})
