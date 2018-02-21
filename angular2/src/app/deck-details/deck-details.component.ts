@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Validators, FormGroup, FormArray, FormBuilder, FormsModule, FormControl } from '@angular/forms';
 
 import { Deck } from '../deck';
 import { DecksService } from '../services/decks.service';
@@ -13,19 +14,24 @@ export class DeckDetailsComponent implements OnInit {
   deck: Deck;
   sub: any;
   cards = [];
-  menuOpen = false;
   lessons = [];
+  public myFormLesson: FormGroup;
+  id: number;
 
   constructor(private decksService: DecksService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private _fb: FormBuilder
    ) {}
 
   ngOnInit() {
+    this.myFormLesson = this._fb.group({
+      lesson_id: ['', [Validators.required]]
+    })
     const self = this;
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
-      console.log('getting person with id: ', id);
+      self.id = id;      
       this.decksService
         .get(id)
         .subscribe(p => {
@@ -36,65 +42,8 @@ export class DeckDetailsComponent implements OnInit {
     });
   }
 
-  flipped($event){
-    this.menuOpen = !this.menuOpen;
+  click_lesson(id, model){
+    this.myFormLesson.setValue({lesson_id: id }); 
+    this.router.navigate(['decks/'+ this.id +'/lessons/'+ id]);
   }
-
-  click_lesson(id){
-    const self = this;
-       this.decksService
-        .get_lesson(id)
-        .subscribe(function(p){ 
-          self.randomAnswers(p.cards[0], p.cards);
-          self.cards = p.cards;
-        })
-    return self.cards;
-  }
-
-  randomAnswers(card, cards){
-    var answers = []
-    answers.push(card.back)
-    if (cards.length == 2) {
-      var otherCard = this.getOtherCard(cards, card);
-      answers.push(otherCard.front, otherCard.back);
-    }
-    if (cards.length >= 3) {
-      answers = this.getRandomCards(cards, card);
-    }
-    return answers;
-  }
-
-  getOtherCard(cards, card) {
-    for (var i = cards.length-1; i > 0; i--) {
-      if (cards[i] != card) {
-        return cards[i];
-      }
-    }
-  }
-
-  getRandomCards(cards, card) {
-    // cards = cards.splice(this.getPosition(cards, card), 1);
-    var answers = [];
-    var position = this.getRandomPosition(cards);
-    answers.push(cards[position].back);
-    cards = cards.splice(position, 1);
-    position = this.getRandomPosition(cards);
-    answers.push(cards[position].back);
-    return answers;
-  }
-
-  getRandomPosition(cards) {
-    var len = cards.length;
-    var position = Math.floor(Math.random() * len);
-    return position;
-  }
-
-  getPosition(cards, card) {
-    for (var i = cards.length - 1; i >= 0; i--) {
-      if (cards[i].id == card.id) {
-        return i;
-      }
-    }
-  }
-
 }
