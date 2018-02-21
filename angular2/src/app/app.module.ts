@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ng2-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { FormWizardModule } from 'angular2-wizard';
+import { ImageUploadModule } from "angular2-image-upload";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -40,7 +41,7 @@ import { LessonComponent } from './lesson/lesson.component';
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
-    FormWizardModule
+    FormWizardModule, ImageUploadModule.forRoot()
   ],
   providers: [DecksService, AuthenticationService, UserService, HeaderBasicService],
   bootstrap: [AppComponent]

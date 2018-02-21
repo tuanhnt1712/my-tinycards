@@ -1,3 +1,129 @@
+.right .containerTab {
+  margin-top: 30px;
+}
+.right .list-lesson .item-lesson {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+  height: 166px;
+  width: 144px;
+}
+.right .list-lesson .item-lesson img {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.right .add-card {
+  position: absolute;
+  right: 32px;
+  top: 160px;
+}
+.right .add-card img {
+  width: 110px;
+}
+.right .add-card .add {
+  background-color: #32cdff;
+  border-radius: 100%;
+  border: none;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.18);
+  color: white;
+  font-size: 45px;
+  height: 65px;
+  outline: none;
+  position: fixed;
+  width: 65px;
+  z-index: 100;
+}
+.right .wrapper {
+  padding: 10px 0 10px;
+}
+.right .wrapper .n-card {
+  display: flex;
+  margin-top: 25px;
+  padding: 20px 0 20px;
+  position: relative;
+  text-align: center;
+}
+.right .wrapper .n-card:hover {
+  background-color: #F7F7F7;
+}
+.right .wrapper .n-card:hover .del {
+  background-color: #F7F7F7;
+}
+.right .wrapper .number {
+  flex: 1;
+}
+.right .wrapper .front-card {
+  flex: 3;
+}
+.right .wrapper .back-card {
+  flex: 3;
+}
+.right .wrapper .list-option {
+  flex: 1;
+}
+.right .wrapper .list-option .del {
+  background-color: white;
+  border: none;
+  outline: none;
+}
+.right .wrapper .list-option .del .fa-trash-o {
+  color: #32cdff;
+  font-size: 25px;
+  opacity: 0.7;
+}
+.right .wrapper .f-deck {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.17);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 310px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 90%;
+}
+.right .wrapper .f-deck .import-cover-deck {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.right .wrapper .f-deck .import-cover-deck .ct-text {
+  border: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .left .cover-deck {
+    height: 255px;
+  }
+
+  .right .wrapper .f-deck {
+    height: 255px;
+  }
+}
+
+.list-card {
+  margin: 20px;
+}
+.list-card .item-card {
+  background-color: blanchedalmond;
+  border-radius: 15px;
+  height: 230px;
+  text-align: center;
+  cursor: pointer;
+}
+.list-card .item-card img {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 .animation {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -136,4 +262,74 @@
 .les-wrapper .les-card .btn-continue:hover {
   -webkit-filter: brightness(95%);
   filter: brightness(95%);
+}
+.del .fa-trash-o {
+  color: #32cdff;
+  font-size: 25px;
+  opacity: 0;
+}
+.wrapper {
+  padding: 10px 0 10px;
+}
+.wrapper .n-card {
+  display: flex;
+  margin-top: 25px;
+  padding: 20px 0 20px;
+  position: relative;
+  text-align: center;
+}
+.wrapper .n-card:hover {
+  background-color: #f7f7f7;
+}
+.wrapper .n-card:hover .del {
+  background-color: #f7f7f7;
+}
+.wrapper .n-card:hover .del .fa-trash-o {
+  opacity: 0.7;
+}
+.wrapper .number {
+  flex: 1;
+}
+.wrapper .front-card {
+  flex: 3;
+}
+.wrapper .front-card .image {
+  display: block;
+  width: 45px;
+  margin: 15px;
+}
+.wrapper .front-card .add-img {
+  width: 100%;
+}
+.wrapper .back-card {
+  flex: 3;
+}
+.wrapper .list-option {
+  flex: 1;
+}
+.wrapper .f-deck {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, .17);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 310px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 90%;
+}
+.wrapper .f-deck .import-cover-deck {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.wrapper .f-deck .import-cover-deck .ct-text {
+  border: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+  text-align: center;
 }

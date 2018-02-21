@@ -11,25 +11,31 @@ import { FormWizardModule } from 'angular2-wizard';
 })
 export class LessonComponent implements OnInit {
   sub: any;
-	menuOpen = false;
+  menuOpen = false;
   lessons = [];
   cards = [];
   current_card: any;
+  index = 0;
+  userLesson: any;
 
   constructor(private decksService: DecksService,
               private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
+    this.userLesson = {
+      lesson_id: ''
+    }
     const self = this;
     this.sub = this.route.params.subscribe(params => {
         let id = Number.parseInt(params['id']);
-         this.decksService
+        self.userLesson.lesson_id = id;
+        this.decksService
           .get_lesson(id)
-          .subscribe(function(p){ 
+          .subscribe(function(p){
             self.randomAnswers(p.cards[0], p.cards);
             self.cards = p.cards;
-            self.current_card = p.cards[0];
+            self.current_card = p.cards[self.index];
           })
       return self.cards;
     });
@@ -37,6 +43,18 @@ export class LessonComponent implements OnInit {
 
   flipped($event){
     this.menuOpen = !this.menuOpen;
+  }
+
+  continue_card(){
+    this.index = this.index+1;
+    this.current_card = this.cards[this.index];
+    if (this.index > this.cards.length-1) {
+      this.decksService.create_user_lesson(this.userLesson).subscribe(
+      data => {
+        this.router.navigate(['decks/']);
+        return true;
+    });
+    }
   }
 
   ok(id, model) {

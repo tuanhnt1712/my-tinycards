@@ -21,6 +21,9 @@
             <div class="description-deck" style="margin-top: 15px;">
               <input type="text" style="outline: none; font-size: 18px" formControlName="description" placeholder="Enter description" class="ip input-des">
             </div>
+            <!-- <input formControlName="cover_image" type="text" (change)="readURL(this);"> -->
+            <!-- <input #cover_image type="file"/> -->
+            <!-- <button (click)="addFile()">Add</button> -->
 
             <div class="btn-ct">
               <button type="button" class="btn btn-ct-setting"><i class="fa fa-cog" aria-hidden="true"></i></button>
@@ -54,7 +57,9 @@
             <h5 id="coverImgModalLabel">INSERT IMAGE</h5>
           </modal-header>
           <modal-content>
-            <input name="myFile" type="file">
+          <input class="form-control" type="file" name="avatar" (change)="imageUpload($event)">
+          <img [src]="imageUrl" />
+            <!-- <input formControlName="cover_image" type="file" (change)="readURL(this);"> -->
             <!-- <%= f.file_field :cover_image, id: "imgInp" %> -->
           </modal-content>
           <modal-footer>

@@ -33,6 +33,7 @@ export class DecksService extends RequestBasicService{
     let headers = this.getHeaders();
     let options = new RequestOptions({ headers: headers });
     let body = deck;
+    debugger
     return this.http.post(`${this.baseUrl}/decks/`, body, options ).map((res: Response) => res.json());
   }
 
@@ -61,6 +62,7 @@ function toDeck(r:any): Deck{
     user_id: r.user_id,
     title: r.title,
     description: r.description,
+    cover_image: r.cover_image,
     cards: r.cards,
     lessons: r.lessons
   });

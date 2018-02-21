@@ -11,6 +11,7 @@ import { Deck } from '../deck';
 })
 export class CreateDeckComponent implements OnInit{
   public myForm: FormGroup;
+  imageUrl: any;
 
   constructor(private decksService: DecksService,
               private _fb: FormBuilder,
@@ -21,6 +22,7 @@ export class CreateDeckComponent implements OnInit{
     this.myForm = this._fb.group({
               title: ['', [Validators.required]],
               description: ['', [Validators.required]],
+              cover_image: [''],
               cards_attributes: this._fb.array([])
     });
     this.addCard();
@@ -52,5 +54,20 @@ export class CreateDeckComponent implements OnInit{
         this.router.navigate(['/decks']);
         return true;
       });
+  }
+
+  imageUpload(e) {
+    let reader = new FileReader();
+    //get the selected file from event
+    let file = e.target.files[0];
+    reader.onloadend = () => {
+      //Assign the result to variable for setting the src of image element
+      this.imageUrl = reader.result;
+    }
+    reader.readAsDataURL(file);
+  }
+
+  readURL(input) {
+
   }
 }
