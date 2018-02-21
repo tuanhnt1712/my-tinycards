@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :decks, dependent: :destroy
+  has_many :user_lessons, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

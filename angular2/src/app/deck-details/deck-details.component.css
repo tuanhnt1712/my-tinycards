@@ -121,6 +121,9 @@
 .right .containerTab {
   margin-top: 30px;
 }
+.right .list-lesson {
+  position: relative;
+}
 .right .list-lesson .item-lesson {
   cursor: pointer;
   display: inline-block;
@@ -128,6 +131,7 @@
   text-align: center;
   height: 166px;
   width: 144px;
+  position: relative;
 }
 .right .list-lesson .item-lesson img {
   margin-bottom: 20px;
