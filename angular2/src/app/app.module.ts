@@ -23,6 +23,9 @@ import { CreateDeckComponent } from './create-deck/create-deck.component';
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { LessonComponent } from './lesson/lesson.component';
+import { LessonContentDirective } from './lesson/lesson-content.directive';
+import { RememberCardComponent } from './lesson/remember-card.component';
+import { SingleChoiceQuestionComponent } from './lesson/single-choice-question.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +39,16 @@ import { LessonComponent } from './lesson/lesson.component';
     CreateDeckComponent,
     CardComponent,
     HeaderComponent,
-    LessonComponent
+    LessonComponent,
+    LessonContentDirective,
+    RememberCardComponent,
+    SingleChoiceQuestionComponent
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
     FormWizardModule
   ],
+  entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent],
   providers: [DecksService, AuthenticationService, UserService, HeaderBasicService],
   bootstrap: [AppComponent]
 })

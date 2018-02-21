@@ -1,42 +1,83 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, AfterViewInit, ComponentFactoryResolver } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DecksService } from '../services/decks.service';
 import { Lesson } from '../lesson';
 import { FormWizardModule } from 'angular2-wizard';
+
+import { LessonContentDirective } from './lesson-content.directive';
+import { LessonContentItem }      from './lesson-content-item';
+import { LessonContentComponent } from './lesson-content.component'
+import { RememberCardComponent } from './remember-card.component'
+import { SingleChoiceQuestionComponent } from './single-choice-question.component'
 
 @Component({
   selector: 'app-lesson',
   templateUrl: './lesson.component.html',
   styleUrls: ['./lesson.component.css']
 })
-export class LessonComponent implements OnInit {
+export class LessonComponent implements AfterViewInit {
   sub: any;
 	menuOpen = false;
   lessons = [];
   cards = [];
-  current_card: any;
+  current_card_index: number = -1;
+
+  @ViewChild(LessonContentDirective) lessonContentHost: LessonContentDirective;
 
   constructor(private decksService: DecksService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private componentFactoryResolver: ComponentFactoryResolver) { }
 
-  ngOnInit() {
+  nextCard(){
+    if (this.current_card_index == this.cards.length - 1) {
+      this.router.navigate(['decks/']);
+    }
+    this.current_card_index++;
+    let rand = Math.floor(Math.random() * 5);
+    if (rand % 2 == 0){
+      this.loadRememberCardComponent()
+    } else {
+      this.loadSingleChoiceQuestionComponent()
+    }
+  }
+
+  ngAfterViewInit(){
     const self = this;
     this.sub = this.route.params.subscribe(params => {
         let id = Number.parseInt(params['id']);
          this.decksService
           .get_lesson(id)
-          .subscribe(function(p){ 
-            self.randomAnswers(p.cards[0], p.cards);
+          .subscribe(function(p){
             self.cards = p.cards;
-            self.current_card = p.cards[0];
+            self.nextCard();
           })
       return self.cards;
     });
   }
 
-  flipped($event){
-    this.menuOpen = !this.menuOpen;
+  loadRememberCardComponent() {
+    let lcItem = new LessonContentItem(RememberCardComponent, {current_card: this.cards[this.current_card_index]})
+    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(lcItem.component);
+
+    let viewContainerRef = this.lessonContentHost.viewContainerRef;
+    viewContainerRef.clear();
+
+    let componentRef = viewContainerRef.createComponent(componentFactory);
+    (<LessonContentComponent>componentRef.instance).data = lcItem.data;
+    (<LessonContentComponent>componentRef.instance).parent = this;
+  }
+
+  loadSingleChoiceQuestionComponent() {
+    let lcItem = new LessonContentItem(SingleChoiceQuestionComponent, {current_card: this.cards[this.current_card_index], cards: this.cards})
+    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(lcItem.component);
+
+    let viewContainerRef = this.lessonContentHost.viewContainerRef;
+    viewContainerRef.clear();
+
+    let componentRef = viewContainerRef.createComponent(componentFactory);
+    (<LessonContentComponent>componentRef.instance).data = lcItem.data;
+    (<LessonContentComponent>componentRef.instance).parent = this;
   }
 
   ok(id, model) {
@@ -45,51 +86,5 @@ export class LessonComponent implements OnInit {
         this.router.navigate(['decks/']);
         return true;
     });
-  }
-
-  randomAnswers(card, cards){
-    var answers = []
-    answers.push(card.back)
-    if (cards.length == 2) {
-      var otherCard = this.getOtherCard(cards, card);
-      answers.push(otherCard.front, otherCard.back);
-    }
-    if (cards.length >= 3) {
-      answers = this.getRandomCards(cards, card);
-    }
-    return answers;
-  }
-
-  getOtherCard(cards, card) {
-    for (var i = cards.length-1; i > 0; i--) {
-      if (cards[i] != card) {
-        return cards[i];
-      }
-    }
-  }
-
-  getRandomCards(cards, card) {
-    // cards = cards.splice(this.getPosition(cards, card), 1);
-    var answers = [];
-    var position = this.getRandomPosition(cards);
-    answers.push(cards[position].back);
-    cards = cards.splice(position, 1);
-    position = this.getRandomPosition(cards);
-    answers.push(cards[position].back);
-    return answers;
-  }
-
-  getRandomPosition(cards) {
-    var len = cards.length;
-    var position = Math.floor(Math.random() * len);
-    return position;
-  }
-
-  getPosition(cards, card) {
-    for (var i = cards.length - 1; i >= 0; i--) {
-      if (cards[i].id == card.id) {
-        return i;
-      }
-    }
   }
 }
