@@ -61,6 +61,7 @@ function toDeck(r:any): Deck{
     user_id: r.user_id,
     title: r.title,
     description: r.description,
+    cover_image: r.cover_image,
     cards: r.cards,
     lessons: r.lessons
   });
@@ -82,5 +83,4 @@ function mapDeck(response:Response): Deck{
 
 function mapLesson(response:Response){
   return toLesson(response.json().data);
-  // return toDeck(response.json().data);
 }

@@ -54,11 +54,10 @@
             <h5 id="coverImgModalLabel">INSERT IMAGE</h5>
           </modal-header>
           <modal-content>
-            <input name="myFile" type="file">
-            <!-- <%= f.file_field :cover_image, id: "imgInp" %> -->
+          <input class="form-control" type="file" formControlName="cover_image" id="cover_image" (change)="onFileChange($event)" #fileInput>
           </modal-content>
           <modal-footer>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="coverImgModal.close()">Close</button>
+            <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal" (click)="coverImgModal.close()">Close</button>
           </modal-footer>
     </modal>
   </form>

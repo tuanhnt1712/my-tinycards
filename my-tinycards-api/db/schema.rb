@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180213092838) do
 
   create_table "decks", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
-    t.string "cover_image"
+    t.text "cover_image"
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
@@ -126,6 +126,8 @@ ActiveRecord::Schema.define(version: 20180213092838) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "decks"
+  add_foreign_key "cards", "lessons"
   add_foreign_key "decks", "users"
   add_foreign_key "favorites", "decks"
   add_foreign_key "favorites", "users"

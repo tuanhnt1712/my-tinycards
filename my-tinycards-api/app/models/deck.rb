@@ -21,4 +21,6 @@ class Deck < ApplicationRecord
       :picture
     ]
   ].freeze
+
+  mount_base64_uploader :cover_image, DeckUploader
 end
