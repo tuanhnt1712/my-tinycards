@@ -1,54 +1,55 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-
-import { Deck } from '../deck';
 import { DecksService } from '../services/decks.service';
+import { Lesson } from '../lesson';
+import { FormWizardModule } from 'angular2-wizard';
 
 @Component({
-  selector: 'app-deck-details',
-  templateUrl: './deck-details.component.html',
-  styleUrls: ['./deck-details.component.css']
+  selector: 'app-lesson',
+  templateUrl: './lesson.component.html',
+  styleUrls: ['./lesson.component.css']
 })
-export class DeckDetailsComponent implements OnInit {
-  deck: Deck;
-  sub: any;
-  cards = [];
-  menuOpen = false;
-  lessons = [];
+export class LessonComponent implements OnInit {
 
-  constructor(private decksService: DecksService,
-    private route: ActivatedRoute,
-    private router: Router
-   ) {}
+	lesson: Lesson;
+
+  constructor(private decksService: DecksService) { }
 
   ngOnInit() {
-    const self = this;
-    this.sub = this.route.params.subscribe(params => {
-      let id = Number.parseInt(params['id']);
-      console.log('getting person with id: ', id);
-      this.decksService
-        .get(id)
-        .subscribe(p => {
-          this.deck = p;
-          self.lessons = p.lessons;
-        }
-      )
-    });
-  }
+    var a = {
+      back:"hi",
+      front:"chao",
+      id:1
+    }
 
-  flipped($event){
-    this.menuOpen = !this.menuOpen;
-  }
-
-  click_lesson(id){
-    const self = this;
+    var b = [{
+      back:"hi",
+      front:"chao",
+      id:2
+    },
+    {
+      back:"bye",
+      front:"tambiet",
+      id:1
+    },
+    {
+      back:"love",
+      front:"yeu",
+      id:3
+    }]
+  	// this.sub = this.route.params.subscribe(params => {
+      // let id = Number.parseInt(params['id']);
+      console.log('getting person with id: ', 1);
+      const self = this;
        this.decksService
-        .get_lesson(id)
+        .get_lesson(1)
         .subscribe(function(p){ 
           self.randomAnswers(p.cards[0], p.cards);
-          self.cards = p.cards;
+          debugger;
         })
-    return self.cards;
+
+    // this.randomAnswers(a, b);
+    // this.getOtherCard(b,a);
+    // });
   }
 
   randomAnswers(card, cards){
@@ -97,4 +98,21 @@ export class DeckDetailsComponent implements OnInit {
     }
   }
 
+  // random_card(card, cards){
+  // 	var array = []
+  // 	if (cards.lenght() == 2) {
+  // 		array.push(card.back)
+  // 		let otherCard = this.getOtherCard(cards, card);
+  // 		array.push(card.front);
+  // 		array.push(card.back);
+  // 	}
+  // }
+
+  // getOtherCard(cards, card) {
+  // 	for (var i = cards.length - 1; i >= 0; i--) {
+  // 		if (cards[i] != card) {
+  // 			return cards[i];
+  // 		}
+  // 	}
+  // }
 }
