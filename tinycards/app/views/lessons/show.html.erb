@@ -1,0 +1,16 @@
+<div class="les-wrapper">
+  <div class="les-card">
+    <p class="title">New Card</p>
+    <div class="containerr" style="margin-bottom: 35px">
+      <div class="ct-card">
+        <div class="item-card front" style="width: 100%">
+          <%= image_tag @cards.first.picture %>
+        </div>
+        <div class="item-card back">
+          <%= @cards.first.back %>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn-continue">Continue <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></button>
+  </div>
+</div>
