@@ -1,5 +1,5 @@
 class Api::V1::Auth::UsersController < Api::V1::BaseController
-  validate_params on: :create, require: [user: User::SIGN_UP_REQUIRE_PARAMS]
+  validate_params on: :create, require: User::SIGN_UP_REQUIRE_PARAMS
 
   def create
     user = Authenticates::SignUpService.new(user_params: user_params).perform
