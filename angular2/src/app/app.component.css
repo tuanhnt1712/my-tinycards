@@ -1,6 +1,8 @@
 body {
   background-color: #F7F7F7;
   margin: 0px;
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Regular, sans-serif;
 }
 a:link, a:visited, a:hover {
   text-decoration: none;
@@ -14,60 +16,6 @@ a:link, a:visited, a:hover {
   border: 1px solid #fff;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.04);
   width: auto;
-}
-
-header {
-  background-color: #00CCFC;
-  height: 65px;
-}
-header .header-logo {
-  margin: auto;
-  max-width: 1120px;
-}
-header .header-logo .inner {
-  display: flex;
-  justify-content: space-between;
-}
-header .header-logo .inner img {
-  height: 60px;
-  padding-top: 5px;
-}
-header .header-logo .inner .logo {
-  display: flex;
-}
-header .header-logo .inner .logo .name-logo {
-  color: White;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 7px;
-}
-header .header-logo .inner .logo .name-logo a {
-  color: White;
-}
-header .header-logo .inner .search {
-  margin-top: 12px;
-}
-header .header-logo .inner .search .f-search {
-  width: 400px !important;
-}
-header .header-logo .inner .txt-home {
-  color: White;
-  display: inline-block;
-  font-size: 32px;
-  font-weight: bold;
-  margin-right: 20px;
-}
-header .header-logo .inner .nav-list {
-  display: flex;
-}
-header .header-logo .inner .nav-list .nav-item {
-  color: White;
-  display: block;
-  font-weight: bold;
-  padding: 20px 15px;
-}
-header .header-logo .inner .nav-list .cl-text {
-  color: White;
 }
 
 footer .quick-links {

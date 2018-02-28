@@ -1,6 +1,6 @@
 header {
   background-color: #00CCFC;
-  height: 65px;
+  height: 60px;
 }
 header .header-logo {
   margin: auto;
@@ -13,6 +13,7 @@ header .header-logo .inner {
 header .header-logo .inner img {
   height: 60px;
   padding-top: 5px;
+  border-radius: 10px;
 }
 header .header-logo .inner .logo {
   display: flex;
@@ -21,7 +22,7 @@ header .header-logo .inner .logo .name-logo {
   color: White;
   font-size: 30px;
   font-weight: bold;
-  margin: 7px;
+  margin: auto 8px;
 }
 header .header-logo .inner .logo .name-logo a {
   color: White;
@@ -29,9 +30,35 @@ header .header-logo .inner .logo .name-logo a {
 header .header-logo .inner .search {
   margin-top: 12px;
 }
-header .header-logo .inner .search .f-search {
-  width: 400px !important;
+header .header-logo .inner .search .search-form {
+  width: 320px;
+  border: none;
+  border-radius: 10px;
 }
+header .header-logo .inner .search .search-form .search-input {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #5c5c5c;
+  font-size: 15px;
+  height: 42px;
+  padding: 3px 0 0 20px;
+  width: 100%;
+}
+header .header-logo .inner .search .search-form .search-input:placeholder-shown {
+  background-color: #6fdcff;
+}
+header .header-logo .inner .search .search-form .search-input:placeholder {
+  color: #fff;
+  font-family: DINNextRoundedLTPro-Medium, sans-serif;
+  opacity: .8;
+  text-transform: uppercase;
+}
+header .header-logo .inner .search .search-form .search-input:focus {
+  background-color: #fff;
+}
+
 header .header-logo .inner .txt-home {
   color: White;
   display: inline-block;
@@ -45,11 +72,17 @@ header .header-logo .inner .nav-list {
 header .header-logo .inner .nav-list .nav-item {
   color: White;
   display: block;
+  font-family: DINNextRoundedLTPro-Bold, sans-serif;
+  font-size: 15px;
   font-weight: bold;
+  height: 20px;
   padding: 20px 15px;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 header .header-logo .inner .nav-list .cl-text {
   color: White;
+  font-size: 16px;
 }
 
 footer .quick-links {
