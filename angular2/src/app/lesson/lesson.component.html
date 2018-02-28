@@ -1,17 +1,22 @@
 <!-- <div *ngFor="let card of cards"> -->
   <!-- <form-wizard> -->
     <!-- <wizard-step [title]="'Step1'"> -->
-      <div class="containerr">
-        <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
-          <div class="item-card front" style="border-radius: 15px;">
-            <span> {{current_card.front}} </span>
+      <div class="les-wrapper">
+        <div class="les-card">
+          <p class="title">New Card</p>
+          <div class="containerr" style="margin-bottom: 35px">
+            <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
+              <div class="item-card front">
+                <span> {{current_card.front}} </span>
+              </div>
+              <div class="item-card back">
+                <span> {{current_card.back}} </span>
+              </div>
+            </div>
           </div>
-          <div class="item-card back">
-            <span> {{current_card.back}} </span>
-          </div>
+          <button type="button" class="btn-continue" onclick="continue()">Continue <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></button>
         </div>
       </div>
-      <button click="continue()">continue</button>
     <!-- </wizard-step> -->
   <!-- </form-wizard> -->
   <!-- </div> -->
