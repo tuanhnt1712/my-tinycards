@@ -1,9 +1,6 @@
 .left {
   padding: 20px;
 }
-.left .img-deck {
-  height: 310px;
-}
 .left .img-deck img {
   width: 90%;
   margin: auto;
@@ -25,8 +22,9 @@
   width: 100%;
 }
 .left .txt .name-deck {
-  font-size: 25px;
+  font-size: 26px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .left .txt .author {
   margin-top: 15px;
