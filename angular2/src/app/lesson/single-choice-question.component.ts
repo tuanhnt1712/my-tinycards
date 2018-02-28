@@ -4,23 +4,33 @@ import { LessonContentComponent } from './lesson-content.component';
 
 @Component({
   template: `
-      <div class="containerr">
-        <div class="ct-card">
-          <div class="item-card front" style="border-radius: 15px;">
-            <span> {{data.current_card.front}} </span>
+    <div class="les-wrapper">
+      <div class="les-choice">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="containerr" style="margin-bottom: 35px">
+              <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
+                <div class="front" style="border-radius: 15px;">
+                  <span> {{data.current_card.front}} </span>
+                </div>
+                <div class="back">
+                  <span> {{data.current_card.back}} </span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="item-card back">
-            <span> {{data.current_card.back}} </span>
+          <div class="col-md-8">
+            <div class="answers">
+              <ul>
+                <li class="list-ans" *ngFor="let answer of answers" >
+                  <button (click)="continue(answer)">{{answer}}</button>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="col-md-8 answers">
-          <ul >
-            <li *ngFor="let answer of answers" >
-              <button (click)="continue(answer)">{{answer}}</button>
-            </li>
-          </ul>
         </div>
       </div>
+    </div>
   `,
   styleUrls: ['./lesson.component.css']
 })
@@ -31,6 +41,11 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
   cards = [];
   current_card: any;
   answers = [];
+  menuOpen = false;
+
+  flipped($event){
+    this.menuOpen = !this.menuOpen;
+  }
 
   ngOnInit() {
     this.current_card = this.data.current_card
