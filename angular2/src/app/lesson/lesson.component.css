@@ -99,7 +99,16 @@
   width: 100%;
   border-radius: 15px;
 }
+.les-wrapper .les-choice img {
+  width: 100%;
+  border-radius: 15px;
+}
 .les-wrapper .les-card .containerr {
+  width: 100%;
+  margin: auto;
+  height: 345px;
+}
+.les-wrapper .les-choice .containerr {
   width: 100%;
   margin: auto;
   height: 345px;
@@ -107,10 +116,20 @@
 .les-wrapper .les-card .containerr .ct-card {
   width: 100%;
 }
+.les-wrapper .les-choice .containerr .ct-card {
+  width: 100%;
+}
 .les-wrapper .les-card .containerr .front img {
   border-radius: 15px;
 }
+.les-wrapper .les-choice .containerr .front img {
+  border-radius: 15px;
+}
 .les-wrapper .les-card .containerr .back {
+  border-radius: 15px;
+  background-color: while;
+}
+.les-wrapper .les-choice .containerr .back {
   border-radius: 15px;
   background-color: while;
 }
@@ -136,4 +155,33 @@
 .les-wrapper .les-card .btn-continue:hover {
   -webkit-filter: brightness(95%);
   filter: brightness(95%);
+}
+.les-wrapper .les-choice {
+  width: 80%;
+  height: 500px;
+  margin: 30px auto;
+  padding: 50px 20px;
+}
+.les-wrapper .les-choice .answers .list-ans {
+  border-radius: 15px;
+  list-style-type: decimal;
+  margin: 12px;
+}
+.les-wrapper .les-choice .answers .list-ans button {
+  -ms-flex-positive: 1;
+  -webkit-box-flex: 1;
+  border-radius: 15px;
+  border: 3px solid #98e6ff;
+  background-color: white;
+  color: #32cdff;
+  cursor: pointer;
+  display: block;
+  flex-grow: 1;
+  font-size: 21px;
+  height: 100px;
+  width: 100%;
+  outline: none;
+}
+.les-wrapper .les-choice .answers .list-ans button:hover {
+  border: 3px solid #32cdff;
 }

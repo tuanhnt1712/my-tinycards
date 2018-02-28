@@ -19,16 +19,19 @@ header .header-logo .inner .logo {
   display: flex;
 }
 header .header-logo .inner .logo .name-logo {
-  color: White;
   font-size: 30px;
   font-weight: bold;
   margin: auto 8px;
+  opacity: .95;
+}
+header .header-logo .inner .logo .name-logo a:hover {
+  text-decoration: none;
 }
 header .header-logo .inner .logo .name-logo a {
   color: White;
 }
 header .header-logo .inner .search {
-  margin-top: 12px;
+  margin-top: 9px;
 }
 header .header-logo .inner .search .search-form {
   width: 320px;
@@ -69,20 +72,16 @@ header .header-logo .inner .txt-home {
 header .header-logo .inner .nav-list {
   display: flex;
 }
-header .header-logo .inner .nav-list .nav-item {
+header .header-logo .inner .nav-list .nav-item a{
   color: White;
   display: block;
-  font-family: DINNextRoundedLTPro-Bold, sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-  height: 20px;
-  padding: 20px 15px;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 22px 15px;
   text-transform: uppercase;
   vertical-align: middle;
-}
-header .header-logo .inner .nav-list .cl-text {
-  color: White;
-  font-size: 16px;
+  opacity: .9;
+  filter: alpha(opacity=);
 }
 
 footer .quick-links {
