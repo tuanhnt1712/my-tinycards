@@ -18,7 +18,7 @@ import { LessonComponent } from './lesson.component';
             </div>
           </div>
         </div>
-        <button type="button" class="btn-continue" (click)="continue()">Continue <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></button>
+        <button type="button" id="continue-card" class="btn-continue hide" (click)="continue()">Continue <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></button>
       </div>
     </div>
   `,
@@ -28,8 +28,10 @@ export class RememberCardComponent implements LessonContentComponent {
   @Input() data: any;
   parent: any;
   menuOpen = false;
+  
   flipped($event){
     this.menuOpen = !this.menuOpen;
+    document.getElementById('continue-card').classList.remove('hide')
   }
 
   continue(){

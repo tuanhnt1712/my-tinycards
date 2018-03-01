@@ -9,12 +9,9 @@ import { LessonContentComponent } from './lesson-content.component';
         <div class="row">
           <div class="col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
-              <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
+              <div class="ct-card">
                 <div class="front" style="border-radius: 15px;">
                   <span> {{data.current_card.front}} </span>
-                </div>
-                <div class="back">
-                  <span> {{data.current_card.back}} </span>
                 </div>
               </div>
             </div>
@@ -41,11 +38,6 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
   cards = [];
   current_card: any;
   answers = [];
-  menuOpen = false;
-
-  flipped($event){
-    this.menuOpen = !this.menuOpen;
-  }
 
   ngOnInit() {
     this.current_card = this.data.current_card

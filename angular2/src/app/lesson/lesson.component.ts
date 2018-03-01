@@ -8,7 +8,8 @@ import { LessonContentDirective } from './lesson-content.directive';
 import { LessonContentItem }      from './lesson-content-item';
 import { LessonContentComponent } from './lesson-content.component'
 import { RememberCardComponent } from './remember-card.component'
-import { SingleChoiceQuestionComponent } from './single-choice-question.component'
+import { SingleChoiceQuestionComponent } from './single-choice-question.component';
+import { MapQuestionAnswerComponent } from './map-question-answer.component';
 
 @Component({
   selector: 'app-lesson',
@@ -34,11 +35,14 @@ export class LessonComponent implements AfterViewInit {
       this.router.navigate(['decks/']);
     }
     this.current_card_index++;
-    let rand = Math.floor(Math.random() * 5);
-    if (rand % 2 == 0){
+    let rand = Math.floor(Math.random() * 3);
+    
+    if (rand == 0){
       this.loadRememberCardComponent()
-    } else {
+    } else if(rand == 1) {
       this.loadSingleChoiceQuestionComponent()
+    } else {
+      this.loadMapQuestionAnswerComponent()
     }
   }
 
@@ -70,6 +74,18 @@ export class LessonComponent implements AfterViewInit {
 
   loadSingleChoiceQuestionComponent() {
     let lcItem = new LessonContentItem(SingleChoiceQuestionComponent, {current_card: this.cards[this.current_card_index], cards: this.cards})
+    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(lcItem.component);
+
+    let viewContainerRef = this.lessonContentHost.viewContainerRef;
+    viewContainerRef.clear();
+
+    let componentRef = viewContainerRef.createComponent(componentFactory);
+    (<LessonContentComponent>componentRef.instance).data = lcItem.data;
+    (<LessonContentComponent>componentRef.instance).parent = this;
+  }
+
+  loadMapQuestionAnswerComponent() {
+    let lcItem = new LessonContentItem(MapQuestionAnswerComponent, {current_card: this.cards[this.current_card_index]})
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(lcItem.component);
 
     let viewContainerRef = this.lessonContentHost.viewContainerRef;
