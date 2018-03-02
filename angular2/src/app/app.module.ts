@@ -14,7 +14,6 @@ import { LoginComponent } from './user/login.component';
 import { SignupComponent } from './user/signup.component';
 import { DeckComponent } from './deck/deck.component';
 import { DecksService } from './services/decks.service';
-import { UserService } from './services/user.service'
 import { AuthenticationService } from './services/authentication.service';
 import { HeaderBasicService } from './services/base/header-basic.service';
 import { HttpModule } from '@angular/http';
@@ -51,7 +50,7 @@ import { MapQuestionAnswerComponent } from './lesson/map-question-answer.compone
     FormWizardModule
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, MapQuestionAnswerComponent],
-  providers: [DecksService, AuthenticationService, UserService, HeaderBasicService],
+  providers: [DecksService, AuthenticationService, HeaderBasicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

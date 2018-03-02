@@ -3,7 +3,7 @@ class Api::V1::Auth::UsersController < Api::V1::BaseController
 
   def create
     user = Authenticates::SignUpService.new(user_params: user_params).perform
-    render_success
+    render_success data: Authenticates::LoginService.new(user: user).perform
   end
 
   def update
