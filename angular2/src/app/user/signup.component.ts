@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { UserService } from '../services/user.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
 	model: any = {};
 	loading = false;
 
-  constructor(private userService: UserService,
+  constructor(private authenticationService: AuthenticationService,
   						private route: ActivatedRoute,
         			private router: Router
   ) {}
@@ -23,10 +23,10 @@ export class SignupComponent implements OnInit {
 
   register() {
     this.loading = true;
-    this.userService.create(this.model)
+    this.authenticationService.create(this.model)
       .subscribe(
           data => {
-              this.router.navigate(['/login']);
+              this.router.navigate(['/']);
           },
           error => {
               this.loading = false;

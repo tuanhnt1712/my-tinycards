@@ -7,7 +7,7 @@ class Authenticates::SignUpService
 
   def perform
     ActiveRecord::Base.transaction do
-      user = User.create! user_params
+      @user = User.create! user_params
     end
     user
   end

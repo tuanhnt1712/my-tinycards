@@ -70,7 +70,16 @@ export class AuthenticationService {
     return this.headerBasicService.getHeaders();
   }
 
-
+  create(user : User) {
+    return this.http.post(`http://localhost:3000/api/auth/users`, user)
+      .map(response => {
+          let user_token = response["data"]
+          if (user_token && user_token.token)
+            this.loginStateSource.next('login');
+            localStorage.setItem('currentUser', JSON.stringify(user_token));
+          return user_token;
+        });
+  }
 
   handleError(error: any): Promise<any> {
 
