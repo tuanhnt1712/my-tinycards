@@ -61,13 +61,17 @@
 }
 
 .ct-card .front {
-  background: #a3a3a3;
+  background: white;
   border-radius: 15px;
+  color: black;
+  opacity: .8;
   width: 100%;
 }
 
 .ct-card .back {
-  background: #444444;
+  background: white;
+  color: black;
+  opacity: .8;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -176,7 +180,7 @@
   text-transform: uppercase;
   width: 100%;
 }
-.les-wrapper .les-card .btn-continue button{
+.les-wrapper .les-card .btn-continue button {
   outline: none;
 }
 .les-wrapper .les-card .btn-continue:hover {
