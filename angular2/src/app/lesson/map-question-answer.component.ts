@@ -4,7 +4,7 @@ import { LessonContentComponent } from './lesson-content.component';
 
 @Component({
   template: `
-    <div class="les-wrapper"> 
+    <div class="les-wrapper">
       <div class="les-choice">
 		    <div class="row">
           <div class="col-md-4">
@@ -17,15 +17,14 @@ import { LessonContentComponent } from './lesson-content.component';
             </div>
           </div>
           <div class="col-md-8">
-            <div class="answers">
-              <ul>
-                <input type="text" name="answer" id="write-answer">
-              </ul>
+            <div class="txt-answers">
+              <div class="ct-answers">
+                <input type="text" class="txt-answer" placeholder="Enter the answer" name="answer" id="write-answer">
+                <button type="button" class="btn-continue" (click)="continue(answer)">
+                <i class="fa fa-arrow-circle-right"></i></button>
+              </div>
             </div>
           </div>
-       	</div>
-       	<div class="les-card">
-        	<button type="button" class="btn-continue" (click)="continue(answer)">Continue <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></button>
        	</div>
       </div>
     </div>
@@ -44,10 +43,12 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
     this.cards = this.data.cards
   }
 
+
   continue(answer){
   	answer = (<HTMLInputElement>document.getElementById('write-answer')).value
     if (this.current_card.back == answer) {
       console.log("Right");
+      this.parent.delay(1000);
       this.parent.nextCard();
     }else {
       console.log("Wrong");

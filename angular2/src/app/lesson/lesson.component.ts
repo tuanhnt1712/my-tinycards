@@ -36,7 +36,7 @@ export class LessonComponent implements AfterViewInit {
     }
     this.current_card_index++;
     let rand = Math.floor(Math.random() * 3);
-    
+
     if (rand == 0){
       this.loadRememberCardComponent()
     } else if(rand == 1) {
@@ -44,6 +44,11 @@ export class LessonComponent implements AfterViewInit {
     } else {
       this.loadMapQuestionAnswerComponent()
     }
+  }
+
+  delay(ms) {
+    ms += new Date().getTime();
+    while (new Date() < ms){}
   }
 
   ngAfterViewInit(){
