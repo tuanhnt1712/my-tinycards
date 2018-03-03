@@ -92,7 +92,7 @@
   min-height: 500px;
   text-align: center;
   margin: 50px auto;
-  width: 300px;
+  width: 280px;
   border-radius: 15px;
 }
 .les-wrapper .les-card img {
@@ -106,12 +106,15 @@
 .les-wrapper .les-card .containerr {
   width: 100%;
   margin: auto;
-  height: 345px;
+  height: 330px;
+  padding: 25px 0;
 }
 .les-wrapper .les-choice .containerr {
   width: 100%;
   margin: auto;
-  height: 345px;
+  height: 330px;
+  padding: 25px 0;
+  position: relative;
 }
 .les-wrapper .les-card .containerr .ct-card {
   width: 100%;
@@ -119,11 +122,33 @@
 .les-wrapper .les-choice .containerr .ct-card {
   width: 100%;
 }
+.les-wrapper .les-choice .containerr .ct-card:hover {
+  transform: scale(1.025);
+  &:before, &:after {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+  }
+
+  &:before {
+    left: -2px;
+  }
+  &:after {
+    right: -2px;
+  }
+}
 .les-wrapper .les-card .containerr .front img {
   border-radius: 15px;
 }
 .les-wrapper .les-choice .containerr .front img {
   border-radius: 15px;
+}
+.les-wrapper .les-choice .containerr .front {
+  background-color: white;
+  color: black;
+  opacity: .8;
+  font-size: 30px;
+  justify-content: center;
 }
 .les-wrapper .les-card .containerr .back {
   border-radius: 15px;
@@ -138,7 +163,6 @@
   color: #ffc615;
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 30px;
 }
 .les-wrapper .les-card .btn-continue {
   background-color: #32cdff;
@@ -152,6 +176,9 @@
   text-transform: uppercase;
   width: 100%;
 }
+.les-wrapper .les-card .btn-continue button{
+  outline: none;
+}
 .les-wrapper .les-card .btn-continue:hover {
   -webkit-filter: brightness(95%);
   filter: brightness(95%);
@@ -161,6 +188,9 @@
   height: 500px;
   margin: 30px auto;
   padding: 50px 20px;
+}
+.les-wrapper .les-choice .answers {
+  padding: 20px 0;
 }
 .les-wrapper .les-choice .answers .list-ans {
   border-radius: 15px;
@@ -184,4 +214,50 @@
 }
 .les-wrapper .les-choice .answers .list-ans button:hover {
   border: 3px solid #32cdff;
+}
+.les-wrapper .les-choice .txt-answers {
+  position: relative;
+  height: 350px;
+}
+.les-wrapper .les-choice .txt-answers .ct-answers {
+  margin-left: 25px;
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  border-bottom: 2px solid #32cdff;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  display: flex;
+  padding: 6px 0;
+}
+.les-wrapper .les-choice .txt-answers .ct-answers input {
+  font-size: 24px;
+  width: 90%;
+  height: 45px;
+  outline: none;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+}
+.les-wrapper .les-choice .txt-answers .ct-answers button {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 8%;
+}
+.les-wrapper .les-choice .txt-answers .ct-answers button i {
+  font-size: 35px;
+  background: transparent;
+  color: blueviolet;
+  opacity: .6;
+}
+.les-wrapper .les-choice .txt-answers .ct-answers button i:hover{
+  opacity: .9;
+}
+.les-wrapper .les-choice .txt-answers .ct-answers:hover {
+  border-bottom: 3px solid #32cdff;
+}
+.les-wrapper .les-choice .txt-answers .ct-answers input::placeholder {
+  opacity: .8;
 }
