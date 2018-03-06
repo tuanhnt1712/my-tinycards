@@ -26,6 +26,7 @@ import { LessonContentDirective } from './lesson/lesson-content.directive';
 import { RememberCardComponent } from './lesson/remember-card.component';
 import { SingleChoiceQuestionComponent } from './lesson/single-choice-question.component';
 import { MapQuestionAnswerComponent } from './lesson/map-question-answer.component';
+import { ImageUploadModule } from "angular2-image-upload";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { MapQuestionAnswerComponent } from './lesson/map-question-answer.compone
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
-    FormWizardModule
+    FormWizardModule, ImageUploadModule
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, MapQuestionAnswerComponent],
   providers: [DecksService, AuthenticationService, HeaderBasicService],

@@ -11,12 +11,12 @@ class Api::V1::DecksController < Api::V1::AuthorizeController
 
 	def create
 		@deck = ::CreateDeckService.new.perform(current_user, deck_params)
-    render_success data: Api::V1::DeckSerializer.new(@deck)
+	    render_success data: Api::V1::DeckSerializer.new(@deck)
 	end
 
 	private
 
 	def deck_params
-		params.permit Deck::ATTRIBUTE_PARAMS
+	  params.permit Deck::ATTRIBUTE_PARAMS
 	end
 end

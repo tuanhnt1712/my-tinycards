@@ -31,6 +31,7 @@ export class DecksService extends RequestBasicService{
 
   add_deck(deck) {
     let headers = this.getHeaders();
+    headers.append('Content-Type', 'multipart/form-data')
     let options = new RequestOptions({ headers: headers });
     let body = deck;
     return this.http.post(`${this.baseUrl}/decks/`, body, options ).map((res: Response) => res.json());

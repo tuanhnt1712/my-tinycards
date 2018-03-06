@@ -3,6 +3,7 @@ export interface Deck {
 	user_id: number,
 	title: string,
 	description: string,
+  cover_image: any;
   cards: Card[],
   lessons: Lesson[]
 }

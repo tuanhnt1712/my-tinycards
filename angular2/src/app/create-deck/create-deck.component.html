@@ -1,8 +1,9 @@
 <div class="container">
-  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)" enctype="multipart/form-data">
     <div class="row" style="margin-top: 25px;">
       <div class="col-xs-12 col-md-4">
         <div class="left">
+          <input type="file" #fileInput id="cover_image" formControlName="cover_image" placeholder="Upload file..." (change)="onFileChange($event)" />
           <div class="cover-deck" (click)="coverImgModal.open()" data-whatever="@mdo">
             <div id="preview-img" class="import-cover-deck">
               <img id="blah" src="#"/>
