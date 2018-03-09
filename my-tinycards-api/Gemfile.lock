@@ -165,6 +165,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave-base64 (2.6.1)
+      carrierwave (>= 0.8.0)
+      mime-types (~> 3.0)
     case_transform (0.2)
       activesupport
     code_analyzer (0.4.8)
@@ -729,6 +732,7 @@ DEPENDENCIES
   capistrano-sidekiq
   capistrano3-unicorn
   carrierwave
+  carrierwave-base64
   coffee-rails
   config
   database_cleaner
@@ -746,6 +750,7 @@ DEPENDENCIES
   jshint
   kaminari
   listen (~> 3.0.5)
+  mime-types
   mini_magick
   mysql2 (>= 0.3.18, < 0.5)
   nokogiri (~> 1.8.1)

@@ -31,7 +31,7 @@ export class DeckDetailsComponent implements OnInit {
     const self = this;
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
-      self.id = id;      
+      self.id = id;
       this.decksService
         .get(id)
         .subscribe(p => {
@@ -43,7 +43,7 @@ export class DeckDetailsComponent implements OnInit {
   }
 
   click_lesson(id, model){
-    this.myFormLesson.setValue({lesson_id: id }); 
+    this.myFormLesson.setValue({lesson_id: id });
     this.router.navigate(['decks/'+ this.id +'/lessons/'+ id]);
   }
 }

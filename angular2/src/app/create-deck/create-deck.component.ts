@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Validators, FormGroup, FormArray, FormBuilder, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DecksService } from '../services/decks.service';
@@ -11,6 +11,8 @@ import { Deck } from '../deck';
 })
 export class CreateDeckComponent implements OnInit{
   public myForm: FormGroup;
+  imageUrl: any;
+  @ViewChild('fileInput') fileInput: ElementRef;
 
   constructor(private decksService: DecksService,
               private _fb: FormBuilder,
@@ -21,6 +23,7 @@ export class CreateDeckComponent implements OnInit{
     this.myForm = this._fb.group({
               title: ['', [Validators.required]],
               description: ['', [Validators.required]],
+              cover_image: [''],
               cards_attributes: this._fb.array([])
     });
     this.addCard();
@@ -52,5 +55,18 @@ export class CreateDeckComponent implements OnInit{
         this.router.navigate(['/decks']);
         return true;
       });
+  }
+
+  onFileChange(event) {
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        (<HTMLInputElement>document.getElementById('blah')).setAttribute('src', reader.result);
+        (<HTMLInputElement>document.getElementById('closeModalButton')).click();
+        this.myForm.get('cover_image').setValue("data:"+file.type +";base64, " + reader.result.split(',')[1])
+      };
+    }
   }
 }
