@@ -21,6 +21,7 @@ export class LessonComponent implements AfterViewInit {
 	menuOpen = false;
   lessons = [];
   cards = [];
+  point: number = 0;
   current_card_index: number = -1;
 
   @ViewChild(LessonContentDirective) lessonContentHost: LessonContentDirective;
@@ -32,6 +33,7 @@ export class LessonComponent implements AfterViewInit {
 
   nextCard(){
     if (this.current_card_index == this.cards.length - 1) {
+      alert(this.point);
       this.router.navigate(['decks/']);
     }
     this.current_card_index++;

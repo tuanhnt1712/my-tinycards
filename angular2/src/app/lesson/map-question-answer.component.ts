@@ -48,10 +48,12 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
   	answer = (<HTMLInputElement>document.getElementById('write-answer')).value
     if (this.current_card.back == answer) {
       console.log("Right");
-      this.parent.delay(1000);
+      this.parent.point++;
       this.parent.nextCard();
     }else {
       console.log("Wrong");
+      this.parent.point--;
+      this.parent.current_card_index--;
     }
   }
 }
