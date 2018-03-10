@@ -36,5 +36,6 @@ export class RememberCardComponent implements LessonContentComponent {
 
   continue(){
     this.parent.nextCard();
+    this.parent.point++;
   }
 }
