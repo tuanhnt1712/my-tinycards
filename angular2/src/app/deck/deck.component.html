@@ -1,83 +1,28 @@
- <ul >
-    <li *ngFor="let deck of decks | async " >
-      <a href="#" [routerLink]="['/decks', deck.id]">{{deck.title}}</a>
-    </li>
-  </ul>
-  <a href="createDeck">hihi</a>
-<!-- <div class="container">
-  <div class="row" style="margin-top: 25px;">
-    <div class="col-xs-12 col-md-4">
-      <div class="left">
-        <div class="img-deck">
-          <img src="./assets/images/deck-demo.jpg" alt="deck-demo">
-        </div>
-        <div class="txt">
-          <div class="name-deck">
-            <span class="name">Shapes</span>
-          </div>
-          <div class="description-deck">
-            <span class="des">Bright and colorful shapes. Great for kids! Happy learning :)</span>
-          </div>
-          <div class="author">
-            <div class="img">
-              <img src="./assets/images/avatar.png" alt="avatar">
-              <a href="#" class="name"> Bette</a>
-            </div>
-          </div>
-          <div class="favorite">
-            <button type="button" class="btn btn-outline-success" style="width: 80%; margin-right: 5px;"><i class="fa fa-star-o" aria-hidden="true"></i> FAVORITE</button>
-            <button type="button" class="btn btn-outline-success" style="width: 15%"><i class="fa fa-external-link" aria-hidden="true"></i></button>
-          </div>
-        </div>
+<div class="show-value">
+  <div class="slide">
+    <h1>Slide</h1>
+  </div>
+  <div class="favorites">
+    <div class="container">
+      <div class="title">
+        <span class="txt">Your favorites</span>
       </div>
-    </div>
-    <div class="col-xs-12 col-md-8">
-      <div class="right">
-        <div class="s-select">
-          <span onclick="openTab('b1','bb1');"><a href="#" id="bb1" class="s-txt lessons s-active"> LESSONS</a></span>
-          <span onclick="openTab('b2','bb2');"><a href="#" id="bb2" class="s-txt cards"> CARDS(10)</a></span>
-        </div>
-        <hr style="margin-top: 0;">
-
-        <div class="container">
-          <div id="b1" class="containerTab">
-            <div class="list-lesson">
-              <div class="row">
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                  <div class="item-lesson">
-                    <a href="#"><img src="./assets/images/lesson.png" alt="lesson"></a>
-                  </div>
-                </div>
+      <div class="list-decks-favor">
+        <div class="row" style="margin: auto;" *ngFor="let deck of decks | async ">
+          <div class="col-md-2">
+            <div class="item-deck">
+              <div class="image-cover">
+                <a href ="#" [routerLink]="['/decks', deck.id]">
+                  <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image">
+                </a>
+              </div>
+              <div class="name">
+                <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck">{{deck.title}}</a>
               </div>
             </div>
-          </div>
-
-          <div id="b2" class="containerTab" style="display:none;">
-            <h2>Cards...</h2>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
- -->

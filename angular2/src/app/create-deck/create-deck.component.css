@@ -131,15 +131,19 @@
   margin-bottom: 20px;
   width: 100%;
 }
-/*.right .add-card {
+.add-card {
   position: absolute;
   right: 32px;
   top: 160px;
-}*/
-.right .add-card img {
+}
+.add-card img {
   width: 110px;
 }
-.right .add-card .add {
+.glyphicon {
+  margin-top: -346px;
+  margin-right: 40px;
+}
+.add {
   background-color: #32cdff;
   border-radius: 100%;
   border: none;
@@ -152,6 +156,10 @@
   width: 65px;
   z-index: 100;
 }
+.add span {
+  margin-left: 20px;
+  cursor: pointer;
+}
 .right .wrapper {
   padding: 10px 0 10px;
 }
@@ -161,6 +169,16 @@
   padding: 20px 0 20px;
   position: relative;
   text-align: center;
+}
+.del {
+  background-color: white;
+  border: none;
+  outline: none;
+}
+.del .fa-trash-o {
+  color: #32cdff;
+  font-size: 25px;
+  opacity: 0;
 }
 .right .wrapper .n-card:hover {
   background-color: #F7F7F7;
