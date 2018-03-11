@@ -30,19 +30,20 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-8">
-        <div formArrayName="cards_attributes" *ngFor="let cards_attributes of myForm.controls.cards_attributes.controls; let i=index">
-          <div class="right prepend-body-content card-body">
-            <div class="add-card">
-              <a (click)="addCard()" style="cursor: default">
-                Add another card +
-              </a>
-            </div>
+        <div class="add-card" (click)="addCard()">
+          <div class="add">
+            <span>+</span>
+          </div>
+        </div>
+        <div class="right prepend-body-content card-body">
+          <div formArrayName="cards_attributes" *ngFor="let cards_attributes of myForm.controls.cards_attributes.controls; let i=index">
+            
             <div [formGroupName]="i">
-              <card [group]="myForm.controls.cards_attributes.controls[i]"></card>
-            </div>
-            <div class="panel-heading">
-              <span>Address {{i + 1}}</span>
-              <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.cards_attributes.controls.length > 1" (click)="removeCard(i)"></span>
+              <card [group]="myForm.controls.cards_attributes.controls[i]">
+              </card>
+                <div class="panel-heading">
+                  <span class="glyphicon glyphicon-remove pull-right" (click)="removeCard(i)"></span>
+                </div>
             </div>
           </div>
         </div>

@@ -86,17 +86,6 @@
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-
-.del {
-  background-color: white;
-  border: none;
-  outline: none;
-}
-.del .fa-trash-o {
-  color: #32cdff;
-  font-size: 25px;
-  opacity: 0;
-}
 .wrapper {
   padding: 10px 0 10px;
 }
@@ -106,6 +95,7 @@
   padding: 20px 0 20px;
   position: relative;
   text-align: center;
+  padding-right: 80px;
 }
 .wrapper .n-card:hover {
   background-color: #f7f7f7;
