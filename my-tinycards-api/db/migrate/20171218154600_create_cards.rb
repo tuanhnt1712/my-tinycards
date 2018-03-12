@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.references :deck, foreign_key: true
       t.string :front
       t.string :back
+      t.text :picture
 
       t.timestamps
     end

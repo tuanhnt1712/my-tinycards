@@ -6,6 +6,7 @@
 		<div class="front-card">
 			<div class="f-deck">
 				<div class="image">
+				<input class="form-control" type="file" formControlName="picture" id="picture" (change)="onFileChange($event)" #fileInput>
 					<!-- <%= f.file_field :picture, style: "width: 100%" %> -->
 				</div>
 				<div class="import-cover-deck">
