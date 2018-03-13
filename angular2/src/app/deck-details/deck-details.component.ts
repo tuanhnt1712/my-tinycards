@@ -17,6 +17,7 @@ export class DeckDetailsComponent implements OnInit {
   lessons = [];
   public myFormLesson: FormGroup;
   id: number;
+  menuOpen = false;
 
   constructor(private decksService: DecksService,
     private route: ActivatedRoute,
@@ -45,5 +46,30 @@ export class DeckDetailsComponent implements OnInit {
   click_lesson(id, model){
     this.myFormLesson.setValue({lesson_id: id });
     this.router.navigate(['decks/'+ this.id +'/lessons/'+ id]);
+  }
+
+  openTab(tabName, titleName) {
+    var i, x;
+    x = document.getElementsByClassName("containerTab");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+
+    if (titleName == "bb1"){
+      document.getElementById('bb1').classList.add("s-active");
+      document.getElementById('bb2').classList.remove("s-active");
+    }
+    else {
+      document.getElementById('bb2').classList.add("s-active");
+      document.getElementById('bb1').classList.remove("s-active");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+  }
+
+
+  flipped($event){
+    this.menuOpen = !this.menuOpen;
+    document.getElementById('continue-card').classList.remove('hide')
   }
 }
