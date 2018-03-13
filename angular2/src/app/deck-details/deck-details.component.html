@@ -27,30 +27,22 @@
       </div>
     </div>
     <div class="row" *ngFor="let card of cards">
-                <!-- <% @cards.each do |card| %> -->
                   <div class="containerr">
                     <div class="ct-card">
                       <div class="item-card front">
-                        <!-- <% if card.picture.blank? %> -->
-                          <!-- <%= card.front %> -->
                           <p>{{card.front}}</p>
-                        <!-- <% else %> -->
-                          <!-- <%= image_tag card.picture %> -->
-                        <!-- <% end %> -->
                       </div>
                       <div class="item-card back">
-                        <!-- <%= card.back %> -->
                         <p>{{card.back}}</p>
                       </div>
                     </div>
                   </div>
-                <!-- <% end %> -->
               </div>
     <div class="col-xs-12 col-md-8">
       <div class="right">
         <div class="s-select">
-          <span onclick="openTab('b1','bb1');"><a href="#" id="bb1" class="s-txt lessons s-active"> LESSONS</a></span>
-          <span onclick="openTab('b2','bb2');"><a href="#" id="bb2" class="s-txt cards"> CARDS(10)</a></span>
+          <span (click)="openTab('b1','bb1');" id="bb1" class="s-txt lessons s-active"> LESSONS</span>
+          <span (click)="openTab('b2','bb2');" id="bb2" class="s-txt cards"> CARDS ({{deck.cards.length}})</span>
         </div>
         <hr style="margin-top: 0;">
 
@@ -75,24 +67,19 @@
           <div id="b2" class="containerTab" style="display:none;">
             <div class="list-card">
               <div class="row" *ngFor="let card of deck.cards">
-                <!-- <% @cards.each do |card| %> -->
                   <div class="containerr">
-                    <div class="ct-card">
+                    <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
                       <div class="item-card front">
-                        <!-- <% if card.picture.blank? %> -->
-                          <!-- <%= card.front %> -->
-                          <p>{{card.front}}</p>
-                        <!-- <% else %> -->
-                          <!-- <%= image_tag card.picture %> -->
-                        <!-- <% end %> -->
+                        <span *ngIf="card.picture">
+                          <img src="{{card.picture.url}}">
+                        </span>
+                        <p>{{card.front}}</p>
                       </div>
                       <div class="item-card back">
-                        <!-- <%= card.back %> -->
                         <p>{{card.back}}</p>
                       </div>
                     </div>
                   </div>
-                <!-- <% end %> -->
               </div>
             </div>
           </div>

@@ -111,6 +111,7 @@
   color: darkgray;
   font-weight: bold;
   margin-right: 35px;
+  cursor: pointer;
 }
 .right .s-select .s-active {
   border-bottom: 2px solid lightskyblue;
