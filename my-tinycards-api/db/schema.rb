@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180213092838) do
     t.integer "deck_id"
     t.string "front"
     t.string "back"
+    t.text "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "lesson_id"

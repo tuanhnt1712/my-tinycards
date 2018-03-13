@@ -18,5 +18,6 @@ export interface Card {
   deck_id: number,
   lesson_id: number,
   front: string,
-  back: string
+  back: string,
+  picture: string
 }

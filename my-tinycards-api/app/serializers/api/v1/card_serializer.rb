@@ -1,4 +1,4 @@
 class Api::V1::CardSerializer < ActiveModel::Serializer
-	attributes :id, :back, :front
+	attributes :id, :back, :front, :picture
 	has_many :lessons, serializer: Api::V1::LessonSerializer
 end

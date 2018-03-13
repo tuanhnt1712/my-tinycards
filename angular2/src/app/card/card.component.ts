@@ -16,4 +16,14 @@ export class CardComponent implements OnInit {
   ngOnInit() {
   }
 
+  onFileChange(event) {
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.cardForm.get('picture').setValue(reader.result)
+	 	 }
+  	}
+	}
 }

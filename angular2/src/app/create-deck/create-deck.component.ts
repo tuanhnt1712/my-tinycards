@@ -32,7 +32,8 @@ export class CreateDeckComponent implements OnInit{
   initCard() {
     return this._fb.group({
         front: ['', Validators.required],
-        back: ['', Validators.required]
+        back: ['', Validators.required],
+        picture: ['']
     });
   }
 
