@@ -27,6 +27,8 @@ import { LessonContentDirective } from './lesson/lesson-content.directive';
 import { RememberCardComponent } from './lesson/remember-card.component';
 import { SingleChoiceQuestionComponent } from './lesson/single-choice-question.component';
 import { MapQuestionAnswerComponent } from './lesson/map-question-answer.component';
+import { SlickCarouselComponent } from './slick/slick-carousel.component';
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { MapQuestionAnswerComponent } from './lesson/map-question-answer.compone
     LessonContentDirective,
     RememberCardComponent,
     SingleChoiceQuestionComponent,
-    MapQuestionAnswerComponent
+    MapQuestionAnswerComponent,
+    SlickCarouselComponent
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
