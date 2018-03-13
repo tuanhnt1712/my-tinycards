@@ -66,6 +66,7 @@ export class CreateDeckComponent implements OnInit{
       reader.onload = () => {
         (<HTMLInputElement>document.getElementById('blah')).setAttribute('src', reader.result);
         (<HTMLInputElement>document.getElementById('closeModalButton')).click();
+        (<HTMLInputElement>document.getElementById('preview-img')).style.top = '0%';
         this.myForm.get('cover_image').setValue("data:"+file.type +";base64, " + reader.result.split(',')[1])
       };
     }

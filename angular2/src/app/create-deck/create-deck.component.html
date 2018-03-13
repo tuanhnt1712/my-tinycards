@@ -7,7 +7,6 @@
             <div id="preview-img" class="import-cover-deck">
               <img id="blah" src="#"/>
               <div class="img-tog">
-                <i class="fa fa-picture-o" aria-hidden="true"></i>
                 <div class="change-cover">
                   <p class="ct-text">CHOOSE COVER</p>
                 </div>
@@ -37,7 +36,7 @@
         </div>
         <div class="right prepend-body-content card-body">
           <div formArrayName="cards_attributes" *ngFor="let cards_attributes of myForm.controls.cards_attributes.controls; let i=index">
-            
+
             <div [formGroupName]="i">
               <card [group]="myForm.controls.cards_attributes.controls[i]">
               </card>

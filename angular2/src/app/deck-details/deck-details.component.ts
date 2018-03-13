@@ -70,6 +70,5 @@ export class DeckDetailsComponent implements OnInit {
 
   flipped($event){
     this.menuOpen = !this.menuOpen;
-    document.getElementById('continue-card').classList.remove('hide')
   }
 }
