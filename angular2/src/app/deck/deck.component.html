@@ -3,22 +3,20 @@
     <h1>Slide</h1>
   </div>
   <div class="favorites">
-    <div class="container">
-      <div class="title">
-        <span class="txt">Your favorites</span>
-      </div>
-      <div class="list-decks-favor">
-        <div class="row" style="margin: auto;" *ngFor="let deck of decks | async ">
-          <div class="col-md-2">
-            <div class="item-deck">
-              <div class="image-cover">
-                <a href ="#" [routerLink]="['/decks', deck.id]">
-                  <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image">
-                </a>
-              </div>
-              <div class="name">
-                <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck">{{deck.title}}</a>
-              </div>
+    <div class="title">
+      <span class="txt">Your favorites</span>
+    </div>
+    <div class="list-decks-favor">
+      <div class="row" style="margin: auto;">
+        <div class="col-md-2" *ngFor="let deck of decks | async">
+          <div class="item-deck">
+            <div class="image-cover">
+              <a href ="#" [routerLink]="['/decks', deck.id]">
+                <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image">
+              </a>
+            </div>
+            <div class="name">
+              <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck">{{deck.title}}</a>
             </div>
           </div>
         </div>
