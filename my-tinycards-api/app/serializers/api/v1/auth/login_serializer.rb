@@ -14,6 +14,7 @@ class Api::V1::Auth::LoginSerializer
       created_at: token.created_at,
       user_id: user.id,
       user_email: user.email,
+      name: user.name
     }
   end
 end
