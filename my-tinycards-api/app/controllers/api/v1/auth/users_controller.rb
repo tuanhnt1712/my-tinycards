@@ -14,6 +14,11 @@ class Api::V1::Auth::UsersController < Api::V1::BaseController
     render_success data: Authenticates::LoginService.new(user: user).perform
   end
 
+  def show
+    @user = User.find_by! id: params[:id]
+    render_success data: Api::V1::UserSerializer.new(@user)
+  end
+
   private
   def user_params
     params.permit User::ATTRIBUTES_PARAMS

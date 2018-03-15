@@ -28,6 +28,7 @@ import { RememberCardComponent } from './lesson/remember-card.component';
 import { SingleChoiceQuestionComponent } from './lesson/single-choice-question.component';
 import { MapQuestionAnswerComponent } from './lesson/map-question-answer.component';
 import { SlickCarouselComponent } from './slick/slick-carousel.component';
+import { UserService } from './services/user.service';
 import * as $ from 'jquery';
 
 @NgModule({
@@ -54,7 +55,7 @@ import * as $ from 'jquery';
     FormWizardModule, ImageUploadModule.forRoot()
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, MapQuestionAnswerComponent],
-  providers: [DecksService, AuthenticationService, HeaderBasicService],
+  providers: [DecksService, AuthenticationService, HeaderBasicService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

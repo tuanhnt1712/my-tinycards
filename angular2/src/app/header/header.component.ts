@@ -10,6 +10,7 @@ import { AuthenticationService } from '../services/authentication.service';
 export class HeaderComponent implements OnInit {
 
   isAuthenticated: boolean;
+  id: number;
 
   constructor(private authenticationService: AuthenticationService) {
     this.isAuthenticated = this.authenticationService.isLoggedIn();
@@ -19,7 +20,9 @@ export class HeaderComponent implements OnInit {
     this.authenticationService.loginState$.subscribe(
       state => {
         this.isAuthenticated = (state == 'login')
-      });
+      }
+    );
+    this.id = this.authenticationService.currentUser().user_id
   }
 
   onLogout(){

@@ -2,9 +2,9 @@
 <div class="header-logo">
   <div class="inner">
     <div class="logo">
-      <a href="/"><img src="./assets/images/logo.jpg" alt="logo"></a>
+      <a href="#" [routerLink]="['/']"><img src="./assets/images/logo.jpg" alt="logo"></a>
       <div class="name-logo">
-        <a href="/">Tinycard</a>
+        <a href="#" [routerLink]="['/']">Tinycard</a>
       </div>
     </div>
 
@@ -15,13 +15,16 @@
     </div>
     <div class="nav-list">
       <div class="nav-item">
-        <a href="/" class="cl-text fa fa-home"> HOME</a>
+        <a href="#" [routerLink]="['/']" class="cl-text fa fa-home"> HOME</a>
       </div>
       <div class="nav-item">
-        <a href="createDeck" class="cl-text fa fa-plus"> CREATE</a>
+        <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> CREATE</a>
+      </div>
+      <div class="nav-item" *ngIf="isAuthenticated">
+        <a href="#" [routerLink]="['/users/', id]" class="cl-text fa fa-user">TUANH</a>
       </div>
       <div class="nav-item" *ngIf="!isAuthenticated">
-        <a href="login" class="cl-text fa fa-user"> LOG IN</a>
+        <a href="#" [routerLink]="['/login']" class="cl-text fa fa-user"> LOG IN</a>
       </div>
       <div class="nav-item">
         <a href="javascript:void(0)" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated"> LOG OUT</a>
