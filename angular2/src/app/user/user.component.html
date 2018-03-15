@@ -1,3 +1,10 @@
-<p>
-  user works!
-</p>
+<!-- TO DO -->
+<section *ngIf="user">
+	<p> {{user.name}} </p>
+</section>
+<p>hihi</p>
+<div class="containerr" *ngFor="let deck of user.decks">
+  <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image">
+	<p>{{deck.title}}</p>
+	<p>{{deck.desctiption}}</p>
+</div>

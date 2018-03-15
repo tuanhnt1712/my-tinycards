@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :lessons, only: :show
 
       namespace :auth do
-        resources :users, only: [:create, :update]
+        resources :users, only: [:create, :update, :show]
         put "confirm", to: "users#update"
         post "facebook", to: "facebook#facebook"
         post "sign_in", to: "sessions#create"

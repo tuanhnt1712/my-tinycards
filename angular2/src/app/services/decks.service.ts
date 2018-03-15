@@ -77,7 +77,6 @@ function toLesson(r:any): Lesson{
 }
 
 function mapDeck(response:Response): Deck{
-  console.log(response.json().data)
   return toDeck(response.json().data);
 }
 
