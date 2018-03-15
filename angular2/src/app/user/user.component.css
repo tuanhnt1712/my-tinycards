@@ -124,7 +124,7 @@
 }
 .tab-active {
   border-bottom: 4px solid #32cdff;
-  color: #32cdff;
+  color: #32cdff !important;
   padding-bottom: 11px;
 }
 .profile-content .container .image-wrap img {

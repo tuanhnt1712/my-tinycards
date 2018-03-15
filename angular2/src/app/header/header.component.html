@@ -15,19 +15,19 @@
     </div>
     <div class="nav-list">
       <div class="nav-item">
-        <a href="#" [routerLink]="['/']" class="cl-text fa fa-home"> HOME</a>
+        <a href="#" [routerLink]="['/']" class="cl-text fa fa-home"> <span>HOME</span></a>
       </div>
       <div class="nav-item">
-        <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> CREATE</a>
+        <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> <span>CREATE</span></a>
       </div>
       <div class="nav-item" *ngIf="isAuthenticated">
-        <a href="#" [routerLink]="['/users/', current_user_id]" class="cl-text fa fa-user">{{current_user_name}}</a>
+        <a href="#" [routerLink]="['/users/', current_user_id]" class="cl-text fa fa-user"> <span>{{current_user_name}}</span></a>
       </div>
       <div class="nav-item" *ngIf="!isAuthenticated">
-        <a href="#" [routerLink]="['/login']" class="cl-text fa fa-user"> LOG IN</a>
+        <a href="#" [routerLink]="['/login']" class="cl-text fa fa-user"> <span>LOGIN</span></a>
       </div>
       <div class="nav-item">
-        <a href="javascript:void(0)" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated"> LOG OUT</a>
+        <a href="javascript:void(0)" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated"> <span>LOGOUT</span></a>
       </div>
     </div>
   </div>

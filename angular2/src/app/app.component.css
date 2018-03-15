@@ -21,7 +21,7 @@
 }
 
 body {
-  background-color: #F7F7F7;
+  background-color: #F7F7F7 !important;
   margin: 0px;
   color: #5c5c5c;
   font-family: DINNextRoundedLTPro-Regular, sans-serif;
@@ -29,17 +29,6 @@ body {
 a:link, a:visited, a:hover {
   text-decoration: none;
 }
-
-.show-value {
-  min-height: 700px;
-  margin-top: 45px;
-  background-color: White;
-  border-radius: 10px;
-  border: 1px solid #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.04);
-  width: auto;
-}
-
 footer .quick-links {
   margin-bottom: 20px;
   margin-top: 90px;

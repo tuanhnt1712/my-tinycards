@@ -74,7 +74,7 @@ header .header-logo .inner .txt-home {
 header .header-logo .inner .nav-list {
   display: flex;
 }
-header .header-logo .inner .nav-list .nav-item a{
+header .header-logo .inner .nav-list .nav-item a {
   color: White;
   display: block;
   font-size: 16px;
@@ -83,6 +83,10 @@ header .header-logo .inner .nav-list .nav-item a{
   text-transform: uppercase;
   vertical-align: middle;
   opacity: .9;
+  text-decoration: none;
+}
+header .header-logo .inner .nav-list .nav-item span {
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
 
 footer .quick-links {
