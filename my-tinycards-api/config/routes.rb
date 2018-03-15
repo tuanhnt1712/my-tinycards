@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: "json"} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       resources :decks
-      # resources :decks, only: :show do
       resources :user_lessons
-      # end
       resources :lessons, only: :show
+      resources :relationships, only: [:create, :destroy]
 
       namespace :auth do
         resources :users, only: [:create, :update, :show]

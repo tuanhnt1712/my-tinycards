@@ -4,7 +4,7 @@
       <h2 class="text-center login-form-label">Create your account</h2>
       <div class="text-center">
         Already have an account?
-        <a href="login" class="link-custome">Login</a>
+        <a href="#" [routerLink]="['/login']" class="link-custome">Login</a>
       </div>
 
       <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>

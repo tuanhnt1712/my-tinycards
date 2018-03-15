@@ -7,13 +7,17 @@ import { User } from '../user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderBasicService } from './base/header-basic.service';
 import { Headers } from '@angular/http';
+import { HeaderComponent } from '../header/header.component'
+
 
 @Injectable()
 export class AuthenticationService {
   private baseUrl: string = 'http://localhost:3000/api';
   private loginStateSource = new Subject<string>();
+  private current_user = new Subject<any>();
 
   loginState$ = this.loginStateSource.asObservable();
+  current_user$ = this.current_user.asObservable();
 
   constructor(private http: HttpClient,
               private headerBasicService: HeaderBasicService,
@@ -26,6 +30,7 @@ export class AuthenticationService {
           let user = response.data
           if (user && user.token)
             this.loginStateSource.next('login');
+            this.current_user.next(user);
             localStorage.setItem('currentUser', JSON.stringify(user));
           return user;
       });
@@ -76,6 +81,7 @@ export class AuthenticationService {
           let user_token = response["data"]
           if (user_token && user_token.token)
             this.loginStateSource.next('login');
+            this.current_user.next(user);
             localStorage.setItem('currentUser', JSON.stringify(user_token));
           return user_token;
         });
