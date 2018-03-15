@@ -30,4 +30,29 @@ export class UserComponent implements OnInit {
     });
   }
 
+  openTab(tabName, titleName) {
+    var i, x;
+    x = document.getElementsByClassName("containerTab");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+
+    if (titleName == "bb1"){
+      document.getElementById('bb1').classList.add("tab-active");
+      document.getElementById('bb2').classList.remove("tab-active");
+      document.getElementById('bb3').classList.remove("tab-active");
+    }
+    else if (titleName == "bb2"){
+      document.getElementById('bb2').classList.add("tab-active");
+      document.getElementById('bb1').classList.remove("tab-active");
+      document.getElementById('bb3').classList.remove("tab-active");
+    }
+    else {
+      document.getElementById('bb3').classList.add("tab-active");
+      document.getElementById('bb1').classList.remove("tab-active");
+      document.getElementById('bb2').classList.remove("tab-active");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+  }
 }

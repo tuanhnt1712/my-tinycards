@@ -1,0 +1,143 @@
+.user-profile .user-profile-info {
+  padding: 0 15px;
+}
+.user-profile .user-profile-info .user-profile-avatar {
+  border: 5px solid #bebebe;
+  border-radius: 100%;
+  height: 120px;
+  margin: auto;
+  width: 120px;
+}
+.user-profile .user-profile-info .user-profile-name {
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 27px;
+  margin-top: 20px;
+  padding: 0;
+}
+.user-profile .user-profile-info .user-profile-follow {
+  color: #32cdff;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex
+}
+.user-profile .user-profile-info .user-profile-follow .follow {
+  flex: auto;
+  font-size: 15px;
+}
+.user-profile .user-profile-info .profile-device {
+  background-color: #e8e8e8;
+  height: 1px;
+  margin: 15px 0;
+  width: 100%;
+}
+.user-profile .user-profile-info .profile-setting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+  white-space: nowrap;
+  text-align: center;
+}
+.user-profile .user-profile-info .profile-setting a {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid #32cdff;
+  border-radius: 7px;
+  color: #32cdff;
+  padding: 10px 45px;
+}
+.user-profile .user-profile-info .profile-setting a .img-setting {
+  display: inline-block;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  height: 23px;
+  margin-right: 5px;
+  width: 23px;
+}
+.user-profile .user-profile-info .profile-setting a .text-setting {
+  display: inline-block;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 15px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+.user-profile .user-profile-info .profile-setting a:hover {
+  filter: brightness(95%);
+  outline: none;
+  text-decoration: none;
+}
+.user-profile .user-profile-info .profile-setting .button-profile {
+  box-sizing: border-box;
+  margin-left: 6px;
+  max-width: 42px;
+  background-color: transparent;
+  border: 2px solid #32cdff;
+  border-radius: 7px;
+  color: #32cdff;
+  padding: 8px 10px;
+  outline: none;
+}
+.user-profile .user-profile-info .profile-setting .button-profile .button-icon {
+  display: inline-block;
+  width: 14px;
+}
+.user-profile .user-profile-info .profile-setting .button-profile:hover {
+  filter: brightness(95%);
+}
+.user-profile .profile-content {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+  margin-left: 50px;
+}
+.user-profile .profile-content .tab-header {
+  border-bottom: 1px solid #e8e8e8;
+  text-align: left;
+}
+.user-profile .profile-content .tab-header .tab-title {
+  color: #c4c4c4;
+  display: inline-block;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 15px;
+  margin-left: 60px;
+  padding: 25px 0 10px;
+  text-transform: uppercase;
+}
+.user-profile .profile-content .tab-header .tab-title:hover {
+  cursor: pointer;
+}
+.user-profile .profile-content .containerTab {
+  padding: 32px 0;
+  position: relative;
+  text-align: left;
+}
+.user-profile .profile-content .container-tab .container-tab-content {
+  padding: 0 40px;
+}
+.user-profile .profile-content .container-tab .container-tab-content .image-wrap {
+  flex-shrink: 0;
+  margin: 0 40px 20px 0;
+  position: relative;
+}
+.tab-active {
+  border-bottom: 4px solid #32cdff;
+  color: #32cdff;
+  padding-bottom: 11px;
+}
+.profile-content .container .image-wrap img {
+  display: block;
+  margin: auto;
+  border-radius: 17px;
+  cursor: pointer;
+}
+.profile-content .container .list-deck a {
+  text-decoration: none;
+}
+.profile-content .container .deck-title {
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 21px;
+}

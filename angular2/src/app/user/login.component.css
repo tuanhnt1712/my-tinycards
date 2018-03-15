@@ -1,25 +1,3 @@
-/* Dinh nghia font moi de dung cho du an*/
-@font-face {
-  font-family: DINNextRoundedLTPro-Light;
-  font-style: normal;
-  src: local("DINNextRoundedLTPro-Light"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.svg) format("svg");
-}
-@font-face {
-  font-family: DINNextRoundedLTPro-Regular;
-  font-style: normal;
-  src: local("DINNextRoundedLTPro-Regular"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.svg) format("svg");
-}
-@font-face {
-  font-family: DINNextRoundedLTPro-Medium;
-  font-style: normal;
-  src: local("DINNextRoundedLTPro-Medium"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.svg) format("svg");
-}
-@font-face {
-  font-family: DINNextRoundedLTPro-Bold;
-  font-style: normal;
-  src: local("DINNextRoundedLTPro-Bold"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.svg) format("svg");
-}
-
 /* Sign in form*/
 .login-form {
   margin-top: 40px;

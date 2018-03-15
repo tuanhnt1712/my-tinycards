@@ -103,19 +103,20 @@
   position: relative;
   box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.17);
 }
-.right .s-select {
-  margin-left: 25px;
-  padding: 20px;
-}
 .right .s-select .s-txt {
-  color: darkgray;
-  font-weight: bold;
-  margin-right: 35px;
+  color: #c4c4c4;
+  display: inline-block;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 15px;
+  margin-left: 60px;
+  padding: 25px 0 10px;
+  text-transform: uppercase;
   cursor: pointer;
 }
-.right .s-select .s-active {
-  border-bottom: 2px solid lightskyblue;
-  color: lightskyblue;
+.right .s-select .tab-active {
+  border-bottom: 4px solid #32cdff;
+  color: #32cdff;
+  padding-bottom: 11px;
 }
 .right .containerTab {
   margin-top: 30px;

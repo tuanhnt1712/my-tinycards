@@ -56,12 +56,12 @@ export class DeckDetailsComponent implements OnInit {
     }
 
     if (titleName == "bb1"){
-      document.getElementById('bb1').classList.add("s-active");
-      document.getElementById('bb2').classList.remove("s-active");
+      document.getElementById('bb1').classList.add("tab-active");
+      document.getElementById('bb2').classList.remove("tab-active");
     }
     else {
-      document.getElementById('bb2').classList.add("s-active");
-      document.getElementById('bb1').classList.remove("s-active");
+      document.getElementById('bb2').classList.add("tab-active");
+      document.getElementById('bb1').classList.remove("tab-active");
     }
 
     document.getElementById(tabName).style.display = "block";
