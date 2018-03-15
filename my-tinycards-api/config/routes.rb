@@ -8,6 +8,13 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       resources :decks
       resources :user_lessons
+      namespace :favorite do
+        resources :decks
+      end
+      resources :favorites, only: [:create]
+      namespace :remove do
+        resources :favorites, only: [:create]
+      end
       resources :lessons, only: :show
       resources :relationships, only: [:create, :destroy]
 
