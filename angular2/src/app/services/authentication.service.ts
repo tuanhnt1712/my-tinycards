@@ -53,6 +53,7 @@ export class AuthenticationService {
   logout() {
     localStorage.removeItem('currentUser');
     this.loginStateSource.next('logout');
+    this.current_user.next();
     this.router.navigate(['/login']);
   }
 
