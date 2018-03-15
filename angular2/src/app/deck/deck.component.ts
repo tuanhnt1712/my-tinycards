@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DecksService } from '../services/decks.service';
 import { Observable } from 'rxjs/Observable';
 import { Deck } from '../deck';
@@ -10,11 +10,16 @@ import { Deck } from '../deck';
 })
 
 export class DeckComponent implements OnInit{
-  decks: Promise<Deck[]>;
+  decks = [];
 
   constructor(private decksService : DecksService){}
 
   ngOnInit(){
-    this.decks = this.decksService.getAll();
+    this.decksService.getAll().then(data => {
+     this.decks = data
+     setTimeout(function(){
+      $('.slick-slider').slick('refresh');
+     },100);
+    });
   }
 }
