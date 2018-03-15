@@ -22,6 +22,17 @@ export class DecksService extends RequestBasicService{
     return decks;
   }
 
+  getFavorites(): Promise<Deck[]>{
+    let decks = this.http
+      .get(`${this.baseUrl}/favorite/decks`, { headers: this.getHeaders()})
+      .toPromise()
+      .then(response => {
+        return response.json().data['decks']
+      })
+      .catch(error => this.handleError(error));
+    return decks;
+  }
+
   get(id: number): Observable<Deck> {
     let deck$ = this.http
       .get(`${this.baseUrl}/decks/${id}`, {headers: this.getHeaders()})
@@ -41,6 +52,20 @@ export class DecksService extends RequestBasicService{
     let options = new RequestOptions({ headers: headers });
     let body = user_lesson;
     return this.http.post(`${this.baseUrl}/user_lessons/`, body, options ).map((res: Response) => res.json());
+  }
+
+  favorite(deck_id) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = {deck_id: deck_id};
+    return this.http.post(`${this.baseUrl}/favorites/`, body, options ).map((res: Response) => res.json());
+  }
+
+  unFavorite(deck_id) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = {deck_id: deck_id};
+    return this.http.post(`${this.baseUrl}/remove/favorites/`, body, options ).map((res: Response) => res.json());
   }
 
   get_lesson(id: number) {
@@ -63,7 +88,8 @@ function toDeck(r:any): Deck{
     description: r.description,
     cover_image: r.cover_image,
     cards: r.cards,
-    lessons: r.lessons
+    lessons: r.lessons,
+    favorited: r.favorited
   });
   return deck;
 }

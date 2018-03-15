@@ -11,11 +11,11 @@ import { Subject } from 'rxjs/Subject';
 export class HeaderComponent implements OnInit {
 
   isAuthenticated: boolean;
-  current_user_id: any;
-  current_user_name: any;
+  current_user: any;
 
   constructor(private authenticationService: AuthenticationService) {
     this.isAuthenticated = this.authenticationService.isLoggedIn();
+    this.current_user = this.authenticationService.currentUser();
   }
 
   ngOnInit() {
@@ -27,8 +27,7 @@ export class HeaderComponent implements OnInit {
     );
     this.authenticationService.current_user$.subscribe(
       state => {
-        this.current_user_id = state.user_id
-        this.current_user_name = state.name
+        self.current_user = state
       }
     );
   }

@@ -15,7 +15,6 @@ export class SlickCarouselComponent {
   ngAfterViewInit() {
     this.zone.runOutsideAngular(()=>{
      this.$carousel = $(this.el.nativeElement).slick({
-       infinite: true,
        autoplay: true,
        autoplaySpeed: 3000,
        dots: true,
