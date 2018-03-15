@@ -5,7 +5,8 @@ export interface Deck {
 	description: string,
   cover_image: string,
   cards: Card[],
-  lessons: Lesson[]
+  lessons: Lesson[],
+  favorited: boolean
 }
 
 export interface Lesson {

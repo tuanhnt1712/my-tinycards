@@ -18,7 +18,7 @@ export class DeckDetailsComponent implements OnInit {
   public myFormLesson: FormGroup;
   id: number;
   menuOpen = false;
-
+  favorited = false;
   constructor(private decksService: DecksService,
     private route: ActivatedRoute,
     private router: Router,
@@ -37,6 +37,7 @@ export class DeckDetailsComponent implements OnInit {
         .get(id)
         .subscribe(p => {
           this.deck = p;
+          self.favorited = p.favorited
           self.lessons = p.lessons;
         }
       )
@@ -46,6 +47,24 @@ export class DeckDetailsComponent implements OnInit {
   click_lesson(id, model){
     this.myFormLesson.setValue({lesson_id: id });
     this.router.navigate(['decks/'+ this.id +'/lessons/'+ id]);
+  }
+
+  toogleFavorite() {
+    (this.favorited)? this.unFavorite(): this.favorite()
+  }
+
+  favorite() {
+    this.decksService.favorite(this.deck.id).subscribe(
+      data => {
+        this.favorited = true
+    });
+  }
+
+  unFavorite() {
+    this.decksService.unFavorite(this.deck.id).subscribe(
+      data => {
+        this.favorited = false
+    });
   }
 
   openTab(tabName, titleName) {
