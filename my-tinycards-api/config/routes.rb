@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       resources :relationships, only: [:create, :destroy]
 
       namespace :auth do
-        resources :users, only: [:create, :update, :show]
+        resources :users, only: [:create, :update, :show, :edit]
         put "confirm", to: "users#update"
         post "facebook", to: "facebook#facebook"
         post "sign_in", to: "sessions#create"
