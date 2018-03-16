@@ -21,7 +21,7 @@
         <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> <span>CREATE</span></a>
       </div>
       <div class="nav-item" *ngIf="isAuthenticated">
-        <a href="#" [routerLink]="['/users/', current_user_id]" class="cl-text fa fa-user"> <span>{{current_user_name}}</span></a>
+        <a href="#" [routerLink]="['/users/', current_user.user_id]" class="cl-text fa fa-user">{{current_user.name}}</a>
       </div>
       <div class="nav-item" *ngIf="!isAuthenticated">
         <a href="#" [routerLink]="['/login']" class="cl-text fa fa-user"> <span>LOGIN</span></a>
