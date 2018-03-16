@@ -7,6 +7,7 @@ import { CreateDeckComponent } from './create-deck/create-deck.component';
 import { DeckDetailsComponent } from './deck-details/deck-details.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { UserComponent } from './user/user.component';
+import { SettingsComponent } from './user/settings.component';
 
 const routing : Routes = [
   {path: '', component: HomeComponent},
@@ -16,7 +17,8 @@ const routing : Routes = [
   {path: 'decks/:id', component: DeckDetailsComponent},
   {path: 'createDeck', component: CreateDeckComponent},
   {path: 'decks/:id/lessons/:id', component: LessonComponent},
-  {path: 'users/:id', component: UserComponent}
+  {path: 'users/:id', component: UserComponent},
+  {path: 'users/:id/setting', component: SettingsComponent}
 ]
 
 export const appRoutes = RouterModule.forRoot(routing);

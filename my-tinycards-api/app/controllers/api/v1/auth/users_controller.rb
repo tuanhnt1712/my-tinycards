@@ -6,16 +6,19 @@ class Api::V1::Auth::UsersController < Api::V1::BaseController
     render_success data: Authenticates::LoginService.new(user: user).perform
   end
 
-  def update
-    user = User.find_by! email: params[:email]
-    invalid_confirmation_token! user
-    user_activated! user
-    user.confirm
-    render_success data: Authenticates::LoginService.new(user: user).perform
-  end
-
   def show
     @user = User.find_by! id: params[:id]
+    render_success data: Api::V1::UserSerializer.new(@user)
+  end
+
+  def edit
+    @user = User.find_by! id: params[:id]
+    render_success data: Api::V1::UserSerializer.new(@user)
+  end
+
+  def update
+    @user = User.find_by! id: params[:id]
+    Authenticates::UpdateService.new(user_params: user_params, user: @user).perform
     render_success data: Api::V1::UserSerializer.new(@user)
   end
 
