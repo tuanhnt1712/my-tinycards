@@ -1,13 +1,19 @@
 header {
   background-color: #00CCFC;
   height: 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 header .header-logo {
   margin: auto;
+  height: 100%;
   max-width: 1120px;
 }
 header .header-logo .inner {
   display: flex;
+  height: 100%;
   justify-content: space-between;
 }
 header .header-logo .inner img {
@@ -46,16 +52,17 @@ header .header-logo .inner .search .search-form .search-input {
   border-radius: 10px;
   box-sizing: border-box;
   color: #5c5c5c;
-  font-size: 15px;
+  font-size: 14px;
   height: 42px;
   padding: 3px 0 0 20px;
   width: 100%;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
 header .header-logo .inner .search .search-form .search-input:placeholder-shown {
   background-color: #6fdcff;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
 header .header-logo .inner .search .search-form .search-input:placeholder {
-  color: #fff;
   font-family: DINNextRoundedLTPro-Medium, sans-serif;
   opacity: .8;
   text-transform: uppercase;
@@ -63,7 +70,6 @@ header .header-logo .inner .search .search-form .search-input:placeholder {
 header .header-logo .inner .search .search-form .search-input:focus {
   background-color: #fff;
 }
-
 header .header-logo .inner .txt-home {
   color: White;
   display: inline-block;
