@@ -12,6 +12,20 @@ export class UserService extends RequestBasicService{
       .map(mapUser);
     return user$;
   }
+
+  // follow(user_id) {
+  //   let headers = this.getHeaders();
+  //   let options = new RequestOptions({ headers: headers });
+  //   let body = {follower_id: user_id};
+  //   return this.http.post(`${this.baseUrl}/relationships/`, body, options ).map((res: Response) => res.json());
+  // }
+
+  // unFollow(user_id) {
+  //   let headers = this.getHeaders();
+  //   let options = new RequestOptions({ headers: headers });
+  //   let body = {id: user_id};
+  //   return this.http.post(`${this.baseUrl}/relationships/`, body, options ).map((res: Response) => res.json());
+  // }
 }
 
 function toUser(r:any): User{

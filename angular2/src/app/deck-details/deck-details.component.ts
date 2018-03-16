@@ -3,7 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormGroup, FormArray, FormBuilder, FormsModule, FormControl } from '@angular/forms';
 
 import { Deck } from '../deck';
+import { User } from '../user'
 import { DecksService } from '../services/decks.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-deck-details',
@@ -19,10 +21,12 @@ export class DeckDetailsComponent implements OnInit {
   id: number;
   menuOpen = false;
   favorited = false;
+  user: User;
   constructor(private decksService: DecksService,
     private route: ActivatedRoute,
     private router: Router,
-    private _fb: FormBuilder
+    private _fb: FormBuilder,
+    private userService: UserService
    ) {}
 
   ngOnInit() {
@@ -39,6 +43,10 @@ export class DeckDetailsComponent implements OnInit {
           this.deck = p;
           self.favorited = p.favorited
           self.lessons = p.lessons;
+          this.userService.getUser(p.id).subscribe(
+            data => {
+              this.user = data
+          });
         }
       )
     });
