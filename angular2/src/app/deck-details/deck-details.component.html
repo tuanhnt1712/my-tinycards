@@ -16,7 +16,7 @@
           <div class="author">
             <div class="img">
               <img src="./assets/images/avatar.png" alt="avatar">
-              <a href="#" class="name"> Bette</a>
+              <a href="#" [routerLink]="['/users/', user.id]" class="name">{{user.name}}</a>
             </div>
           </div>
           <div class="favorite">

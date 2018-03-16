@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../user'
 import { UserService } from '../services/user.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-user',
@@ -12,9 +13,14 @@ export class UserComponent implements OnInit {
 	sub: any;
 	user: User;
 	decks = [];
+  current_user: any;
+  followed: Boolean;
 
   constructor(private route: ActivatedRoute,
-  						private userService: UserService) { }
+  						private userService: UserService,
+              private authenticationService: AuthenticationService) { 
+    this.current_user = this.authenticationService.currentUser();
+  }
 
   ngOnInit() {
   	const self = this;
@@ -23,11 +29,16 @@ export class UserComponent implements OnInit {
       this.userService
         .getUser(id)
         .subscribe(p => {
-          this.user = p;
+          self.user = p;
           self.decks = p.decks;
         }
       )
     });
+    this.authenticationService.current_user$.subscribe(
+      state => {
+        self.current_user = state
+      }
+    );
   }
 
   openTab(tabName, titleName) {
@@ -55,4 +66,22 @@ export class UserComponent implements OnInit {
 
     document.getElementById(tabName).style.display = "block";
   }
+
+  // toogleFollow() {
+  //   (this.followed)? this.unFollow(): this.follow()
+  // }
+
+  // follow() {
+  //   this.userService.follow(this.user.id).subscribe(
+  //     data => {
+  //       this.followed = true
+  //   });
+  // }
+
+  // unFollow() {
+  //   this.userService.unFollow(this.user.id).subscribe(
+  //     data => {
+  //       this.followed = false
+  //   });
+  // }
 }
