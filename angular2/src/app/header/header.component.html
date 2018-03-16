@@ -1,35 +1,35 @@
 <header>
-<div class="header-logo">
-  <div class="inner">
-    <div class="logo">
-      <a href="#" [routerLink]="['/']"><img src="./assets/images/logo.jpg" alt="logo"></a>
-      <div class="name-logo">
-        <a href="#" [routerLink]="['/']">tinycard</a>
+  <div class="header-logo">
+    <div class="inner">
+      <div class="logo">
+        <a href="#" [routerLink]="['/']"><img src="./assets/images/logo.jpg" alt="logo"></a>
+        <div class="name-logo">
+          <a href="#" [routerLink]="['/']">tinycards</a>
+        </div>
       </div>
-    </div>
 
-    <div class="search">
-      <div class="search-form">
-        <input class="search-input" type="search" style="outline: none" placeholder="Search" aria-label="Search">
+      <div class="search">
+        <div class="search-form">
+          <input class="search-input" type="search" style="outline: none" placeholder="Search" aria-label="Search">
+        </div>
       </div>
-    </div>
-    <div class="nav-list">
-      <div class="nav-item">
-        <a href="#" [routerLink]="['/']" class="cl-text fa fa-home"> <span>HOME</span></a>
-      </div>
-      <div class="nav-item">
-        <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> <span>CREATE</span></a>
-      </div>
-      <div class="nav-item" *ngIf="isAuthenticated">
-        <a href="#" [routerLink]="['/users/', current_user.user_id]" class="cl-text fa fa-user">{{current_user.name}}</a>
-      </div>
-      <div class="nav-item" *ngIf="!isAuthenticated">
-        <a href="#" [routerLink]="['/login']" class="cl-text fa fa-user"> <span>LOGIN</span></a>
-      </div>
-      <div class="nav-item">
-        <a href="javascript:void(0)" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated"> <span>LOGOUT</span></a>
+      <div class="nav-list">
+        <div class="nav-item">
+          <a href="#" [routerLink]="['/']" class="cl-text fa fa-home"> <span>HOME</span></a>
+        </div>
+        <div class="nav-item">
+          <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> <span>CREATE</span></a>
+        </div>
+        <div class="nav-item" *ngIf="isAuthenticated">
+          <a href="#" [routerLink]="['/users/', current_user.user_id]" class="cl-text fa fa-user"><span> {{current_user.name}}</span></a>
+        </div>
+        <div class="nav-item" *ngIf="!isAuthenticated">
+          <a href="#" [routerLink]="['/login']" class="cl-text fa fa-user"> <span>LOGIN</span></a>
+        </div>
+        <div class="nav-item">
+          <a href="javascript:void(0)" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated"> <span>LOGOUT</span></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </header>

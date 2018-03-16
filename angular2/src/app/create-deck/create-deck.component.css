@@ -133,8 +133,8 @@
 }
 .add-card {
   position: absolute;
-  right: 32px;
-  top: 160px;
+  right: 45px;
+  top: 185px;
 }
 .add-card img {
   width: 110px;
@@ -142,6 +142,7 @@
 .glyphicon {
   margin-top: -346px;
   margin-right: 40px;
+  cursor: pointer;
 }
 .add {
   background-color: #32cdff;

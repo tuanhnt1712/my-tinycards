@@ -90,7 +90,7 @@
 .user-profile .profile-content {
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
   margin-left: 50px;
 }
 .user-profile .profile-content .tab-header {
