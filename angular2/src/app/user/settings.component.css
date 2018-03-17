@@ -1,0 +1,79 @@
+.wrapper {
+  height: 400px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 10px;
+}
+.nav-list {
+  position: relative;
+}
+.sidenav {
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.sidenav li {
+  border-left: 4px solid transparent;
+  color: #c4c4c4;
+  cursor: pointer;
+  display: block;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 10px 0 10px 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.wrapper .change {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+  padding: 25px 40px;
+  font-size: 18px;
+}
+.wrapper .change label {
+  color: #c4c4c4;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  text-transform: uppercase;
+}
+.wrapper .change input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #c4c4c4;
+  box-sizing: border-box;
+  color: #5c5c5c;
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  outline: none;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+}
+.wrapper .change input:focus {
+  border-bottom: 2px solid #32cdff;
+}
+.wrapper .change .avatar {
+  position: relative;
+}
+.wrapper .change .avatar button{
+  position: absolute;
+  background: transparent;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  right: 18px;
+  bottom: 7px;
+  border-radius: 50%;
+  font-size: 22px;
+  outline: none;
+}
+.wrapper .change .avatar img {
+  width: 85%;
+  display: block;
+  margin: auto;
+}
+.active {
+  border-left: 4px solid #32cdff !important;
+  color: #32cdff !important;
+}
