@@ -2,7 +2,17 @@ class Api::V1::DecksController < Api::V1::AuthorizeController
 	def index
 		decks = Deck.all.page(params[:page])
 		render_success data: Api::V1::ListDeckSerializer.new(decks: decks).generate
-	end	
+	end
+
+	def edit
+		
+	end
+
+	def update
+		@deck = Deck.find(params[:id])
+		::UpdateDeckService.new(deck: @deck, params: deck_params).perform
+      render_success data: Api::V1::DeckSerializer.new(@deck)
+	end
 
 	def show
 		@deck = Deck.find params[:id]
