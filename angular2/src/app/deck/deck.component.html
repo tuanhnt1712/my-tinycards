@@ -24,11 +24,30 @@
     </div>
 
     <div class="title">
-      <span class="txt">All decks</span>
+      <span class="txt">People you follow</span>
     </div>
     <div class="list-decks-favor">
       <slick-carousel class="carousel">
-        <div class="slide" *ngFor="let deck of decks">
+        <div class="slide" *ngFor="let deck of following_people_decks">
+          <div class="item-deck">
+            <div class="image-cover">
+              <a href ="#" [routerLink]="['/decks', deck.id]">
+                <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image">
+              </a>
+            </div>
+            <div class="name">
+              <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck">{{deck.title}}</a>
+            </div>
+          </div>
+        </div>
+      </slick-carousel>
+    </div>
+    <div class="title">
+      <span class="txt">Trending</span>
+    </div>
+    <div class="list-decks-favor">
+      <slick-carousel class="carousel">
+        <div class="slide" *ngFor="let deck of trending_decks">
           <div class="item-deck">
             <div class="image-cover">
               <a href ="#" [routerLink]="['/decks', deck.id]">

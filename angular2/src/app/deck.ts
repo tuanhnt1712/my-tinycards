@@ -1,7 +1,8 @@
 export interface Deck {
 	id: number,
 	user_id: number,
-	title: string,
+  title: string,
+	user_name: string,
 	description: string,
   cover_image: string,
   cards: Card[],

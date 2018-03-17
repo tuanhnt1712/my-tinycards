@@ -32,6 +32,26 @@ export class DecksService extends RequestBasicService{
       .catch(error => this.handleError(error));
     return decks;
   }
+  getByFollowingPeople(): Promise<Deck[]>{
+    let decks = this.http
+      .get(`${this.baseUrl}/following_people/decks`, { headers: this.getHeaders()})
+      .toPromise()
+      .then(response => {
+        return response.json().data['decks']
+      })
+      .catch(error => this.handleError(error));
+    return decks;
+  }
+  getByTrending(): Promise<Deck[]>{
+    let decks = this.http
+      .get(`${this.baseUrl}/trending/decks`, { headers: this.getHeaders()})
+      .toPromise()
+      .then(response => {
+        return response.json().data['decks']
+      })
+      .catch(error => this.handleError(error));
+    return decks;
+  }
 
   get(id: number): Observable<Deck> {
     let deck$ = this.http
@@ -84,6 +104,7 @@ function toDeck(r:any): Deck{
   let deck = <Deck>({
     id: (r.id),
     user_id: r.user_id,
+    user_name: r.user_name,
     title: r.title,
     description: r.description,
     cover_image: r.cover_image,

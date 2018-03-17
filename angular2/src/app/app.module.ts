@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { appRoutes } from './app.routes';
 import { UserComponent } from './user/user.component';
+import { UserFollowDetailComponent } from './user/follow/user.component';
 import { LoginComponent } from './user/login.component';
 import { SignupComponent } from './user/signup.component';
 import { DeckComponent } from './deck/deck.component';
@@ -37,6 +38,7 @@ import * as $ from 'jquery';
     AppComponent,
     HomeComponent,
     UserComponent,
+    UserFollowDetailComponent,
     LoginComponent,
     SignupComponent,
     DeckComponent,

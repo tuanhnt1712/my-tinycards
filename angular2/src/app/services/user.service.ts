@@ -8,7 +8,7 @@ import { User } from '../user'
 export class UserService extends RequestBasicService{
 	getUser(id: number): Observable<User> {
     let user$ = this.http
-      .get(`${this.baseUrl}/auth/users/${id}`, {headers: this.getHeaders()})
+      .get(`${this.baseUrl}/profile/users/${id}`, {headers: this.getHeaders()})
       .map(mapUser);
     return user$;
   }
@@ -20,19 +20,19 @@ export class UserService extends RequestBasicService{
     return user$;
   }
 
-  // follow(user_id) {
-  //   let headers = this.getHeaders();
-  //   let options = new RequestOptions({ headers: headers });
-  //   let body = {follower_id: user_id};
-  //   return this.http.post(`${this.baseUrl}/relationships/`, body, options ).map((res: Response) => res.json());
-  // }
+  follow(user_id) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = {follower_id: user_id};
+    return this.http.post(`${this.baseUrl}/relationships/`, body, options ).map((res: Response) => res.json());
+  }
 
-  // unFollow(user_id) {
-  //   let headers = this.getHeaders();
-  //   let options = new RequestOptions({ headers: headers });
-  //   let body = {id: user_id};
-  //   return this.http.post(`${this.baseUrl}/relationships/`, body, options ).map((res: Response) => res.json());
-  // }
+  unFollow(user_id) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = {follower_id: user_id};
+    return this.http.post(`${this.baseUrl}/remove/relationships/`, body, options ).map((res: Response) => res.json());
+  }
 }
 
 function toUser(r:any): User{
@@ -42,7 +42,12 @@ function toUser(r:any): User{
     email: r.email,
     avatar: r.avatar,
     bio: r.bio,
-    decks: r.decks
+    decks: r.decks,
+    followed: r.followed,
+    follower_number: r.follower_number,
+    following_number: r.following_number,
+    following: r.following,
+    followers: r.followers,
   });
   return user;
 }

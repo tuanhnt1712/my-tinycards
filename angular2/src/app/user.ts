@@ -9,4 +9,9 @@ export interface User {
   bio: string;
   avatar: string;
   decks: Deck[];
+  followed: boolean,
+  follower_number: number,
+  following: User[],
+  followers: User[],
+  following_number: number,
 }
