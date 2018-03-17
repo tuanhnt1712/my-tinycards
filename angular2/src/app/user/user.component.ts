@@ -14,11 +14,10 @@ export class UserComponent implements OnInit {
 	user: User;
 	decks = [];
   current_user: any;
-  followed: Boolean;
 
   constructor(private route: ActivatedRoute,
   						private userService: UserService,
-              private authenticationService: AuthenticationService) { 
+              private authenticationService: AuthenticationService) {
     this.current_user = this.authenticationService.currentUser();
   }
 
@@ -67,21 +66,21 @@ export class UserComponent implements OnInit {
     document.getElementById(tabName).style.display = "block";
   }
 
-  // toogleFollow() {
-  //   (this.followed)? this.unFollow(): this.follow()
-  // }
+  toogleFollow(user) {
+    (user.followed)? this.unFollow(user): this.follow(user)
+  }
 
-  // follow() {
-  //   this.userService.follow(this.user.id).subscribe(
-  //     data => {
-  //       this.followed = true
-  //   });
-  // }
+  follow(user) {
+    this.userService.follow(user.id).subscribe(
+      data => {
+        this.user = data.data
+    });
+  }
 
-  // unFollow() {
-  //   this.userService.unFollow(this.user.id).subscribe(
-  //     data => {
-  //       this.followed = false
-  //   });
-  // }
+  unFollow(user) {
+    this.userService.unFollow(user.id).subscribe(
+      data => {
+        this.user = data.data
+    });
+  }
 }

@@ -13,7 +13,15 @@ class Deck < ApplicationRecord
   scope :favorite_by, -> user {
     joins(:favorites).where(favorites: {user: user})
   }
+  scope :by_following_people_of, -> user {
+    where user: user.following
+  }
+  scope :trending, -> user {
+    left_joins(:favorites).group(:id).order("COUNT(favorites.id) DESC")
+  }
 
+  delegate :name, to: :user, prefix: true, allow_nil: true
+  
   ATTRIBUTE_PARAMS = [
   	:user_id,
     :title,

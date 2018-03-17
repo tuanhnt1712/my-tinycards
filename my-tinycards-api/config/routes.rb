@@ -11,12 +11,22 @@ Rails.application.routes.draw do
       namespace :favorite do
         resources :decks
       end
+      namespace :following_people do
+        resources :decks
+      end
+      namespace :trending do
+        resources :decks
+      end
       resources :favorites, only: [:create]
+      resources :relationships, only: [:create]
+      namespace :profile do
+        resources :users, only: [:show]
+      end
       namespace :remove do
         resources :favorites, only: [:create]
+        resources :relationships, only: [:create]
       end
       resources :lessons, only: :show
-      resources :relationships, only: [:create, :destroy]
 
       namespace :auth do
         resources :users, only: [:create, :update, :show, :edit]

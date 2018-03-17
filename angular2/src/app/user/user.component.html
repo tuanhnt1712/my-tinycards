@@ -11,10 +11,10 @@
           </div>
           <div class="user-profile-follow">
             <div class="follow">
-              Followers: 10
+              Followers: {{user.follower_number}}
             </div>
             <div class="follow">
-              Following: 10
+              Following: {{user.following_number}}
             </div>
           </div>
           <div class="profile-device"></div>
@@ -35,7 +35,10 @@
         </div>
 
         <div *ngIf="user.id != current_user.user_id" class="col-xs-12 profile-setting">
-          <button (click)="toogleFollow()" [class.btn-favorited]="favorited" type="button" class="btn btn-outline-success btn-favorite"><i class="fa fa-user" aria-hidden="true"></i> Follow</button>
+          <button (click)="toogleFollow(user)" [class.btn-followed]="user.followed" type="button" class="btn btn-outline-success btn-follow">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            {{user.followed ? 'Unfollow' : 'Follow'}}
+          </button>
           <button type="button" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #32cdff;"><i class="fa fa-external-link" aria-hidden="true" style="color: #32cdff;"></i></button>
         </div>
       </div>
@@ -72,10 +75,18 @@
           </div>
 
           <div id="b2" class="containerTab" style="display:none;">
-            <h2>FOLLOWERS</h2>
+            <div class="list-user">
+              <div *ngFor="let user of user.followers">
+                <user-follow-detail [user]="user"></user-follow-detail>
+              </div>
+            </div>
           </div>
           <div id="b3" class="containerTab" style="display:none;">
-            <h2>FOLLOWING</h2>
+            <div class="list-user">
+              <div *ngFor="let user of user.following">
+                <user-follow-detail [user]="user"></user-follow-detail>
+              </div>
+            </div>
           </div>
         </div>
       </div>
