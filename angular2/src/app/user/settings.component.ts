@@ -16,7 +16,7 @@ export class SettingsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
   						private userService: UserService,
-              private authenticationService: AuthenticationService) { 
+              private authenticationService: AuthenticationService) {
     this.current_user = this.authenticationService.currentUser();
   }
 
@@ -35,6 +35,22 @@ export class SettingsComponent implements OnInit {
         }
       )
     });
+  }
+
+  openTab(tabName, titleName) {
+    var i, x, shows;
+    x = document.getElementsByClassName("item");
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.remove("active");
+    }
+
+    shows = document.getElementsByClassName("show-value");
+    for (i = 0; i < shows.length; i++) {
+      shows[i].style.display = "none";
+    }
+
+    document.getElementById(titleName).classList.add("active");
+    document.getElementById(tabName).style.display = "block";
   }
 
   save(model) {
