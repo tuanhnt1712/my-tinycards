@@ -53,10 +53,6 @@ export class SettingsComponent implements OnInit {
     document.getElementById(tabName).style.display = "block";
   }
 
-  onLogout(){
-    this.authenticationService.logout();
-  }
-
   save(model) {
     // TODO
   }
