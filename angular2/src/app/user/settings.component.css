@@ -48,13 +48,43 @@
   margin: 10px 0;
   width: 100%;
   outline: none;
-  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
 .wrapper .change input:focus {
   border-bottom: 2px solid #32cdff;
 }
 .wrapper .change .avatar {
   position: relative;
+}
+.wrapper .change .btn-save {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 15px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 12px 25px 8px;
+  text-align: center;
+  text-transform: uppercase;
+  background: cyan;
+}
+.wrapper .change button {
+  outline: none;
+}
+.wrapper .change button:hover {
+  background: #32cdff;
+}
+.wrapper .change input:change {
+  background: red;
 }
 .wrapper .change .avatar button{
   position: absolute;
@@ -66,7 +96,6 @@
   bottom: 7px;
   border-radius: 50%;
   font-size: 22px;
-  outline: none;
 }
 .wrapper .change .avatar img {
   width: 85%;

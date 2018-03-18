@@ -16,11 +16,14 @@
 .left .txt {
   margin: 15px;
 }
-.left .txt .title-deck input:focus{
+.left .txt input:focus{
   border-bottom: 2px solid #32cdff;
+  font-family: DINNextRoundedLTPro-Medium, sans-serif;
+  opacity: .9;
 }
-.left .txt .description-deck input:focus{
-  border-bottom: 2px solid #32cdff;
+.left .txt input:placeholder-shown {
+  font-family: DINNextRoundedLTPro-Medium, sans-serif;
+  opacity: .8;
 }
 .left .txt .ip {
   background-color: transparent;

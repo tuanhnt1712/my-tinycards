@@ -2,9 +2,9 @@
   min-height: 700px;
   background-color: White;
   border-radius: 10px;
-  border: 1px solid #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.04);
   width: auto;
+  margin-top: 35px;
 }
 .show-value .slider {
   height: 200px;
@@ -24,6 +24,9 @@
   height: 240px;
   padding: 10px;
   width: 170px;
+}
+.show-value .favorites .item-deck a {
+  text-decoration: none;
 }
 .show-value .favorites .item-deck img {
   width: 100%;

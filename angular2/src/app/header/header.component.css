@@ -39,12 +39,18 @@ header .header-logo .inner .logo .name-logo a {
   text-decoration: none;
 }
 header .header-logo .inner .search {
-  margin-top: 9px;
+  margin: auto;
+  margin-left: 10px;
 }
 header .header-logo .inner .search .search-form {
-  width: 320px;
+  width: 300px;
   border: none;
   border-radius: 10px;
+}
+header .header-logo .inner .search .search-form input {
+  background-image: url('~/assets/images/searchicon.png');
+  background-position: 8px 5px;
+  background-repeat: no-repeat;
 }
 header .header-logo .inner .search .search-form .search-input {
   background-color: #fff;
@@ -52,9 +58,9 @@ header .header-logo .inner .search .search-form .search-input {
   border-radius: 10px;
   box-sizing: border-box;
   color: #5c5c5c;
-  font-size: 14px;
+  font-size: 15px;
   height: 42px;
-  padding: 3px 0 0 20px;
+  padding: 3px 0 0 50px;
   width: 100%;
   font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
@@ -62,9 +68,10 @@ header .header-logo .inner .search .search-form .search-input:placeholder-shown 
   background-color: #6fdcff;
   font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
-header .header-logo .inner .search .search-form .search-input:placeholder {
+header .header-logo .inner .search .search-form .search-input::placeholder {
   font-family: DINNextRoundedLTPro-Medium, sans-serif;
   opacity: .8;
+  color: #fff;
   text-transform: uppercase;
 }
 header .header-logo .inner .search .search-form .search-input:focus {
