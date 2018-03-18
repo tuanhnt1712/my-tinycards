@@ -29,6 +29,8 @@
 }
 .left .txt {
   margin: 15px;
+  font-family: DINNextRoundedLTPro-Regular,sans-serif;
+  opacity: .8;
 }
 .left .txt .ip {
   background-color: transparent;
@@ -43,9 +45,16 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+.left .txt .description-deck {
+  font-size: 16px;
+}
 .left .txt .author {
   margin-top: 15px;
   margin-bottom: 15px;
+  font-size: 16px;
+}
+.left .txt .author a {
+  text-decoration: none;
 }
 .left .txt .author img {
   width: 40px;
@@ -121,6 +130,7 @@
   border-radius: 15px;
   margin-top: 20px;
   min-height: 400px;
+  padding: 0 0 20px;
   position: relative;
   box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.17);
 }
@@ -155,7 +165,7 @@
   position: relative;
 }
 .right .list-lesson .item-lesson img {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 100%;
 }
 .right .add-card {
@@ -265,8 +275,8 @@
   cursor: pointer;
 }
 .list-card .item-card img {
-  margin-bottom: 20px;
   width: 100%;
+  border-radius: 15px;
 }
 
 .animation {
@@ -281,7 +291,7 @@
   position: relative;
   float: left;
   width: 200px;
-  height: 260px;
+  height: 230px;
   margin: 10px;
   background: #fff;
   /* Set the depth of the elements */
