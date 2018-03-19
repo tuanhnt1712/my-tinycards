@@ -18,9 +18,8 @@
               <div class="row">
                 <div class="col-md-9">
                   <input type="hidden" formControlName="id" value="{{user.id}}"><br>
-                <!-- <input type="text" style="outline: none; font-size: 25px" formControlName="title" placeholder="Enter title" class="ip input-title"> -->
-                  <!-- <label>Email</label><br>
-                  <input type="text" name="txt-name" value="{{user.email}}"><br> -->
+                  <label>Email</label><br>
+                  <input type="text" formControlName="email" value="{{user.email}}"><br>
                   <label>Username</label><br>
                   <input type="text" formControlName="name" value="{{user.name}}"><br>
                   <label>Bio</label><br>
@@ -38,12 +37,15 @@
             </form>
           </div>
           <div id="a2" class="show-value" style="display: none">
-            <label>Email</label><br>
-            <input type="text" name="txt-name" value="{{user.email}}"><br>
-            <label>Password</label><br>
-            <input type="password" name="txt-username" style="width: 300px"><br>
-            <label>Password confirm</label><br>
-            <input type="password" name="txt-bio" style="width: 300px"><br>
+            <form [formGroup]="formPassWord" novalidate (ngSubmit)="changePassword(formPassWord)">
+              <label>Current Password</label><br>
+              <input type="password" formControlName="current_password"><br>
+              <label>Password</label><br>
+              <input type="password" formControlName="password" style="width: 300px"><br>
+              <label>Password confirm</label><br>
+              <input type="password" formControlName="password_confirmation" style="width: 300px"><br>
+              <button type="submit" class="btn-save">save changes</button>
+            </form>
           </div>
           <div id="a3" class="show-value" style="display: none">
             <h3>haha 3</h3>

@@ -13,8 +13,8 @@ import { HeaderComponent } from '../header/header.component'
 @Injectable()
 export class AuthenticationService {
   private baseUrl: string = 'http://localhost:3000/api';
-  private loginStateSource = new Subject<string>();
-  private current_user = new Subject<any>();
+  public loginStateSource = new Subject<string>();
+  public current_user = new Subject<any>();
 
   loginState$ = this.loginStateSource.asObservable();
   current_user$ = this.current_user.asObservable();
