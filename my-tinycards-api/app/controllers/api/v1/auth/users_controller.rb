@@ -18,13 +18,18 @@ class Api::V1::Auth::UsersController < Api::V1::BaseController
 
   def update
     @user = User.find_by! id: params[:id]
-    Authenticates::UpdateService.new(user_params: user_params, user: @user).perform
+    Authenticates::UpdateService.new(user_params: user_update_params, user: @user).perform
     render_success data: Api::V1::UserSerializer.new(@user)
   end
 
   private
+
   def user_params
     params.permit User::ATTRIBUTES_PARAMS
+  end
+
+  def user_update_params
+    params.permit User::UPDATE_PARAMS
   end
 
   def invalid_confirmation_token! user

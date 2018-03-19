@@ -8,30 +8,34 @@
             <li class="item" (click)="openTab('a2','aa2');" id="aa2">ACCOUNT SETTINGS</li>
             <li class="item" (click)="openTab('a3','aa3');" id="aa3">NOTIFICATIONS</li>
             <li class="item" (click)="openTab('a4','aa4');" id="aa4">SEND FEEDBACK</li>
-            <li class="item" (click)="openTab('a5','aa5');" id="aa5">LOG OUT</li>
           </ul>
         </div>
       </div>
       <div class="col-md-9">
         <div class="change">
           <div id="a1" class="show-value">
-            <div class="row">
-              <div class="col-md-9">
-                <label>Name</label><br>
-                <input type="text" name="txt-name" value="{{user.name}}"><br>
-                <label>Username</label><br>
-                <input type="text" name="txt-username" value="{{user.name}}"><br>
-                <label>Bio</label><br>
-                <input type="text" name="txt-bio" value="{{user.bio}}"><br>
-                <button type="button" class="btn-save">save changes</button>
-              </div>
-              <div class="col-md-3">
-                <div class="avatar">
-                  <img src="./assets/images/avatar.png" class="user-profile-avatar" alt="Default avatar">
-                  <button type="button"><i class="fa fa-pencil"></i></button>
+            <form [formGroup]="formUser" novalidate (ngSubmit)="save(formUser)">
+              <div class="row">
+                <div class="col-md-9">
+                  <input type="hidden" formControlName="id" value="{{user.id}}"><br>
+                <!-- <input type="text" style="outline: none; font-size: 25px" formControlName="title" placeholder="Enter title" class="ip input-title"> -->
+                  <!-- <label>Email</label><br>
+                  <input type="text" name="txt-name" value="{{user.email}}"><br> -->
+                  <label>Username</label><br>
+                  <input type="text" formControlName="name" value="{{user.name}}"><br>
+                  <label>Bio</label><br>
+                  <input type="text" formControlName="bio" value="{{user.bio}}"><br>
+                  <button type="submit" class="btn-save">save changes</button>
+                </div>
+                <div class="col-md-3">
+                  <div class="avatar">
+                    <img src="{{user.avatar.url}}" onError="this.src='./assets/images/avatar.png';" class="user-profile-avatar" alt="Default avatar" id="avatar-default">
+                    <input name="file" type="file" (change)="onFileChange($event)">
+                    <input type="hidden" name="fileHidden" formControlName="avatar"/>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
           <div id="a2" class="show-value" style="display: none">
             <label>Email</label><br>
@@ -46,9 +50,6 @@
           </div>
           <div id="a4" class="show-value" style="display: none">
             <h3>haha 4</h3>
-          </div>
-          <div id="a5" class="show-value" style="display: none">
-            <h3>haha 5</h3>
           </div>
         </div>
       </div>

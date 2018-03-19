@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormGroup, FormArray, FormBuilder, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../user'
 import { UserService } from '../services/user.service';
@@ -10,17 +11,28 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-	sub: any;
-	user: User;
+  public formUser: FormGroup;
+  sub: any;
+  user: User;
   current_user: any;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private _fb: FormBuilder,
+              private router: Router,
+              private route: ActivatedRoute,
   						private userService: UserService,
               private authenticationService: AuthenticationService) {
     this.current_user = this.authenticationService.currentUser();
   }
 
   ngOnInit() {
+    this.formUser = this._fb.group({
+      id: [''],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      bio: [''],
+      avatar: ['']
+    });
+
   	const self = this;
     this.authenticationService.current_user$.subscribe(
       state => {
@@ -32,9 +44,17 @@ export class SettingsComponent implements OnInit {
         .getUserEdit(self.current_user.user_id)
         .subscribe(p => {
           self.user = p;
+          self.formUser.setValue({
+            id: self.user.id,
+            name: self.user.name,
+            email: self.user.email,
+            bio: self.user.bio,
+            avatar: self.user.avatar
+          })
         }
       )
     });
+
   }
 
   openTab(tabName, titleName) {
@@ -53,7 +73,23 @@ export class SettingsComponent implements OnInit {
     document.getElementById(tabName).style.display = "block";
   }
 
-  save(model) {
-    // TODO
+  save(model: User) {
+    this.userService.editUser(model["value"]).subscribe(
+      data => {
+        this.router.navigate(['/users/'+this.user.id]);
+        return true;
+      });
+  }
+
+  onFileChange(event) {
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        (<HTMLInputElement>document.getElementById('avatar-default')).setAttribute('src', reader.result);
+        this.formUser.controls['avatar'].setValue(reader.result)
+      }
+    }
   }
 }
