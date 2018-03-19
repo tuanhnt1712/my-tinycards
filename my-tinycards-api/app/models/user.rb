@@ -35,9 +35,13 @@ class User < ApplicationRecord
     :name,
     :email,
     :bio,
-    :avatar,
+    :avatar
+  ]
+
+  CHANGE_PASSWORD_PARAMS = [
     :password,
-    :password_confirmation
+    :password_confirmation,
+    :current_password
   ]
 
   def follow other_user

@@ -12,6 +12,7 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class SettingsComponent implements OnInit {
   public formUser: FormGroup;
+  public formPassWord: FormGroup;
   sub: any;
   user: User;
   current_user: any;
@@ -31,6 +32,12 @@ export class SettingsComponent implements OnInit {
       email: ['', [Validators.required]],
       bio: [''],
       avatar: ['']
+    });
+
+    this.formPassWord = this._fb.group({
+      current_password: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      password_confirmation: ['', [Validators.required]]
     });
 
   	const self = this;
@@ -75,6 +82,14 @@ export class SettingsComponent implements OnInit {
 
   save(model: User) {
     this.userService.editUser(model["value"]).subscribe(
+      data => {
+        this.router.navigate(['/users/'+this.user.id]);
+        return true;
+      });
+  }
+
+  changePassword(model) {
+    this.userService.changePassword(model["value"]).subscribe(
       data => {
         this.router.navigate(['/users/'+this.user.id]);
         return true;

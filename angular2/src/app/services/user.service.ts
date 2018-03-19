@@ -19,6 +19,23 @@ export class UserService extends RequestBasicService{
     return user$;
   }
 
+  changePassword(user) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = user
+    return this.http
+      .put(`${this.baseUrl}/auth/change_password`, body, options)
+      .map(response => {
+          let user = response.json().data
+          if (user && user.token)
+            this.authenticationService.loginStateSource.next('login');
+            this.authenticationService.current_user.next(user);
+            localStorage.clear();
+            localStorage.setItem('currentUser', JSON.stringify(user));
+          return user;
+      });
+  }
+
   editUser(user): Observable<User> {
     let headers = this.getHeaders();
     let options = new RequestOptions({ headers: headers });
