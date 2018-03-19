@@ -15,9 +15,17 @@ export class UserService extends RequestBasicService{
 
   getUserEdit(id: number): Observable<User> {
     let user$ = this.http
-      .get(`${this.baseUrl}/auth/users/${id}/edit`, {headers: this.getHeaders()})
-      .map(mapUser);
+      .get(`${this.baseUrl}/auth/users/${id}/edit`, {headers: this.getHeaders()}).map(mapUser);
     return user$;
+  }
+
+  editUser(user): Observable<User> {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = user
+    return this.http
+      .patch(`${this.baseUrl}/auth/users/${user.id}`, body, options)
+      .map(mapUser);
   }
 
   follow(user_id) {

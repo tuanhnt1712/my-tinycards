@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  mount_base64_uploader :avatar, AvatarUploader
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -29,6 +30,15 @@ class User < ApplicationRecord
   	:password,
   	:password_confirmation
   ].freeze
+
+  UPDATE_PARAMS = [
+    :name,
+    :email,
+    :bio,
+    :avatar,
+    :password,
+    :password_confirmation
+  ]
 
   def follow other_user
     following << other_user

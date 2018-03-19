@@ -7,7 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       t.string :name, null: false, default: ""
       t.string :bio, default: ""
-      t.string "avatar"
+      t.text "avatar"
       t.boolean "is_admin", default: false
 
       ## Recoverable
