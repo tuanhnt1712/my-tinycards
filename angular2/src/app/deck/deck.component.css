@@ -46,8 +46,21 @@
   margin-top: 10px;
 }
 .show-value .favorites .item-deck .name .name-deck {
-  color: #5c5c5c;
   font-size: 18px;
+}
+.show-value .favorites .item-deck .name a {
+  text-decoration: none;
+  outline: none;
+  margin-left: 10px;
+}
+.show-value .favorites .item-deck .name .number {
+  color: lightgray;
+  font-size: 16px;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+}
+.show-value .favorites .item-deck .name-deck {
+  color: #5c5c5c;
+  font-size: 15px;
   font-weight: bold;
 }
 .list-decks-favor {

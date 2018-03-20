@@ -1,6 +1,6 @@
 .btn-favorite {
   background-color: transparent;
-  width: 80%;
+  width: 60%;
   margin-right: 5px;
   color: #32cdff;
   border: 2px solid #32cdff;
@@ -8,7 +8,7 @@
 
 .btn-favorited {
   background-color: #32cdff;
-  width: 80%;
+  width: 60%;
   margin-right: 5px;
   color: white;
   border: 2px solid #32cdff;
