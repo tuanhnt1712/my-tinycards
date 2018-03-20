@@ -20,6 +20,10 @@ class Deck < ApplicationRecord
     left_joins(:favorites).group(:id).order("COUNT(favorites.id) DESC")
   }
 
+  scope :search_deck, -> key {
+    where("title like ? OR description like ?", "#{key}%", "#{key}%")
+  }
+
   delegate :name, to: :user, prefix: true, allow_nil: true
   
   ATTRIBUTE_PARAMS = [

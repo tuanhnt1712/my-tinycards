@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AuthenticationService } from '../services/authentication.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
+import { DecksService } from '../services/decks.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,9 @@ export class HeaderComponent implements OnInit {
   isAuthenticated: boolean;
   current_user: any;
 
-  constructor(private authenticationService: AuthenticationService) {
+  constructor(private authenticationService: AuthenticationService,
+              private decksService: DecksService,
+              private router: Router) {
     this.isAuthenticated = this.authenticationService.isLoggedIn();
     this.current_user = this.authenticationService.currentUser();
   }
@@ -34,5 +38,12 @@ export class HeaderComponent implements OnInit {
 
   onLogout(){
     this.authenticationService.logout();
+  }
+
+  performSearch(searchTerm: HTMLInputElement): void {
+    this.decksService.searchDeck(searchTerm.value).then(data => {
+      this.decksService.publishData(data);
+      this.router.navigate(['/search']);
+    });
   }
 }

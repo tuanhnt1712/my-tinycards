@@ -31,6 +31,7 @@ import { MapQuestionAnswerComponent } from './lesson/map-question-answer.compone
 import { SlickCarouselComponent } from './slick/slick-carousel.component';
 import { UserService } from './services/user.service';
 import { SettingsComponent } from './user/settings.component';
+import { SearchDeckComponent } from './header/search_deck.component';
 import * as $ from 'jquery';
 
 @NgModule({
@@ -52,7 +53,8 @@ import * as $ from 'jquery';
     SingleChoiceQuestionComponent,
     MapQuestionAnswerComponent,
     SlickCarouselComponent,
-    SettingsComponent
+    SettingsComponent,
+    SearchDeckComponent
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,

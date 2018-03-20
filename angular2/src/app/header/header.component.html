@@ -10,7 +10,7 @@
 
       <div class="search">
         <div class="search-form">
-          <input class="search-input" type="search" style="outline: none" placeholder="Search" aria-label="Search">
+          <input #searchTerm class="search-input" type="search" (keydown.enter)="performSearch(searchTerm)" style="outline: none" placeholder="Search" aria-label="Search">
         </div>
       </div>
       <div class="nav-list">
