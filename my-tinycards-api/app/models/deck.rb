@@ -21,7 +21,7 @@ class Deck < ApplicationRecord
   }
 
   scope :search_deck, -> key {
-    where("title like ? OR description like ?", "#{key}%", "#{key}%")
+    where("title like ? OR description like ?", "%#{key}%", "%#{key}%")
   }
 
   delegate :name, to: :user, prefix: true, allow_nil: true

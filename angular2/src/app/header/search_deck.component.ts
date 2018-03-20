@@ -12,6 +12,10 @@ export class SearchDeckComponent implements OnInit {
   constructor(private decksService: DecksService) {}
 
   ngOnInit() {
-    this.search_decks = this.decksService.fetch();
+   this.decksService.searchCaseNumber$.subscribe(
+     state => {
+      this.search_decks = state
+     }
+   );
   }
 }
