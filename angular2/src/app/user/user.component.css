@@ -18,8 +18,8 @@
   padding: 0 15px;
 }
 .user-profile .user-profile-info .user-profile-avatar {
-  border: 5px solid #bebebe;
   border-radius: 100%;
+  border: 5px solid #fff;
   height: 120px;
   margin: auto;
   width: 120px;
