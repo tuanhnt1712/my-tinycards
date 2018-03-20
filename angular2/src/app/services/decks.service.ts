@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Deck } from '../deck';
 import { Lesson } from '../lesson';
-
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -11,6 +10,16 @@ import { RequestBasicService } from './base/request-basic.service';
 
 @Injectable()
 export class DecksService extends RequestBasicService{
+  private searchCaseNumber = [];
+
+  publishData(data) {
+    this.searchCaseNumber = data
+  }
+
+  fetch() {
+    return this.searchCaseNumber;
+  }
+
   getAll(): Promise<Deck[]>{
     let decks = this.http
       .get(`${this.baseUrl}/decks`, { headers: this.getHeaders()})
@@ -22,6 +31,16 @@ export class DecksService extends RequestBasicService{
     return decks;
   }
 
+  searchDeck(key): Promise<Deck[]>{
+    let decks = this.http
+      .get(`${this.baseUrl}/search/decks?key=${key}`, { headers: this.getHeaders()})
+      .toPromise()
+      .then(response => {
+        return response.json().data['decks']
+      })
+      .catch(error => this.handleError(error));
+    return decks;
+  }
   getFavorites(): Promise<Deck[]>{
     let decks = this.http
       .get(`${this.baseUrl}/favorite/decks`, { headers: this.getHeaders()})

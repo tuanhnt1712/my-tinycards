@@ -1,0 +1,56 @@
+.profile-content {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+  margin-left: 50px;
+}
+.container-tab-content {
+  padding: 0 40px;
+}
+.list-deck a {
+  text-decoration: none;
+}
+.container-tab-content .image-wrap {
+  flex-shrink: 0;
+  margin: 0 40px 20px 0;
+  position: relative;
+}
+.deck-title {
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 21px;
+}
+.profile-content .container .image-wrap img {
+  display: block;
+  margin: auto;
+  border-radius: 17px;
+  cursor: pointer;
+}
+.profile-content .container .list-deck a {
+  text-decoration: none;
+}
+.profile-content .container .deck-title {
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 21px;
+}
+.profile-content .containerTab {
+  padding: 32px 0;
+  position: relative;
+  text-align: left;
+}
+.item-deck .name a {
+  text-decoration: none;
+  outline: none;
+  margin-left: 10px;
+}
+.name .number {
+  color: lightgray;
+  font-size: 16px;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+}
+.item-deck .name-deck {
+  color: #5c5c5c;
+  font-size: 15px;
+  font-weight: bold;
+}

@@ -17,6 +17,9 @@ Rails.application.routes.draw do
       namespace :trending do
         resources :decks
       end
+      namespace :search do
+        resources :decks
+      end
       resources :favorites, only: [:create]
       resources :relationships, only: [:create]
       namespace :profile do
