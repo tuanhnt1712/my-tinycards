@@ -29,8 +29,10 @@
                 <div class="col-md-3">
                   <div class="avatar">
                     <img src="{{user.avatar.url}}" onError="this.src='./assets/images/avatar.png';" class="user-profile-avatar" alt="Default avatar" id="avatar-default">
-                    <input name="file" type="file" (change)="onFileChange($event)">
-                    <input type="hidden" name="fileHidden" formControlName="avatar"/>
+                    <label type="button"><i class="fa fa-pencil"></i>
+                      <input name="file" type="file" (change)="onFileChange($event)" style="display: none">
+                      <input type="hidden" name="fileHidden" formControlName="avatar">
+                    </label>
                   </div>
                 </div>
               </div>
@@ -39,7 +41,7 @@
           <div id="a2" class="show-value" style="display: none">
             <form [formGroup]="formPassWord" novalidate (ngSubmit)="changePassword(formPassWord)">
               <label>Current Password</label><br>
-              <input type="password" formControlName="current_password"><br>
+              <input type="password" formControlName="current_password" style="width: 300px"><br>
               <label>Password</label><br>
               <input type="password" formControlName="password" style="width: 300px"><br>
               <label>Password confirm</label><br>

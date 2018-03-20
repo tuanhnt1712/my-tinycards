@@ -83,24 +83,35 @@
 .wrapper .change button:hover {
   background: #32cdff;
 }
-.wrapper .change input:change {
-  background: red;
+.wrapper .change .avatar img {
+  width: 85%;
+  display: block;
+  margin: auto;
 }
-.wrapper .change .avatar button{
+.wrapper .change .avatar .user-profile-avatar {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.wrapper .change .avatar label {
   position: absolute;
   background: transparent;
   background-color: #fff;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   border: none;
-  right: 18px;
-  bottom: 7px;
+  right: 22px;
+  bottom: 0;
   border-radius: 50%;
   font-size: 22px;
+  width: 34px;
+  height: 34px;
+  margin: 0;
 }
-.wrapper .change .avatar img {
-  width: 85%;
-  display: block;
-  margin: auto;
+.wrapper .change .avatar label .fa {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  color: deepskyblue;
 }
 .active {
   border-left: 4px solid #32cdff !important;
