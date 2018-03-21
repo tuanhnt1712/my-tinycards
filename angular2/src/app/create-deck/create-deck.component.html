@@ -38,7 +38,7 @@
           <div formArrayName="cards_attributes" *ngFor="let cards_attributes of myForm.controls.cards_attributes.controls; let i=index">
 
             <div [formGroupName]="i">
-              <card [group]="myForm.controls.cards_attributes.controls[i]">
+              <card [group]="myForm.controls.cards_attributes.controls[i]" [i]="i+1">
               </card>
                 <div class="panel-heading">
                   <span class="glyphicon glyphicon-remove pull-right" (click)="removeCard(i)"></span>
