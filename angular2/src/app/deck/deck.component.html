@@ -1,6 +1,10 @@
 <div class="show-value">
-  <div class="slider">
-    <h1>Slide</h1>
+  <div class="sliderx">
+    <carousel>
+      <slide *ngFor="let image of images">
+        <img [src]="image.url" style="display: block; width: 100%;">
+      </slide>
+    </carousel>
   </div>
   <div class="favorites">
     <section *ngIf="favoriteDecks.length > 0">
