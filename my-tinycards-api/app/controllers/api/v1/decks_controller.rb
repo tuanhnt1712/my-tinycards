@@ -5,7 +5,8 @@ class Api::V1::DecksController < Api::V1::AuthorizeController
 	end
 
 	def edit
-		
+ 	  @deck = Deck.find params[:id]
+ 	  render_success data: Api::V1::DeckDetailSerializer.new(@deck, scope: current_user)
 	end
 
 	def update

@@ -1,3 +1,8 @@
+.card-picture {
+  max-height: 130px;
+  max-width: 130px;
+}
+
 .list-card {
   margin: 20px;
 }

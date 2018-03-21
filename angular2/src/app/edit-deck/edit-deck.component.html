@@ -1,0 +1,66 @@
+<div class="container">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+    <input type="text" type="hidden" formControlName="id">
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-xs-12 col-md-4">
+        <div class="left">
+          <div class="cover-deck" (click)="coverImgModal.open()" data-whatever="@mdo">
+            <div id="preview-img" class="import-cover-deck">
+              <img id="blah" [src]="deck.cover_image['url']" *ngIf="deck && deck.cover_image['url']">
+              <input type="hidden" name="fileHidden" formControlName="cover_image">
+              <div class="img-tog">
+                <div class="change-cover">
+                  <p class="ct-text">CHOOSE COVER</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="txt pd-top-10">
+            <div class="title-deck">
+              <input type="text" style="outline: none; font-size: 25px" formControlName="title" placeholder="Enter title" class="ip input-title">
+            </div>
+            <div class="description-deck" style="margin-top: 15px;">
+              <input type="text" style="outline: none; font-size: 18px" formControlName="description" placeholder="Enter description" class="ip input-des">
+            </div>
+
+            <div class="btn-ct">
+              <button type="button" class="btn btn-ct-setting"><i class="fa fa-cog" aria-hidden="true"></i></button>
+              <button type="submit" class="btn btn-ct-publ btn-primary">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <div class="add-card" (click)="addCard()">
+          <div class="add">
+            <span>+</span>
+          </div>
+        </div>
+        <div class="right prepend-body-content card-body">
+          <div formArrayName="cards_attributes" *ngFor="let cardForm of myForm.controls.cards_attributes.controls; let i=index">
+
+            <div [formGroupName]="i" [style.display]="cardForm.value._destroy == true ? 'none': ''">
+              <card [group]="cardForm" [i]="i+1">
+              </card>
+                <div class="panel-heading">
+                  <span class="glyphicon glyphicon-remove pull-right" (click)="removeCard(i)"></span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <modal #coverImgModal>
+          <modal-header>
+            <h5 id="coverImgModalLabel">INSERT IMAGE</h5>
+          </modal-header>
+          <modal-content>
+          <input class="form-control" type="file" id="cover_image" (change)="onFileChange($event)" #fileInput>
+          </modal-content>
+          <modal-footer>
+            <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal" (click)="coverImgModal.close()">Close</button>
+          </modal-footer>
+    </modal>
+  </form>
+</div>

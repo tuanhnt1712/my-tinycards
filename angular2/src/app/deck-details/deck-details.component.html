@@ -22,7 +22,7 @@
           </div>
           <div class="favorite">
             <button (click)="toogleFavorite()" [class.btn-favorited]="favorited" type="button" class="btn btn-outline-success btn-favorite" style="border-radius: 10px"><i class="fa fa-star-o" aria-hidden="true"></i> FAVORITE</button>
-            <button type="button" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #32cdff; border-radius: 10px; margin-right: 4px">
+            <button type="button" [routerLink]="['/decks/', deck.id, 'edit']" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #32cdff; border-radius: 10px; margin-right: 4px">
               <i class="fa fa-pencil" aria-hidden="true" style="color: #32cdff;"></i>
             </button>
             <button type="button" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #32cdff; border-radius: 10px">

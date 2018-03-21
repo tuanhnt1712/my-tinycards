@@ -8,7 +8,7 @@ class Deck < ApplicationRecord
   validates :title, presence: true, length: {maximum: 100}
   validates :description, presence: true, length: {maximum: 250}
 
-  accepts_nested_attributes_for :cards
+  accepts_nested_attributes_for :cards, allow_destroy: true
 
   scope :favorite_by, -> user {
     joins(:favorites).where(favorites: {user: user})
@@ -33,6 +33,7 @@ class Deck < ApplicationRecord
     :cover_image,
     cards_attributes: [
       :id,
+      :_destroy,
       :front,
       :back,
       :picture

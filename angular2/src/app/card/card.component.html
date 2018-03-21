@@ -7,7 +7,9 @@
 			<div class="f-deck">
 				<div class="image">
 					<label type="button"><i class="fa fa-image" style="font-size: 25px; opacity: .6;"></i>
-						<input class="form-control" type="file" formControlName="picture"  style="display: none" id="picture" (change)="onFileChange($event)" #fileInput>
+						<img class="card-picture" id="blah" [src]="picture" [style.display]="picture ? '': 'none'">
+						<input type="hidden" name="fileHidden" formControlName="picture">
+						<input class="form-control" type="file" style="display: none" id="picture" (change)="onFileChange($event)" #fileInput>
 					</label>
 				</div>
 				<div style="height: 50%; border-top: 1px solid #eceaea;">
