@@ -11,15 +11,18 @@ import { RequestBasicService } from './base/request-basic.service';
 
 @Injectable()
 export class DecksService extends RequestBasicService{
+  private searchCaseNumberFirst = [];
   public searchCaseNumber = new Subject<any>();
+  
   searchCaseNumber$ = this.searchCaseNumber.asObservable();
 
   publishData(data) {
+    this.searchCaseNumberFirst = data;
     this.searchCaseNumber.next(data);
   }
 
   fetch() {
-    return this.searchCaseNumber;
+    return this.searchCaseNumberFirst;
   }
 
   getAll(): Promise<Deck[]>{

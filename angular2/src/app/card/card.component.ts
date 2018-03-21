@@ -22,8 +22,8 @@ export class CardComponent implements OnInit {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.cardForm.get('picture').setValue(reader.result)
-	 	 }
+        this.cardForm.controls['picture'].setValue(reader.result)
+	 	  }
   	}
 	}
 }
