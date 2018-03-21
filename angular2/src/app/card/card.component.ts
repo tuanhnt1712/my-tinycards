@@ -10,7 +10,7 @@ export class CardComponent implements OnInit {
 
   @Input('group')
    public cardForm: FormGroup;
-   i = 1;
+  @Input() public i;
   constructor() { }
 
   ngOnInit() {
