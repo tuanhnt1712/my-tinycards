@@ -14,6 +14,15 @@ export class DeckComponent implements OnInit{
   favoriteDecks = []
   following_people_decks = []
   trending_decks = []
+  images=[{
+      url: "../../assets/images/carousel/900x200.jpg"
+    },
+    {
+      url: "../../assets/images/carousel/900x200_2.png"
+    },
+    {
+      url: "../../assets/images/carousel/900x200_3.jpg"
+    }]
   constructor(private decksService : DecksService){}
 
   ngOnInit(){
