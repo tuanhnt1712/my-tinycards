@@ -7,6 +7,7 @@ export interface Deck {
   cover_image: string,
   cards: Card[],
   lessons: Lesson[],
+  favorite_count: number,
   favorited: boolean
 }
 

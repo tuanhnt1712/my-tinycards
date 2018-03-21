@@ -14,6 +14,14 @@
   border: 2px solid #32cdff;
 }
 
+.favorite-number {
+  color: #c4c4c4;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  vertical-align: middle;
+  float: right;
+}
 
 .left {
   padding: 20px;

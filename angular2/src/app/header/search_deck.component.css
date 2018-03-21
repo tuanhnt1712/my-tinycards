@@ -3,6 +3,9 @@
   border-radius: 15px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
   margin-left: 50px;
+  width: 100%;
+  min-height: 1080px;
+  margin-top: 20px;
 }
 .container-tab-content {
   padding: 0 40px;
@@ -21,6 +24,7 @@
   font-size: 21px;
 }
 .profile-content .container .image-wrap img {
+  height: 140px;
   display: block;
   margin: auto;
   border-radius: 17px;
@@ -53,4 +57,14 @@
   color: #5c5c5c;
   font-size: 15px;
   font-weight: bold;
+}
+
+.item-deck{
+  display: flex;;
+}
+.image-cover {
+  flex: 1;
+}
+.name {
+  flex: 2;
 }

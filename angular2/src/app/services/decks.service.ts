@@ -3,6 +3,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Deck } from '../deck';
 import { Lesson } from '../lesson';
 import { Observable } from 'rxjs/Rx';
+import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,10 +11,11 @@ import { RequestBasicService } from './base/request-basic.service';
 
 @Injectable()
 export class DecksService extends RequestBasicService{
-  private searchCaseNumber = [];
+  public searchCaseNumber = new Subject<any>();
+  searchCaseNumber$ = this.searchCaseNumber.asObservable();
 
   publishData(data) {
-    this.searchCaseNumber = data
+    this.searchCaseNumber.next(data);
   }
 
   fetch() {
@@ -129,6 +131,7 @@ function toDeck(r:any): Deck{
     cover_image: r.cover_image,
     cards: r.cards,
     lessons: r.lessons,
+    favorite_count: r.favorite_count,
     favorited: r.favorited
   });
   return deck;

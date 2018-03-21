@@ -65,6 +65,7 @@ export class DeckDetailsComponent implements OnInit {
     this.decksService.favorite(this.deck.id).subscribe(
       data => {
         this.favorited = true
+        this.deck = data.data
     });
   }
 
@@ -72,6 +73,7 @@ export class DeckDetailsComponent implements OnInit {
     this.decksService.unFavorite(this.deck.id).subscribe(
       data => {
         this.favorited = false
+        this.deck = data.data
     });
   }
 
@@ -96,6 +98,6 @@ export class DeckDetailsComponent implements OnInit {
 
 
   flipped($event){
-    this.menuOpen = !this.menuOpen;
+    $event.currentTarget.classList.toggle('flipped')
   }
 }

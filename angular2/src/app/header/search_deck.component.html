@@ -5,7 +5,7 @@
         <div class="list-deck">
           <div *ngFor="let deck of search_decks">
             <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4 image-wrap">
+              <div class="image-wrap">
                 <div class="item-deck">
                   <div class="image-cover">
                     <a href ="#" [routerLink]="['/decks', deck.id]">
@@ -14,7 +14,8 @@
                   </div>
                   <div class="name">
                     <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck" style="display: block">{{deck.title}}</a>
-                    <a href="#" [routerLink]="['/decks', deck.id]" class="number"><i class="fa fa-star"></i> 4 </a>
+                    <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck" style="display: block">{{deck.description}}</a>
+                    <a href="#" [routerLink]="['/decks', deck.id]" class="number"><i class="fa fa-star"></i>{{deck.favorite_count}}</a>
                     <a href="#" [routerLink]="['/decks', deck.id]" class="number"><i class="fa fa-window-restore"></i> {{deck.cards.length}}</a>
                   </div>
                 </div>
