@@ -57,7 +57,7 @@
             <div class="container-tab-content">
               <div class="list-deck">
                 <div *ngFor="let deck of user.decks">
-                  <div class="row" style="margin-bottom: 15px;">
+                  <div class="row" style="margin-bottom: 30px;">
                     <div class="col-md-4 image-wrap">
                       <a href ="#" [routerLink]="['/decks', deck.id]">
                         <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image" style="width: 150px;">
@@ -67,7 +67,14 @@
                       <a href ="#" [routerLink]="['/decks', deck.id]">
                         <div class="deck-title">{{deck.title}}</div>
                       </a>
-                      <p>{{deck.desctiption}}</p>
+                      <a href ="#" [routerLink]="['/decks', deck.id]">
+                        <div class="deck-des">{{deck.description}}</div>
+                      </a>
+                      <a href="#" [routerLink]="['/decks', deck.id]" class="number">
+                        <i class="fa fa-star"></i> {{deck.favorite_count}}
+                      </a>
+
+                      <!-- <i class="fa fa-window-restore"></i> {{deck.cards.length}} -->
                     </div>
                   </div>
                 </div>

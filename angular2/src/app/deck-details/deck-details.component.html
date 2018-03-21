@@ -17,7 +17,7 @@
             <div class="img">
               <img src="./assets/images/avatar.png" alt="avatar">
               <a href="#" [routerLink]="['/users/', deck.user_id]" class="name">{{deck.user_name}}</a>
-              <span class="favorite-number"><i class="fa fa-star"></i>{{deck.favorite_count}}</span>
+              <span class="favorite-number"><i class="fa fa-star" style="margin-right: 5px"></i>{{deck.favorite_count}}</span>
             </div>
           </div>
           <div class="favorite">
@@ -64,9 +64,9 @@
                 <div class="containerr" *ngFor="let card of deck.cards">
                   <div class="ct-card" (click)="flipped($event)" [class.flipped]="false">
                     <div class="item-card front">
-                      <span *ngIf="card.picture">
+                      <div *ngIf="card.picture" style="height: 182px">
                         <img src="{{card.picture.url}}">
-                      </span>
+                      </div>
                       <p>{{card.front}}</p>
                     </div>
                     <div class="item-card back">

@@ -106,6 +106,7 @@
   width: 34px;
   height: 34px;
   margin: 0;
+  cursor: pointer;
 }
 .wrapper .change .avatar label .fa {
   position: absolute;
