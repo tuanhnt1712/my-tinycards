@@ -114,8 +114,8 @@
 }
 .wrapper .front-card .image {
   display: block;
-  width: 45px;
   margin: 15px;
+  height: 40%;
 }
 .wrapper .front-card .add-img {
   width: 100%;
@@ -134,14 +134,30 @@
   display: inline-block;
   height: 310px;
   overflow: hidden;
-  position: relative;
   text-align: center;
   vertical-align: top;
   width: 90%;
 }
+.wrapper .f-deck textarea {
+  outline: none;
+}
+.wrapper .f-deck .image label:hover {
+  color: blue;
+  opacity: .9;
+}
+.wrapper .f-deck textarea::placeholder {
+  opacity: .7;
+}
+.wrapper .f-deck .txt-back {
+  border: none;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 25px;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
 .wrapper .f-deck .import-cover-deck {
-  position: absolute;
-  top: 40%;
   width: 100%;
 }
 .wrapper .f-deck .import-cover-deck .ct-text {

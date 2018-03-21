@@ -276,15 +276,16 @@
   margin: 20px;
 }
 .list-card .item-card {
-  background-color: blanchedalmond;
+  background-color: #fff;
   border-radius: 15px;
   height: 230px;
   text-align: center;
   cursor: pointer;
 }
 .list-card .item-card img {
-  width: 100%;
+  width: 70%;
   border-radius: 15px;
+  margin-top: 20px;
 }
 
 .animation {
@@ -338,7 +339,8 @@
   display: block;
   height: 100%;
   width: 100%;
-  color: white;
+  color: #828181;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
   text-align: center;
   font-size: 30px;
   position: absolute;
@@ -349,12 +351,7 @@
   box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.2);
 }
 
-.ct-card .front {
-  background: #a3a3a3;
-}
-
 .ct-card .back {
-  background: #444444;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);

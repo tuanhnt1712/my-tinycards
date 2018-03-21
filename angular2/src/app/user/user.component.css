@@ -156,4 +156,14 @@
   color: #5c5c5c;
   font-family: DINNextRoundedLTPro-Medium,sans-serif;
   font-size: 21px;
+  margin-bottom: 15px;
+}
+.profile-content .container .deck-des {
+  color: #898989;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+.number {
+  color: lightgray;
 }
