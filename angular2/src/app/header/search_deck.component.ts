@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DecksService } from '../services/decks.service';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
   selector: 'search-deck',
@@ -9,7 +10,8 @@ import { DecksService } from '../services/decks.service';
 export class SearchDeckComponent implements OnInit {
   search_decks = [];
 
-  constructor(private decksService: DecksService) {
+  constructor(private decksService: DecksService, private router: Router,
+    private activeedRouter: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -20,5 +22,13 @@ export class SearchDeckComponent implements OnInit {
         self.search_decks = state
       }
     );
+
+    this.activeedRouter.queryParams.subscribe((params) => {
+      var text = params['q']
+      this.decksService.searchDeck(text).then(data => {
+        this.decksService.publishData(data);
+        this.router.navigate(['/search'], {queryParams: { q: text}});
+      });
+  });
   }
 }
