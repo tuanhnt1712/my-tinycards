@@ -85,7 +85,7 @@ export class SettingsComponent implements OnInit {
       data => {
         this.router.navigate(['/users/'+this.user.id]);
         return true;
-      });
+    });
   }
 
   changePassword(model) {

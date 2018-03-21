@@ -9,13 +9,16 @@ import { DecksService } from '../services/decks.service';
 export class SearchDeckComponent implements OnInit {
   search_decks = [];
 
-  constructor(private decksService: DecksService) {}
+  constructor(private decksService: DecksService) {
+  }
 
   ngOnInit() {
-   this.decksService.searchCaseNumber$.subscribe(
-     state => {
-      this.search_decks = state
-     }
-   );
+    const self = this;
+    this.search_decks = this.decksService.fetch();
+    self.decksService.searchCaseNumber$.subscribe(
+      state => {
+        self.search_decks = state
+      }
+    );
   }
 }
