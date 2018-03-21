@@ -41,9 +41,10 @@ export class HeaderComponent implements OnInit {
   }
 
   performSearch(searchTerm: HTMLInputElement): void {
-    this.decksService.searchDeck(searchTerm.value).then(data => {
+    var text = searchTerm.value
+    this.decksService.searchDeck(text).then(data => {
       this.decksService.publishData(data);
-      this.router.navigate(['/search']);
+      this.router.navigate(['/search'], {queryParams: { q: text}});
     });
   }
 }
