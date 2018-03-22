@@ -55,11 +55,8 @@
 .left .txt .btn-ct {
   margin-top: 20px;
 }
-.left .txt .btn-ct .btn-ct-setting {
-  background-color: #fff;
-  border-radius: 10px;
-  border: 2px solid #32cdff;
-  width: 15%;
+.left .txt .btn-ct button {
+  outline: none;
 }
 .left .txt .btn-ct .btn-ct-publ {
   background-color: #32cdff;
@@ -67,9 +64,8 @@
   border: 2px solid #32cdff;
   cursor: pointer;
   font-weight: bold;
-  margin-left: 8px;
   opacity: 0.7;
-  width: 78%;
+  width: 100%;
 }
 .left .txt .btn-ct .fa-cog {
   color: #32cdff;

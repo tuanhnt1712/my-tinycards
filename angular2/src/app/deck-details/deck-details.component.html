@@ -22,11 +22,8 @@
           </div>
           <div class="favorite">
             <button (click)="toogleFavorite()" [class.btn-favorited]="favorited" type="button" class="btn btn-outline-success btn-favorite" style="border-radius: 10px"><i class="fa fa-star-o" aria-hidden="true"></i> FAVORITE</button>
-            <button type="button" [routerLink]="['/decks/', deck.id, 'edit']" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #32cdff; border-radius: 10px; margin-right: 4px">
+            <button type="button" [routerLink]="['/decks/', deck.id, 'edit']" class="btn btn-outline-success" style="width: 16%; background-color: white;border: 2px solid #32cdff; border-radius: 10px; float: right;">
               <i class="fa fa-pencil" aria-hidden="true" style="color: #32cdff;"></i>
-            </button>
-            <button type="button" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #32cdff; border-radius: 10px">
-              <i class="fa fa-external-link" aria-hidden="true" style="color: #32cdff;"></i>
             </button>
           </div>
         </div>
@@ -43,7 +40,7 @@
         <div class="container" style="width: 100%; margin: auto">
           <div id="b1" class="containerTab">
             <div class="list-lesson">
-              <div class="row">
+              <div class="row" style="width: 98%;margin: auto;">
                 <div *ngFor= "let lesson of lessons">
                   <div class="col-md-3" style="margin-bottom: 20px">
                     <div class="item-lesson">
@@ -60,14 +57,14 @@
 
           <div id="b2" class="containerTab" style="display:none;">
             <div class="list-card">
-              <div class="row">
+              <div class="row" style="width: 98%;margin: auto;">
                 <div class="containerr" *ngFor="let card of deck.cards">
                   <div class="ct-card" (click)="flipped($event)" [class.flipped]="false">
                     <div class="item-card front">
                       <div *ngIf="card.picture" style="height: 182px">
                         <img src="{{card.picture.url}}">
                       </div>
-                      <p>{{card.front}}</p>
+                      <p class="txt-front">{{card.front}}</p>
                     </div>
                     <div class="item-card back">
                       <p>{{card.back}}</p>

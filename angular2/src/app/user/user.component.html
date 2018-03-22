@@ -22,17 +22,10 @@
         </div>
 
         <div *ngIf="user.id == current_user.user_id" class="col-xs-12 profile-setting">
-          <div class="row">
-            <a href="#" [routerLink]="['setting']" class="col-9">
-              <img src="./assets/images/setting.png" class="img-setting" alt="Setting">
-              <div class="text-setting">Settings</div>
-            </a>
-            <button class="col-3 button-profile">
-              <div class="button-icon">
-                <span class="fa fa-share-square-o"></span>
-              </div>
-            </button>
-          </div>
+          <a href="#" [routerLink]="['setting']" class="col">
+            <img src="./assets/images/setting.png" class="img-setting" alt="Setting">
+            <div class="text-setting">Settings</div>
+          </a>
         </div>
 
         <div *ngIf="user.id != current_user.user_id" class="col-xs-12 profile-setting">
@@ -74,7 +67,8 @@
                         <i class="fa fa-star"></i> {{deck.favorite_count}}
                       </a>
 
-                      <!-- <i class="fa fa-window-restore"></i> {{deck.cards.length}} -->
+                      <!-- <a href="#" ><i class="fa fa-window-restore"></i> {{deck.cards.length}}
+                      </a> -->
                     </div>
                   </div>
                 </div>
