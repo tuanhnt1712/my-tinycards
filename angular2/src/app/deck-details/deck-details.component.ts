@@ -43,7 +43,7 @@ export class DeckDetailsComponent implements OnInit {
           this.deck = p;
           self.favorited = p.favorited
           self.lessons = p.lessons;
-          this.userService.getUser(p.id).subscribe(
+          this.userService.getUser(p.user_id).subscribe(
             data => {
               this.user = data
           });

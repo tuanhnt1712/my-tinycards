@@ -13,7 +13,7 @@ import { RequestBasicService } from './base/request-basic.service';
 export class DecksService extends RequestBasicService{
   private searchCaseNumberFirst = [];
   public searchCaseNumber = new Subject<any>();
-  
+
   searchCaseNumber$ = this.searchCaseNumber.asObservable();
 
   publishData(data) {
@@ -89,6 +89,13 @@ export class DecksService extends RequestBasicService{
     let options = new RequestOptions({ headers: headers });
     let body = deck;
     return this.http.post(`${this.baseUrl}/decks/`, body, options ).map((res: Response) => res.json());
+  }
+
+  update_deck(deck) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = deck;
+    return this.http.put(`${this.baseUrl}/decks/${deck.id}`, body, options ).map((res: Response) => res.json());
   }
 
   create_user_lesson(user_lesson) {

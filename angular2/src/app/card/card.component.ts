@@ -8,12 +8,14 @@ import { FormGroup } from '@angular/forms';
 })
 export class CardComponent implements OnInit {
 
-  @Input('group')
-   public cardForm: FormGroup;
+  @Input('group') public cardForm: FormGroup;
   @Input() public i;
-  constructor() { }
+  picture: any;
+  constructor() {
+  }
 
   ngOnInit() {
+    this.picture = this.cardForm.value.picture['url']
   }
 
   onFileChange(event) {
@@ -22,6 +24,7 @@ export class CardComponent implements OnInit {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
+        this.picture = reader.result;
         this.cardForm.controls['picture'].setValue(reader.result)
 	 	  }
   	}
