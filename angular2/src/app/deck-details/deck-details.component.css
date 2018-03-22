@@ -1,6 +1,6 @@
 .btn-favorite {
   background-color: transparent;
-  width: 60%;
+  width: 80%;
   margin-right: 5px;
   color: #32cdff;
   border: 2px solid #32cdff;
@@ -8,7 +8,7 @@
 
 .btn-favorited {
   background-color: #32cdff;
-  width: 60%;
+  width: 80%;
   margin-right: 5px;
   color: white;
   border: 2px solid #32cdff;
@@ -284,6 +284,7 @@
 }
 .list-card .item-card img {
   width: 70%;
+  height: 160px;
   border-radius: 15px;
   margin-top: 20px;
 }
@@ -356,6 +357,14 @@
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+.ct-card .back p {
+  position: relative;
+  float: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .del {

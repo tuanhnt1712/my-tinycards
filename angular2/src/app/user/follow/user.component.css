@@ -1,7 +1,7 @@
 .btn-follow {
   background-color: transparent;
-  width: 56px;
-  height: 42px;
+  width: 45px;
+  height: 40px;
   margin-right: 5px;
   color: #32cdff;
   border: 2px solid #32cdff;
@@ -11,8 +11,8 @@
 
 .btn-followed {
   background-color: #32cdff;
-  width: 56px;
-  height: 42px;
+  width: 45px;
+  height: 40px;
   margin-right: 5px;
   color: white;
   border: 2px solid #32cdff;
@@ -20,8 +20,12 @@
   right: 0;
 }
 
-.user-profile{
+.user-profile {
   padding: 20px 20px;
+  border-radius: 15px;
+}
+.user-profile:hover {
+  background-color: aliceblue;
 }
 .user-profile-avatar img {
   border: 2px solid #bebebe;
@@ -30,7 +34,12 @@
   width: 60px;
   margin: auto;
 }
-
+.user-profile-follow {
+  margin-top: 10px;
+}
+.user-profile-follow button {
+  outline: none;
+}
 .user-profile-name {
   color: #5c5c5c;
   font-size: 24px;

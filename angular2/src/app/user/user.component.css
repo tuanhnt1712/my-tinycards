@@ -52,17 +52,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   margin: 10px 0;
   white-space: nowrap;
   text-align: center;
 }
 .user-profile .user-profile-info .profile-setting a {
   position: relative;
+  width: 100%;
   background-color: transparent;
   border: 2px solid #32cdff;
   border-radius: 7px;
   color: #32cdff;
-  padding: 10px 45px;
+  padding: 7px 45px;
 }
 .user-profile .user-profile-info .profile-setting a .img-setting {
   display: inline-block;
