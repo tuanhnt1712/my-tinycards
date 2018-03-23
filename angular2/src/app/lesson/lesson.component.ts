@@ -32,19 +32,19 @@ export class LessonComponent implements AfterViewInit {
               private componentFactoryResolver: ComponentFactoryResolver) { }
 
   nextCard(){
-    if (this.current_card_index == this.cards.length - 1) {
+    if (this.point == 5) {
       alert(this.point);
       this.router.navigate(['decks/']);
     }
-    this.current_card_index++;
+    this.current_card_index = Math.floor(Math.random() * this.cards.length);
     let rand = Math.floor(Math.random() * 3);
 
     if (rand == 0){
-      this.loadRememberCardComponent()
+      this.loadRememberCardComponent(this.current_card_index)
     } else if(rand == 1) {
-      this.loadSingleChoiceQuestionComponent()
+      this.loadSingleChoiceQuestionComponent(this.current_card_index)
     } else {
-      this.loadMapQuestionAnswerComponent()
+      this.loadMapQuestionAnswerComponent(this.current_card_index)
     }
   }
 
@@ -67,8 +67,8 @@ export class LessonComponent implements AfterViewInit {
     });
   }
 
-  loadRememberCardComponent() {
-    let lcItem = new LessonContentItem(RememberCardComponent, {current_card: this.cards[this.current_card_index]})
+  loadRememberCardComponent(current_card_index) {
+    let lcItem = new LessonContentItem(RememberCardComponent, {current_card: this.cards[current_card_index]})
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(lcItem.component);
 
     let viewContainerRef = this.lessonContentHost.viewContainerRef;
@@ -79,8 +79,8 @@ export class LessonComponent implements AfterViewInit {
     (<LessonContentComponent>componentRef.instance).parent = this;
   }
 
-  loadSingleChoiceQuestionComponent() {
-    let lcItem = new LessonContentItem(SingleChoiceQuestionComponent, {current_card: this.cards[this.current_card_index], cards: this.cards})
+  loadSingleChoiceQuestionComponent(current_card_index) {
+    let lcItem = new LessonContentItem(SingleChoiceQuestionComponent, {current_card: this.cards[current_card_index], cards: this.cards})
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(lcItem.component);
 
     let viewContainerRef = this.lessonContentHost.viewContainerRef;
@@ -91,8 +91,8 @@ export class LessonComponent implements AfterViewInit {
     (<LessonContentComponent>componentRef.instance).parent = this;
   }
 
-  loadMapQuestionAnswerComponent() {
-    let lcItem = new LessonContentItem(MapQuestionAnswerComponent, {current_card: this.cards[this.current_card_index]})
+  loadMapQuestionAnswerComponent(current_card_index) {
+    let lcItem = new LessonContentItem(MapQuestionAnswerComponent, {current_card: this.cards[current_card_index]})
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(lcItem.component);
 
     let viewContainerRef = this.lessonContentHost.viewContainerRef;
