@@ -18,6 +18,7 @@
   -moz-perspective: 800px;
   -o-perspective: 800px;
   perspective: 800px;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
 
 .ct-card {
@@ -243,6 +244,7 @@
   width: 100%;
   padding: 10px 0;
   border: none;
+  font-family: DINNextRoundedLTPro-Regular,sans-serif;
 }
 .les-wrapper .les-choice .txt-answers .ct-answers button {
   background: transparent;
@@ -264,4 +266,11 @@
 }
 .les-wrapper .les-choice .txt-answers .ct-answers input::placeholder {
   opacity: .8;
+}
+.back span {
+  float: left;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

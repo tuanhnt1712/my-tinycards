@@ -4,7 +4,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 header .header-logo {
   margin: auto;

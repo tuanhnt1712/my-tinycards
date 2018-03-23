@@ -11,7 +11,10 @@ import { LessonContentComponent } from './lesson-content.component';
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
                 <div class="front" style="border-radius: 15px;">
-                  <span> {{data.current_card.front}} </span>
+                  <div>
+                <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
+              </div>
+              <span> {{data.current_card.front}} </span>
                 </div>
               </div>
             </div>

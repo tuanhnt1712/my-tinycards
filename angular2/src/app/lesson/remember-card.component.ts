@@ -11,6 +11,9 @@ import { LessonComponent } from './lesson.component';
         <div class="containerr" style="margin-bottom: 35px">
           <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
             <div class="item-card front" style="width: 100%;border-radius: 15px;">
+              <div>
+                <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
+              </div>
               <span> {{data.current_card.front}} </span>
             </div>
             <div class="item-card back">
