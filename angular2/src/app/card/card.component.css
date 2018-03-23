@@ -173,6 +173,9 @@
   text-align: center;
   width: 100%;
 }
+.wrapper .f-deck .back {
+  padding-top: 130px;
+}
 .wrapper .f-deck .import-cover-deck {
   width: 100%;
 }

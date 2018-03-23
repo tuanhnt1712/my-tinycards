@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../user'
+import { User } from '../user';
 import { UserService } from '../services/user.service';
 import { AuthenticationService } from '../services/authentication.service';
 
@@ -12,7 +12,6 @@ import { AuthenticationService } from '../services/authentication.service';
 export class UserComponent implements OnInit {
 	sub: any;
 	user: User;
-	decks = [];
   current_user: any;
 
   constructor(private route: ActivatedRoute,
@@ -29,7 +28,6 @@ export class UserComponent implements OnInit {
         .getUser(id)
         .subscribe(p => {
           self.user = p;
-          self.decks = p.decks;
         }
       )
     });

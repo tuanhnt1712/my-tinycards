@@ -66,9 +66,9 @@
                       <a href="#" [routerLink]="['/decks', deck.id]" class="number">
                         <i class="fa fa-star"></i> {{deck.favorite_count}}
                       </a>
-
-                      <!-- <a href="#" ><i class="fa fa-window-restore"></i> {{deck.cards.length}}
-                      </a> -->
+                      <a href="#" [routerLink]="['/decks', deck.id]" class="number">
+                        <i class="fa fa-window-restore"></i> {{deck.cards.length}}
+                      </a>
                     </div>
                   </div>
                 </div>
