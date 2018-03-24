@@ -150,6 +150,7 @@ function toDeck(r:any): Deck{
 function toLesson(r:any): Lesson{
   let lesson = <Lesson>({
     id: (r.id),
+    deck_id: (r.deck_id),
     cards: r.cards
   });
   return lesson;

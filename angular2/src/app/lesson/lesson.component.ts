@@ -19,7 +19,7 @@ import { MapQuestionAnswerComponent } from './map-question-answer.component';
 export class LessonComponent implements AfterViewInit {
   sub: any;
 	menuOpen = false;
-  lessons = [];
+  lesson: any;
   cards = [];
   point: number = 0;
   current_card_index: number = -1;
@@ -32,8 +32,9 @@ export class LessonComponent implements AfterViewInit {
               private componentFactoryResolver: ComponentFactoryResolver) { }
 
   nextCard(){
-    if (this.point == 5) {
+    if (this.point >= this.cards.length) {
       alert(this.point);
+      this.finish_lesson(this.lesson);
       this.router.navigate(['decks/']);
     }
     this.current_card_index = Math.floor(Math.random() * this.cards.length);
@@ -60,6 +61,7 @@ export class LessonComponent implements AfterViewInit {
          this.decksService
           .get_lesson(id)
           .subscribe(function(p){
+            self.lesson = p;
             self.cards = p.cards;
             self.nextCard();
           })
@@ -103,11 +105,10 @@ export class LessonComponent implements AfterViewInit {
     (<LessonContentComponent>componentRef.instance).parent = this;
   }
 
-  ok(id, model) {
-    this.decksService.create_user_lesson(model["value"]).subscribe(
+  finish_lesson(lesson) {
+    this.decksService.create_user_lesson({lesson_id: lesson.id}).subscribe(
       data => {
-        this.router.navigate(['decks/']);
-        return true;
+        this.router.navigate(['/decks', lesson.deck_id]);
     });
   }
 }

@@ -40,18 +40,21 @@
         <div class="container" style="width: 100%; margin: auto">
           <div id="b1" class="containerTab">
             <div class="list-lesson">
-              <div class="row" style="width: 98%;margin: auto;">
-                <div *ngFor= "let lesson of lessons">
-                  <div class="col-md-3" style="margin-bottom: 20px">
-                    <div class="item-lesson">
-                      <form [formGroup]="myFormLesson" novalidate (click)="click_lesson(lesson.id, myFormLesson)">
-                        <img src="./assets/images/lesson.png" alt="lesson">
-                        <input type="hidden" formControlName="lesson_id" form>
-                      </form>
-                    </div>
+              <div class="lesson-item" *ngFor= "let lesson of lessons; let i=index">
+              <form [formGroup]="myFormLesson" novalidate (click)="click_lesson(lesson.id, myFormLesson)">
+                <div class="_1vqs9">
+                  <div class="_1iWkj _34_xG"><div class="_2zwto _1QXgH"></div><div class="_1XPsL _1QXgH"></div><div class="oSJeW _1QXgH"></div>
                   </div>
+                  <div class="_27a_4">{{i+1}}</div>
+                  <div></div>
+                  <div class="_3YFFC _21gWC">
+                    <span class="_2SILG _1-nKn" [style.width.%]="lesson.current_user_lesson ? lesson.current_user_lesson.percent : 0"></span>
+                  </div>
+                  <input type="hidden" formControlName="lesson_id" form>
                 </div>
+              </form>
               </div>
+                
             </div>
           </div>
 
