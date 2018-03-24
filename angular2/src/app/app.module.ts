@@ -16,6 +16,7 @@ import { LoginComponent } from './user/login.component';
 import { SignupComponent } from './user/signup.component';
 import { DeckComponent } from './deck/deck.component';
 import { DecksService } from './services/decks.service';
+import { LessonPracticeService } from './services/lesson-practice.service';
 import { AuthenticationService } from './services/authentication.service';
 import { HeaderBasicService } from './services/base/header-basic.service';
 import { HttpModule } from '@angular/http';
@@ -28,6 +29,7 @@ import { LessonComponent } from './lesson/lesson.component';
 import { LessonContentDirective } from './lesson/lesson-content.directive';
 import { RememberCardComponent } from './lesson/remember-card.component';
 import { SingleChoiceQuestionComponent } from './lesson/single-choice-question.component';
+import { SingleChoiceImageQuestionComponent } from './lesson/single-choice-image-question.component';
 import { MapQuestionAnswerComponent } from './lesson/map-question-answer.component';
 import { SlickCarouselComponent } from './slick/slick-carousel.component';
 import { UserService } from './services/user.service';
@@ -53,6 +55,7 @@ import * as $ from 'jquery';
     LessonContentDirective,
     RememberCardComponent,
     SingleChoiceQuestionComponent,
+    SingleChoiceImageQuestionComponent,
     MapQuestionAnswerComponent,
     SlickCarouselComponent,
     SettingsComponent,
@@ -62,8 +65,9 @@ import * as $ from 'jquery';
     BrowserModule, AlertModule.forRoot(), CarouselModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
     FormWizardModule, ImageUploadModule.forRoot()
   ],
-  entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, MapQuestionAnswerComponent],
-  providers: [DecksService, AuthenticationService, HeaderBasicService, UserService],
+  entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, SingleChoiceImageQuestionComponent,
+   MapQuestionAnswerComponent],
+  providers: [DecksService, AuthenticationService, LessonPracticeService, HeaderBasicService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
