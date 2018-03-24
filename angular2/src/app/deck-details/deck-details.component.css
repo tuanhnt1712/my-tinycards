@@ -161,6 +161,8 @@
   margin-top: 30px;
 }
 .right .list-lesson {
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
 }
 .right .list-lesson .item-lesson {
@@ -442,3 +444,53 @@
   opacity: 0.8;
   text-align: center;
 }
+
+
+
+
+._1QXgH{position:absolute;width:100%;}
+._1QXgH{background-color:#fff;border-radius:18px;box-shadow:0 2px 9px rgba(0,0,0,.1);height:100%;left:50%;top:0;-webkit-transform:translateX(-50%);transform:translateX(-50%);}
+._1iWkj{height:166px;margin-bottom:12px;position:relative;width:144px;z-index:0;}
+._2zwto{height:100%;width:100%;z-index:2;}
+._1XPsL{height:99%;top:6px;width:99%;z-index:1;}
+.oSJeW{height:98%;top:12px;width:98%;z-index:0;}
+@media (max-width:1208px){
+._1QXgH{border-radius:18px;}
+._1iWkj{height:166px;width:144px;}
+}
+@media (max-width:1008px){
+._1QXgH{border-radius:14.5px;}
+._1iWkj{height:134px;width:116px;}
+}
+@media (max-width:444px){
+._1QXgH{border-radius:4vw;}
+._1iWkj{height:37vw;margin-bottom:3vw;width:32vw;}
+._1XPsL{top:1vw;}
+.oSJeW{top:2vw;}
+}
+
+._2SILG{background:linear-gradient(90deg,#ffd600,#ffc615);border-radius:14px;display:block;height:100%;overflow:hidden;position:relative;}
+._3YFFC{background:#eef1f4;border-radius:25px;height:14px;margin:auto;overflow:hidden;position:absolute;}
+
+._34_xG{display:block;left:50%;position:absolute;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);z-index:0;}
+._1vqs9{border:none;cursor:pointer;display:inline-block;height:166px;margin:12px;padding:0;position:relative;text-align:center;width:144px;}
+._27a_4{color:#5c5c5c;font-family:DINNextRoundedLTPro-Bold,sans-serif;font-size:36px;-webkit-transform:translateY(-50%);transform:translateY(-50%);width:100%;z-index:1;}
+._27a_4{position:absolute;top:50%;}
+._1-nKn{transition:width .5s;transition-timing-function:ease-in-out;}
+._21gWC{bottom:18px;left:15%;width:70%;}
+@media (max-width:1208px){
+._1vqs9,._34_xG{height:143px;width:124px;}
+._1vqs9{margin:12px 8px;}
+}
+@media (max-width:1008px){
+._1vqs9,._34_xG{height:134px;width:116px;}
+._1vqs9{margin:12px;}
+}
+@media (max-width:444px){
+._1vqs9,._34_xG{height:31vw;width:26.66667vw;}
+._1vqs9{margin:2.5vw;}
+._27a_4{font-size:27px;}
+._21gWC{bottom:3vw;}
+}
+
+@font-face{font-family:DINNextRoundedLTPro-Bold;font-style:normal;src:local("DINNextRoundedLTPro-Bold"),url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff2) format("woff2"),url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff) format("woff"),url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.ttf) format("truetype"),url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.svg) format("svg");}
