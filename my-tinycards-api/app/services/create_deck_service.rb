@@ -4,19 +4,8 @@ class CreateDeckService
 	def perform current_user, params
 		ActiveRecord::Base.transaction do
 			@deck = current_user.decks.create! params
-
-      deck.cards.each_slice(number_cards) do |cards|
-        lesson = deck.lessons.create! 
-      	cards.each do |card|
-      		card.update_attributes! lesson: lesson
-        end
-      end
+      CreateLessonsService.new(deck: @deck, cards: @deck.cards).perform
 	  end
     deck
-	end
-
-	private
-	def number_cards
-	  4
 	end
 end
