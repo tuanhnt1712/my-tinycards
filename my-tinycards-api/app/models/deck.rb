@@ -2,6 +2,7 @@ class Deck < ApplicationRecord
   belongs_to :user
 
   has_many :cards, dependent: :destroy
+  has_many :no_lesson_cards, -> {no_lesson}, dependent: :destroy, class_name: Card
   has_many :lessons, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
