@@ -1,5 +1,5 @@
 import { Component, Input, OnInit }  from '@angular/core';
-
+import * as _ from "lodash";
 import { LessonContentComponent } from './lesson-content.component';
 
 @Component({
@@ -26,6 +26,7 @@ import { LessonContentComponent } from './lesson-content.component';
                 <button type="button" class="btn-continue" (click)="continue(answer)">
                 <i class="fa fa-arrow-circle-right"></i></button>
               </div>
+              <div class="ct-hint">{{hint}}</div>
             </div>
           </div>
        	</div>
@@ -37,26 +38,24 @@ import { LessonContentComponent } from './lesson-content.component';
 export class MapQuestionAnswerComponent implements LessonContentComponent, OnInit {
   @Input() data: any;
   parent: any;
-  cards = [];
   current_card: any;
   answers = [];
+  hint: string;
 
   ngOnInit() {
     this.current_card = this.data.current_card
-    this.cards = this.data.cards
   }
-
 
   continue(answer){
   	answer = (<HTMLInputElement>document.getElementById('write-answer')).value
     if (this.current_card.back == answer) {
-      console.log("Right");
-      this.parent.point++;
-      this.parent.nextCard();
+      console.log("Right")
+      this.parent.lessonPracticeService.map_question_success(this.data.current_card);
     }else {
+      this.hint = this.current_card.back
+      this.parent.lessonPracticeService.reset_card(this.data.current_card);
       console.log("Wrong");
-      this.parent.point--;
-      this.parent.current_card_index--;
     }
+    _.delay(this.parent.nextCard.bind(this.parent), 2000)
   }
 }
