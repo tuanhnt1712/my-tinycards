@@ -48,7 +48,7 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
 
   continue(answer){
   	answer = (<HTMLInputElement>document.getElementById('write-answer')).value
-    if (this.current_card.back == answer) {
+    if (_.isEqual(_.words(_.toLower(this.current_card.back)), _.words(_.toLower(answer))) ) {
       console.log("Right")
       this.parent.lessonPracticeService.map_question_success(this.data.current_card);
     }else {

@@ -1,4 +1,5 @@
 CarrierWave.configure do |config|
+  config.validate_download = false
   if Rails.env.development? || Rails.env.test?
     config.storage :file
     config.asset_host = 'http://localhost:3000'

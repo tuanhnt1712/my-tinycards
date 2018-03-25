@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       end
       namespace :search do
         resources :decks
+      end      
+      namespace :import do
+        resources :decks
       end
       resources :favorites, only: [:create]
       resources :relationships, only: [:create]

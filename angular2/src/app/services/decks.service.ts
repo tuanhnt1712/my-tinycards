@@ -84,6 +84,13 @@ export class DecksService extends RequestBasicService{
     return deck$;
   }
 
+  import_deck(form) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    let body = form;
+    return this.http.post(`${this.baseUrl}/import/decks/`, body, options ).map((res: Response) => res.json());
+  }
+
   add_deck(deck) {
     let headers = this.getHeaders();
     let options = new RequestOptions({ headers: headers });
