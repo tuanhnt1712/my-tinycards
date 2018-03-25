@@ -17,7 +17,7 @@ export class SlickCarouselComponent {
      this.$carousel = $(this.el.nativeElement).slick({
        autoplay: true,
        autoplaySpeed: 3000,
-       dots: true,
+       dots: false,
        slidesToShow: 4,
        slidesToScroll: 2,
      });

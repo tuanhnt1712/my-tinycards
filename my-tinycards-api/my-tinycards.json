@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tinycard-199015",
+  "private_key_id": "4d6313cf229b4c9f89aabbe1534a301b77651a8d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDfh++uU9Snwynl\nCYU7LIUj2KbSmtAdmhfxZNcgC9HTdjl90dMNrxeaSzWa+DBb3xrNR2dSO8xZffIb\n35sTR1lPEoLjV8eaRWE1ByoUSD40pglOBwDHrzOUXGfhsSdWNpwxPUu2UGQ3vO6d\n4Otas9sKzqgy37iYfPezzR1EbLDO88E0Wt/0d8fDzsAeiowjJKvrczRdazRhf+dG\nHSdgMLhDsYudwAp+YTLHEggqmA0iRLqXG26Tr3nnbeXPLvyOMgJHjfa/gpPt4H93\np2PTVLb31fWqg4cW38Xjiht4oqIGc0iY/R74zJI2NSsF71BfpPSHrd51Vy5mDOci\ni5grTpadAgMBAAECggEALJnOiJ2gdlLaJqGWLF7vN95QNwB92xI2icthozrIhKV3\nxjOaJYZUsswj54Zy+7nR+rivFHjrBsY7CzW8FwYq+zyJ0jvfD1idkzuZOU/K3a1t\neNyr2qwKIiWn8p/q5ehilO6Sj0+OF5MCl4zb2Q6++3KNnA0Io6B3ujAIkXEQfFJG\nMCggK+M3BSh39i5rW5NnilMRSIuKeS0vKmSSlpE4YkzMc3BXUXrn4IddU+rWjWXA\nNaNzLQ/fSeUk/FLRQ2CKRRdoLRC6x+UWAteVSq3PL5ybQtsXoM9aSJls5oSB47gJ\nttm1JN7/hVopcScv0D42YvxsLIF2HFIeDNeaX5DhwQKBgQD2DUvYU8fHekkz5ygM\nvn3OwojV/8my2xsn6gX02026RSET9m/63arBk4tSluqwHuoT3dequnxGbNV5D+d4\n8maz5aGwgZ2S9QIAcRBwe+f984/+asBr/DiTo9bxAaHxKHcKPnBjajym1CJvzqY+\nNxLndwGsETI9GN4ozyaXiWjc/QKBgQDokYrPNMpfj8i75zqHu6075hPAo/6TPO1o\nl628YNlXc5o7QOiy3XxDB6s0LS2TCpJ2p37QLokgv4cXc0twBxSem15Vy9wZZuUi\nefSnW42xdiNHFdIwupuz46xw7wqgyjbARQG0uRIyifzAEJ495SV+Uxd56uQP0RGv\nC+9jiFqiIQKBgQCXGIEr3f7/s0uCsP+6G7x8HKAU8he1WrGpaB+yRn3L1inC7YHE\nhx0V9HoJBJ4n+0P5YTDQKeapBKpuxmJ5tjl1XZ1WG7JdDVHmXYgf2ycSnuAc9wcl\nCOThXSpgI4WD5zp6su8nTZTjSb+/8yHJcN6N/1mqhYDZXg0G+HaVdg9MLQKBgQC4\n3D9G1sJp1UOMwI6Qp4hajVZ0EKbhaFOZiL9Ldnwr/DLDGKQe0Njd+vGGBscsEwI6\nmIa/ec38HuGFrVpwUOB99ie08Nchxd0qW2Axyx9EyQ/fiCPMIfhzs+w01H1RM4rz\np6ZkfZtOWspx7IOr1UHJOMj3WtMvE1MIHeeJ6S+JoQKBgQCbxaRqSXBeRHwiIRNn\nXUmSj2eg2MOURXXuUDEgYasz3tY+iV5GVcyZd3WYVqtkhWe8OD13O/qgb/wQRF5H\nneSgCh4aDX+gWJAvavFq5xuTr7lFZMDXji9Fxut/xp4pH54evoYoiTPECnAZ6ORB\nNh7HZWqDFUyILcSr4yRJ0P6i3w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "tinicard@tinycard-199015.iam.gserviceaccount.com",
+  "client_id": "108759328896600829357",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tinicard%40tinycard-199015.iam.gserviceaccount.com"
+}

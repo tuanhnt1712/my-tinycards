@@ -38,7 +38,7 @@ export class RememberCardComponent implements LessonContentComponent {
   }
 
   continue(){
+    this.parent.lessonPracticeService.remembered_card(this.data.current_card);
     this.parent.nextCard();
-    this.parent.point++;
   }
 }

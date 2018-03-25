@@ -1,1 +1,19 @@
+<div class="lesson-wrapper">
+  <div class="menu">
+    <button class="_1Osoi" (click)="confirmModal.open()">×</button>
+    <modal #confirmModal>
+          <modal-header>
+            <h5 id="confirmModalLabel">Confirm</h5>
+          </modal-header>
+          <modal-content>
+            Are your sure?
+          </modal-content>
+          <modal-footer>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="quit_lesson()">Close</button>
+            <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal" (click)="confirmModal.close()">Close</button>
+          </modal-footer>
+    </modal>
+    <div class="_3PcMa _3lLex"><div class="_3yCFA" [style.width.%]="progress"></div></div>
+  </div>
 <ng-template lesson-content></ng-template>
+</div>

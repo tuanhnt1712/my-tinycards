@@ -10,20 +10,20 @@ import * as _ from "lodash";
           <div class="col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
-                <div class="front" id="animation3" style="border-radius: 15px;">
-                  <div>
-                    <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
-                  </div>
-                  <span> {{data.current_card.front}} </span>
+                <div class="front back-card" id="animation2" style="border-radius: 15px;">
+                  <span> {{data.current_card.back}} </span>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-8">
-            <div class="answers">
-              <ul>
-                <li class="list-ans" *ngFor="let answer of answers" >
-                  <button (click)="continue(answer)">{{answer}}</button>
+            <div class="image-answers">
+              <ul style="list-style-type: decimal;">
+                <li class="list-ans" *ngFor="let card_answer of card_answers" >
+                  <button (click)="continue(card_answer)">
+                    {{card_answer.front}}
+                    <img src="{{card_answer.picture.url}}">
+                  </button>
                 </li>
               </ul>
             </div>
@@ -34,27 +34,27 @@ import * as _ from "lodash";
   `,
   styleUrls: ['./lesson.component.css']
 })
-export class SingleChoiceQuestionComponent implements LessonContentComponent, OnInit {
+export class SingleChoiceImageQuestionComponent implements LessonContentComponent, OnInit {
   @Input() data: any;
   parent: any;
   lessons = [];
   cards = [];
   current_card: any;
-  answers = [];
+  card_answers = [];
 
   ngOnInit() {
     this.current_card = this.data.current_card
     this.cards =  _.cloneDeep(this.data.cards);
-    this.answers = this.randomAnswers(this.current_card, this.cards);
+    this.card_answers = this.randomAnswers(this.current_card, this.cards);
   }
 
-  continue(answer){
-    if (this.current_card.back == answer) {
+  continue(card_answer){
+    if (this.current_card.front == card_answer.front) {
       console.log("Right");
-      document.getElementById('animation3').classList.add("true-animation");
+      document.getElementById('animation2').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
     }else {
-      document.getElementById('animation3').classList.add("false-animation");
+      document.getElementById('animation2').classList.add("false-animation");
       this.parent.lessonPracticeService.reset_card(this.current_card);
       console.log("Wrong");
     }
@@ -62,17 +62,17 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
   }
 
   randomAnswers(card, cards){
-    var answers = []
+    var card_answers = []
     if (cards.length == 2) {
       var otherCard =  _.find(cards, function(o) { return card !=o ; });
-      answers.push(otherCard.front, otherCard.back);
+      card_answers.push(otherCard);
     }
     if (cards.length >= 3) {
       var other_cards = _.reject(cards, function(o) { return o.id == card.id; });
       var limited = _.sampleSize(other_cards, 2);
-      answers = _.map(limited, 'back');
+      card_answers = limited;
     }
-    answers.push(card.back)
-    return _.shuffle(answers)
+    card_answers.push(card)
+    return _.shuffle(card_answers)
   }
 }
