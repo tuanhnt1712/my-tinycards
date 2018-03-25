@@ -1,0 +1,26 @@
+<div class="import-button">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+    <a class="import-btn cl-text fa fa-plus" (click)="coverImgModal.open()">
+      <span>IMPORT</span>
+    </a>
+    <modal #coverImgModal>
+      <modal-header>
+        <h5 id="coverImgModalLabel">IMPORT DECK</h5>
+      </modal-header>
+      <modal-content class="import-modal-content">
+        <div class="loader-background" [style.display]="loading ? 'inherit':'none' ">
+          <div class="loader"></div>
+        </div>
+        <div class="txt pd-top-10">
+          <div class="title-deck">
+            <input type="text" style="outline: none; font-size: 15px; width: 100%" formControlName="file_url" placeholder="Enter spredsheet url" class="ip input-title">
+          </div>
+        </div>
+      </modal-content>
+      <modal-footer>
+        <button type="submit" class="btn btn-ct-publ btn-primary">Create</button>
+        <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal" (click)="coverImgModal.close()">Close</button>
+      </modal-footer>
+    </modal>
+  </form>
+</div>

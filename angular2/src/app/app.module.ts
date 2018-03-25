@@ -22,6 +22,7 @@ import { HeaderBasicService } from './services/base/header-basic.service';
 import { HttpModule } from '@angular/http';
 import { DeckDetailsComponent } from './deck-details/deck-details.component';
 import { CreateDeckComponent } from './create-deck/create-deck.component';
+import { ImportDeckComponent } from './import-deck/import-deck.component';
 import { EditDeckComponent } from './edit-deck/edit-deck.component';
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
@@ -48,6 +49,7 @@ import * as $ from 'jquery';
     DeckComponent,
     DeckDetailsComponent,
     CreateDeckComponent,
+    ImportDeckComponent,
     EditDeckComponent,
     CardComponent,
     HeaderComponent,
