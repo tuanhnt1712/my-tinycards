@@ -129,4 +129,8 @@ export class LessonComponent implements AfterViewInit {
         this.router.navigate(['/decks', lesson.deck_id]);
     });
   }
+
+  quit_lesson() {
+    this.router.navigate(['/decks', this.lesson.deck_id]);
+  }
 }
