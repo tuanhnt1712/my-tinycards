@@ -17,6 +17,9 @@ class Api::V1::DecksController < Api::V1::AuthorizeController
 
   def show
     @deck = Deck.find params[:id]
+    unless UserLesson.where(user: current_user, lesson_id: @deck.lessons.ids).exists?
+      UserLesson.create user: current_user, lesson: @deck.lessons.first
+    end
     render_success data: Api::V1::DeckDetail::DeckDetailSerializer.new(@deck, scope: current_user)
   end
 

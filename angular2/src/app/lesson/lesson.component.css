@@ -91,7 +91,7 @@
   box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.17);
   margin-top: 20px;
   min-height: 650px;
-  padding: 15px;
+  padding:  18px 56px;
   display: grid;
 }
 .les-wrapper .les-card {
@@ -324,7 +324,7 @@
 ._3PcMa,._3yCFA{border-radius:8px;display:block;overflow:hidden;position:relative;}
 ._3PcMa{background:#eef1f4;height:8px;margin:30px auto;width:90%;}
 
-._3lLex{width:calc(90% - 32px);}
+._3lLex{width:calc(96% - 32px);}
 ._3lLex{display:inline-block;}
 @media (max-width:584px){
 ._3lLex{margin:20px 0;}
@@ -371,3 +371,20 @@ div:focus{outline:none;}
   80%   {left:-10px; top:0px;}
   100%  {left:0px; top:0px;}
 }
+
+._1Osoi{background:none;border:none;color:#c4c4c4;cursor:pointer;display:inline-block;font-size:36px;margin-top:8px;padding:0;position:relative;text-align:left;vertical-align:top;width:32px;}
+@media (max-width:584px){
+._1Osoi{margin-top:-3px;}
+}
+
+button{font:inherit;margin:0;}
+button{overflow:visible;}
+button{text-transform:none;}
+button{-webkit-appearance:button;}
+button::-moz-focus-inner{border-style:none;padding:0;}
+button:-moz-focusring{outline:1px dotted ButtonText;}
+::-webkit-input-placeholder{color:inherit;opacity:.54;}
+*{-webkit-tap-highlight-color:transparent;}
+button:focus{outline:none;}
+button{cursor:pointer;}
+button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:grayscale(100%);}
