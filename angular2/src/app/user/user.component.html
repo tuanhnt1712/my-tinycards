@@ -64,10 +64,10 @@
                         <div class="deck-des">{{deck.description}}</div>
                       </a>
                       <a href="#" [routerLink]="['/decks', deck.id]" class="number">
-                        <i class="fa fa-star"></i> {{deck.favorite_count}}
+                        <i class="fa fa-star"></i>  {{deck.favorite_count}}
                       </a>
-                      <a href="#" [routerLink]="['/decks', deck.id]" class="number">
-                        <i class="fa fa-window-restore"></i> {{deck.cards.length}}
+                      <a href="#" [routerLink]="['/decks', deck.id]" class="number" style="margin-left: 10px">
+                        <i class="fa fa-window-restore"></i>  {{deck.cards.length}}
                       </a>
                     </div>
                   </div>
