@@ -57,11 +57,6 @@ export class LessonComponent implements AfterViewInit {
     }
   }
 
-  delay(ms) {
-    ms += new Date().getTime();
-    while (new Date() < ms){}
-  }
-
   ngAfterViewInit(){
     const self = this;
     this.sub = this.route.params.subscribe(params => {

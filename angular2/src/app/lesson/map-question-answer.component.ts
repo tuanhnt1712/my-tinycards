@@ -10,11 +10,11 @@ import { LessonContentComponent } from './lesson-content.component';
           <div class="col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
-                <div class="front" style="border-radius: 15px;">
+                <div class="front" id="animation1" style="border-radius: 15px;">
                   <div>
-                <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
-              </div>
-              <span> {{data.current_card.front}} </span>
+                    <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
+                  </div>
+                  <span> {{data.current_card.front}} </span>
                 </div>
               </div>
             </div>
@@ -50,12 +50,14 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
   	answer = (<HTMLInputElement>document.getElementById('write-answer')).value
     if (this.current_card.back == answer) {
       console.log("Right")
+      document.getElementById('animation1').classList.add("true-animation");
       this.parent.lessonPracticeService.map_question_success(this.data.current_card);
     }else {
+      document.getElementById('animation1').classList.add("false-animation");
       this.hint = this.current_card.back
       this.parent.lessonPracticeService.reset_card(this.data.current_card);
       console.log("Wrong");
     }
-    _.delay(this.parent.nextCard.bind(this.parent), 2000)
+    _.delay(this.parent.nextCard.bind(this.parent), 1000);
   }
 }

@@ -332,3 +332,42 @@
 
 ::-webkit-input-placeholder{color:inherit;opacity:.54;}
 div:focus{outline:none;}
+
+.true-animation {
+  position: absolute;
+  -webkit-animation-name: example1;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  animation-name: example1;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes example1 {
+  0%    {left:0px; top:0px;}
+  70%   {background-color: aqua; left: 0px; top:0px}
+  100%  {left:-400px; top:0px; opacity: .3}
+}
+
+.false-animation {
+  position: absolute;
+  -webkit-animation-name: example2;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  animation-name: example2;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes example2 {
+  0%    {left:0px; top:0px;}
+  20%   {left:10px; top:0px;}
+  40%   {left:-10px; top:0px;}
+  60%   {left:10px; top:0px;}
+  80%   {left:-10px; top:0px;}
+  100%  {left:0px; top:0px;}
+}

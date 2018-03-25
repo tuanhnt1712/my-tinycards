@@ -10,7 +10,7 @@ import * as _ from "lodash";
           <div class="col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
-                <div class="front" style="border-radius: 15px;">
+                <div class="front" id="animation3" style="border-radius: 15px;">
                   <div>
                     <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
                   </div>
@@ -51,12 +51,14 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
   continue(answer){
     if (this.current_card.back == answer) {
       console.log("Right");
+      document.getElementById('animation3').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
     }else {
+      document.getElementById('animation3').classList.add("false-animation");
       this.parent.lessonPracticeService.reset_card(this.current_card);
       console.log("Wrong");
     }
-    this.parent.nextCard();
+    _.delay(this.parent.nextCard.bind(this.parent), 1000);
   }
 
   randomAnswers(card, cards){

@@ -10,7 +10,7 @@ import * as _ from "lodash";
           <div class="col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
-                <div class="front back-card" style="border-radius: 15px;">
+                <div class="front back-card" id="animation2" style="border-radius: 15px;">
                   <span> {{data.current_card.back}} </span>
                 </div>
               </div>
@@ -18,7 +18,7 @@ import * as _ from "lodash";
           </div>
           <div class="col-md-8">
             <div class="image-answers">
-              <ul>
+              <ul style="list-style-type: decimal;">
                 <li class="list-ans" *ngFor="let card_answer of card_answers" >
                   <button (click)="continue(card_answer)">
                     {{card_answer.front}}
@@ -51,12 +51,14 @@ export class SingleChoiceImageQuestionComponent implements LessonContentComponen
   continue(card_answer){
     if (this.current_card.front == card_answer.front) {
       console.log("Right");
+      document.getElementById('animation2').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
     }else {
+      document.getElementById('animation2').classList.add("false-animation");
       this.parent.lessonPracticeService.reset_card(this.current_card);
       console.log("Wrong");
     }
-    this.parent.nextCard();
+    _.delay(this.parent.nextCard.bind(this.parent), 1000);
   }
 
   randomAnswers(card, cards){
