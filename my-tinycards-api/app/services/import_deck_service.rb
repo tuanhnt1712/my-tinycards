@@ -20,21 +20,21 @@ class ImportDeckService
     path = Rails.root.join("my-tinycards.json")
     session = GoogleDrive::Session.from_service_account_key(path)
 
-    url = params[:file_url] 
-    
+    url = params[:file_url]
+
     spreadsheet = session.spreadsheet_by_url(url)
     ActiveRecord::Base.transaction do
-    
+
       worksheet = spreadsheet.worksheets.each do |worksheet|
         maps.transform_values do |item|
           index = worksheet.rows.first.index do |x|
-            x.casecmp(item[:column]) == 0 
+            x.casecmp(item[:column]) == 0
           end
           item.merge!(index: index)
         end
         worksheet.rows.each_with_index do |row, index|
           next if index.zero?
-          deck = current_user.decks.find_or_create_by title: row[maps[:deck_front][:index]], 
+          deck = current_user.decks.find_or_create_by title: row[maps[:deck_front][:index]],
             description: row[maps[:deck_front][:index]]
 
           decks << deck
@@ -50,10 +50,18 @@ class ImportDeckService
 
   private
   def card_attributes row
-    {
-      front: row[maps[:card_front][:index]],
-      back: row[maps[:card_back][:index]],
-      remote_picture_url: URI.encode(row[maps[:card_front_4_url][:index]])
-    }
+    if row[maps[:card_front_4_url][:index]].split(".").last.downcase.in? %w(jpg jpeg gif png)
+      {
+        front: row[maps[:card_front][:index]],
+        back: row[maps[:card_back][:index]],
+        remote_picture_url: URI.encode(row[maps[:card_front_4_url][:index]])
+      }
+      else
+      {
+        front: row[maps[:card_front][:index]],
+        back: row[maps[:card_back][:index]],
+        source_url: row[maps[:card_front_4_url][:index]]
+      }
+    end
   end
 end

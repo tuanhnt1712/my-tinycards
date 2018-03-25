@@ -12,7 +12,7 @@ import { LessonComponent } from './lesson.component';
           <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
             <div class="item-card front" style="width: 100%;border-radius: 15px;">
               <div>
-                <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
+                <img src="{{data.current_card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
               </div>
               <span> {{data.current_card.front}} </span>
             </div>

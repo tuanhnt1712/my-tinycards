@@ -12,7 +12,7 @@ import * as _ from "lodash";
               <div class="ct-card">
                 <div class="front" id="animation3" style="border-radius: 15px;">
                   <div>
-                    <img src="{{data.current_card.picture.url}}" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
+                    <img src="{{data.current_card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
                   </div>
                   <span> {{data.current_card.front}} </span>
                 </div>

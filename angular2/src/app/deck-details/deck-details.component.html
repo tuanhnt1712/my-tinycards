@@ -67,7 +67,7 @@
                   <div class="ct-card" (click)="flipped($event)" [class.flipped]="false">
                     <div class="item-card front">
                       <div *ngIf="card.picture" style="height: 182px">
-                        <img src="{{card.picture.url}}">
+                        <img src="{{card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';">
                       </div>
                       <p class="txt-front">{{card.front}}</p>
                     </div>

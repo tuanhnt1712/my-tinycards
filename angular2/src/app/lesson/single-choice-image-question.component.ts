@@ -22,7 +22,7 @@ import * as _ from "lodash";
                 <li class="list-ans" *ngFor="let card_answer of card_answers" >
                   <button (click)="continue(card_answer)">
                     {{card_answer.front}}
-                    <img src="{{card_answer.picture.url}}">
+                    <img src="{{card_answer.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';">
                   </button>
                 </li>
               </ul>
