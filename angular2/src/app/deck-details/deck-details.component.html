@@ -3,10 +3,10 @@
   <div class="row" style="margin-top: 25px;">
     <div class="col-xs-12 col-md-4 mg-bt-30">
       <div class="left">
-        <div class="col-xs-4 img-deck" style="height: 330px">
+        <div class="col-xs-4 col-md-12 img-deck" style="height: 330px">
           <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image" style="height: 100%">
         </div>
-        <div class="col-xs-8 txt">
+        <div class="col-xs-8 col-md-12 txt">
           <div class="name-deck">
             <span class="name">{{deck.title}}</span>
           </div>
@@ -40,7 +40,7 @@
         <div class="container" style="width: 100%; margin: auto">
           <div id="b1" class="containerTab">
             <div class="list-lesson">
-              <div class="col-xs-6 lesson-item" *ngFor= "let lesson of lessons; let i=index">
+              <div class="col-xs-6 col-md-3 lesson-item" *ngFor= "let lesson of lessons; let i=index">
               <form   *ngIf="lesson.current_user_lesson" [formGroup]="myFormLesson" novalidate (click)="click_lesson(lesson.id, myFormLesson)">
                 <div class="_1vqs9">
                   <div class="_1iWkj _34_xG"><div class="_2zwto _1QXgH"></div><div class="_1XPsL _1QXgH"></div><div class="oSJeW _1QXgH"></div>
