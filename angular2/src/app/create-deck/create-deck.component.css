@@ -107,7 +107,7 @@
   background-color: #fff;
   border-radius: 15px;
   margin-top: 20px;
-  min-height: 400px;
+  min-height: 420px;
   position: relative;
   box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.17);
 }
@@ -184,9 +184,6 @@
 .right .wrapper .n-card:hover {
   background-color: #F7F7F7;
 }
-.right .wrapper .n-card:hover .del {
-  background-color: #F7F7F7;
-}
 .right .wrapper .number {
   flex: 1;
 }
@@ -243,5 +240,51 @@
 
   .right .wrapper .f-deck {
     height: 255px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    padding: 0 !important;
+    background-color: #fff;
+  }
+  .row {
+    margin-top: 0px !important;
+    margin: auto !important;
+    width: 100% !important;
+  }
+  .cover-deck {
+    margin: auto !important;
+    display: block !important;
+    width: 230px !important;
+  }
+
+  .add-card {
+    position: absolute;
+    top: 95px;
+    right: 100px;
+  }
+
+  .panel-heading span {
+    margin-top: -10px;
+    margin-right: 10px;
+  }
+
+  .right {
+    border-radius: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    margin-top: 0;
+    min-height: 270px;
+  }
+  .left {
+    background-color: #fff;
+  }
+
+  .bod {
+    border-bottom: 1px solid #9d9a9a33;
+  }
+
+  .pad-top-10 {
+    padding-top: 10px;
   }
 }

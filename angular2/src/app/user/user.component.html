@@ -1,19 +1,19 @@
 <section *ngIf="user">
   <div class="swap" style="margin-top: 45px">
-    <div class="row text-center user-profile">
+    <div class="row text-center user-profile" style="margin: auto">
       <div class="col-xs-12 col-md-3 user-profile-info">
         <div class="col-xs-12">
           <img src="{{user.avatar.url}}" onError="this.src='./assets/images/avatar.png';" class="user-profile-avatar" alt="Default avatar">
         </div>
         <div class="col-xs-12">
-          <div class="col-12 user-profile-name">
+          <div class="col-xs-12 user-profile-name">
             <p> {{user.name}} </p>
           </div>
           <div class="user-profile-follow">
-            <div class="follow">
+            <div class="col-xs-6 follow">
               Followers: {{user.follower_number}}
             </div>
-            <div class="follow">
+            <div class="col-xs-6 follow">
               Following: {{user.following_number}}
             </div>
           </div>
@@ -44,6 +44,7 @@
             <div (click)="openTab('b3','bb3');" id="bb3" class="tab-title"> <span>Following</span></div>
 
             <app-import-deck *ngIf="user.id == current_user.user_id"></app-import-deck>
+
           </div>
         </div>
 
@@ -53,12 +54,12 @@
               <div class="list-deck">
                 <div *ngFor="let deck of user.decks">
                   <div class="row" style="margin-bottom: 30px;">
-                    <div class="col-md-4 image-wrap">
+                    <div class="col-xs-5 col-md-4 image-wrap">
                       <a href ="#" [routerLink]="['/decks', deck.id]">
                         <img src="{{deck.cover_image.url}}" onError="this.src='./assets/images/deck-demo.jpg';" alt="deck-cover_image" style="width: 150px; height: 172px">
                       </a>
                     </div>
-                    <div class="col-md-8" style="margin-top: 5px">
+                    <div class="col-xs-7 col-md-8" style="margin-top: 5px; padding-left: 25px">
                       <a href ="#" [routerLink]="['/decks', deck.id]">
                         <div class="deck-title">{{deck.title}}</div>
                       </a>

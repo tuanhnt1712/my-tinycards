@@ -9,6 +9,7 @@ header {
 header .header-logo {
   margin: auto;
   height: 100%;
+  width: 100%;
   max-width: 1120px;
 }
 header .header-logo .inner {
@@ -43,12 +44,10 @@ header .header-logo .inner .search {
   margin-left: 10px;
 }
 header .header-logo .inner .search .search-form {
-  width: 300px;
   border: none;
   border-radius: 10px;
 }
 header .header-logo .inner .search .search-form input {
-  /*background-image: url('~/assets/images/searchicon.png');*/
   background-position: 8px 5px;
   background-repeat: no-repeat;
 }
@@ -112,4 +111,44 @@ footer .quick-links .link-item {
   font-weight: bold;
   margin: 20px;
   padding: 15px;
+}
+
+@media only screen and (max-width: 999px) {
+  span {
+    display: none;
+  }
+  a {
+    font-size: 30px !important;
+    height: 100%;
+    margin-right: 25px;
+  }
+  .logo a {
+    padding-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  span {
+    display: none;
+  }
+  .logo {
+    display: none !important;
+  }
+  .search {
+    display: none;
+  }
+  .nav-list {
+    display: flex;
+    width: 100%;
+  }
+  .nav-item {
+    flex: 1;
+    height: 100%;
+  }
+  .nav-item a {
+    margin: auto;
+    width: 20px;
+    padding: 15px 0 0 0 !important;
+    display: block;
+  }
 }

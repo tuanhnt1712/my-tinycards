@@ -1,10 +1,10 @@
 <div class="row user-profile .user-profile-info">
-  <div class="col-md-8">
+  <div class="col-xs-10 col-md-8">
     <a href ="#" [routerLink]="['/users', user.id]">
-      <div class="col-md-2 user-profile-avatar">
+      <div class="col-xs-4 col-md-2 user-profile-avatar">
         <img src="./assets/images/avatar.png" class="user-profile-avatar" alt="Default avatar">
       </div>
-      <div class="col-md-8">
+      <div class="col-xs-8 col-md-8">
         <div class="col-md-12 user-profile-name">
           {{user.name}}
         </div>
@@ -14,7 +14,7 @@
       </div>
     </a>
   </div>
-  <div class="col-md-4 user-profile-follow">
+  <div class="col-xs-2 col-md-4 user-profile-follow">
     <button (click)="toogleFollow(user)" [class.btn-followed]="user.followed" type="button" class="btn btn-outline-success btn-follow">
       <i class="fa fa-user" aria-hidden="true" style="font-size: 22px"></i>
     </button>
