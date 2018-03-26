@@ -43,7 +43,7 @@
             <div (click)="openTab('b2','bb2');" id="bb2" class="tab-title"> <span>Followers</span></div>
             <div (click)="openTab('b3','bb3');" id="bb3" class="tab-title"> <span>Following</span></div>
 
-            <app-import-deck></app-import-deck>
+            <app-import-deck *ngIf="user.id == current_user.user_id"></app-import-deck>
           </div>
         </div>
 
