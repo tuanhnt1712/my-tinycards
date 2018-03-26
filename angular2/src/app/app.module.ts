@@ -4,7 +4,6 @@ import { AlertModule, CarouselModule} from 'ngx-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ng2-modal';
 import { MatDialogModule } from '@angular/material';
-import { MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormWizardModule } from 'angular2-wizard';
@@ -79,8 +78,9 @@ import * as $ from 'jquery';
     CardAdvanceComponent
   ],
   imports: [
-    BrowserModule, AlertModule.forRoot(), CarouselModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
-    FormWizardModule, ImageUploadModule.forRoot(), EditorModule
+    BrowserModule, AlertModule.forRoot(), CarouselModule.forRoot(), appRoutes, HttpModule,
+    FormsModule, ReactiveFormsModule, ModalModule, MatDialogModule, BrowserAnimationsModule,
+    MatButtonModule, HttpClientModule, FormWizardModule, ImageUploadModule.forRoot(), EditorModule
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, SingleChoiceImageQuestionComponent,
    MapQuestionAnswerComponent, DialogComponent],

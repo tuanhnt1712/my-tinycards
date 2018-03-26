@@ -10,6 +10,7 @@ import { LessonComponent } from './lesson/lesson.component';
 import { UserComponent } from './user/user.component';
 import { SettingsComponent } from './user/settings.component';
 import { SearchDeckComponent } from './header/search_deck.component';
+import { DeactivateGuard } from './guards/deactivate-guard';
 import { CreateDeckAdvanceComponent } from './create-deck-advance/create-deck-advance.component';
 
 const routing : Routes = [
@@ -20,6 +21,7 @@ const routing : Routes = [
   {path: 'decks/:id', component: DeckDetailsComponent},
   {path: 'decks/:id/edit', component: EditDeckComponent},
   {path: 'createDeck', component: CreateDeckComponent},
+  {path: 'decks/:id/lessons/:id', component: LessonComponent, canDeactivate: [DeactivateGuard]},
   {path: 'createDeckAdvance', component: CreateDeckAdvanceComponent},
   {path: 'decks/:id/lessons/:id', component: LessonComponent},
   {path: 'users/:id', component: UserComponent},
