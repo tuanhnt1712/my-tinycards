@@ -1,0 +1,32 @@
+{
+  "name": "tiny-cards-node-api",
+  "version": "1.0.0",
+  "description": "Nodejs api ",
+  "main": "index.js",
+  "author": "illuminati",
+  "license": "MIT",
+  "scripts": {
+    "start": "pm2 start src/index.js -i 0 --name 'nodeapi'",
+    "stop": "pm2 stop nodeapi",
+    "restart": "pm2 restart nodeapi",
+    "delete": "pm2 delete nodeapi",
+    "start:dev": "pm2-dev src/index.js",
+    "serve:dev": "pm2-dev src/index.js",
+    "debug": "node --inspect src/index.js",
+    "test": "tape src/**/*.{e2e,unit}.test.js"
+  },
+  "dependencies": {
+    "knex": "0.14.4",
+    "koa": "2.5.0",
+    "koa-bodyparser": "4.2.0",
+    "koa-multer": "1.0.2",
+    "koa-router": "7.4.0",
+    "koa-static": "4.0.2",
+    "mkdirp": "0.5.1",
+    "mysql": "2.15.0",
+    "pm2": "2.10.1"
+  },
+  "devDependencies": {
+    "dotenv": "5.0.1"
+  }
+}
