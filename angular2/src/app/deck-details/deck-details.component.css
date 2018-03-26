@@ -523,3 +523,58 @@ img{border-style:none;}
 ::-webkit-input-placeholder{color:inherit;opacity:.54;}
 *{-webkit-tap-highlight-color:transparent;}
 div:focus{outline:none;}
+
+
+@media only screen and (max-width: 450px) {
+  .container {
+    background-color: #fff;
+  }
+  .left {
+    padding: 0;
+    position: relative;
+  }
+  .txt {
+    margin: 0 !important;
+  }
+  .img-deck {
+    height: 100% !important;
+  }
+  .img-deck img {
+    width: 100% !important;
+  }
+  .name-deck {
+    margin-bottom: 5px !important;
+  }
+  .author {
+    margin-top: 10px !important;
+  }
+  .favorite {
+    position: absolute;
+    left: -110px;
+    width: 345px;
+    display: block;
+  }
+  .mg-bt-30 {
+    margin-bottom: 30px;
+  }
+  .right {
+    border-radius: 0;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0);
+  }
+  .containerTab {
+    margin-top: 0px !important;
+  }
+  ._1vqs9 {
+    display: block;
+    margin: 5px auto 20px;
+  }
+  .containerr {
+    display: block;
+    margin: auto;
+    float: none;
+    margin-bottom: 20px;
+  }
+  .list-card {
+    margin: 10px;
+  }
+}

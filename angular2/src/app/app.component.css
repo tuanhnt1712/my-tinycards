@@ -40,3 +40,19 @@ footer .quick-links .link-item {
   margin: 20px;
   padding: 15px;
 }
+
+@media only screen and (max-width: 450px) {
+  .container {
+    padding: 0;
+  }
+
+  footer .quick-links {
+    display: flex;
+    width: 100%;
+  }
+
+  footer .quick-links .link-item {
+    margin: 0 !important;
+    padding: 10px !important;
+  }
+}

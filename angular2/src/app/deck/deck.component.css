@@ -70,3 +70,10 @@
 .slick-slide {
   width: 220px !important;
 }
+
+
+@media only screen and (max-width: 450px) {
+  .show-value {
+    margin-top: 0;
+  }
+}
