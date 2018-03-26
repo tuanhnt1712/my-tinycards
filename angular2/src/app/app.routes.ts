@@ -10,7 +10,6 @@ import { LessonComponent } from './lesson/lesson.component';
 import { UserComponent } from './user/user.component';
 import { SettingsComponent } from './user/settings.component';
 import { SearchDeckComponent } from './header/search_deck.component';
-import { DeactivateGuard } from './guards/deactivate-guard';
 import { CreateDeckAdvanceComponent } from './create-deck-advance/create-deck-advance.component';
 
 const routing : Routes = [
