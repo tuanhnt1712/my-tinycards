@@ -6,6 +6,7 @@ import { ModalModule } from 'ng2-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { FormWizardModule } from 'angular2-wizard';
 import { ImageUploadModule } from "angular2-image-upload";
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,9 +23,12 @@ import { HeaderBasicService } from './services/base/header-basic.service';
 import { HttpModule } from '@angular/http';
 import { DeckDetailsComponent } from './deck-details/deck-details.component';
 import { CreateDeckComponent } from './create-deck/create-deck.component';
+import { CreateDeckAdvanceComponent } from './create-deck-advance/create-deck-advance.component';
+import { TinyEditorComponent } from './card-advance/tiny-editor.compoment';
 import { ImportDeckComponent } from './import-deck/import-deck.component';
 import { EditDeckComponent } from './edit-deck/edit-deck.component';
 import { CardComponent } from './card/card.component';
+import { CardAdvanceComponent } from './card-advance/card-advance.component';
 import { HeaderComponent } from './header/header.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { LessonContentDirective } from './lesson/lesson-content.directive';
@@ -61,11 +65,14 @@ import * as $ from 'jquery';
     MapQuestionAnswerComponent,
     SlickCarouselComponent,
     SettingsComponent,
-    SearchDeckComponent
+    SearchDeckComponent,
+    CreateDeckAdvanceComponent,
+    TinyEditorComponent,
+    CardAdvanceComponent
   ],
   imports: [
     BrowserModule, AlertModule.forRoot(), CarouselModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
-    FormWizardModule, ImageUploadModule.forRoot()
+    FormWizardModule, ImageUploadModule.forRoot(), EditorModule
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, SingleChoiceImageQuestionComponent,
    MapQuestionAnswerComponent],
