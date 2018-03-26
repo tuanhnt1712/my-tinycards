@@ -1,0 +1,189 @@
+.list-card {
+  margin: 20px;
+}
+.list-card .item-card {
+  background-color: blanchedalmond;
+  border-radius: 15px;
+  height: 230px;
+  text-align: center;
+  cursor: pointer;
+}
+.list-card .item-card img {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.animation {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.containerr {
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 260px;
+  margin: 10px;
+  background: #fff;
+  /* Set the depth of the elements */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.ct-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  width: 200px;
+  /* Set the transition effects */
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  -o-transition: -o-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.ct-card.flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.ct-card .front,
+.ct-card .back {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ct-card .front {
+  background: #a3a3a3;
+}
+
+.ct-card .back {
+  background: #444444;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.wrapper {
+  padding: 10px 0 10px;
+}
+.wrapper .n-card {
+  display: flex;
+  margin-top: 25px;
+  padding: 20px 0 20px;
+  position: relative;
+  text-align: center;
+  padding-right: 80px;
+}
+.wrapper .n-card:hover {
+  background-color: #f7f7f7;
+}
+.wrapper .n-card:hover .del {
+  background-color: #f7f7f7;
+}
+.wrapper .n-card:hover .del .fa-trash-o {
+  opacity: 0.7;
+}
+.wrapper .number {
+  flex: 1;
+}
+.wrapper .front-card {
+  flex: 3;
+}
+.wrapper .front-card .image {
+  display: block;
+  margin: 15px auto;
+  height: 60%;
+  width: 160px;
+  position: relative;
+}
+.wrapper .front-card .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.wrapper .front-card .add-img {
+  width: 100%;
+}
+.wrapper .back-card {
+  flex: 3;
+}
+.wrapper .list-option {
+  flex: 1;
+}
+.wrapper .f-deck {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, .17);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 310px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: top;
+  width: 90%;
+}
+.wrapper .f-deck textarea {
+  outline: none;
+}
+.wrapper .f-deck .image label:hover {
+  color: blue;
+  opacity: .9;
+}
+.wrapper .f-deck .image label  {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.wrapper .f-deck textarea::placeholder {
+  opacity: .7;
+}
+.wrapper .f-deck .txt-back {
+  border: none;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 25px;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+.wrapper .f-deck .back {
+  padding-top: 130px;
+}
+.wrapper .f-deck .import-cover-deck {
+  width: 100%;
+}
+.wrapper .f-deck .import-cover-deck .ct-text {
+  border: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+  text-align: center;
+}
