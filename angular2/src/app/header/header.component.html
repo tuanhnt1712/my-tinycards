@@ -20,6 +20,9 @@
         <div class="nav-item">
           <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> <span>CREATE</span></a>
         </div>
+        <div class="nav-item">
+          <a href="#" [routerLink]="['/createDeckAdvance']" class="cl-text fa fa-plus"> <span>CREATE ADVANCE</span></a>
+        </div>
         <div class="nav-item" *ngIf="isAuthenticated">
           <a href="#" [routerLink]="['/users/', current_user.user_id]" class="cl-text fa fa-user"><span> {{current_user.name}}</span></a>
         </div>
