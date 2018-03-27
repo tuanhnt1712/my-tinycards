@@ -5,6 +5,7 @@ class Deck < ApplicationRecord
   has_many :no_lesson_cards, -> {no_lesson}, dependent: :destroy, class_name: Card
   has_many :lessons, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :feed_backs, dependent: :destroy
 
   validates :title, presence: true, length: {maximum: 100}
   validates :description, presence: true, length: {maximum: 250}
