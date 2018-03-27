@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< 6fee95ee7bae1bc90fadeec93b94052631ec1acd
 ActiveRecord::Schema.define(version: 20180326092117) do
+=======
+ActiveRecord::Schema.define(version: 20180327121532) do
+>>>>>>> feedback
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "email", default: "", null: false
@@ -61,7 +65,21 @@ ActiveRecord::Schema.define(version: 20180326092117) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+<<<<<<< 6fee95ee7bae1bc90fadeec93b94052631ec1acd
   create_table "lessons", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+=======
+  create_table "feed_backs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "status"
+    t.integer "deck_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deck_id"], name: "index_feed_backs_on_deck_id"
+    t.index ["user_id"], name: "index_feed_backs_on_user_id"
+  end
+
+  create_table "lessons", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+>>>>>>> feedback
     t.integer "deck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -154,6 +172,8 @@ ActiveRecord::Schema.define(version: 20180326092117) do
   add_foreign_key "decks", "users"
   add_foreign_key "favorites", "decks"
   add_foreign_key "favorites", "users"
+  add_foreign_key "feed_backs", "decks"
+  add_foreign_key "feed_backs", "users"
   add_foreign_key "lessons", "decks"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"

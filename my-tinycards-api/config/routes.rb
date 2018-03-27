@@ -37,6 +37,7 @@ Rails.application.routes.draw do
         resources :relationships, only: [:create]
       end
       resources :lessons, only: :show
+      resources :feed_backs, only: [:create]
 
       namespace :auth do
         resources :users, only: [:create, :update, :show, :edit]
