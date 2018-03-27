@@ -17,6 +17,13 @@
         <div class="nav-item">
           <a href="#" [routerLink]="['/']" class="cl-text fa fa-home"> <span>HOME</span></a>
         </div>
+        <div class="nav-itemm" id="icon-search" style="display: none" (click)="show()">
+          <div class="cl-textt fa fa-search" id="f-se">
+            <input #searchTerm class="search-input-res" id="ip-search" type="search" (keydown.enter)="performSearch(searchTerm)" style="outline: none;display: none" placeholder="Search">
+          </div>
+
+        </div>
+        <i class="fa fa-times" id="icon-cancle" style="position: absolute;right: 18px;top: 20px;display: none;z-index: 200;color: aqua;font-size: 20px" (click)="hid()"></i>
         <div class="nav-item">
           <a href="#" [routerLink]="['/createDeck']" class="cl-text fa fa-plus"> <span>CREATE</span></a>
         </div>
@@ -24,10 +31,10 @@
           <a href="#" [routerLink]="['/users/', current_user.user_id]" class="cl-text fa fa-user"><span> {{current_user.name}}</span></a>
         </div>
         <div class="nav-item" *ngIf="!isAuthenticated">
-          <a href="#" [routerLink]="['/login']" class="cl-text fa fa-user"> <span>LOGIN</span></a>
+          <a href="#" [routerLink]="['/login']" class="cl-text fa fa-sign-in"> <span>LOGIN</span></a>
         </div>
         <div class="nav-item">
-          <a href="javascript:void(0)" class="cl-text fa fa-user" (click)="onLogout()" *ngIf="isAuthenticated"> <span>LOGOUT</span></a>
+          <a href="javascript:void(0)" class="cl-text fa fa-sign-out" (click)="onLogout()" *ngIf="isAuthenticated"> <span>LOGOUT</span></a>
         </div>
       </div>
     </div>

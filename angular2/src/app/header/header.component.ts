@@ -47,4 +47,25 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/search'], {queryParams: { q: text}});
     });
   }
+
+  show(){
+    var i, x;
+    document.getElementById('ip-search').style.display = 'block';
+    document.getElementById('icon-cancle').style.display = 'block';
+    x = document.getElementsByClassName('nav-item');
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = 'none';
+    }
+  }
+
+  hid(){
+    var i, x;
+    document.getElementById('f-se').style.display = 'block';
+    document.getElementById('icon-cancle').style.display = 'none';
+    document.getElementById('ip-search').style.display = 'none';
+    x = document.getElementsByClassName('nav-item');
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = 'block';
+    }
+  }
 }
