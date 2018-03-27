@@ -6,12 +6,8 @@
         Don't have an account?
         <a href="#" [routerLink]="['/signup']" class="link-custome">Signup</a>
       </div>
-      <div class="social-login">
-        <button class="btn btn-block google-signin btn-social-signin">Sign in with Google</button>
-        <button class="btn btn-block facebook-signin btn-social-signin">Sign in with Facebook</button>
-      </div>
       <div class="devide-login">
-        <div class="devide-text">or</div>
+        <div class="devide-text"></div>
       </div>
 
       <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
