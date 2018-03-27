@@ -7,7 +7,7 @@ import * as _ from "lodash";
     <div class="les-wrapper">
       <div class="les-choice">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-xs-12 col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
                 <div class="front back-card" id="animation2" style="border-radius: 15px;">
@@ -16,7 +16,7 @@ import * as _ from "lodash";
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-xs-12 col-md-8 img-answ">
             <div class="image-answers">
               <ul style="list-style-type: decimal;">
                 <li class="list-ans" *ngFor="let card_answer of card_answers" >
