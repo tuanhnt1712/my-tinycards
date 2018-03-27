@@ -28,6 +28,11 @@ class Api::V1::DecksController < Api::V1::AuthorizeController
     render_success data: Api::V1::DeckSerializer.new(@deck)
   end
 
+  def destroy
+    @deck = Deck.find params[:id]
+    @deck.destroy!
+  end
+
   private
 
   def deck_params

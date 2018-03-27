@@ -24,6 +24,20 @@
             </div>
 
             <div class="btn-ct">
+              <button type="button" class="btn btn-ct-setting" (click)="confirmModal.open()"><i class="fa fa-trash" aria-hidden="true"></i></button>
+              <modal #confirmModal>
+                <modal-header>
+                  <h5 id="confirmModalLabel">Confirm</h5>
+                </modal-header>
+                <modal-content>
+                  Are your sure?
+                </modal-content>
+                <modal-footer>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteDeck(deck)">Delete</button>
+                  <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="confirmModal.close()">Close</button>
+                </modal-footer>
+              </modal>
               <button type="submit" class="btn btn-ct-publ btn-primary">Update</button>
             </div>
           </div>

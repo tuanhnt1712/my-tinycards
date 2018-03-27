@@ -102,4 +102,12 @@ export class EditDeckComponent implements OnInit{
       };
     }
   }
+
+  deleteDeck(deck) {
+    this.decksService.deleteDeck(deck.id).subscribe(
+      data => {
+        this.router.navigate(['/decks']);
+      }
+    )
+  }
 }

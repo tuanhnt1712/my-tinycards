@@ -105,6 +105,12 @@ export class DecksService extends RequestBasicService{
     return this.http.put(`${this.baseUrl}/decks/${deck.id}`, body, options ).map((res: Response) => res.json());
   }
 
+  deleteDeck(id) {
+    let headers = this.getHeaders();
+    let options = new RequestOptions({ headers: headers });
+    return this.http.delete(`${this.baseUrl}/decks/${id}`, options)
+  }
+
   create_user_lesson(user_lesson) {
     let headers = this.getHeaders();
     let options = new RequestOptions({ headers: headers });
