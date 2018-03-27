@@ -4,6 +4,7 @@ import { AlertModule, CarouselModule} from 'ngx-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ng2-modal';
 import { MatDialogModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormWizardModule } from 'angular2-wizard';

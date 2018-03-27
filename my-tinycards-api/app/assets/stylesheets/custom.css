@@ -24,6 +24,8 @@ body {
   background-color: #F7F7F7;
   margin: 0px;
   color: #5c5c5c;
+
+  font-family: DINNextRoundedLTPro-Regular, sans-serif;
   line-height: 1.5;
 }
 body a:link, body a:visited, body a:hover {
@@ -39,7 +41,7 @@ a:focus, button:focus, input:focus, div:focus, textarea:focus {
 }
 
 .list-card {
-  padding: 10px;
+  margin: 20px;
 }
 .list-card .item-card {
   background-color: blanchedalmond;
@@ -49,11 +51,8 @@ a:focus, button:focus, input:focus, div:focus, textarea:focus {
   cursor: pointer;
 }
 .list-card .item-card img {
-  border-radius: 15px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  width: 70%;
-  height: 160px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .animation {
@@ -115,7 +114,6 @@ a:focus, button:focus, input:focus, div:focus, textarea:focus {
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
 }
 
 .ct-card .front {
@@ -126,6 +124,7 @@ a:focus, button:focus, input:focus, div:focus, textarea:focus {
 
 .ct-card .back {
   background-color: #fff;
+  background: while;
   color: black;
   opacity: 0.8;
   -webkit-transform: rotateY(180deg);
