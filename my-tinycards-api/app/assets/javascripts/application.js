@@ -12,3 +12,6 @@
 //
 //= require rails-ujs
 //= require_tree .
+//= require light-bootstrap-dashboard
+//= require demo
+//= require bootstrap-notify
