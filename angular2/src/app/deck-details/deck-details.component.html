@@ -86,7 +86,7 @@
     </div>
     <modal #ModalReport>
       <modal-header>
-        <h5 id="coverImgModalLabel">What's wrong?</h5>
+        <h4 id="ModalLabel">What's wrong?</h4>
       </modal-header>
       <modal-content>
         <label class="checkb">I'm not interested in this deck.
@@ -107,8 +107,8 @@
         </label>
       </modal-content>
       <modal-footer>
+        <button type="button" class="btn btn-primary">Send report</button>
         <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal" (click)="ModalReport.close()">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </modal-footer>
     </modal>
   </div>
