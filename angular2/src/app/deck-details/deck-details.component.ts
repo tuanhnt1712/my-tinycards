@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormGroup, FormArray, FormBuilder, FormsModule, FormControl } from '@angular/forms';
-
+import { AuthenticationService } from '../services/authentication.service';
 import { Deck } from '../deck';
 import { User } from '../user'
 import { DecksService } from '../services/decks.service';
@@ -18,20 +18,28 @@ export class DeckDetailsComponent implements OnInit {
   cards = [];
   lessons = [];
   public myFormLesson: FormGroup;
+  feedbackForm: FormGroup;
   id: number;
   menuOpen = false;
   favorited = false;
   user: User;
-  constructor(private decksService: DecksService,
+  current_user: any;
+  constructor(private authenticationService: AuthenticationService,
+    private decksService: DecksService,
     private route: ActivatedRoute,
     private router: Router,
     private _fb: FormBuilder,
     private userService: UserService
-   ) {}
+   ) {
+    this.current_user = this.authenticationService.currentUser();
+  }
 
   ngOnInit() {
     this.myFormLesson = this._fb.group({
       lesson_id: ['', [Validators.required]]
+    })
+    this.feedbackForm = this._fb.group({
+      feedback: ['', [Validators.required]]
     })
     const self = this;
     this.sub = this.route.params.subscribe(params => {
@@ -99,5 +107,13 @@ export class DeckDetailsComponent implements OnInit {
 
   flipped($event){
     $event.currentTarget.classList.toggle('flipped')
+  }
+
+  sendReport(model){
+    (<HTMLInputElement>document.getElementById('closeModalButton1')).click();
+    this.decksService.feed_back(this.current_user.user_id, this.deck.id, model["value"].feedback).subscribe(
+      data => {
+        alert("Thanks for your feedback!");
+    });
   }
 }
