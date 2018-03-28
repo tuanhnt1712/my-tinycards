@@ -118,3 +118,33 @@
   border-left: 4px solid #32cdff !important;
   color: #32cdff !important;
 }
+
+@media only screen and (max-width: 450px) {
+  .row {
+    background-color: #fff !important;
+  }
+  .nav-list {
+    display: none;
+  }
+
+  #a2 {
+    display: block !important;
+  }
+
+  .wrapper {
+    padding: 0;
+    margin: 0;
+  }
+
+  .change {
+    border-radius: 0 !important;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0) !important;
+  }
+
+  .ava {
+    margin: 30px;
+  }
+  .ava label {
+    right: 60px !important;
+  }
+}

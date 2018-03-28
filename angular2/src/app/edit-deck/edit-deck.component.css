@@ -245,3 +245,49 @@
     height: 255px;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .container {
+    padding: 0 !important;
+    background-color: #fff;
+  }
+  .row {
+    margin-top: 0px !important;
+    margin: auto !important;
+    width: 100% !important;
+  }
+  .cover-deck {
+    margin: auto !important;
+    display: block !important;
+    width: 230px !important;
+  }
+
+  .add-card {
+    position: absolute;
+    top: 95px;
+    right: 100px;
+  }
+
+  .panel-heading span {
+    margin-top: -10px;
+    margin-right: 10px;
+  }
+
+  .right {
+    border-radius: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    margin-top: 0;
+    min-height: 270px;
+  }
+  .left {
+    background-color: #fff;
+  }
+
+  .bod {
+    border-bottom: 1px solid #9d9a9a33;
+  }
+
+  .pad-top-10 {
+    padding-top: 10px;
+  }
+}
