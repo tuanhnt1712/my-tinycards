@@ -7,7 +7,7 @@ import * as _ from "lodash";
     <div class="les-wrapper">
       <div class="les-choice">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-xs-12 col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
                 <div class="front" id="animation3" style="border-radius: 15px;">
@@ -19,7 +19,7 @@ import * as _ from "lodash";
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-xs-12 col-md-8">
             <div class="answers">
               <ul>
                 <li class="list-ans" *ngFor="let answer of answers" >
