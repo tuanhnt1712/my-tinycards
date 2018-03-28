@@ -13,6 +13,12 @@
     <%= deck.cards.size %>
   </td>
   <td>
+    <%= deck.created_at %>
+  </td>
+  <td>
+    <%= deck.updated_at %>
+  </td>
+  <td>
     <% if current_admin %>
       <% if current_admin %>
         <%= link_to "Delete", admins_deck_path(deck), method: :delete, remote: true,

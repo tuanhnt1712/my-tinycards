@@ -15,16 +15,11 @@
 				<div style="height: 30%; border-top: 1px solid #eceaea; opacity: .8">
 					<textarea type="text" formControlName="front" id="front-card-value" class="txt-back" placeholder="Front">
 					</textarea>
-					<!-- <app-tiny-editor
-            [(ngModel)]="page.content" formControlName="front">
-          </app-tiny-editor> -->
 				</div>
 			</div>
 		</div>
 		<div class="back-card">
 			<div class="f-deck">
-				<!-- <textarea type="text" formControlName="back" id="back-card-value" class="form-control txt-back back" placeholder="Back">
-				</textarea> -->
 				<app-tiny-editor
           [(ngModel)]="page.content" formControlName="back">
         </app-tiny-editor>
