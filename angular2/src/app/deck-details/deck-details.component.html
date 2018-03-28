@@ -60,7 +60,8 @@
             </div>
           </div>
 
-          <div id="b2" class="containerTab" style="display:none;">
+          <div id="b2" class="containerTab" style="display:none; position: relative;">
+            <button type="button" (click)="ModalReport.open()" class="feedback">...</button>
             <div class="list-card">
               <div class="row" style="width: 98%;margin: auto;">
                 <div class="containerr" *ngFor="let card of deck.cards">
@@ -72,7 +73,7 @@
                       <p class="txt-front">{{card.front}}</p>
                     </div>
                     <div class="item-card back">
-                    
+
                       <p [innerHTML]="card.back"></p>
                     </div>
                   </div>
@@ -83,6 +84,33 @@
         </div>
       </div>
     </div>
+    <modal #ModalReport>
+      <modal-header>
+        <h5 id="coverImgModalLabel">What's wrong?</h5>
+      </modal-header>
+      <modal-content>
+        <label class="checkb">I'm not interested in this deck.
+          <input type="radio" checked="checked" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkb">This deck has an error.
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkb">This deck is inappropriate.
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkb">This deck infringes on copyright.
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+      </modal-content>
+      <modal-footer>
+        <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal" (click)="ModalReport.close()">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </modal-footer>
+    </modal>
   </div>
 </div>
 </section>
