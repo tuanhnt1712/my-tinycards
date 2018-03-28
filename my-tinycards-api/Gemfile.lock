@@ -807,7 +807,7 @@ DEPENDENCIES
   apipie-rails
   aws-sdk (~> 1.66.0)
   better_errors
-  bootstrap (~> 4.0.0.alpha6)
+  bootstrap (~> 4.0.0.beta2.1)
   bootstrap-kaminari-views
   brakeman
   bundler-audit

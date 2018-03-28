@@ -2888,7 +2888,6 @@ Copyright (c) 2015 Daniel Eden
     margin: 0;
     color: #333333;
     font-weight: 300;
-
 }
 
 .card .avatar {
@@ -2896,7 +2895,6 @@ Copyright (c) 2015 Daniel Eden
     height: 30px;
     overflow: hidden;
     border-radius: 15px;
-    margin-right: 5px;
 }
 
 .card .description {
