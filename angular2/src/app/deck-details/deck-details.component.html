@@ -60,7 +60,8 @@
             </div>
           </div>
 
-          <div id="b2" class="containerTab" style="display:none;">
+          <div id="b2" class="containerTab" style="display:none; position: relative;">
+            <button type="button" (click)="ModalReport.open()" class="feedback">...</button>
             <div class="list-card">
               <div class="row" style="width: 98%;margin: auto;">
                 <div class="containerr" *ngFor="let card of deck.cards">
@@ -72,11 +73,6 @@
                       <p class="txt-front">{{card.front}}</p>
                     </div>
                     <div class="item-card back">
-<<<<<<< ddec2af84906c44380105b7fd79e472019981dff
-
-=======
-                    
->>>>>>> create advance
                       <p [innerHTML]="card.back"></p>
                     </div>
                   </div>
@@ -87,6 +83,35 @@
         </div>
       </div>
     </div>
+    <form [formGroup]="feedbackForm" novalidate>
+      <modal #ModalReport>
+        <modal-header>
+          <h4 id="ModalLabel">What's wrong?</h4>
+        </modal-header>
+        <modal-content>
+            <label class="checkb">I'm not interested in this deck.
+              <input type="radio" [checked]="1" formControlName="feedback" value="not_interested">
+              <span class="checkmark"></span>
+            </label>
+            <label class="checkb">This deck has an error.
+              <input type="radio" formControlName="feedback" value="an_error">
+              <span class="checkmark"></span>
+            </label>
+            <label class="checkb">This deck is inappropriate.
+              <input type="radio" formControlName="feedback" value="inappropriate">
+              <span class="checkmark"></span>
+            </label>
+            <label class="checkb">This deck infringes on copyright.
+              <input type="radio" formControlName="feedback" value="infringes_copyright">
+              <span class="checkmark"></span>
+            </label>
+        </modal-content>
+        <modal-footer>
+          <button type="submit" class="btn btn-primary" (click)="sendReport(feedbackForm)">Send report</button>
+          <button id="closeModalButton1" type="button" class="btn btn-secondary" data-dismiss="modal" (click)="ModalReport.close()">Close</button>
+        </modal-footer>
+      </modal>
+    </form>
   </div>
 </div>
 </section>
