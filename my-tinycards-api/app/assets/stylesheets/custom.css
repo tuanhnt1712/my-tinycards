@@ -1,8 +1,29 @@
+/* Dinh nghia font moi de dung cho du an*/
+@font-face {
+  font-family: DINNextRoundedLTPro-Light;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Light"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Light.svg) format("svg");
+}
+@font-face {
+  font-family: DINNextRoundedLTPro-Regular;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Regular"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Regular.svg) format("svg");
+}
+@font-face {
+  font-family: DINNextRoundedLTPro-Medium;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Medium"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Medium.svg) format("svg");
+}
+@font-face {
+  font-family: DINNextRoundedLTPro-Bold;
+  font-style: normal;
+  src: local("DINNextRoundedLTPro-Bold"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff2) format("woff2"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.woff) format("woff"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.ttf) format("truetype"), url(//d17u0960v8a9bp.cloudfront.net/font/din/DINNextRoundedLTPro-Bold.svg) format("svg");
+}
+
 body {
   background-color: #F7F7F7;
   margin: 0px;
   color: #5c5c5c;
-  font-family: DINNextRoundedLTPro-Regular, sans-serif;
   line-height: 1.5;
 }
 body a:link, body a:visited, body a:hover {
@@ -577,6 +598,9 @@ footer .quick-links .link-item {
   margin-top: 40px;
   padding: 35px;
   border-radius: 20px;
+  width: 300px;
+  margin-top: 30px;
+  margin: auto;
 }
 
 .login-form-label {
@@ -795,7 +819,7 @@ footer .quick-links .link-item {
   padding: 35px;
   border-radius: 20px;
   background-color: #fff;
-  height: 500px;
+  height: 450px;
 }
 .login-form button {
   outline: none;
@@ -889,4 +913,59 @@ footer .quick-links .link-item {
 .shadow-nohover {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-control {
+  display: block;
+  width: 91%;
+  height: 34px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.btn-custome {
+  -moz-user-select: none;
+  -ms-touch-action: manipulation;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background-color: #32cdff;
+  background-image: none;
+  border-radius: 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: DINNextRoundedLTPro-Bold,sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  margin-bottom: 0;
+  padding: 12px 0 8px;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.text-center {
+  text-align: center;
 }
