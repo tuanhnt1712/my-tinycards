@@ -24,7 +24,6 @@ body {
   background-color: #F7F7F7;
   margin: 0px;
   color: #5c5c5c;
-
   font-family: DINNextRoundedLTPro-Regular, sans-serif;
   line-height: 1.5;
 }
@@ -812,8 +811,4 @@ footer .quick-links .link-item {
   border-bottom: 4px solid #32cdff;
   color: #32cdff;
   padding-bottom: 11px;
-}
-
-.deck-title {
-  font-size: 30px;
 }
