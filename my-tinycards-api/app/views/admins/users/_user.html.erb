@@ -1,0 +1,17 @@
+<tr id="<%= user.id %>">
+  <td>
+    <%= link_to user.name %>
+  </td>
+  <td>
+    <%= user.email %>
+  </td>
+  <td>
+    <%= user.decks.size %>
+  </td>
+  <td>
+    <% if current_admin %>
+      <%= link_to "Delete", admins_user_path(user), method: :delete, remote: true,
+        data: {confirm: "Are you sure"}, class: "btn btn-danger button_text" %>
+    <% end %>
+  </td>
+</tr>
