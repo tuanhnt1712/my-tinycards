@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
 
   namespace :admins do
-    root "admins#index"
+    root "users#index"
     resources :users, only: [:index, :show, :destroy]
     resources :decks, only: [:index, :show, :destroy]
     resources :feed_backs

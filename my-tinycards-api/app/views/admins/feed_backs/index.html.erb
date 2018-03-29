@@ -1,7 +1,24 @@
-<div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
-  <% if @feed_backs.any? %>
-    <ul class="post-preview" id="my-posts">
-      <%= render @feed_backs %>
-    </ul>
-  <% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        <h4 class="title" style="font-size: 25px">List feed_backs</h4>
+      </div>
+      <div class="content table-responsive table-full-width">
+          <table class="table table-hover">
+              <thead>
+                <th style="width: 15%">Avata User</th>
+                <th style="width: 20%">Username</th>
+                <th style="width: 20%">Deck number</th>
+                <th>Info feedback</th>
+              </thead>
+              <tbody>
+                <% if @feed_backs.any? %>
+                  <div><%= render @feed_backs %></div>
+                <% end %>
+              </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
 </div>
