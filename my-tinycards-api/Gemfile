@@ -31,6 +31,8 @@ gem "nokogiri", "~> 1.8.1"
 gem 'carrierwave'
 gem 'carrierwave-base64'
 gem 'mime-types', require: 'mime/types/full'
+gem "font-awesome-rails"
+gem "bootstrap", "~> 4.0.0.beta2.1"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
@@ -49,7 +51,7 @@ group :development, :test do
   gem "bundler-audit"
   gem "rubocop", "~> 0.35.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
-  gem "scss_lint"
+  gem "scss-lint"
   gem "scss_lint_reporter_checkstyle", require: false
   gem "eslint-rails"
   gem "rails_best_practices"

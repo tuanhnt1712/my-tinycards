@@ -11,4 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery.3.2.1.min
+//= require bootstrap-select
+//= require light-bootstrap-dashboard
 //= require_tree .
