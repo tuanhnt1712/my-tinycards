@@ -184,3 +184,22 @@
     background-color: #fff;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .profile-content {
+    margin-left: 0px !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0) !important;
+  }
+
+  section {
+    background-color: #fff;
+  }
+
+  .swap {
+    margin-top: 22px !important;
+  }
+  .nav-item a {
+    padding: 15px !important;
+  }
+}

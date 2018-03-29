@@ -578,3 +578,58 @@ div:focus{outline:none;}
     margin: 10px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    background-color: #fff;
+    width: 100%;
+  }
+  .list-card {
+    margin: 0 !important;
+  }
+  .row {
+    width: 100% !important;
+  }
+  .left {
+    padding: 0;
+    position: relative;
+  }
+  .txt {
+    margin: 0 !important;
+  }
+  .img-deck {
+    height: 100% !important;
+  }
+  .img-deck img {
+    width: 100% !important;
+  }
+  .name-deck {
+    margin-bottom: 5px !important;
+  }
+  .author {
+    margin-top: 10px !important;
+  }
+  .mg-bt-30 {
+    margin-bottom: 30px;
+  }
+  .right {
+    border-radius: 0;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0);
+  }
+  .containerTab {
+    margin-top: 0px !important;
+  }
+  ._1vqs9 {
+    display: block;
+    margin: 5px auto 20px;
+  }
+  .containerr {
+    display: block;
+    margin: auto;
+    float: left;
+    margin: 4px;
+  }
+  .list-card {
+    margin: 10px;
+  }
+}

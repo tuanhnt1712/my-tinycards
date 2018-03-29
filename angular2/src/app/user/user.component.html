@@ -2,14 +2,14 @@
   <div class="swap" style="margin-top: 45px">
     <div class="row text-center user-profile" style="margin: auto">
       <div class="col-xs-12 col-md-3 user-profile-info">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-6 col-md-12">
           <img src="{{user.avatar.url}}" onError="this.src='./assets/images/avatar.png';" class="user-profile-avatar" alt="Default avatar">
         </div>
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-6 col-md-12">
           <div class="col-xs-12 user-profile-name">
             <p> {{user.name}} </p>
           </div>
-          <div class="user-profile-follow">
+          <div class=" col-md-12 user-profile-follow">
             <div class="col-xs-6 follow">
               Followers: {{user.follower_number}}
             </div>
@@ -21,14 +21,14 @@
           <div style="font-style: italic;">{{user.bio}}</div>
         </div>
 
-        <div *ngIf="user.id == current_user.user_id" class="col-xs-12 profile-setting">
+        <div *ngIf="user.id == current_user.user_id" class="col-xs-12 col-sm-6 profile-setting">
           <a href="#" [routerLink]="['setting']" class="col">
             <img src="./assets/images/setting.png" class="img-setting" alt="Setting">
             <div class="text-setting">Settings</div>
           </a>
         </div>
 
-        <div *ngIf="user.id != current_user.user_id" class="col-xs-12 profile-setting">
+        <div *ngIf="user.id != current_user.user_id" class="col-xs-12 col-sm-6 profile-setting">
           <button (click)="toogleFollow(user)" [class.btn-followed]="user.followed" type="button" class="btn btn-outline-success btn-follow">
             <i class="fa fa-user" aria-hidden="true"></i>
             {{user.followed ? 'Unfollow' : 'Follow'}}
