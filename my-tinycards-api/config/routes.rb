@@ -1,12 +1,17 @@
 require "api_constraints"
 Rails.application.routes.draw do
-  # devise_for :admins
-  resources :admins
 
-  root to: 'admins#index'
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }
+
+  namespace :admins do
+    root "admins#index"
+    resources :users, only: [:index, :show, :destroy]
+    resources :decks, only: [:index, :show, :destroy]
+    resources :feed_backs
+  end
+
   use_doorkeeper
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :alive, only: :show

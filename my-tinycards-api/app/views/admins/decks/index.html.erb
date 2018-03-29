@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <span>
+      <%= t ".decks" %>
+    </span>
+    <p>
+      <%= t ".download" %>:
+      <%= link_to "csv", admins_decks_path(format: "csv", query: @decks) %> |
+      <%= link_to "excel", admins_decks_path(format: "xls", query: @decks) %>
+    </p>
+    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
+      <% if @decks.any? %>
+        <ul class="post-preview" id="my-posts">
+          <%= render @decks %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

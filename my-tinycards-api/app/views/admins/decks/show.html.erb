@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">	
+		<div id="post-<%= @deck.id %>">
+		  <div div="box-post">
+		    <%= link_to image_tag(@deck.user.avatar, class: "avatar-post") %>
+		    <h3 class="user-name"><%= link_to @deck.user.name %></h3>
+		    <h2 class="post-title"><%= link_to @deck.title %>
+		      <% if @deck.cards.any? %>
+		        <span class="badge badge-info">
+		          <%= @deck.cards.size %>
+		        </span>
+		      <% end %>
+		    </h2>
+		    <span>
+		      <% if current_admin %>
+		        <%= link_to "Delete", admins_deck_path(@deck), method: :delete, remote: true,
+		         data: {confirm: "Are you sure"}, class: "btn btn-danger button_text" %>
+		      <% end %>
+		    </span>
+		    <hr>
+		  </div>
+		</div>
+	</div>
+</div>

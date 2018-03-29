@@ -61,7 +61,6 @@ module Api::V1::Auth::DoorkeeperAuthorize
   end
 
   def strategy
-    binding.pry
     @strategy ||= server.token_request params[:grant_type]
   end
 
