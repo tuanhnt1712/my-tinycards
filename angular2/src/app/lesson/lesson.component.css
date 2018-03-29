@@ -388,3 +388,69 @@ button:-moz-focusring{outline:1px dotted ButtonText;}
 button:focus{outline:none;}
 button{cursor:pointer;}
 button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:grayscale(100%);}
+
+@media only screen and (max-width: 450px) {
+  .lesson-wrapper {
+    margin-top: 0 !important;
+    border-radius: 0;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0);
+    display: block;
+  }
+
+  .les-choice {
+    margin: auto !important;
+    padding: 0 !important;
+    width: 90% !important;
+  }
+
+  .les-card {
+    margin: auto !important;
+  }
+
+  .containerr {
+    height: 330px !important;
+  }
+
+  .txt-answers {
+  }
+  .txt-answers .ct-answers {
+    margin: auto !important;
+  }
+
+  .image-answers ul {
+    display: flex;
+    padding-left: 0px !important;
+  }
+  .image-answers ul li {
+    list-style-type: none !important;
+    flex: 1;
+  }
+
+  .answers ul {
+    display: flex;
+    padding-left: 0px !important;
+  }
+  .answers ul li {
+    list-style-type: none !important;
+    flex: 1;
+  }
+  .list-ans {
+    margin: 0 !important;
+    padding: 0 5px;
+  }
+
+  .img-answ {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .image-answers {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ct-answers {
+    top: 10% !important;
+  }
+}

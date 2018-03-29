@@ -12,9 +12,5 @@
  *
  *= require_tree .
  *= require_self
- *= require_light-bootstrap-dashboard
- *= require_demo
- *= require_bootstrap.min
  */
-@import "bootstrap";
 @import "font-awesome";

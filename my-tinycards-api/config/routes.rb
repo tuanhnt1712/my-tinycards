@@ -1,7 +1,9 @@
 require "api_constraints"
-
 Rails.application.routes.draw do
   # devise_for :admins
+  resources :admins
+
+  root to: 'admins#index'
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
       end
       namespace :search do
         resources :decks
-      end      
+      end
       namespace :import do
         resources :decks
       end
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
         resources :relationships, only: [:create]
       end
       resources :lessons, only: :show
+      resources :feed_backs, only: [:create]
 
       namespace :auth do
         resources :users, only: [:create, :update, :show, :edit]

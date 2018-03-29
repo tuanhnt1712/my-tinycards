@@ -7,7 +7,7 @@ import { LessonContentComponent } from './lesson-content.component';
     <div class="les-wrapper">
       <div class="les-choice">
 		    <div class="row">
-          <div class="col-md-4">
+          <div class="col-xs-12 col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
                 <div class="front" id="animation1" style="border-radius: 15px;">
@@ -19,7 +19,7 @@ import { LessonContentComponent } from './lesson-content.component';
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-xs-12 col-md-8">
             <div class="txt-answers">
               <div class="ct-answers">
                 <input type="text" class="txt-answer" placeholder="Enter the answer" name="answer" id="write-answer">

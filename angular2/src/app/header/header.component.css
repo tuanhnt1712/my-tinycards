@@ -4,7 +4,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 100;
+  z-index: 10;
 }
 header .header-logo {
   margin: auto;
@@ -16,6 +16,7 @@ header .header-logo .inner {
   display: flex;
   height: 100%;
   justify-content: space-between;
+  position: relative;
 }
 header .header-logo .inner img {
   height: 60px;
@@ -97,6 +98,17 @@ header .header-logo .inner .nav-list .nav-item a {
   opacity: .9;
   text-decoration: none;
 }
+header .header-logo .inner .nav-list .cl-textt {
+  color: White;
+  display: block;
+  font-size: 25px;
+  font-weight: 300;
+  padding: 17px 30px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  opacity: .9;
+  text-decoration: none;
+}
 header .header-logo .inner .nav-list .nav-item span {
   font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
@@ -111,6 +123,24 @@ footer .quick-links .link-item {
   font-weight: bold;
   margin: 20px;
   padding: 15px;
+}
+
+.search-input-res input {
+  background-position: 8px 5px;
+  background-repeat: no-repeat;
+}
+.search-input-res {
+  display: none;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #5c5c5c;
+  font-size: 15px;
+  height: 30px;
+  padding: 3px 0 0 20px;
+  width: 80%;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
 
 @media only screen and (max-width: 999px) {
@@ -131,6 +161,11 @@ footer .quick-links .link-item {
   span {
     display: none;
   }
+
+  #icon-search {
+    display: block !important;
+  }
+
   .logo {
     display: none !important;
   }
@@ -150,5 +185,25 @@ footer .quick-links .link-item {
     width: 20px;
     padding: 15px 0 0 0 !important;
     display: block;
+  }
+
+  .search-input-res {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+    color: #5c5c5c;
+    display: block;
+    font-family: DINNextRoundedLTPro-Medium,sans-serif;
+    font-size: 15px;
+    height: 40px;
+    left: 10px;
+    margin: auto;
+    outline: none;
+    padding: 3px 0 0 20px;
+    position: absolute;
+    top: 10px;
+    width: 95%;
+    z-index: 100;
   }
 }
