@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="main-box-body clearfix">
+        <div class="table-responsive">
+        <p>
+          <%= t ".download" %>:
+          <%= link_to t(".csv"), admins_users_path(format: "csv") %> |
+          <%= link_to t(".excel"), admins_users_path(format: "xls") %>
+        </p>
+          <table class="table user-list" id="my-users">
+            <thead>
+              <tr id="my-users">
+                <th>User</th>
+                <th>Email</th>
+                <th>Decks</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if @users.any? %>
+                <div><%= render @users %></div>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

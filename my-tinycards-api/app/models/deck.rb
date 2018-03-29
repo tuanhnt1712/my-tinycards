@@ -43,4 +43,13 @@ class Deck < ApplicationRecord
   ].freeze
 
   mount_base64_uploader :cover_image, DeckUploader
+
+  def self.to_csv options = {}
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |deck|
+        csv << deck.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

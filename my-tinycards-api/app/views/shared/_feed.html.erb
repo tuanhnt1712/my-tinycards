@@ -1,0 +1,8 @@
+<% if @feed_items.any? %>
+  <ul class="post-preview" id="my-items">
+    <%= render @feed_items %>
+  </ul>
+<% end %>
+<div id="infinite-scrolling">
+  <%= paginate @feed_items %>
+</div>
