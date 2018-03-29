@@ -1,19 +1,29 @@
-<div class="container">
-  <div class="row">
-    <span>
-      <%= t ".decks" %>
-    </span>
-    <p>
-      <%= t ".download" %>:
-      <%= link_to "csv", admins_decks_path(format: "csv", query: @decks) %> |
-      <%= link_to "excel", admins_decks_path(format: "xls", query: @decks) %>
-    </p>
-    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
-      <% if @decks.any? %>
-        <ul class="post-preview" id="my-posts">
-          <%= render @decks %>
-        </ul>
-      <% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        <h4 class="title" style="font-size: 25px">List decks</h4>
+        <p>
+          <%= t ".download" %>:
+          <%= link_to "csv", admins_decks_path(format: "csv", query: @decks) %> |
+          <%= link_to "excel", admins_decks_path(format: "xls", query: @decks) %>
+        </p>
+      </div>
+      <div class="content table-responsive table-full-width">
+          <table class="table table-hover">
+              <thead>
+                <th style="width: 12%">Image Cover Deck</th>
+                <th style="width: 25%">Author</th>
+                <th style="width: 20%">Deck title</th>
+                <th style="width: 20%">Cards</th>
+                <th>Action</th>
+              </thead>
+              <tbody>
+                <% if @decks.any? %>
+                  <div><%= render @decks %></div>
+                <% end %>
+              </tbody>
+          </table>
+      </div>
     </div>
-  </div>
-</div>
+  </div
