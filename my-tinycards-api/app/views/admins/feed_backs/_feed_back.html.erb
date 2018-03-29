@@ -1,3 +1,4 @@
+<<<<<<< e11b7dd421a59ab607ca89ebf6cf8929ad9d0a42
 <tr>
   <td>
     <%= link_to image_tag(feed_back.user.avatar, class: "avatar-post") %>
@@ -12,3 +13,12 @@
     <%= feed_back.status %>
   </td>
 </tr>
+=======
+<div div="box-post">
+  <%= link_to image_tag(feed_back.user.avatar, class: "avatar-post") %>
+  <h3 class="user-name"><%= link_to feed_back.user.name %></h3>
+  <h3 class="user-name"><%= link_to feed_back.deck.title, admins_deck_path(feed_back.deck) %></h3>
+  <h2 class="post-title"><%= feed_back.status %></h2>
+  <hr>
+</div>
+>>>>>>> admin report user and deck

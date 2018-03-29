@@ -10,22 +10,22 @@
           </p>
         </div>
       <div class="content table-responsive table-full-width">
-          <table class="table table-hover">
-              <thead>
-                <th>ID</th>
-                <th style="width: 15%">Username</th>
-                <th style="width: 20%">Email</th>
-                <th style="width: 20%">Created at</th>
-                <th style="width: 20%">Updated at</th>
-                <th style="width: 15%">Decks</th>
-                <th>Action</th>
-              </thead>
-              <tbody>
-                <% if @users.any? %>
-                  <div><%= render @users %></div>
-                <% end %>
-              </tbody>
-          </table>
+        <table class="table table-hover">
+          <thead>
+            <th>ID</th>
+            <th style="width: 15%">Username</th>
+            <th style="width: 20%">Email</th>
+            <th style="width: 20%">Created at</th>
+            <th style="width: 20%">Updated at</th>
+            <th style="width: 15%">Decks</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+            <% if @users.any? %>
+              <div><%= render @users %></div>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

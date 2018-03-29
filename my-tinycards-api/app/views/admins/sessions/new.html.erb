@@ -1,12 +1,10 @@
 <div class="row">
   <div class="card login-form shadow-nohover">
-    <div class="text-center login-form-label">Log in with your account</div>
-    <div class="text-center">
-      Don't have an account?
-      <%= render "admins/shared/links" %>
+    <div class="text-center login-form-label">Log in with your admin account</div>
+    <div class="text-center">     
     </div>
     <div class="devide-login">
-      <div class="devide-text">or</div>
+      <div class="devide-text"></div>
     </div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
