@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :destroy]
     resources :decks, only: [:index, :show, :destroy]
     resources :feed_backs
+    resources :dashboards
   end
 
   use_doorkeeper
