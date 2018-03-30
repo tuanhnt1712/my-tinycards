@@ -1,4 +1,6 @@
 class Card < ApplicationRecord
+  include CreatedAtDay
+
   belongs_to :deck, optional: true
   belongs_to :lesson, optional: true
 

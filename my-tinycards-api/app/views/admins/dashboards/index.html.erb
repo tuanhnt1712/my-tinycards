@@ -1,0 +1,10 @@
+<div class="chart-type">
+  <%= link_to "Last Week", admins_dashboards_path(type: "week"), class: "btn btn-default" %>
+  <%= link_to "Last 30 days", admins_dashboards_path(type: "month"), class: "btn btn-default" %>
+</div>
+<div id="container" style="width:100%; height:400px;"></div>
+<%= javascript_tag do %>
+  <%= render partial: "chart.js", locals: { users: @dashboard.users,
+    decks: @dashboard.decks, cards: @dashboard.cards, dates: @dashboard.dates,
+    title: params[:type] || "week" } %>
+<% end %>
