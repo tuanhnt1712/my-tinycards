@@ -1,24 +1,45 @@
-<div class="container">
-  <div class="row">	
-		<div id="post-<%= @deck.id %>">
-		  <div div="box-post">
-		    <%= link_to image_tag(@deck.user.avatar, class: "avatar-post") %>
-		    <h3 class="user-name"><%= link_to @deck.user.name %></h3>
-		    <h2 class="post-title"><%= link_to @deck.title %>
-		      <% if @deck.cards.any? %>
-		        <span class="badge badge-info">
-		          <%= @deck.cards.size %>
-		        </span>
-		      <% end %>
-		    </h2>
-		    <span>
-		      <% if current_admin %>
-		        <%= link_to "Delete", admins_deck_path(@deck), method: :delete, remote: true,
-		         data: {confirm: "Are you sure"}, class: "btn btn-danger button_text" %>
-		      <% end %>
-		    </span>
-		    <hr>
-		  </div>
-		</div>
-	</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card card-user">
+        <div class="content">
+            <div class="author">
+                <a href="#">
+                	<%= image_tag(@deck.cover_image, class: "avatar border-gray") %>
+
+                  <h4 class="title"><%= @deck.title %><br />
+                    <small><%= @deck.description %></small><hr />
+                    <small>Author: <%= @deck.user.name %></small>
+		                <span>
+										  <% if current_admin %>
+										    <%= link_to "Delete", admins_deck_path(@deck), method: :delete, remote: true,
+										     data: {confirm: "Are you sure delete it?"}, class: "btn btn-danger button_text" %>
+										  <% end %>
+										</span>
+                  </h4>
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+ 	<div class="col-md-8">
+    <div class="card card-user list-card" style="min-height: 338px;">
+      <div class="row" style="width: 98%;margin: auto;">
+      	<% @deck.cards.each do |card| %>
+	        <div class="containerr" style="margin-right: 20px">
+	          <div class="ct-card">
+	            <div class="item-card front">
+	              <div style="height: 182px">
+	                <%= image_tag(card.picture) %>
+	              </div>
+	              <p class="txt-front"><%= card.front %></p>
+	            </div>
+	            <div class="item-card back">
+	              <p><%= card.back %></p>
+	            </div>
+	          </div>
+	        </div>
+	      <% end %>
+      </div>
+    </div>
+  </div>
 </div>
