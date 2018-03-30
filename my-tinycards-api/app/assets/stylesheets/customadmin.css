@@ -2287,13 +2287,14 @@ fieldset[disabled] .btn-neutral.active {
     margin: 0;
     color: #333333;
     font-weight: 300;
+
 }
 
 .card .avatar {
     width: 30px;
     height: 30px;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 15px;
     margin-right: 5px;
 }
 
@@ -2386,12 +2387,11 @@ fieldset[disabled] .btn-neutral.active {
 .card-user .author {
     text-align: center;
     text-transform: none;
-    margin-top: -70px;
 }
 
 .card-user .avatar {
-    width: 124px;
-    height: 124px;
+    width: 188px;
+    height: 210px;
     border: 5px solid #FFFFFF;
     position: relative;
     margin-bottom: 15px;
@@ -2403,6 +2403,8 @@ fieldset[disabled] .btn-neutral.active {
 
 .card-user .title {
     line-height: 24px;
+    font-weight: 600;
+    opacity: .8;
 }
 
 .card-user .content {

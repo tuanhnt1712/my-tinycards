@@ -13,3 +13,9 @@ function openTab(tabName, titleName) {
   $(tabName).addClass("active");
   $(titleName).css("display", "block");
 }
+
+$(document).ready(function() {
+  $(".ct-card").click(function() {
+    $(this).toggleClass('flipped');
+  });
+});
