@@ -1,0 +1,55 @@
+$(document).ready(function() {
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Statistics'
+        },
+        subtitle: {
+            text: '<%= raw title %>'
+        },
+        xAxis: {
+            categories: <%= raw dates %>,
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Quantity'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value;
+                }
+            }
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ''
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: 'Users',
+            data: <%= raw users %>
+        }, {
+            name: 'Decks',
+            data: <%= raw decks %>
+        }, {
+            name: 'Cards',
+            data: <%= raw cards %>
+        }]
+    });
+});
