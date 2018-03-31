@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180327121532) do
   create_table "cards", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "deck_id"
     t.string "front"
-    t.text "back"
+    t.string "back"
     t.text "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 20180327121532) do
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
     t.string "bio", default: ""
-    t.text "avatar"
+    t.string "avatar"
     t.boolean "is_admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
