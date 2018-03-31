@@ -1,4 +1,4 @@
 en:
   time:
     formats:
-      short: "%d-%M-%Y"
+      short: "%d-%m-%y"
