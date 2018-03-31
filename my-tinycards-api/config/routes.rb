@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions'
   }
 
+  root to: redirect('/admins/dashboards')
+
   namespace :admins do
-    root "users#index"
+    root "dashboards#index"
     resources :users, only: [:index, :show, :destroy]
     resources :decks, only: [:index, :show, :destroy]
     resources :feed_backs
