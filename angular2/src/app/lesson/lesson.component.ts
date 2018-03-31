@@ -1,6 +1,9 @@
 import { Component, ViewChild, OnInit, AfterViewInit, ComponentFactoryResolver } from '@angular/core';
+import { Observable }    from 'rxjs/Observable';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { DecksService } from '../services/decks.service';
+import { DialogService } from '../dialog/dialog.service';
 import { LessonPracticeService } from '../services/lesson-practice.service';
 import { Lesson } from '../lesson';
 import { FormWizardModule } from 'angular2-wizard';
@@ -12,7 +15,6 @@ import { RememberCardComponent } from './remember-card.component'
 import { SingleChoiceQuestionComponent } from './single-choice-question.component';
 import { SingleChoiceImageQuestionComponent } from './single-choice-image-question.component';
 import { MapQuestionAnswerComponent } from './map-question-answer.component';
-
 @Component({
   selector: 'app-lesson',
   templateUrl: './lesson.component.html',
@@ -25,6 +27,7 @@ export class LessonComponent implements AfterViewInit {
   progress = 0;
   lesson: any;
   cards = [];
+  forceQuit = false;
 
   @ViewChild(LessonContentDirective) lessonContentHost: LessonContentDirective;
 
@@ -32,7 +35,8 @@ export class LessonComponent implements AfterViewInit {
               private route: ActivatedRoute,
               private router: Router,
               public lessonPracticeService: LessonPracticeService,
-              private componentFactoryResolver: ComponentFactoryResolver) { }
+              private componentFactoryResolver: ComponentFactoryResolver,
+              private dialogService: DialogService) { }
 
   ngOnInit() {
     const self = this;
@@ -41,6 +45,13 @@ export class LessonComponent implements AfterViewInit {
         this.progress = state
       }
     );
+  }
+
+  canDeactivate(): Observable<boolean> | boolean {
+    if (!this.forceQuit) {
+      return this.dialogService.confirm({title: "Confirm", message: "Are you sure?"})
+    }
+    return true;
   }
 
   nextCard(){
@@ -126,6 +137,7 @@ export class LessonComponent implements AfterViewInit {
   finish_lesson(lesson) {
     this.decksService.create_user_lesson({lesson_id: lesson.id}).subscribe(
       data => {
+        this.forceQuit = true;
         this.router.navigate(['/decks', lesson.deck_id]);
     });
   }

@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { AlertModule, CarouselModule} from 'ngx-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ng2-modal';
+import { MatDialogModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormWizardModule } from 'angular2-wizard';
 import { ImageUploadModule } from "angular2-image-upload";
@@ -27,6 +30,9 @@ import { EditDeckComponent } from './edit-deck/edit-deck.component';
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { LessonComponent } from './lesson/lesson.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { DialogService } from './dialog/dialog.service';
+
 import { LessonContentDirective } from './lesson/lesson-content.directive';
 import { RememberCardComponent } from './lesson/remember-card.component';
 import { SingleChoiceQuestionComponent } from './lesson/single-choice-question.component';
@@ -36,6 +42,7 @@ import { SlickCarouselComponent } from './slick/slick-carousel.component';
 import { UserService } from './services/user.service';
 import { SettingsComponent } from './user/settings.component';
 import { SearchDeckComponent } from './header/search_deck.component';
+import { DeactivateGuard } from './guards/deactivate-guard';
 import * as $ from 'jquery';
 
 @NgModule({
@@ -53,6 +60,7 @@ import * as $ from 'jquery';
     EditDeckComponent,
     CardComponent,
     HeaderComponent,
+    DialogComponent,
     LessonComponent,
     LessonContentDirective,
     RememberCardComponent,
@@ -64,12 +72,13 @@ import * as $ from 'jquery';
     SearchDeckComponent
   ],
   imports: [
-    BrowserModule, AlertModule.forRoot(), CarouselModule.forRoot(), appRoutes, HttpModule, FormsModule, ReactiveFormsModule, ModalModule, HttpClientModule,
-    FormWizardModule, ImageUploadModule.forRoot()
+    BrowserModule, AlertModule.forRoot(), CarouselModule.forRoot(), appRoutes, HttpModule,
+    FormsModule, ReactiveFormsModule, ModalModule, MatDialogModule, BrowserAnimationsModule,
+    MatButtonModule, HttpClientModule, FormWizardModule, ImageUploadModule.forRoot()
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, SingleChoiceImageQuestionComponent,
-   MapQuestionAnswerComponent],
-  providers: [DecksService, AuthenticationService, LessonPracticeService, HeaderBasicService, UserService],
+   MapQuestionAnswerComponent, DialogComponent],
+  providers: [DecksService, AuthenticationService, LessonPracticeService, HeaderBasicService, UserService, DialogService, DeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
