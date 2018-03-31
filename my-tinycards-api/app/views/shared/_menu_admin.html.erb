@@ -1,0 +1,29 @@
+<div class="sidebar">
+  <div class="sidebar-wrapper fix-background">
+    <div class="logo">
+      <span class="fix-logo"><%= link_to "ADMIN", "#" %></span>
+    </div>
+    <ul class="nav">
+      <li>
+        <%= link_to admins_dashboards_path do %>
+          <span><i class="pe-7s-graph"></i>Dashboard</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admins_users_path do %>
+          <span><i class="pe-7s-user"></i>List Users</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admins_decks_path do %>
+          <span><i class="pe-7s-news-paper"></i>List Decks</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admins_feed_backs_path do %>
+          <span><i class="pe-7s-bell"></i>Reports</span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,6 +1,19 @@
 require "api_constraints"
-
 Rails.application.routes.draw do
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions'
+  }
+
+  root to: redirect('/admins/dashboards')
+
+  namespace :admins do
+    root "dashboards#index"
+    resources :users, only: [:index, :show, :destroy]
+    resources :decks, only: [:index, :show, :destroy]
+    resources :feed_backs
+    resources :dashboards
+  end
+
   use_doorkeeper
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :alive, only: :show
@@ -19,7 +32,7 @@ Rails.application.routes.draw do
       end
       namespace :search do
         resources :decks
-      end      
+      end
       namespace :import do
         resources :decks
       end
@@ -33,6 +46,7 @@ Rails.application.routes.draw do
         resources :relationships, only: [:create]
       end
       resources :lessons, only: :show
+      resources :feed_backs, only: [:create]
 
       namespace :auth do
         resources :users, only: [:create, :update, :show, :edit]

@@ -1,10 +1,13 @@
 class Deck < ApplicationRecord
+  include CreatedAtDay
+
   belongs_to :user
 
   has_many :cards, dependent: :destroy
   has_many :no_lesson_cards, -> {no_lesson}, dependent: :destroy, class_name: Card
   has_many :lessons, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :feed_backs, dependent: :destroy
 
   validates :title, presence: true, length: {maximum: 100}
   validates :description, presence: true, length: {maximum: 250}
@@ -26,7 +29,7 @@ class Deck < ApplicationRecord
   }
 
   delegate :name, to: :user, prefix: true, allow_nil: true
-  
+
   ATTRIBUTE_PARAMS = [
   	:user_id,
     :title,
@@ -42,4 +45,13 @@ class Deck < ApplicationRecord
   ].freeze
 
   mount_base64_uploader :cover_image, DeckUploader
+
+  def self.to_csv options = {}
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |deck|
+        csv << deck.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325135253) do
+ActiveRecord::Schema.define(version: 20180327121532) do
+
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
 
   create_table "cards", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "deck_id"
@@ -42,6 +59,16 @@ ActiveRecord::Schema.define(version: 20180325135253) do
     t.datetime "updated_at", null: false
     t.index ["deck_id"], name: "index_favorites_on_deck_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "feed_backs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "status"
+    t.integer "deck_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deck_id"], name: "index_feed_backs_on_deck_id"
+    t.index ["user_id"], name: "index_feed_backs_on_user_id"
   end
 
   create_table "lessons", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -116,7 +143,7 @@ ActiveRecord::Schema.define(version: 20180325135253) do
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
     t.string "bio", default: ""
-    t.text "avatar"
+    t.string "avatar"
     t.boolean "is_admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -137,6 +164,8 @@ ActiveRecord::Schema.define(version: 20180325135253) do
   add_foreign_key "decks", "users"
   add_foreign_key "favorites", "decks"
   add_foreign_key "favorites", "users"
+  add_foreign_key "feed_backs", "decks"
+  add_foreign_key "feed_backs", "users"
   add_foreign_key "lessons", "decks"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"

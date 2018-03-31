@@ -113,6 +113,8 @@ GEM
     ast (2.3.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
+    autoprefixer-rails (8.1.0.1)
+      execjs
     aws-sdk (1.66.0)
       aws-sdk-v1 (= 1.66.0)
     aws-sdk-v1 (1.66.0)
@@ -128,6 +130,10 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    bootstrap (4.0.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -403,6 +409,8 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     get_process_mem (0.2.1)
     globalid (0.4.1)
@@ -440,6 +448,8 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     httpclient (2.8.3)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
@@ -521,6 +531,7 @@ GEM
       rake (>= 0.8.1)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
+    popper_js (1.12.9)
     powerpack (0.1.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -665,9 +676,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    scss_lint (0.56.0)
-      rake (>= 0.9, < 13)
-      sass (~> 3.5.3)
+    scss-lint (0.7.0)
+      colorize
+      sass
     scss_lint_reporter_checkstyle (0.2.0)
     sexp_processor (4.10.0)
     shellany (0.0.1)
@@ -768,6 +779,7 @@ DEPENDENCIES
   apipie-rails
   aws-sdk (~> 1.66.0)
   better_errors
+  bootstrap (~> 4.0.0.beta2.1)
   bootstrap-kaminari-views
   brakeman
   bundler-audit
@@ -794,8 +806,10 @@ DEPENDENCIES
   faker
   figaro
   fog
+  font-awesome-rails
   google_drive
   guard-rspec
+  highcharts-rails
   jbuilder (~> 2.0)
   jquery-rails
   jshint
@@ -825,7 +839,7 @@ DEPENDENCIES
   rubocop-checkstyle_formatter
   rubyXL
   sass-rails
-  scss_lint
+  scss-lint
   scss_lint_reporter_checkstyle
   shoulda-matchers
   sidekiq
