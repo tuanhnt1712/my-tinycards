@@ -1,4 +1,8 @@
 en:
   time:
     formats:
+<<<<<<< HEAD
       short: "%d-%M-%Y"
+=======
+      short: "%d-%m-%y"
+>>>>>>> 3e2e36877255baf9d1caf3ad897c2b08c7f0b938

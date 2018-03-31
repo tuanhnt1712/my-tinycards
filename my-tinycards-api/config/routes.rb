@@ -1,12 +1,13 @@
 require "api_constraints"
-
 Rails.application.routes.draw do
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }
 
+  root to: redirect('/admins/dashboards')
+
   namespace :admins do
-    root "users#index"
+    root "dashboards#index"
     resources :users, only: [:index, :show, :destroy]
     resources :decks, only: [:index, :show, :destroy]
     resources :feed_backs
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
       end
       namespace :search do
         resources :decks
-      end      
+      end
       namespace :import do
         resources :decks
       end

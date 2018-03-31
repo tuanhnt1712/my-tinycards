@@ -578,6 +578,7 @@ div:focus{outline:none;}
     margin: 10px;
   }
 }
+<<<<<<< HEAD
 
 @media only screen and (max-width: 768px) {
   .container {
@@ -633,6 +634,8 @@ div:focus{outline:none;}
     margin: 10px;
   }
 }
+=======
+>>>>>>> 3e2e36877255baf9d1caf3ad897c2b08c7f0b938
 .feedback {
   background: transparent;
   border: none;
