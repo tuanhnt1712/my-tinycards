@@ -1,4 +1,6 @@
 class Deck < ApplicationRecord
+  include CreatedAtDay
+
   belongs_to :user
 
   has_many :cards, dependent: :destroy
@@ -27,7 +29,7 @@ class Deck < ApplicationRecord
   }
 
   delegate :name, to: :user, prefix: true, allow_nil: true
-  
+
   ATTRIBUTE_PARAMS = [
   	:user_id,
     :title,
