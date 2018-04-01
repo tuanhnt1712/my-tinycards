@@ -110,7 +110,7 @@
   border-radius: 15px;
 }
 .les-wrapper .les-choice .image-answers img {
-  width: auto;
+  width: 88px;
   height: 100px;
   margin-top: 15px;
   margin-bottom: 8px;
@@ -152,9 +152,11 @@
 }
 .les-wrapper .les-card .containerr .front img {
   border-radius: 15px;
+  height: 225px;
 }
 .les-wrapper .les-choice .containerr .front img {
   border-radius: 15px;
+  height: 225px;
 }
 .les-wrapper .les-choice .containerr .front {
   background-color: white;
@@ -389,72 +391,6 @@ button:focus{outline:none;}
 button{cursor:pointer;}
 button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:grayscale(100%);}
 
-@media only screen and (max-width: 450px) {
-  .lesson-wrapper {
-    margin-top: 0 !important;
-    border-radius: 0;
-    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0);
-    display: block;
-  }
-
-  .les-choice {
-    margin: auto !important;
-    padding: 0 !important;
-    width: 90% !important;
-  }
-
-  .les-card {
-    margin: auto !important;
-  }
-
-  .containerr {
-    height: 330px !important;
-  }
-
-  .txt-answers {
-  }
-  .txt-answers .ct-answers {
-    margin: auto !important;
-  }
-
-  .image-answers ul {
-    display: flex;
-    padding-left: 0px !important;
-  }
-  .image-answers ul li {
-    list-style-type: none !important;
-    flex: 1;
-  }
-
-  .answers ul {
-    display: flex;
-    padding-left: 0px !important;
-  }
-  .answers ul li {
-    list-style-type: none !important;
-    flex: 1;
-  }
-  .list-ans {
-    margin: 0 !important;
-    padding: 0 5px;
-  }
-
-  .img-answ {
-    position: relative;
-    margin-top: 20px;
-  }
-
-  .image-answers {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .ct-answers {
-    top: 10% !important;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .lesson-wrapper {
     margin-top: 0 !important;
@@ -521,6 +457,85 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
   }
 
   .les-choice .ct-card {
-    width: 50% !important;
+    width: 240px !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .lesson-wrapper {
+    margin-top: 0 !important;
+    border-radius: 0;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0);
+    display: block;
+  }
+
+  .les-choice {
+    margin: auto !important;
+    padding: 0 !important;
+    width: 90% !important;
+  }
+
+  .les-choice .ct-card {
+    width: 240px !important;
+  }
+
+  .les-card {
+    margin: auto !important;
+  }
+
+  .containerr {
+    height: 330px !important;
+  }
+
+  .txt-answers {
+  }
+  .txt-answers .ct-answers {
+    margin: auto !important;
+  }
+
+  .image-answers ul {
+    display: flex;
+    padding-left: 0px !important;
+  }
+  .image-answers ul li {
+    list-style-type: none !important;
+    flex: 1;
+  }
+
+  .answers ul {
+    display: flex;
+    padding-left: 0px !important;
+  }
+  .answers ul li {
+    list-style-type: none !important;
+    flex: 1;
+  }
+  .list-ans {
+    margin: 0 !important;
+    padding: 0 5px;
+  }
+
+  .img-answ {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .image-answers {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ct-answers {
+    top: 10% !important;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .lesson-wrapper {
+    padding: 18px 25px !important;
+  }
+  .les-wrapper .les-card {
+    width: 260px !important;
   }
 }

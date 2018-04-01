@@ -159,6 +159,10 @@
 
   #a2 {
     display: block !important;
+    width: 100%;
+  }
+  #a2 input {
+    width: 100% !important;
   }
 
   .wrapper {
