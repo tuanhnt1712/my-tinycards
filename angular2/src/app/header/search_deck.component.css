@@ -2,9 +2,8 @@
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
-  margin-left: 50px;
   width: 100%;
-  min-height: 1080px;
+  min-height: 500px;
   margin-top: 20px;
 }
 .container-tab-content {
@@ -24,7 +23,8 @@
   font-size: 21px;
 }
 .profile-content .container .image-wrap img {
-  height: 140px;
+  height: 170px;
+  width: 150px;
   display: block;
   margin: auto;
   border-radius: 17px;
@@ -67,4 +67,10 @@
 }
 .name {
   flex: 2;
+}
+
+@media only screen and (max-width: 450px) {
+  .profile-content {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
+  }
 }
