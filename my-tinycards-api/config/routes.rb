@@ -1,12 +1,9 @@
 require "api_constraints"
-
 Rails.application.routes.draw do
-
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }
 
-<<<<<<< e11b7dd421a59ab607ca89ebf6cf8929ad9d0a42
   root to: redirect('/admins/dashboards')
 
   namespace :admins do
