@@ -51,7 +51,7 @@
   font-family: DINNextRoundedLTPro-Medium,sans-serif;
 }
 .wrapper .change input:focus {
-  border-bottom: 2px solid #32cdff;
+  border-bottom: 2px solid #276d8c;
 }
 .wrapper .change .avatar {
   position: relative;
@@ -75,13 +75,13 @@
   padding: 12px 25px 8px;
   text-align: center;
   text-transform: uppercase;
-  background: cyan;
+  background: #276d8c;
 }
 .wrapper .change button {
   outline: none;
 }
 .wrapper .change button:hover {
-  background: #32cdff;
+  background: #137ead;
 }
 .wrapper .change .avatar img {
   width: 85%;
@@ -112,11 +112,14 @@
   position: absolute;
   top: 20%;
   left: 20%;
-  color: deepskyblue;
+  color: #276d8c;
+}
+.wrapper .change .avatar label .fa:hover {
+  color: #137ead;
 }
 .active {
-  border-left: 4px solid #32cdff !important;
-  color: #32cdff !important;
+  border-left: 4px solid #276d8c !important;
+  color: #276d8c !important;
 }
 
 @media only screen and (max-width: 768px) {

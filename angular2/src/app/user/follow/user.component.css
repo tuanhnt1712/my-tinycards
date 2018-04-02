@@ -3,19 +3,19 @@
   width: 45px;
   height: 40px;
   margin-right: 5px;
-  color: #32cdff;
-  border: 2px solid #32cdff;
+  color: #276d8c;
+  border: 2px solid #276d8c;
   position: absolute;
   right: 0;
 }
 
 .btn-followed {
-  background-color: #32cdff;
+  background-color: #276d8c;
   width: 45px;
   height: 40px;
   margin-right: 5px;
   color: white;
-  border: 2px solid #32cdff;
+  border: 2px solid #276d8c;
   position: absolute;
   right: 0;
 }

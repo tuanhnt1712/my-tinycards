@@ -2,16 +2,16 @@
   background-color: transparent;
   width: 80%;
   margin-right: 5px;
-  color: #32cdff;
-  border: 2px solid #32cdff;
+  color: #276d8c;
+  border: 2px solid #276d8c;
 }
 
 .btn-favorited {
-  background-color: #32cdff;
+  background-color: #276d8c;
   width: 80%;
   margin-right: 5px;
   color: white;
-  border: 2px solid #32cdff;
+  border: 2px solid #276d8c;
 }
 
 .favorite-number {
@@ -70,7 +70,7 @@
 .left .txt .author .name {
   margin-left: 10px;
   font-weight: bold;
-  color: cornflowerblue;
+  color: #276d8c;
 }
 .left .txt .favorite {
   margin: auto;
@@ -85,21 +85,21 @@
 .left .txt .btn-ct .btn-ct-setting {
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #32cdff;
+  border: 1px solid #276d8c;
   width: 15%;
 }
 .left .txt .btn-ct .btn-ct-publ {
   cursor: pointer;
   font-weight: bold;
-  background-color: #32cdff;
-  border-color: #32cdff;
+  background-color: #276d8c;
+  border-color: #276d8c;
   border-radius: 12px;
   margin-left: 8px;
   opacity: 0.7;
   width: 78%;
 }
 .left .txt .btn-ct .fa-cog {
-  color: #32cdff;
+  color: #276d8c;
 }
 .left .cover-deck {
   background-color: #fff;
@@ -122,7 +122,7 @@
   width: 100%;
 }
 .left .cover-deck .import-cover-deck .ct-text {
-  color: #32cdff;
+  color: #276d8c;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -153,8 +153,8 @@
   cursor: pointer;
 }
 .right .s-select .tab-active {
-  border-bottom: 4px solid #32cdff;
-  color: #32cdff;
+  border-bottom: 4px solid #276d8c;
+  color: #276d8c;
   padding-bottom: 11px;
 }
 .right .containerTab {
@@ -187,7 +187,7 @@
   width: 110px;
 }
 .right .add-card .add {
-  background-color: #32cdff;
+  background-color: #276d8c;
   border-radius: 100%;
   border: none;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.18);
@@ -233,7 +233,7 @@
   outline: none;
 }
 .right .wrapper .list-option .del .fa-trash-o {
-  color: #32cdff;
+  color: #276d8c;
   font-size: 25px;
   opacity: 0.7;
 }
@@ -375,7 +375,7 @@
   outline: none;
 }
 .del .fa-trash-o {
-  color: #32cdff;
+  color: #276d8c;
   font-size: 25px;
   opacity: 0;
 }

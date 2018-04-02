@@ -21,7 +21,7 @@ header .header-logo .inner {
 header .header-logo .inner img {
   height: 60px;
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 15px;
 }
 header .header-logo .inner .logo {
   display: flex;

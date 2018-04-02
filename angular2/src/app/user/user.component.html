@@ -23,7 +23,7 @@
 
         <div *ngIf="user.id == current_user.user_id" class="col-xs-12 col-sm-6 profile-setting">
           <a href="#" [routerLink]="['setting']" class="col">
-            <img src="./assets/images/setting.png" class="img-setting" alt="Setting">
+            <i class="fa fa-cog"></i>
             <div class="text-setting">Settings</div>
           </a>
         </div>
@@ -33,7 +33,7 @@
             <i class="fa fa-user" aria-hidden="true"></i>
             {{user.followed ? 'Unfollow' : 'Follow'}}
           </button>
-          <button type="button" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #32cdff;"><i class="fa fa-external-link" aria-hidden="true" style="color: #32cdff;"></i></button>
+          <button type="button" class="btn btn-outline-success" style="width: 15%; background-color: white;border: 2px solid #276d8c;"><i class="fa fa-external-link" aria-hidden="true" style="color: #276d8c;"></i></button>
         </div>
       </div>
       <div class="col-xs-12 col-md-8 profile-content">

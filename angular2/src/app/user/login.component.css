@@ -62,7 +62,7 @@
 }
 
 .btn-custome {
-  background-color: #32cdff;
+  background-color: #276d8c;
   border-radius: 10px;
   color: #fff;
   font-family: DINNextRoundedLTPro-Bold,sans-serif;
@@ -77,12 +77,12 @@
 .link-custome {
   background-color: transparent;
   border: none;
-  color: #32cdff;
+  color: #276d8c;
   font-family: DINNextRoundedLTPro-Bold,sans-serif;
   text-transform: uppercase;
 }
 .link-custome:hover {
-  color: #32cdff;
+  color: #276d8c;
   text-decoration: none;
   filter: brightness(95%);
 }

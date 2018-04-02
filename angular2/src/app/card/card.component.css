@@ -150,8 +150,7 @@
   outline: none;
 }
 .wrapper .f-deck .image label:hover {
-  color: blue;
-  opacity: .9;
+  color: #276d8c;
 }
 .wrapper .f-deck .image label  {
   height: 100%;
