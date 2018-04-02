@@ -56,3 +56,18 @@ en:
       unauthorized:
         code: 2606
         message: (E-mail address or password) is incorrect.
+
+  api_validation:
+    resources:
+      deck: "Deck"
+      user: "User"
+    fields:
+      deck:
+        title: "Title"
+        base: "Deck"
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"

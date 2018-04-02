@@ -10,7 +10,7 @@ class Deck < ApplicationRecord
   has_many :feed_backs, dependent: :destroy
 
   validates :title, presence: true, length: {maximum: 100}
-  validates :description, presence: true, length: {maximum: 250}
+  validate :at_least_three_cards
 
   accepts_nested_attributes_for :cards, allow_destroy: true
 
@@ -53,5 +53,12 @@ class Deck < ApplicationRecord
         csv << deck.attributes.values_at(*column_names)
       end
     end
+  end
+
+  private
+
+  def at_least_three_cards
+     return errors.add :base, "Must have at least three Card" unless cards.length > 2
+     return errors.add :base, "Must have at least three Card" if cards.reject{|card| card._destroy == true}.length < 3
   end
 end

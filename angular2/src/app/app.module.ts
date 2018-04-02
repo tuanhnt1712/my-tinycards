@@ -47,6 +47,7 @@ import { UserService } from './services/user.service';
 import { SettingsComponent } from './user/settings.component';
 import { SearchDeckComponent } from './header/search_deck.component';
 import { DeactivateGuard } from './guards/deactivate-guard';
+import { AlertService } from './services/alert.service';
 import * as $ from 'jquery';
 
 @NgModule({
@@ -85,7 +86,7 @@ import * as $ from 'jquery';
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, SingleChoiceImageQuestionComponent,
    MapQuestionAnswerComponent, DialogComponent],
-  providers: [DecksService, AuthenticationService, LessonPracticeService, HeaderBasicService, UserService, DialogService, DeactivateGuard],
+  providers: [DecksService, AuthenticationService, LessonPracticeService, HeaderBasicService, UserService, DialogService, DeactivateGuard, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

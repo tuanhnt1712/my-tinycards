@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Validators, FormGroup, FormArray, FormBuilder, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DecksService } from '../services/decks.service';
+import { AlertService } from '../services/alert.service';
 import { Deck } from '../deck';
 
 @Component({
@@ -16,7 +17,8 @@ export class CreateDeckComponent implements OnInit{
 
   constructor(private decksService: DecksService,
               private _fb: FormBuilder,
-              private router: Router
+              private router: Router,
+              private alertService: AlertService
   ) {}
 
   ngOnInit(){
@@ -54,6 +56,12 @@ export class CreateDeckComponent implements OnInit{
     this.decksService.add_deck(model["value"]).subscribe(
       data => {
         this.router.navigate(['/decks', data.data.id]);
+        this.alertService.success("Create deck successfuly");
+      },
+      error => {
+        JSON.parse(error._body).errors.forEach(body => {
+          this.alertService.error(body.field + " " + body.message);
+        })
       });
   }
 
