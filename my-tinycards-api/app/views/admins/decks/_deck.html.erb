@@ -1,0 +1,29 @@
+<tr id="post-<%= deck.id %>">
+  <td>
+    <%= link_to image_tag(deck.cover_image, class: "avatar-post"), admins_deck_path(deck) %>
+  </td>
+  <td>
+    <%= link_to image_tag(deck.user.avatar, class: "avatar") %>
+    <%= link_to deck.user.name %>
+  </td>
+  <td>
+    <%= link_to deck.title, admins_deck_path(deck) %>
+  </td>
+  <td>
+    <%= deck.cards.size %>
+  </td>
+  <td>
+    <%= deck.created_at %>
+  </td>
+  <td>
+    <%= deck.updated_at %>
+  </td>
+  <td>
+    <% if current_admin %>
+      <% if current_admin %>
+        <%= link_to "Delete", admins_deck_path(deck), method: :delete, remote: true,
+         data: {confirm: "Are you sure delete it?"}, class: "btn btn-danger button_text" %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

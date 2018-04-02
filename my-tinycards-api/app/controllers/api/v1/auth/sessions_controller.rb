@@ -6,7 +6,7 @@ class Api::V1::Auth::SessionsController < Api::V1::BaseController
     if authorize_response.status == :unauthorized
       raise APIError::Authorize::Unauthorized
     end
-
+    
     # authorize_response_with_confirmed!
 
     # save_device_token current_resouce.user_profile, params[:device_id], current_language

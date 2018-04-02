@@ -1,0 +1,27 @@
+<tr id="<%= user.id %>">
+  <td>
+    <%= link_to user.id %>
+  </td>
+  <td>
+    <%= link_to image_tag(user.avatar, class: "avatar") %>
+    <%= link_to user.name %>
+  </td>
+  <td>
+    <%= user.email %>
+  </td>
+  <td>
+    <%= user.created_at %>
+  </td>
+  <td>
+    <%= user.updated_at %>
+  </td>
+  <td>
+    <%= user.decks.size %>
+  </td>
+  <td>
+    <% if current_admin %>
+      <%= link_to "Delete", admins_user_path(user), method: :delete, remote: true,
+        data: {confirm: "Are you sure delete it?"}, class: "btn btn-danger button_text" %>
+    <% end %>
+  </td>
+</tr>

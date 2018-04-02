@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="card login-form shadow-nohover">
+    <div class="text-center login-form-label">Log in with your admin account</div>
+    <div class="text-center">     
+    </div>
+    <div class="devide-login">
+      <div class="devide-text"></div>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <label for="user_email">Email address</label>
+        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder:"Enter email" %>
+      </div>
+
+      <div class="form-group">
+        <label for="user_password">Password</label>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+      </div>
+
+      <button type="submit" class="btn btn-block btn-custome">LOG IN</button>
+    <% end %>
+  </div>
+</div>

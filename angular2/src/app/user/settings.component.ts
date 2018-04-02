@@ -3,6 +3,7 @@ import { Validators, FormGroup, FormArray, FormBuilder, FormsModule } from '@ang
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../user'
 import { UserService } from '../services/user.service';
+import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class SettingsComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute,
   						private userService: UserService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private alertService: AlertService) {
     this.current_user = this.authenticationService.currentUser();
   }
 
@@ -84,15 +86,25 @@ export class SettingsComponent implements OnInit {
     this.userService.editUser(model["value"]).subscribe(
       data => {
         this.router.navigate(['/users/'+this.user.id]);
-        return true;
-    });
+        this.alertService.success("Edit profile successfuly");
+      },
+      error => {
+        JSON.parse(error._body).errors.forEach(body => {
+          this.alertService.error(body.field + " " + body.message);
+        })
+      });
   }
 
   changePassword(model) {
     this.userService.changePassword(model["value"]).subscribe(
       data => {
-        this.router.navigate(['/users/'+this.user.id]);
-        return true;
+        this.router.navigate(['/users/' + this.user.id]);
+        this.alertService.success("Change password successfuly");
+      },
+      error => {
+        JSON.parse(error._body).errors.forEach(body => {
+          this.alertService.error(body.field + " " + body.message);
+        })
       });
   }
 

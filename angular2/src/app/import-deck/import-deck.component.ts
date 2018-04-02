@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Validators, FormGroup, FormArray, FormBuilder, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DecksService } from '../services/decks.service';
+import { AlertService } from '../services/alert.service';
 import { Deck } from '../deck';
 
 @Component({
@@ -16,7 +17,8 @@ export class ImportDeckComponent implements OnInit{
 
   constructor(private decksService: DecksService,
               private _fb: FormBuilder,
-              private router: Router
+              private router: Router,
+              private alertService: AlertService
   ) {}
 
   ngOnInit(){
@@ -31,6 +33,11 @@ export class ImportDeckComponent implements OnInit{
       this.loading = false;
       this.coverImgModal.close();
       this.router.navigate(['/decks']);
-    });
+    },
+    error => {
+      JSON.parse(error._body).errors.forEach(body => {
+        this.alertService.error(body.field + " " + body.message);
+      })
+    })
   }
 }

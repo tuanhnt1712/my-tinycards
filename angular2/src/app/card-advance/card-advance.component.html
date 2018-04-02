@@ -1,0 +1,29 @@
+<div [formGroup]="cardForm" class="wrapper">
+	<div class="n-card destroy">
+		<div class="number">
+			<h3>{{i}}</h3>
+		</div>
+		<div class="front-card">
+			<div class="f-deck">
+				<div class="image">
+					<label type="button"><i class="fa fa-image" style="font-size: 25px; opacity: .6;"></i>
+						<img class="card-picture" id="blah" [src]="picture || '#'" [style.display]="picture ? '': 'none'">
+						<input type="hidden" name="fileHidden" formControlName="picture">
+						<input class="form-control" type="file" style="display: none" id="picture" (change)="onFileChange($event)" #fileInput>
+					</label>
+				</div>
+				<div style="height: 30%; border-top: 1px solid #eceaea; opacity: .8">
+					<textarea type="text" formControlName="front" id="front-card-value" class="txt-back" placeholder="Front">
+					</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="back-card">
+			<div class="f-deck">
+				<app-tiny-editor
+          [(ngModel)]="page.content" formControlName="back">
+        </app-tiny-editor>
+			</div>
+		</div>
+	</div>
+</div>
