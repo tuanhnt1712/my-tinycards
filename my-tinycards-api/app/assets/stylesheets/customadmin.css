@@ -329,6 +329,9 @@ input:focus {
     border-radius: 4px;
     display: block;
 }
+.sidebar .nav li {
+    margin-bottom: 15px;
+}
 
 .sidebar .nav li.active > a {
     color: #FFFFFF;
