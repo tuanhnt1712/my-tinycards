@@ -57,7 +57,6 @@ export class LessonComponent implements AfterViewInit {
   nextCard(){
     if (this.lessonPracticeService.finished()) {
       this.finish_lesson(this.lesson);
-      this.router.navigate(['decks/']);
     } else {
       this.lessonPracticeService.continue(
         this.loadRememberCardComponent.bind(this),
