@@ -46,6 +46,7 @@ import { SlickCarouselComponent } from './slick/slick-carousel.component';
 import { UserService } from './services/user.service';
 import { SettingsComponent } from './user/settings.component';
 import { SearchDeckComponent } from './header/search_deck.component';
+import { AuthGuard } from './guards/auth-guard';
 import { DeactivateGuard } from './guards/deactivate-guard';
 import { AlertService } from './services/alert.service';
 import * as $ from 'jquery';
@@ -86,7 +87,8 @@ import * as $ from 'jquery';
   ],
   entryComponents: [ RememberCardComponent, SingleChoiceQuestionComponent, SingleChoiceImageQuestionComponent,
    MapQuestionAnswerComponent, DialogComponent],
-  providers: [DecksService, AuthenticationService, LessonPracticeService, HeaderBasicService, UserService, DialogService, DeactivateGuard, AlertService],
+  providers: [DecksService, AuthenticationService, LessonPracticeService, HeaderBasicService,
+    UserService, DialogService, AuthGuard, DeactivateGuard, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
