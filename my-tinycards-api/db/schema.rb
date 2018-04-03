@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327121532) do
+ActiveRecord::Schema.define(version: 20180403154955) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20180327121532) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "feed_backs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "feed_backs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "status"
     t.integer "deck_id"
     t.integer "user_id"
@@ -71,11 +71,21 @@ ActiveRecord::Schema.define(version: 20180327121532) do
     t.index ["user_id"], name: "index_feed_backs_on_user_id"
   end
 
-  create_table "lessons", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "lessons", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "deck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["deck_id"], name: "index_lessons_on_deck_id"
+  end
+
+  create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "admin_id"
+    t.bigint "feed_back_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_notifications_on_admin_id"
+    t.index ["feed_back_id"], name: "index_notifications_on_feed_back_id"
   end
 
   create_table "oauth_access_grants", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

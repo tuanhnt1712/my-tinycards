@@ -53,12 +53,12 @@ export class SingleChoiceImageQuestionComponent implements LessonContentComponen
       console.log("Right");
       document.getElementById('animation2').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
+      _.delay(this.parent.nextCard.bind(this.parent), 1000);
     }else {
       document.getElementById('animation2').classList.add("false-animation");
       this.parent.lessonPracticeService.reset_card(this.current_card);
       console.log("Wrong");
     }
-    _.delay(this.parent.nextCard.bind(this.parent), 1000);
   }
 
   randomAnswers(card, cards){

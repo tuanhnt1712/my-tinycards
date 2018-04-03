@@ -57,6 +57,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_controller.default_url_options = {host: ENV["HOST"]}
   config.action_controller.asset_host = ENV["HOST"]
+  config.action_cable.url = "ws://localhost:3000/cable"
 end
 
 Rswag::Api.configure do |c|
