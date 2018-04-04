@@ -51,14 +51,14 @@ export class SingleChoiceImageQuestionComponent implements LessonContentComponen
   continue(card_answer){
     if (this.current_card.front == card_answer.front) {
       console.log("Right");
+      document.getElementById('animation2').classList.remove("false-animation");
       document.getElementById('animation2').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
+      _.delay(this.parent.nextCard.bind(this.parent), 1000);
     }else {
       document.getElementById('animation2').classList.add("false-animation");
-      this.parent.lessonPracticeService.reset_card(this.current_card);
       console.log("Wrong");
     }
-    _.delay(this.parent.nextCard.bind(this.parent), 1000);
   }
 
   randomAnswers(card, cards){

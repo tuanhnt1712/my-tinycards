@@ -345,13 +345,19 @@
   color: #828181;
   font-family: DINNextRoundedLTPro-Bold,sans-serif;
   text-align: center;
-  font-size: 30px;
+  font-size: 16px;
   position: absolute;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
   box-shadow: 3px 5px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ct-card .front p {
+  word-wrap: break-word;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .ct-card .back {
@@ -362,8 +368,10 @@
 }
 
 .ct-card .back p {
+  padding-left: 3px;
+  padding-right: 3px;
   position: relative;
-  float: left;
+  word-wrap: break-word;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
