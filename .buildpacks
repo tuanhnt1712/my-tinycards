@@ -1,0 +1,2 @@
+my-tinycards-api=https://github.com/heroku/heroku-buildpack-ruby.git
+angular2=https://github.com/heroku/heroku-buildpack-nodejs.git
