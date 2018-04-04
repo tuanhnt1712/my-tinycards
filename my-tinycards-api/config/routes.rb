@@ -1,5 +1,6 @@
 require "api_constraints"
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }
