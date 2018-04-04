@@ -51,12 +51,12 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
   continue(answer){
     if (this.current_card.back == answer) {
       console.log("Right");
+      document.getElementById('animation3').classList.remove("false-animation");
       document.getElementById('animation3').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
       _.delay(this.parent.nextCard.bind(this.parent), 1000);
     }else {
       document.getElementById('animation3').classList.add("false-animation");
-      this.parent.lessonPracticeService.reset_card(this.current_card);
       console.log("Wrong");
     }
   }
