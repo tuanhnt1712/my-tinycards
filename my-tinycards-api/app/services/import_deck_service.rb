@@ -1,10 +1,11 @@
 class ImportDeckService
-  attr_reader :deck, :maps, :decks, :params, :current_user
+  attr_reader :deck, :maps, :decks, :hash_decks, :params, :current_user
 
   def initialize args
     @params = args[:params]
     @current_user = args[:current_user]
     @decks = []
+    @hash_decks = {}
     @maps = {
       deck_front: {column: "Desk", index: nil},
       card_front: {column: "Side 1.1", index: nil},
@@ -33,15 +34,21 @@ class ImportDeckService
           item.merge!(index: index)
         end
         worksheet.rows.each_with_index do |row, index|
-          next if index.zero?
-          deck = current_user.decks.find_or_create_by title: row[maps[:deck_front][:index]],
-            description: row[maps[:deck_front][:index]]
+          title = row[maps[:deck_front][:index]]
+          next if index.zero? || title.blank?
+          title = title.to_s.strip
+          deck = current_user.decks.find_or_initialize_by title: title
 
           decks << deck
-          deck.cards.create(card_attributes row)
+          if hash_decks[title].blank?
+            hash_decks[title] = deck
+          end
+          hash_decks[title].cards << deck.cards.new(card_attributes row)
           puts "#{card_attributes row}"
         end
       end
+
+      hash_decks.values.map &:save
       decks.uniq.each do |deck|
         CreateLessonsService.new(deck: deck, cards: deck.no_lesson_cards).perform
       end
