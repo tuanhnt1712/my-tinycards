@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormGroup, FormArray, FormBuilder, FormsModule, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
@@ -6,6 +6,7 @@ import { Deck } from '../deck';
 import { User } from '../user'
 import { DecksService } from '../services/decks.service';
 import { UserService } from '../services/user.service';
+declare var $: any;
 
 @Component({
   selector: 'app-deck-details',
@@ -57,6 +58,21 @@ export class DeckDetailsComponent implements OnInit {
           });
         }
       )
+    });
+  }
+
+  ngAfterViewInit() {
+    $('document').ready(function() {
+      var that = $('#front-value');
+      var textLength = that.val().length;
+
+      if (textLength > 150) {
+          that.css('font-size', '16px');
+      } else if(textLength > 100) {
+          that.css('font-size', '20px');
+      } else if(textLength > 60) {
+          that.css('font-size', '22px');
+      }
     });
   }
 

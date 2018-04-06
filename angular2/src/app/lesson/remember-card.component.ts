@@ -14,7 +14,7 @@ import { LessonComponent } from './lesson.component';
               <div>
                 <img src="{{data.current_card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
               </div>
-              <span> {{data.current_card.front}} </span>
+              <span style="word-wrap: break-word;"> {{data.current_card.front}} </span>
             </div>
             <div class="item-card back">
               <span> {{data.current_card.back}} </span>
