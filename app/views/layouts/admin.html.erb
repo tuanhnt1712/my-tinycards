@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DictCards</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag "admin/application", media: "all",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "admin/application", "data-turbolinks-track": "reload" %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%= render "shared/menu_admin" %>
+      <div class="main-panel">
+        <%= render "shared/header_admin" %>
+        <div class="content">
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

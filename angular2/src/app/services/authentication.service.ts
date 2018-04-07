@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import { Subject } from 'rxjs/Subject';
 import { User } from '../user';
+import { environment } from '../../environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderBasicService } from './base/header-basic.service';
 import { Headers } from '@angular/http';
@@ -12,7 +13,7 @@ import { HeaderComponent } from '../header/header.component'
 
 @Injectable()
 export class AuthenticationService {
-  private baseUrl: string = 'http://localhost:3000/api';
+  private baseUrl: string = environment.apiUrl;
   public loginStateSource = new Subject<string>();
   public current_user = new Subject<any>();
 
@@ -77,7 +78,7 @@ export class AuthenticationService {
   }
 
   create(user : User) {
-    return this.http.post(`http://localhost:3000/api/auth/users`, user)
+    return this.http.post(`${this.baseUrl}/auth/users`, user)
       .map(response => {
           let user_token = response["data"]
           if (user_token && user_token.token)
