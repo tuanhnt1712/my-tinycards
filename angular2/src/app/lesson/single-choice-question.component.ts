@@ -14,7 +14,9 @@ import * as _ from "lodash";
                   <div>
                     <img src="{{data.current_card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
                   </div>
-                  <span style="word-wrap: break-word;"> {{data.current_card.front}} </span>
+                   <div style="overflow:auto;height: 82px;">
+                    <span style="word-wrap: break-word"> {{data.current_card.front}} </span>
+                  </div>
                 </div>
               </div>
             </div>

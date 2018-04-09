@@ -10,7 +10,7 @@ import * as _ from "lodash";
           <div class="col-xs-12 col-md-4">
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
-                <div class="front back-card" id="animation2" style="border-radius: 15px;">
+                <div class="front back-card" id="animation2" style="border-radius: 15px;overflow:auto">
                   <span style="word-wrap: break-word;"> {{data.current_card.back}} </span>
                 </div>
               </div>
@@ -21,8 +21,12 @@ import * as _ from "lodash";
               <ul style="list-style-type: decimal;">
                 <li class="list-ans" *ngFor="let card_answer of card_answers" >
                   <button (click)="continue(card_answer)">
-                    {{card_answer.front}}
-                    <img src="{{card_answer.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';">
+                    <div style="flex:5">
+                      {{card_answer.front}}
+                    </div>
+                    <div>
+                      <img src="{{card_answer.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';">
+                    </div>
                   </button>
                 </li>
               </ul>

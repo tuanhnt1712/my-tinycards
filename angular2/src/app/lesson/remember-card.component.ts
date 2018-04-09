@@ -10,13 +10,15 @@ import { LessonComponent } from './lesson.component';
         <p class="title">New Card</p>
         <div class="containerr" style="margin-bottom: 35px">
           <div class="ct-card" (click)="flipped($event)" [class.flipped]="menuOpen">
-            <div class="item-card front" style="width: 100%;border-radius: 15px;">
+            <div class="item-card front" style="width: 100%;border-radius: 15px;overflow:auto">
               <div>
-                <img src="{{data.current_card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
+                <img src="{{data.current_card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';" style="width: 70%;margin-top: 15px;margin-bottom: 8px;">
               </div>
-              <span style="word-wrap: break-word;"> {{data.current_card.front}} </span>
+              <div style="overflow:auto;height: 82px;">
+                <span style="word-wrap: break-word;padding-left: 5px;padding-right: 5px;"> {{data.current_card.front}} </span>
+              </div>
             </div>
-            <div class="item-card back">
+            <div class="item-card back" style="overflow:auto">
               <span> {{data.current_card.back}} </span>
             </div>
           </div>

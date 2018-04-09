@@ -361,6 +361,7 @@
 }
 
 .ct-card .back {
+  overflow: auto;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -561,6 +562,7 @@ div:focus{outline:none;}
     left: -110px;
     width: 345px;
     display: block;
+    margin: 10px auto !important;
   }
   .mg-bt-30 {
     margin-bottom: 30px;
