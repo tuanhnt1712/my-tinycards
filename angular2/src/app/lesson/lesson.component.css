@@ -11,7 +11,6 @@
   float: left;
   width: 200px;
   height: 260px;
-  margin: 10px;
   background: #fff;
   /* Set the depth of the elements */
   -webkit-perspective: 800px;
@@ -65,14 +64,12 @@
   background: white;
   border-radius: 15px;
   color: black;
-  opacity: .8;
   width: 100%;
 }
 
 .ct-card .back {
   background: white;
   color: black;
-  opacity: .8;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -112,8 +109,7 @@
 .les-wrapper .les-choice .image-answers img {
   width: 88px;
   height: 100px;
-  margin-top: 15px;
-  margin-bottom: 8px;
+  margin: 8px 8px 8px 0;
 }
 
 .les-wrapper .les-card .containerr {
@@ -135,27 +131,12 @@
 .les-wrapper .les-choice .containerr .ct-card {
   width: 100%;
 }
-.les-wrapper .les-choice .containerr .ct-card:hover {
-  transform: scale(1.025);
-  &:before, &:after {
-    position: absolute;
-    top: -2px;
-    bottom: -2px;
-  }
-
-  &:before {
-    left: -2px;
-  }
-  &:after {
-    right: -2px;
-  }
-}
 .les-wrapper .les-card .containerr .front img {
   border-radius: 15px;
   height: 225px;
 }
 .les-wrapper .les-card .containerr .front span {
-  font-size: 26px;
+  font-size: 20px;
 }
 .les-wrapper .les-choice .containerr .front img {
   border-radius: 15px;
@@ -165,7 +146,7 @@
   background-color: white;
   color: black;
   opacity: .8;
-  font-size: 26px;
+  font-size: 20px;
   justify-content: center;
 }
 .les-wrapper .les-card .containerr .back {
@@ -174,7 +155,7 @@
 }
 .les-wrapper .les-choice .containerr .back {
   border-radius: 15px;
-  font-size: 26px;
+  font-size: 20px;
   background-color: while;
 }
 .les-wrapper .les-card .title {
@@ -226,10 +207,12 @@
   cursor: pointer;
   display: block;
   flex-grow: 1;
-  font-size: 21px;
+  font-size: 18px;
   height: 100px;
   width: 100%;
   outline: none;
+  word-break: break-word;
+  overflow: auto;
 }
 .les-wrapper .les-choice .image-answers .list-ans button {
   -ms-flex-positive: 1;
@@ -239,13 +222,16 @@
   background-color: white;
   color: #276d8c;
   cursor: pointer;
-  display: block;
+  display: flex;
   flex-grow: 1;
-  font-size: 21px;
+  font-size: 18px;
   height: auto;
   width: 100%;
   outline: none;
   margin-bottom: 20px;
+  height: 130px;
+  word-break: break-word;
+  overflow: auto;
 }
 .les-wrapper .les-choice .answers .list-ans button:hover {
   border: 3px solid #276d8c;
@@ -316,7 +302,7 @@
   width: 100%;
   left: 50%;
   top: 50%;
-  font-size: 26px;
+  font-size: 20px;
   transform: translate(-50%, -50%);
   padding: 4px;
 }
@@ -324,7 +310,7 @@
 .back-card span {
   float: left;
   padding: 4px;
-  font-size: 26px;
+  font-size: 20px;
   word-wrap: break-word;
   position: relative;
   width: 100%;
@@ -438,6 +424,7 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
     display: flex;
     padding-left: 0px !important;
   }
+
   .image-answers ul li {
     list-style-type: none !important;
     flex: 1;
@@ -454,6 +441,10 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
   .list-ans {
     margin: 0 !important;
     padding: 0 5px;
+  }
+
+  .list-ans button {
+    overflow: auto;
   }
 
   .img-answ {
@@ -482,6 +473,7 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
     border-radius: 0;
     box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0);
     display: block;
+    padding: 15px !important;
   }
 
   .les-choice {
@@ -502,8 +494,6 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
     height: 330px !important;
   }
 
-  .txt-answers {
-  }
   .txt-answers .ct-answers {
     margin: auto !important;
   }
@@ -515,6 +505,10 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
   .image-answers ul li {
     list-style-type: none !important;
     flex: 1;
+  }
+
+  .image-answers button {
+    display: block !important;
   }
 
   .answers ul {
@@ -536,7 +530,6 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
   }
 
   .image-answers {
-    position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -548,7 +541,7 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
 
 @media only screen and (max-width: 350px) {
   .lesson-wrapper {
-    padding: 18px 25px !important;
+    padding: 10px 8px !important;
   }
   .les-wrapper .les-card {
     width: 260px !important;

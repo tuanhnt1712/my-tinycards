@@ -59,7 +59,6 @@
 
             </div>
           </div>
-
           <div id="b2" class="containerTab" style="display:none; position: relative;">
             <button type="button" (click)="ModalReport.open()" class="feedback">...</button>
             <div class="list-card">
@@ -70,7 +69,9 @@
                       <div *ngIf="card.picture" style="height: 182px">
                         <img src="{{card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';">
                       </div>
-                      <p class="txt-front">{{card.front}}</p>
+                      <div class="texs" style="height: 48px; overflow: auto">
+                        <p class="txt-front">{{card.front}}</p>
+                      </div>
                     </div>
                     <div class="item-card back">
                       <p [innerHTML]="card.back"></p>

@@ -97,6 +97,9 @@
   text-align: center;
   padding-right: 80px;
 }
+.wrapper .n-card textarea {
+  padding: 10px;
+}
 .wrapper .n-card:hover {
   background-color: #f7f7f7;
 }
