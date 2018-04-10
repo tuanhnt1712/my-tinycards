@@ -26,15 +26,33 @@
             </p>
           </a>
           <% if current_admin.notification_count > 0 %>
-            <ul class="dropdown-menu">
-              <% current_admin.notifications.unread.each do |noti| %>
-                <li><%= link_to noti.feed_back.status, admins_feed_backs_path %></li>
-              <% end -%>
-            </ul>
-          <% end -%>
-        </li>
-        <li>
+            <ul class="dropdown-menu" style="height: 400px;width: 330px;overflow: auto;">
+                <% current_admin.notifications.unread.each do |noti| %>
+                  <li style="height: 55px;background-color: antiquewhite;">
+                    <%= link_to(admins_feed_backs_path) do %>
+                      <%= image_tag('Icon-warning.png',style: "width: 40px; margin-right: 15px") %>
+                      <div style="display: inline-table;">
+                        <p><%= noti.feed_back.status %></p>
+                        <p style="color: #648de2;">by <%= noti.feed_back.user.name %></p>
+                      </div>
+                    <% end %>
+                  </li>
+                  <hr style="margin: 0px">
+                <% end %>
 
+                <% current_admin.notifications.read.each do |noti| %>
+                  <li style="height: 55px">
+                    <%= link_to(admins_feed_backs_path) do %>
+                      <%= image_tag('Icon-warning.png',style: "width: 40px; margin-right: 15px") %>
+                      <div style="display: inline-table;">
+                        <p><%= noti.feed_back.status %></p>
+                        <p>by <%= noti.feed_back.user.name %></p>
+                      </div>
+                    <% end %>
+                  </li>
+                <% end %>
+            </ul>
+          <% end %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
