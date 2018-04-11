@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "dev": "NODE_ENV=\"development\" && cd angular && ng serve",
+    "prod": "ng build --prod --output-hashing=none --aot=false --build-optimizer=false && rsync -K -a dist/. ../public",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

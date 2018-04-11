@@ -1,0 +1,17 @@
+/* Sign in form*/
+.login-form {
+  background-color: #fff;
+  border-radius: 20px;
+  height: 450px;
+  margin-top: 30px;
+  margin: auto;
+  padding: 35px;
+  width: 350px;
+}
+
+.login-form-label {
+  color: #5c5c5c;
+  font-family: DINNextRoundedLTPro-Medium,sans-serif;
+  font-size: 21px;
+  margin-bottom: 15px;
+}

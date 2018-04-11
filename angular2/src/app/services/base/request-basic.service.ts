@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { AuthenticationService } from '../authentication.service';
-
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -10,7 +10,7 @@ import { HeaderBasicService } from '../base/header-basic.service';
 
 @Injectable()
 export class RequestBasicService {
-  protected baseUrl: string = 'http://localhost:3000/api';
+  protected baseUrl: string = environment.apiUrl
 
   constructor(protected http: Http,
               protected authenticationService: AuthenticationService,
