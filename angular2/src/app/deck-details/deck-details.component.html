@@ -21,8 +21,11 @@
             </div>
           </div>
           <div class="favorite">
-            <button (click)="toogleFavorite()" [class.btn-favorited]="favorited" type="button" class="btn btn-outline-success btn-favorite" style="border-radius: 10px"><i class="fa fa-star-o" aria-hidden="true"></i> FAVORITE</button>
-            <button type="button" [routerLink]="['/decks/', deck.id, 'edit']" class="btn btn-outline-success btn-edit" style="width: 16%; background-color: white;border: 2px solid #276d8c; border-radius: 10px; float: right;">
+            <button (click)="toogleFavorite()" [class.btn-favorited]="favorited"
+              [class.not-current_user]="deck.user_id == current_user.user_id"
+              type="button" class="btn btn-outline-success btn-favorite"
+              style="border-radius: 10px"><i class="fa fa-star-o" aria-hidden="true"></i> FAVORITE</button>
+            <button *ngIf="deck.user_id == current_user.user_id" type="button" [routerLink]="['/decks/', deck.id, 'edit']" class="btn btn-outline-success btn-edit" style="width: 16%; background-color: white;border: 2px solid #276d8c; border-radius: 10px; float: right;">
               <i class="fa fa-pencil" aria-hidden="true" style="color: #276d8c;"></i>
             </button>
           </div>
