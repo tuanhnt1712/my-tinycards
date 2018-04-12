@@ -31,7 +31,9 @@
 	              <div style="height: 182px">
 	                <%= image_tag(card.picture) %>
 	              </div>
-	              <p class="txt-front"><%= card.front %></p>
+                <div style="overflow: auto; height: 80px">
+	               <p class="txt-front"><%= card.front %></p>
+                </div>
 	            </div>
 	            <div class="item-card back">
 	              <p><%= card.back %></p>

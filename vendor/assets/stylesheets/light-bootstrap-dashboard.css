@@ -2386,7 +2386,6 @@ fieldset[disabled] .btn-neutral.active {
 .card-user .author {
     text-align: center;
     text-transform: none;
-    margin-top: -70px;
 }
 
 .card-user .avatar {
