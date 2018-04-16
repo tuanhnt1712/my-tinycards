@@ -23,6 +23,10 @@ export class AppComponent {
 
             // add alert to array
             this.alerts.push(alert);
+
+            setTimeout(function () {
+                $('.alert').fadeOut('slow');
+            }, 2500);
         });
     }
 

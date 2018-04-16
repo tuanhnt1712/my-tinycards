@@ -49,6 +49,10 @@ footer .quick-links .link-item {
     padding: 0;
   }
 
+  .alert {
+    top: 70px !important;
+  }
+
   footer {
     display: none;
   }
@@ -70,4 +74,11 @@ footer .quick-links .link-item {
   .viw {
     background-color: #fff !important;
   }
+}
+
+.alert {
+  position: absolute;
+  top: 100px;
+  right: 2%;
+  z-index: 100;
 }
