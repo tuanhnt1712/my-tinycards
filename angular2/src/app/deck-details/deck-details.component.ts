@@ -6,6 +6,7 @@ import { Deck } from '../deck';
 import { User } from '../user'
 import { DecksService } from '../services/decks.service';
 import { UserService } from '../services/user.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-deck-details',
@@ -29,7 +30,8 @@ export class DeckDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private _fb: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private alertService: AlertService
    ) {
     this.current_user = this.authenticationService.currentUser();
   }
@@ -113,7 +115,7 @@ export class DeckDetailsComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('closeModalButton1')).click();
     this.decksService.feed_back(this.current_user.user_id, this.deck.id, model["value"].feedback).subscribe(
       data => {
-        alert("Thanks for your feedback!");
+        this.alertService.success("Thanks for your feedback!");
     });
   }
 }
