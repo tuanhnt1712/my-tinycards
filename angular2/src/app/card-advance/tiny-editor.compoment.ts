@@ -14,7 +14,7 @@ export const TINYMCE_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'app-tiny-editor',
-  template: `<textarea #textArea [value]="value" id="back-card-value" class="form-control txt-back back" placeholder="Back"></textarea>`,
+  template: `<textarea #textArea></textarea>`,
   providers: [TINYMCE_VALUE_ACCESSOR]
 })
 export class TinyEditorComponent implements AfterViewInit, OnDestroy,  ControlValueAccessor {
@@ -40,9 +40,19 @@ export class TinyEditorComponent implements AfterViewInit, OnDestroy,  ControlVa
   ngAfterViewInit() {
     tinymce.init({
       target: this.textArea.nativeElement,
-      plugins: ['link', 'paste', 'table'],
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor textcolor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table contextmenu paste code help wordcount'
+      ],
+      height: 300,
+      menubar: false,
+      toolbar: 'insert | undo redo | formatselect | bold italic text backcolor | bullist numlist | removeformat',
       setup: editor => {
         this.editor = editor;
+        editor.on('init', () => {
+          editor.setContent(this.value);
+        });
         editor.on('keyup', () => {
           const content = editor.getContent();
           this.zone.run(() => this.onChange(content))

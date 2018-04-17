@@ -69,3 +69,6 @@ bower.json
 !.drone.yml
 !.framgia-ci.yml
 .framgia-ci-reports/
+
+# Editor
+.vscode

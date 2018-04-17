@@ -47,7 +47,9 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
   ngOnInit() {
     this.current_card = this.data.current_card
   }
-
+  ngAfterViewInit() {
+    $('#write-answer').focus();
+  }
   continue(answer){
   	answer = (<HTMLInputElement>document.getElementById('write-answer')).value
     if (_.isEqual(_.words(_.toLower(this.current_card.back)), _.words(_.toLower(answer))) ) {
