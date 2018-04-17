@@ -59,6 +59,7 @@ namespace :deploy do
   task :build_angular do
     on roles(:web) do |host|
       within "#{release_path}/angular2" do
+        execute "ln -s /home/deploy/frontend.env #{release_path}/angular2/.env"
         execute :npm, "install"
         execute :npm, "run prod"
       end
