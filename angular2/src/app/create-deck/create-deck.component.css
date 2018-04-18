@@ -259,10 +259,9 @@
     width: 230px !important;
   }
 
-  .add-card {
-    position: absolute;
-    top: 95px;
-    right: 100px;
+  .add-card .add {
+    bottom: 5%;
+    right: 3%;
   }
 
   .panel-heading span {
