@@ -18,7 +18,7 @@ export class DeckComponent implements OnInit{
       url: "../../assets/images/carousel/900x200.jpg"
     },
     {
-      url: "../../assets/images/carousel/900x200_2.png"
+      url: "../../assets/images/carousel/900x200_2.jpg"
     },
     {
       url: "../../assets/images/carousel/900x200_3.jpg"
