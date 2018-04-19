@@ -81,35 +81,6 @@ export class LessonComponent implements AfterViewInit {
           })
       return self.cards;
     });
-    let keyCodes = {
-      enter: 13,
-      space: 32,
-      zeroNumber: 48,
-      nineNumber: 57
-    };
-    $(document).keydown(function (e){
-      let cardBox = $('.ct-card');
-      if (cardBox.length && cardBox.find('.item-card.back').length && e.keyCode == keyCodes.space) {
-        e.preventDefault();
-        cardBox.click();
-        return;
-      }
-      let continueButton = $('.btn-continue:not(.hide)');
-      if (continueButton.length && e.keyCode == keyCodes.enter) {
-        e.preventDefault();
-        continueButton.click();
-        return;
-      }
-      let answerList = $('.list-ans button');
-      if (answerList.length && e.keyCode >= keyCodes.zeroNumber && e.keyCode <= keyCodes.nineNumber) {
-        e.preventDefault();
-        let answerIndex = e.keyCode - keyCodes.zeroNumber - 1;
-        let answerItem = answerList.get(answerIndex);
-        if (typeof answerItem !== 'undefined') {
-          answerItem.click();
-        }
-      }
-    });
   }
 
   loadRememberCardComponent(learning_card) {

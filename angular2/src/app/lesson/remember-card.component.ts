@@ -4,6 +4,9 @@ import { LessonContentComponent } from './lesson-content.component';
 import { LessonComponent } from './lesson.component';
 
 @Component({
+  host: {
+    '(document:keypress)': 'handleKeyboardEvent($event)'
+  },
   template: `
     <div class="les-wrapper">
       <div class="les-card">
@@ -33,13 +36,27 @@ export class RememberCardComponent implements LessonContentComponent {
   @Input() data: any;
   parent: any;
   menuOpen = false;
+  isFlipped = false;
+
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === " ") {
+      event.preventDefault();
+      this.flipped(event);
+      return;
+    }
+    if (this.isFlipped && event.key === "Enter") {
+      this.continue();
+      return;
+    }
+  }
 
   flipped($event){
     this.menuOpen = !this.menuOpen;
+    this.isFlipped = true;
     document.getElementById('continue-card').classList.remove('hide')
   }
 
-  continue(){
+  continue() {
     this.parent.lessonPracticeService.remembered_card(this.data.current_card);
     this.parent.nextCard();
   }

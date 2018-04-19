@@ -3,6 +3,9 @@ import { LessonContentComponent } from './lesson-content.component';
 import * as _ from "lodash";
 
 @Component({
+  host: {
+    '(document:keypress)': 'handleKeyboardEvent($event)'
+  },
   template: `
     <div class="les-wrapper">
       <div class="les-choice">
@@ -50,6 +53,16 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
     this.answers = this.randomAnswers(this.current_card, this.cards);
   }
 
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (/[1-9]/.test(event.key)) {
+      event.preventDefault();
+      let answer = this.answers[_.toNumber(event.key) - 1];
+      if (typeof answer !== 'undefined') {
+        this.continue(answer);
+      }
+    }
+  }
+
   continue(answer){
     if (this.current_card.back == answer) {
       console.log("Right");
@@ -57,8 +70,11 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
       document.getElementById('animation3').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
       _.delay(this.parent.nextCard.bind(this.parent), 1000);
-    }else {
+    } else {
       document.getElementById('animation3').classList.add("false-animation");
+      _.delay(function () {
+        document.getElementById('animation3').classList.remove("false-animation")
+      }, 1000, 'later');
       console.log("Wrong");
     }
   }

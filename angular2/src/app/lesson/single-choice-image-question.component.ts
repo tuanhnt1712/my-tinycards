@@ -3,6 +3,9 @@ import { LessonContentComponent } from './lesson-content.component';
 import * as _ from "lodash";
 
 @Component({
+  host: {
+    '(document:keypress)': 'handleKeyboardEvent($event)'
+  },
   template: `
     <div class="les-wrapper">
       <div class="les-choice">
@@ -52,15 +55,29 @@ export class SingleChoiceImageQuestionComponent implements LessonContentComponen
     this.card_answers = this.randomAnswers(this.current_card, this.cards);
   }
 
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (/[1-9]/.test(event.key)) {
+      event.preventDefault();
+      let answer = this.card_answers[_.toNumber(event.key) - 1];
+      if (typeof answer !== 'undefined') {
+        this.continue(answer);
+      }
+    }
+  }
+
   continue(card_answer){
-    if (this.current_card.front == card_answer.front) {
+    console.log(this.card_answers);
+    if (this.current_card.id == card_answer.id) {
       console.log("Right");
       document.getElementById('animation2').classList.remove("false-animation");
       document.getElementById('animation2').classList.add("true-animation");
       this.parent.lessonPracticeService.single_question_success(this.current_card);
       _.delay(this.parent.nextCard.bind(this.parent), 1000);
-    }else {
+    } else {
       document.getElementById('animation2').classList.add("false-animation");
+      _.delay(function () {
+        document.getElementById('animation2').classList.remove("false-animation")
+      }, 1000, 'later');
       console.log("Wrong");
     }
   }

@@ -3,6 +3,9 @@ import * as _ from "lodash";
 import { LessonContentComponent } from './lesson-content.component';
 
 @Component({
+  host: {
+    '(document:keypress)': 'handleKeyboardEvent($event)'
+  },
   template: `
     <div class="les-wrapper">
       <div class="les-choice">
@@ -47,21 +50,31 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
   ngOnInit() {
     this.current_card = this.data.current_card
   }
-  ngAfterViewInit() {
-    $('#write-answer').focus();
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      this.continue();
+      return;
+    }
   }
-  continue(answer){
-  	answer = (<HTMLInputElement>document.getElementById('write-answer')).value
+  ngAfterViewInit() {
+    (<HTMLInputElement>document.getElementById('write-answer')).focus();
+  }
+  continue() {
+    let answer = (<HTMLInputElement>document.getElementById('write-answer')).value
+    answer = _.trim(answer)
+    if (answer === null || answer === '') {
+      return;
+    }
     if (_.isEqual(_.words(_.toLower(this.current_card.back)), _.words(_.toLower(answer))) ) {
       console.log("Right")
       document.getElementById('animation1').classList.add("true-animation");
       this.parent.lessonPracticeService.map_question_success(this.data.current_card);
-    }else {
-      document.getElementById('animation1').classList.add("false-animation");
-      this.hint = this.current_card.back
-      this.parent.lessonPracticeService.reset_card(this.data.current_card);
-      console.log("Wrong");
+      _.delay(this.parent.nextCard.bind(this.parent), 1000);
+      return;
     }
-    _.delay(this.parent.nextCard.bind(this.parent), 1000);
+    document.getElementById('animation1').classList.add("false-animation");
+    this.hint = this.current_card.back
+    console.log("Wrong");
+    _.delay(this.parent.nextCard.bind(this.parent), 3000);
   }
 }
