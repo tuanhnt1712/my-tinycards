@@ -53,6 +53,7 @@ export class CreateDeckAdvanceComponent implements OnInit{
 
 
   save(model: Deck) {
+    model["value"].is_advance = true;
     this.decksService.add_deck(model["value"]).subscribe(
       data => {
         this.router.navigate(['/decks', data.data.id]);

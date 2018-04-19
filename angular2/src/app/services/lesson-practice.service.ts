@@ -9,6 +9,7 @@ export class LessonPracticeService {
     SINGLE_IMAGE_QUESTION: "single_image_question",
     MAP_QUESTION: "map_question",
   }
+  is_advance = false;
   cards = [];
   learning_cards = [];
   progress = 0;
@@ -20,11 +21,17 @@ export class LessonPracticeService {
     var self = this;
     self.cards = cards;
     this.learning_cards = cards.map(card => {
+      if (this.is_advance) {
+        return {...card, remembered: false, exercises: [
+          self.types['SINGLE_QUESTION'],
+          self.types['SINGLE_IMAGE_QUESTION']
+        ]};
+      }
       return {...card, remembered: false, exercises: [
         self.types['SINGLE_QUESTION'],
         self.types['SINGLE_IMAGE_QUESTION'],
         self.types['MAP_QUESTION']
-        ]};
+      ]};
     });
   }
 

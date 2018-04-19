@@ -28,7 +28,7 @@ import * as _ from "lodash";
             <div class="answers">
               <ul>
                 <li class="list-ans" *ngFor="let answer of answers" >
-                  <button (click)="continue(answer)">{{answer}}</button>
+                  <button (click)="continue(answer)" [innerHtml]="answer"></button>
                 </li>
               </ul>
             </div>

@@ -14,7 +14,7 @@ import * as _ from "lodash";
             <div class="containerr" style="margin-bottom: 35px">
               <div class="ct-card">
                 <div class="front back-card" id="animation2" style="border-radius: 15px;overflow:auto">
-                  <span style="word-wrap: break-word;"> {{data.current_card.back}} </span>
+                  <span style="word-wrap: break-word;" [innerHtml]="data.current_card.back"></span>
                 </div>
               </div>
             </div>

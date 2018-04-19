@@ -18,21 +18,19 @@ export const TINYMCE_VALUE_ACCESSOR: any = {
   providers: [TINYMCE_VALUE_ACCESSOR]
 })
 export class TinyEditorComponent implements AfterViewInit, OnDestroy,  ControlValueAccessor {
-  @Input() elementId: String;
+  @Input() initialValue: string | undefined;
 
   @ViewChild('textArea') textArea: ElementRef;
 
   editor: any;
-
-  value: string;
 
   onChange = (_: any) => { };
 
   constructor(private zone: NgZone) {}
 
   writeValue(value: any): void {
-    this.value = value;
-    if (this.editor) {
+    this.initialValue = value || this.initialValue;
+    if (this.editor && this.editor.initialized && typeof value === 'string') {
       this.editor.setContent(value);
     }
   }
@@ -51,7 +49,9 @@ export class TinyEditorComponent implements AfterViewInit, OnDestroy,  ControlVa
       setup: editor => {
         this.editor = editor;
         editor.on('init', () => {
-          editor.setContent(this.value);
+          if (typeof this.initialValue !== 'undefined') {
+            editor.setContent(this.initialValue);
+          }
         });
         editor.on('keyup', () => {
           const content = editor.getContent();

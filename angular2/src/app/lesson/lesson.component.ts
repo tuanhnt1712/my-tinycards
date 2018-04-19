@@ -76,6 +76,7 @@ export class LessonComponent implements AfterViewInit {
           .subscribe(function(p){
             self.lesson = p;
             self.cards = p.cards;
+            self.lessonPracticeService.is_advance = p.deck.is_advance;
             self.lessonPracticeService.initialize(p.cards);
             self.nextCard();
           })

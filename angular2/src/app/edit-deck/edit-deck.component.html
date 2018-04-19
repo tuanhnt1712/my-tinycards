@@ -53,8 +53,10 @@
           <div formArrayName="cards_attributes" *ngFor="let cardForm of myForm.controls.cards_attributes.controls; let i=index">
 
             <div [formGroupName]="i" [style.display]="cardForm.value._destroy == true ? 'none': ''">
-              <card [group]="cardForm" [i]="i+1">
+              <card *ngIf="deck && ! deck.is_advance" [group]="cardForm" [i]="i+1">
               </card>
+              <card-advance *ngIf="deck && deck.is_advance" [group]="cardForm" [i]="i+1">
+              </card-advance>
                 <div class="panel-heading">
                   <span class="glyphicon glyphicon-remove pull-right" (click)="removeCard(i)"></span>
                 </div>

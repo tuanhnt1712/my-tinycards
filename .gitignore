@@ -72,3 +72,6 @@ bower.json
 
 # Editor
 .vscode
+
+# Mac
+.DS_Store

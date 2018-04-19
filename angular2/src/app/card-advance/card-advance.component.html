@@ -21,7 +21,7 @@
     </div>
     <div class="back-card">
       <div class="f-deck">
-        <app-tiny-editor [(ngModel)]="page.content" formControlName="back">
+        <app-tiny-editor formControlName="back" [initialValue]="content">
         </app-tiny-editor>
       </div>
     </div>

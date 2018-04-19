@@ -22,7 +22,7 @@ import { LessonComponent } from './lesson.component';
               </div>
             </div>
             <div class="item-card back" style="overflow:auto">
-              <span> {{data.current_card.back}} </span>
+              <span [innerHTML]="data.current_card.back"></span>
             </div>
           </div>
         </div>

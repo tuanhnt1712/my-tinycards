@@ -162,7 +162,8 @@ function toDeck(r:any): Deck{
     cards: r.cards,
     lessons: r.lessons,
     favorite_count: r.favorite_count,
-    favorited: r.favorited
+    favorited: r.favorited,
+    is_advance: r.is_advance
   });
   return deck;
 }
@@ -171,6 +172,7 @@ function toLesson(r:any): Lesson{
   let lesson = <Lesson>({
     id: (r.id),
     deck_id: (r.deck_id),
+    deck: (r.deck),
     cards: r.cards
   });
   return lesson;
