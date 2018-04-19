@@ -46,6 +46,7 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
   cards = [];
   current_card: any;
   answers = [];
+  is_first = true;
 
   ngOnInit() {
     this.current_card = this.data.current_card
@@ -68,7 +69,9 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
       console.log("Right");
       document.getElementById('animation3').classList.remove("false-animation");
       document.getElementById('animation3').classList.add("true-animation");
-      this.parent.lessonPracticeService.single_question_success(this.current_card);
+      if (this.is_first) {
+        this.parent.lessonPracticeService.single_question_success(this.current_card);
+      }
       _.delay(this.parent.nextCard.bind(this.parent), 1000);
     } else {
       document.getElementById('animation3').classList.add("false-animation");
@@ -77,6 +80,7 @@ export class SingleChoiceQuestionComponent implements LessonContentComponent, On
       }, 1000, 'later');
       console.log("Wrong");
     }
+    this.is_first = false;
   }
 
   randomAnswers(card, cards){
