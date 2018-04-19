@@ -103,7 +103,7 @@ header .header-logo .inner .nav-list .cl-textt {
   display: block;
   font-size: 25px;
   font-weight: 300;
-  padding: 17px 30px;
+  padding: 17px 23px;
   text-transform: uppercase;
   vertical-align: middle;
   opacity: .9;
@@ -229,6 +229,6 @@ footer .quick-links .link-item {
 
 @media only screen and (max-width: 350px) {
   .nav-itemm .cl-textt {
-    padding: 17px 18px !important;
+    padding: 17px 15px !important;
   }
 }
