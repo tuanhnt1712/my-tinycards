@@ -35,6 +35,7 @@ class Deck < ApplicationRecord
     :title,
     :description,
     :cover_image,
+    :is_advance,
     cards_attributes: [
       :id,
       :_destroy,
