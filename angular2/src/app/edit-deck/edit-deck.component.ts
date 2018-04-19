@@ -46,6 +46,7 @@ export class EditDeckComponent implements OnInit{
                     cover_image: [''],
                     cards_attributes: this._fb.array(this.build_array(this.deck.cards))
           });
+          console.log(this.deck);
         }
       )
     });

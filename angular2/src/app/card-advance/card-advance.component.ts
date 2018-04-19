@@ -1,26 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-export class PageModel {
-  content: string;
-}
-
 @Component({
   selector: 'card-advance',
   templateUrl: './card-advance.component.html',
   styleUrls: ['./card-advance.component.css']
 })
 export class CardAdvanceComponent implements OnInit {
-  page: PageModel;
   @Input('group') public cardForm: FormGroup;
   @Input() public i;
   picture: any;
+  content: any;
   constructor() {
   }
 
   ngOnInit() {
-    this.page = new PageModel();
-    this.picture = this.cardForm.value.picture['url']
+    this.content = this.cardForm.value.back;
+    this.picture = this.cardForm.value.picture['url'];
   }
 
   onFileChange(event) {
