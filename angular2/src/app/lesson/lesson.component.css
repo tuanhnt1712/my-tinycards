@@ -255,10 +255,10 @@
 .les-wrapper .les-choice .txt-answers .ct-hint {
   margin-left: 25px;
   position: absolute;
-  top: 75%;
+  top: 30%;
   width: 100%;
   display: flex;
-  font-size: 24px;
+  font-size: 20px;
   height: 45px;
   outline: none;
   padding: 10px 0;
@@ -492,6 +492,13 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
 
   .containerr {
     height: 330px !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .les-choice .containerr .ct-card{
+    margin: auto;
+    position: static !important;
   }
 
   .txt-answers .ct-answers {

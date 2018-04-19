@@ -564,7 +564,7 @@ div:focus{outline:none;}
   .favorite {
     position: absolute;
     left: -110px;
-    width: 345px;
+    width: 330px;
     display: block;
     margin: 10px auto !important;
   }
@@ -587,6 +587,7 @@ div:focus{outline:none;}
     margin: auto;
     float: none;
     margin-bottom: 20px;
+    margin-right: auto !important;
   }
   .list-card {
     margin: 10px;
@@ -601,9 +602,7 @@ div:focus{outline:none;}
   .list-card {
     margin: 0 !important;
   }
-  .row {
-    width: 100% !important;
-  }
+
   .left {
     padding: 0;
     position: relative;
@@ -640,8 +639,8 @@ div:focus{outline:none;}
   .containerr {
     display: block;
     margin: auto;
-    float: left;
-    margin: 4px;
+    margin-bottom: 20px;
+    margin-right: 20px;
   }
   .list-card {
     margin: 10px;
