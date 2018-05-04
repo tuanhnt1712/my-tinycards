@@ -57,7 +57,8 @@ class ImportDeckService
 
   private
   def card_attributes row
-    if row[maps[:card_front_4_url][:index]].split(".").last.downcase.in? %w(jpg jpeg gif png)
+    image_url = row[maps[:card_front_4_url][:index]]
+    if image_url.present? && image_url.split(".").last.downcase.in?(%w(jpg jpeg gif png))
       {
         front: row[maps[:card_front][:index]],
         back: row[maps[:card_back][:index]],

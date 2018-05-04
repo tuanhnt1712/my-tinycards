@@ -3,8 +3,8 @@
     <%= link_to image_tag(deck.cover_image, class: "avatar-post"), admins_deck_path(deck) %>
   </td>
   <td>
-    <%= link_to image_tag(deck.user.avatar, class: "avatar") %>
-    <%= link_to deck.user.name %>
+    <%= image_tag(deck.user.avatar, class: "avatar") %>
+    <%= deck.user.name %>
   </td>
   <td>
     <%= link_to deck.title, admins_deck_path(deck) %>
@@ -13,10 +13,10 @@
     <%= deck.cards.size %>
   </td>
   <td>
-    <%= deck.created_at %>
+  <%= l deck.created_at, format: :format_datetime %>
   </td>
   <td>
-    <%= deck.updated_at %>
+    <%= l deck.updated_at, format: :format_datetime %>
   </td>
   <td>
     <% if current_admin %>

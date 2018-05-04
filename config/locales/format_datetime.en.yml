@@ -1,0 +1,4 @@
+en:
+  time:
+    formats:
+      format_datetime: "%Y/%m/%d %H:%M"
