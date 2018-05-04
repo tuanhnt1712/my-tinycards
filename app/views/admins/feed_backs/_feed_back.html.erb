@@ -1,9 +1,9 @@
 <tr>
   <td>
-    <%= link_to image_tag(feed_back.user.avatar, class: "avatar-post") %>
+    <%= image_tag(feed_back.user.avatar, class: "avatar-post") %>
   </td>
   <td>
-    <%= link_to feed_back.user.name %>
+    <%= feed_back.user.name %>
   </td>
   <td>
     <%= link_to feed_back.deck.title, admins_deck_path(feed_back.deck) %>
