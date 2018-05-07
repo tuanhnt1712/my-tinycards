@@ -31,7 +31,7 @@
   padding: 20px;
 }
 .left .img-deck img {
-  width: 90%;
+  width: 95%;
   margin: auto;
   display: block;
   border-radius: 20px;
@@ -549,11 +549,9 @@ div:focus{outline:none;}
   .txt {
     margin: 0 !important;
   }
-  .img-deck {
-    height: 100% !important;
-  }
   .img-deck img {
     width: 100% !important;
+    height: 110px !important;
   }
   .name-deck {
     margin-bottom: 5px !important;
@@ -647,7 +645,7 @@ div:focus{outline:none;}
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 360px) {
   .name-deck {
     font-size: 20px !important;
   }

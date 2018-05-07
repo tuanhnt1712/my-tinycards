@@ -227,7 +227,7 @@ footer .quick-links .link-item {
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 360px) {
   .nav-itemm .cl-textt {
     padding: 17px 15px !important;
   }

@@ -236,6 +236,9 @@
 .les-wrapper .les-choice .answers .list-ans button:hover {
   border: 3px solid #276d8c;
 }
+.les-wrapper .les-choice .image-answers .list-ans button:hover {
+  border: 3px solid #276d8c;
+}
 .les-wrapper .les-choice .txt-answers {
   position: relative;
   height: 350px;
@@ -546,7 +549,7 @@ button:disabled{cursor:not-allowed;-webkit-filter:grayscale(100%);filter:graysca
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 360px) {
   .lesson-wrapper {
     padding: 10px 8px !important;
   }

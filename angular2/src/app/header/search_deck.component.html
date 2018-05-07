@@ -14,8 +14,9 @@
                       </a>
                     </div>
                     <div class="name">
-                      <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck" style="display: block">{{deck.title}}</a>
-                      <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck" style="display: block">{{deck.description}}</a>
+                      <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck" style="display: block; font-size: 20px; margin-bottom: 15px">{{deck.title}}</a>
+                      <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck" style="display: block; font-size: 16px; margin-bottom: 15px">{{deck.description}}</a>
+                      <a href="#" [routerLink]="['/decks', deck.id]" class="name-deck" style="display: block; font-size: 13px; margin-bottom: 15px">Author: {{deck.user_name}}</a>
                       <a href="#" [routerLink]="['/decks', deck.id]" class="number"><i class="fa fa-star"></i>{{deck.favorite_count}}</a>
                       <a href="#" [routerLink]="['/decks', deck.id]" class="number"><i class="fa fa-window-restore"></i> {{deck.cards.length}}</a>
                     </div>
