@@ -18,7 +18,7 @@ import { LessonContentComponent } from './lesson-content.component';
                     <img src="{{data.current_card.picture.url}}" onError="this.src='./assets/images/card-demo.jpg';" style="width: 75%;margin-top: 15px;margin-bottom: 8px;">
                   </div>
                   <div style="overflow:auto;height: 82px;">
-                    <span style="word-wrap: break-word;"> {{data.current_card.front}} </span>
+                    <span style="word-wrap: break-word;"> {{data.current_card.back}} </span>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
     if (answer === null || answer === '') {
       return;
     }
-    if (_.isEqual(_.words(_.toLower(this.current_card.back)), _.words(_.toLower(answer))) ) {
+    if (_.isEqual(_.words(_.toLower(this.current_card.front)), _.words(_.toLower(answer))) ) {
       console.log("Right")
       document.getElementById('animation1').classList.add("true-animation");
       this.parent.lessonPracticeService.map_question_success(this.data.current_card);
@@ -73,7 +73,7 @@ export class MapQuestionAnswerComponent implements LessonContentComponent, OnIni
       return;
     }
     document.getElementById('animation1').classList.add("false-animation");
-    this.hint = this.current_card.back
+    this.hint = this.current_card.front
     console.log("Wrong");
     _.delay(this.parent.nextCard.bind(this.parent), 3000);
   }

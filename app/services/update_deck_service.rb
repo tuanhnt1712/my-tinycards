@@ -9,6 +9,7 @@ class UpdateDeckService
   def perform
     ActiveRecord::Base.transaction do
       deck.update_attributes! params
+      DeleteLessonsService.new(deck: deck).perform
       CreateLessonsService.new(deck: deck, cards: deck.no_lesson_cards).perform
     end
     deck
