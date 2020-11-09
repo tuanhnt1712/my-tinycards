@@ -530,7 +530,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.1)
-    puma (3.11.3)
+    puma (3.12.6)
     rack (2.0.3)
     rack-cors (1.0.2)
     rack-test (0.8.2)
@@ -817,7 +817,7 @@ DEPENDENCIES
   paranoia!
   passenger (>= 5.0.25)
   pry
-  puma (~> 3.0)
+  puma (~> 3.12)
   rack-cors
   rails (>= 5.1.1)
   rails_best_practices
