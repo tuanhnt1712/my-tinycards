@@ -500,7 +500,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_magick (4.8.0)
     mini_mime (1.0.0)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     minitest (5.10.3)
     multi_json (1.12.2)
     multipart-post (2.0.0)
@@ -511,8 +511,8 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     nio4r (2.1.0)
-    nokogiri (1.8.1)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -813,7 +813,7 @@ DEPENDENCIES
   mime-types
   mini_magick
   mysql2 (>= 0.3.18, < 0.5)
-  nokogiri (~> 1.8.1)
+  nokogiri (~> 1.10.10)
   paranoia!
   passenger (>= 5.0.25)
   pry
