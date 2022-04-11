@@ -27,7 +27,7 @@ gem "redis", "~> 3.0"
 
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development
-gem "nokogiri", "~> 1.8.1"
+gem "nokogiri", "~> 1.13.4"
 gem 'carrierwave'
 gem 'carrierwave-base64'
 gem 'mime-types', require: 'mime/types/full'
